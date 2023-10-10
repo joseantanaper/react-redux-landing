@@ -1,0 +1,65 @@
+// Default variable overrides
+// $modal-backdrop-bg: black;
+// $modal-backdrop-opacity: 0.6;
+
+$border-radius: 1px;
+$dropdown-item-padding-y: 0.6rem;
+
+// $navbar-toggler-padding-y: 0px;
+// $navbar-toggler-margin-y: 0px;
+// $navbar-brand-padding-y: 0px;
+
+// $navbar-toggler-padding-y: 0rem;
+// $navbar-toggler-padding-x: 0rem;
+
+$navbar-padding-y: 3px;
+
+$navbar-brand-padding-y: 0px;
+
+// $enable-rounded: false;
+$border-radius: 2px;
+
+// Bootstrap imports
+@import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
+@import "/node_modules/bootstrap/scss/bootstrap";
+
+* {
+  box-sizing: border-box;
+}
+
+.navbar-toggler {
+  // padding: 0px !important;
+  // margin: 0px !important;
+  // min-width: 50px;
+  // height: 46px;
+  svg {
+    margin: 0px !important;
+    width: 28px;
+    height: 28px;
+  }
+}
+
+html:not([data-bs-theme="dark"]) {
+  button.navbar-toggler,
+  .btn,
+  .nav-link,
+  .navbar-brand {
+    transition: 250ms;
+    opacity: 0.9;
+    svg {
+      transition: 250ms;
+    }
+  }
+  button.navbar-toggler:hover,
+  .btn:hover,
+  .nav-link:hover,
+  .navbar-brand:hover {
+    transition: 150ms;
+    opacity: 1;
+    text-shadow: 0 0 2px slateblue;
+    svg {
+      transition: 150ms;
+      filter: drop-shadow(0 0 1px slateblue);
+    }
+  }
+}
