@@ -1,14 +1,17 @@
 // Default variable overrides
 // $modal-backdrop-bg: black;
 // $modal-backdrop-opacity: 0.6;
+// @use "./variables.scss";
 
 @import "./variables.scss";
-@import "./bootstrap-light.scss";
-@import "./bootstrap-dark.scss";
 
 // Bootstrap imports
 @import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
 @import "/node_modules/bootstrap/scss/bootstrap";
+
+// Custom
+@import "./bootstrap-light.scss";
+@import "./bootstrap-dark.scss";
 
 * {
   box-sizing: border-box;
@@ -65,3 +68,38 @@ div.vr {
 // .btn:active {
 //   border-color: blue !important;
 // }
+
+.offcanvas-backdrop.show {
+  // opacity: 1;
+  // background-color: rgba(15, 23, 42, 0.5);
+  transition: 1s;
+  backdrop-filter: blur(6px) !important;
+}
+
+.btn:hover,
+.navbar-toggler:hover {
+  transition: 0.5;
+  backdrop-filter: brightness(1.4);
+  text-shadow: $app-btn-hover-glow;
+  svg {
+    filter: drop-shadow($app-btn-hover-glow);
+  }
+}
+.navbar-brand:hover {
+  text-shadow: $app-btn-hover-glow;
+}
+.btn:active,
+.navbar-toggler:active {
+  border-color: $app-btn-active-border-color;
+  text-shadow: $app-btn-active-glow;
+  backdrop-filter: brightness(0.9);
+  svg {
+    filter: drop-shadow($app-btn-active-glow);
+  }
+}
+.navbar-brand:active {
+  text-shadow: $app-btn-active-glow;
+  svg {
+    filter: drop-shadow($app-btn-active-glow);
+  }
+}

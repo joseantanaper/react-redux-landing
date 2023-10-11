@@ -22,7 +22,30 @@ $offcanvas-transition-duration: 0.3s;
 
 $btn-focus-width: 2px;
 
+$list-group-item-padding-y: 10px;
+
+// :root {
+//   --bs-tertiary-bg: blue !important;
+// }
+// $component-hover-bg: blue;
+// $component-active-bg: red;
+
+// $list-group-hover-bg: var(--bs-tertiary-bg);
+// $list-group-active-color: $component-active-color;
+// $list-group-active-bg: $component-active-bg;
+
 :root {
   --app-light-border-color: slateblue;
   --app-dark-border-color: white;
 }
+
+$btn-border-width: 2px;
+
+$app-btn-active-border-color: rgba(0 0 0 / 0.1) !important;
+
+$app-btn-hover-glow: 0 0 2px white;
+$app-btn-active-glow: 0 0 1px white;
+
+// $modal-backdrop-bg: rgba(15, 23, 42, 0.5);
+$modal-backdrop-bg: rgba(0 0 0 / 0.6);
+$modal-backdrop-opacity: 1;

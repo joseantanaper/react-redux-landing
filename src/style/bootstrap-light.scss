@@ -1,14 +1,1 @@
-html:not([data-bs-theme="dark"]) {
-  .btn {
-    --bs-btn-hover-width: 2px;
-    // --bs-btn-hover-color: var(--app-light-border-color);
-    --bs-btn-hover-border-color: rgba(0 0 0 / 0.1) !important;
-    // --bs-btn-active-color: var(--app-light-border-color);
-    --bs-btn-active-border-color: var(--app-light-border-color) !important;
-  }
-  .btn:active {
-    svg {
-      filter: drop-shadow(0 0 1px var(--app-light-border-color));
-    }
-  }
-}
+

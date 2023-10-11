@@ -41,7 +41,7 @@ export const MiniCounter = () => {
       <span className="input-group-text">{count}</span>
       <button
         name="app-minicounter-decrement"
-        className="btn btn-outline-primary"
+        className="btn btn-outline-secondary"
         type="button"
         onClick={() => dispatch(increment())}
       >
