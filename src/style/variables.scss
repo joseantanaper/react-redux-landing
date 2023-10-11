@@ -1,0 +1,28 @@
+$border-radius: 1px;
+$dropdown-item-padding-y: 0.6rem;
+
+$navbar-toggler-padding-y: 0px;
+$navbar-toggler-margin-y: 0px;
+$navbar-brand-padding-y: 0px;
+
+// $navbar-toggler-padding-y: 0rem;
+// $navbar-toggler-padding-x: 0rem;
+$navbar-padding-y: 3px;
+
+$navbar-brand-margin-y: 0px;
+
+// $enable-rounded: false;
+$navbar-nav-link-padding-x: 0.5rem;
+$navbar-brand-margin-end: 1rem;
+
+$offcanvas-padding-y: 3px;
+$offcanvas-horizontal-width: 400px;
+
+$offcanvas-transition-duration: 0.3s;
+
+$btn-focus-width: 2px;
+
+:root {
+  --app-light-border-color: slateblue;
+  --app-dark-border-color: white;
+}
