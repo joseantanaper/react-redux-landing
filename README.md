@@ -56,6 +56,12 @@ Import your custom scss:
 import "/style/bootstrap-custom.scss"
 ```
 
+## React-Router
+
+```sh
+npm install react-router-dom localforage match-sorter sort-by
+```
+
 ---
 
 ---

@@ -1,7 +1,14 @@
 import { useState } from "react"
+import { Link } from "react-router-dom"
+
 import { Icon } from "../../widgets/Icon"
 import { MenuToggler } from "./MenuToggler"
-
+import { ThemeToggler } from "./ThemeToggler"
+import { MiniCounter } from "./MiniCounter"
+import { MenuLeft } from "../menu/MenuLeft"
+import { MenuRight } from "../menu/MenuRight"
+import { MenuTop } from "../menu/MenuTop"
+import { MenuBottom } from "../menu/MenuBottom"
 interface Props {
   title: string
 }
@@ -9,8 +16,8 @@ interface Props {
 export const Navbar = ({ title }: Props) => {
   return (
     <nav className="navbar app-main-navbar bg-body-tertiary fixed-top text-truncate shadow-sm">
-      {/* Left Menu Toggler */}
       <div className="container-fluid flex-nowrap">
+        {/* Navigation Left Toggler */}
         <div className="navbar-brand">
           <MenuToggler
             id="offcanvasMenuLeft"
@@ -19,38 +26,57 @@ export const Navbar = ({ title }: Props) => {
         </div>
 
         {/* Title */}
-        <a className="navbar-brand fw-bolder me-auto text-truncate" href="/">
+        <a className="navbar-brand w-bolder me-auto text-truncate" href="/">
           {title} Sticky top Long Text For Testing
         </a>
 
-        <div className="vr ms-2 me-3"></div>
-
         {/* Menu */}
-        <div className="d-flex me-2">
-          <ul className="navbar-nav">
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="/">
-                Nav-Link
-              </a>
-            </li>
-          </ul>
-          <button className="btn">OKzz</button>
-          <button className="btn">OKgg</button>
-          <button className="btn">OKaa</button>
+        <div className="vr ms-2 me-3 d-none d-lg-block"></div>
+        <div className="d-flex d-none d-lg-block">
+          <Link className="btn" aria-current="page" to="/contact/1">
+            Index 1
+          </Link>
+
+          <Link className="btn " aria-current="page" to="/contact/2">
+            Index 2
+          </Link>
+        </div>
+
+        {/* Buttons */}
+        <div className="vr ms-2 me-3 d-none d-md-block"></div>
+        <div className="d-flex d-none d-md-block">
           <button className="btn">OKss</button>
+          <button className="btn">OKss</button>
+          <MiniCounter />
         </div>
 
         <div className="vr ms-2 me-3"></div>
 
-        <MenuToggler id="sidebarTop" type="btn" iconId="bi-arrow-bar-down" />
-        <MenuToggler id="sidebarBottom" type="btn" iconId="bi-arrow-bar-up" />
+        {/* Global Toolbar */}
+        <ThemeToggler id="ok" />
+        <MenuToggler
+          id="offcanvasMenuTop"
+          type="btn"
+          iconId="bi-arrow-bar-down"
+        />
+        <MenuToggler
+          id="offcanvasMenuBottom"
+          type="btn"
+          iconId="bi-arrow-bar-up"
+        />
 
         <MenuToggler
-          id="sidebarRight"
+          id="offcanvasMenuRight"
           iconId="bi-layout-sidebar-inset-reverse"
           css="ms-2"
         />
       </div>
+
+      {/* Menu Left */}
+      <MenuLeft id="offcanvasMenuLeft" />
+      <MenuRight id="offcanvasMenuRight" />
+      <MenuTop id="offcanvasMenuTop" />
+      <MenuBottom id="offcanvasMenuBottom" />
     </nav>
   )
 }

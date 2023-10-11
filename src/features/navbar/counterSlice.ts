@@ -2,13 +2,15 @@ import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
 import { RootState, AppThunk } from "../../app/store"
 import { fetchCount } from "./counterAPI"
 
+const storeCount = "count"
+
 export interface CounterState {
   value: number
   status: "idle" | "loading" | "failed"
 }
 
 const initialState: CounterState = {
-  value: 0,
+  value: Number(localStorage.getItem(storeCount)) || 0,
   status: "idle",
 }
 
@@ -22,6 +24,7 @@ export const incrementAsync = createAsyncThunk(
   async (amount: number) => {
     const response = await fetchCount(amount)
     // The value we return becomes the `fulfilled` action payload
+    console.log("counterSlice", "incrementAsync", amount, response.data)
     return response.data
   },
 )
@@ -37,9 +40,13 @@ export const counterSlice = createSlice({
       // which detects changes to a "draft state" and produces a brand new
       // immutable state based off those changes
       state.value += 1
+      localStorage.setItem(storeCount, String(Number(state.value)))
+      console.log("counterSlice", "increment", state.value)
     },
     decrement: (state) => {
       state.value -= 1
+      localStorage.setItem(storeCount, String(Number(state.value)))
+      console.log("counterSlice", "decrement", state.value)
     },
     // Use the PayloadAction type to declare the contents of `action.payload`
     incrementByAmount: (state, action: PayloadAction<number>) => {

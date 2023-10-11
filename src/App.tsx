@@ -1,5 +1,5 @@
 import logo from "./logo.svg"
-import { Counter } from "./features/counter/Counter"
+import { Counter } from "./features/menu/Counter"
 import { Navbar } from "./features/navbar/Navbar"
 
 function App() {
