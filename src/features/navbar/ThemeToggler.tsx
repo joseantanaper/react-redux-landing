@@ -12,12 +12,11 @@ import {
 
 interface Props {
   id: string
-  iconId: string
   type?: string
   css?: string
 }
 
-export const ThemeToggler = ({ id, iconId, css = "" }: Props) => {
+export const ThemeToggler = ({ id, css = "" }: Props) => {
   const currentTheme = useAppSelector(selectTheme)
   const dispatch = useAppDispatch()
   const [theme, setTheme] = useState(defaultTheme)
