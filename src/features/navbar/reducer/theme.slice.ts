@@ -4,6 +4,8 @@ import { RootState } from "../../../app/store"
 export const storeTheme = "theme"
 export const defaultTheme = "light"
 export const alternativeTheme = "dark"
+export const LIGHT = "light"
+export const DARK = "dark"
 
 export interface ThemeState {
   value: string

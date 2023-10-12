@@ -84,6 +84,9 @@ div.vr {
   svg {
     filter: drop-shadow($app-btn-hover-glow);
   }
+  svg.app-rotate {
+    animation: rotateAnimation 2s linear infinite;
+  }
 }
 .navbar-brand:hover {
   text-shadow: $app-btn-hover-glow;
@@ -96,10 +99,22 @@ div.vr {
   svg {
     filter: drop-shadow($app-btn-active-glow);
   }
+  svg.app-rotate {
+    animation: rotateAnimation 1s linear infinite;
+  }
 }
 .navbar-brand:active {
   text-shadow: $app-btn-active-glow;
   svg {
     filter: drop-shadow($app-btn-active-glow);
+  }
+}
+
+@keyframes rotateAnimation {
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
   }
 }

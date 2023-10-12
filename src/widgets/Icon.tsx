@@ -1,15 +1,17 @@
 interface Props {
   id: string
+  extra?: string
   style?: object
 }
 
-export const Icon = ({ id, style = {} }: Props) => {
+export const Icon = ({ id, style = {}, extra = "" }: Props) => {
   return (
     <svg
       fill="currentColor"
       width="16"
       height="16"
-      className={`bi ${id}`}
+      name={id}
+      className={`bi ${id} ${extra}`}
       style={style}
       viewBox="0 0 16 16"
     >
