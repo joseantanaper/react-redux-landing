@@ -2,8 +2,6 @@ import { createSlice } from "@reduxjs/toolkit"
 import { RootState } from "../../../app/store"
 
 export const storeTheme = "theme"
-export const defaultTheme = "light"
-export const alternativeTheme = "dark"
 export const LIGHT = "light"
 export const DARK = "dark"
 
@@ -13,7 +11,7 @@ export interface ThemeState {
 }
 
 const initialState: ThemeState = {
-  value: String(localStorage.getItem(storeTheme)) || defaultTheme,
+  value: String(localStorage.getItem(storeTheme)) || LIGHT,
   status: "idle",
 }
 
@@ -23,14 +21,14 @@ export const themeSlice = createSlice({
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
     light: (state) => {
-      state.value = "light"
+      state.value = LIGHT
       localStorage.setItem(storeTheme, String(state.value))
-      console.log("themeSlice", "light", state.value)
+      console.log("themeSlice", LIGHT, state.value)
     },
     dark: (state) => {
-      state.value = "dark"
+      state.value = DARK
       localStorage.setItem(storeTheme, String(state.value))
-      console.log("themeSlice", "dark", state.value)
+      console.log("themeSlice", DARK, state.value)
     },
   },
 })

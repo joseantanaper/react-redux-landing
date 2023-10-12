@@ -15,7 +15,7 @@ interface Props {
 
 export const Navbar = ({ title }: Props) => {
   return (
-    <nav className="navbar app-main-navbar bg-body-tertiary fixed-top text-truncate shadow-sm">
+    <nav className="navbar app-main-navbar bg-body-tertiary border-bottom fixed-top text-truncate shadow-sm">
       <div className="container-fluid flex-nowrap">
         {/* Navigation Left Toggler */}
         <div className="navbar-brand">

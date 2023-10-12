@@ -32,7 +32,7 @@ export const MiniCounter = () => {
     <div className="btn-group">
       <button
         name="app-minicounter-decrement"
-        className="btn btn-outline-primary"
+        className="btn btn-outline-secondary"
         type="button"
         onClick={() => dispatch(decrement())}
       >

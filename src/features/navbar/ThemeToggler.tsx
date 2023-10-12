@@ -5,8 +5,7 @@ import {
   light,
   dark,
   selectTheme,
-  defaultTheme,
-  alternativeTheme,
+  DARK,
   storeTheme,
 } from "./reducer/theme.slice"
 
@@ -18,35 +17,13 @@ interface Props {
 
 export const ThemeToggler = ({ id, css = "" }: Props) => {
   const currentTheme = useAppSelector(selectTheme)
-  document.documentElement.setAttribute("data-bs-theme", currentTheme)
-
   const dispatch = useAppDispatch()
   const [theme, setTheme] = useState(currentTheme)
-
-  const manageTheme = (theme: string) => {
-    console.log("ThemeToggler", "manageTheme", theme)
-    document.documentElement.setAttribute("data-bs-theme", theme)
-    document
-      .querySelectorAll("button[name='app-theme-toggler'] svg[name='bi-sun']")
-      .forEach((icon) => {
-        icon.setAttribute(
-          "style",
-          theme !== "dark" ? "display: none;" : "display: inline;",
-        )
-      })
-    document
-      .querySelectorAll("button[name='app-theme-toggler'] svg[name='bi-moon']")
-      .forEach((icon) => {
-        icon.setAttribute(
-          "style",
-          theme !== "dark" ? "display: inline;" : "display: none;",
-        )
-      })
-  }
+  document.documentElement.setAttribute("data-bs-theme", currentTheme)
 
   const handleClick = () => {
     const newTheme =
-      document.documentElement.getAttribute("data-bs-theme") !== "dark"
+      document.documentElement.getAttribute("data-bs-theme") !== DARK
         ? "dark"
         : "light"
     dispatch(newTheme !== "dark" ? light() : dark())
@@ -64,12 +41,12 @@ export const ThemeToggler = ({ id, css = "" }: Props) => {
         <Icon
           id="bi-sun"
           extra="app-rotate"
-          style={{ display: theme !== "dark" ? "none" : "inline" }}
+          style={{ display: theme !== DARK ? "none" : "inline" }}
         />
         <Icon
           id="bi-moon"
           extra="app-rotate"
-          style={{ display: theme !== "dark" ? "inline" : "none" }}
+          style={{ display: theme !== DARK ? "inline" : "none" }}
         />
       </button>{" "}
     </>

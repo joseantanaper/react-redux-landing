@@ -23,7 +23,7 @@ html[lang=""] {
 }
 
 body {
-  border-top: 56px solid red;
+  border-top: 57px solid red;
   padding: 20px;
 }
 
@@ -72,8 +72,8 @@ div.vr {
 .offcanvas-backdrop.show {
   // opacity: 1;
   // background-color: rgba(15, 23, 42, 0.5);
-  transition: 1s;
-  backdrop-filter: blur(6px) !important;
+  // transition: 1s;
+  backdrop-filter: blur(4px) !important;
 }
 
 .btn:hover,
@@ -85,10 +85,12 @@ div.vr {
     filter: drop-shadow($app-btn-hover-glow);
   }
   svg.app-rotate {
-    animation: rotateAnimation 2s linear infinite;
+    animation: rotation 2s linear infinite;
   }
 }
-.navbar-brand:hover {
+.navbar-brand:hover,
+.list-group-item:hover,
+.accordion-button:hover {
   text-shadow: $app-btn-hover-glow;
 }
 .btn:active,
@@ -100,7 +102,7 @@ div.vr {
     filter: drop-shadow($app-btn-active-glow);
   }
   svg.app-rotate {
-    animation: rotateAnimation 1s linear infinite;
+    animation: rotation 1s linear infinite;
   }
 }
 .navbar-brand:active {
@@ -110,11 +112,30 @@ div.vr {
   }
 }
 
-@keyframes rotateAnimation {
+// .list-group-item {
+//   border-left: 10px solid rgba(255 0 0 / 0.4) !important;
+// }
+// .list-group-item:hover {
+//   border-left: 10px solid rgba(255 60 60 / 0.4) !important;
+// }
+
+@keyframes rotation {
   0% {
     transform: rotate(0);
   }
   100% {
     transform: rotate(360deg);
+  }
+}
+
+.accordion-button,
+.list-group-item {
+  svg {
+    opacity: 0.3;
+  }
+}
+.accordion-button::after {
+  svg {
+    color: black;
   }
 }

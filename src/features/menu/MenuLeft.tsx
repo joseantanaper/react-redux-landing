@@ -12,6 +12,7 @@ export const MenuLeft = ({ id }: Props) => {
       id={id}
       aria-labelledby={`${id}Label`}
     >
+      {/* Header */}
       <div className="offcanvas-header bg-body-tertiary border-bottom shadow-sm">
         <button
           className="navbar-toggler"
@@ -24,9 +25,40 @@ export const MenuLeft = ({ id }: Props) => {
           Menu Left
         </h5>
       </div>
-      <div className="offcanvas-body m-0 p-0 text-wrap">
-        <div className="accordion accordion-flush" id="accordionFlushExample">
-          <div className="accordion-item">
+
+      {/* Body */}
+      <div className="offcanvas-body text-wrap ps-1 pe-1 pt-3">
+        <div className="list-group list-group-flush pb-2 pb-3">
+          <a
+            href="/"
+            className="list-group-item list-group-item-action ps-5 border-0"
+            aria-current="true"
+          >
+            <Icon id="bi-file-code-fill" />
+            <div className="vr ms-3 me-3"></div>
+            Home
+          </a>
+          <a
+            href="/contact/1"
+            className="list-group-item list-group-item-action ps-5 border-0"
+          >
+            <Icon id="bi-file-code-fill" />
+            <div className="vr ms-3 me-3"></div>
+            Contact 1
+          </a>
+          <a
+            href="/contact/2"
+            className="list-group-item list-group-item-action ps-5 border-0"
+          >
+            <Icon id="bi-file-code-fill" />
+            <div className="vr ms-3 me-3"></div>
+            Contact 2
+          </a>
+        </div>
+
+        {/* Accordion 1 */}
+        <div className="accordion" id="accordionFlushExample">
+          <div className="accordion-item border-0">
             <h2 className="accordion-header">
               <button
                 className="accordion-button collapsed"
@@ -36,40 +68,48 @@ export const MenuLeft = ({ id }: Props) => {
                 aria-expanded="false"
                 aria-controls="flush-collapseOne"
               >
+                <Icon id="bi-menu-button-wide-fill" />
+                <div className="vr ms-3 me-3"></div>
                 Accordion Item #1
               </button>
             </h2>
             <div
               id="flush-collapseOne"
-              className="accordion-collapse collapse"
+              className="accordion-collapse collapse accordion-flush"
               // data-bs-parent="#accordionFlushExample"
             >
-              <div className="accordion-body m-0 p-0">
-                <div className="list-group list-group-flush">
-                  <a
-                    href="/"
-                    className="list-group-item list-group-item-action active"
-                    aria-current="true"
-                  >
-                    Home
-                  </a>
-                  <a
-                    href="/contact/1"
-                    className="list-group-item list-group-item-action"
-                  >
-                    Contact 1
-                  </a>
-                  <a
-                    href="/contact/2"
-                    className="list-group-item list-group-item-action"
-                  >
-                    Contact 2
-                  </a>
-                </div>
+              <div className="accordion-body ps-0 pe-0 pt-1 pb-3"></div>
+              <div className="list-group list-group-flush pb-2 pb-3">
+                <a
+                  href="/"
+                  className="list-group-item list-group-item-action ps-5 border-0"
+                  aria-current="true"
+                >
+                  <Icon id="bi-file-code-fill" />
+                  <div className="vr ms-3 me-3"></div>
+                  Home
+                </a>
+                <a
+                  href="/contact/1"
+                  className="list-group-item list-group-item-action ps-5 border-0"
+                >
+                  <Icon id="bi-file-code-fill" />
+                  <div className="vr ms-3 me-3"></div>
+                  Contact 1
+                </a>
+                <a
+                  href="/contact/2"
+                  className="list-group-item list-group-item-action ps-5 border-0"
+                >
+                  <Icon id="bi-file-code-fill" />
+                  <div className="vr ms-3 me-3"></div>
+                  Contact 2
+                </a>
               </div>
             </div>
           </div>
-          <div className="accordion-item">
+
+          <div className="accordion-item border-0">
             <h2 className="accordion-header">
               <button
                 className="accordion-button collapsed"
@@ -79,23 +119,49 @@ export const MenuLeft = ({ id }: Props) => {
                 aria-expanded="false"
                 aria-controls="flush-collapseTwo"
               >
+                <Icon id="bi-menu-button-wide-fill" />
+                <div className="vr ms-3 me-3"></div>
                 Accordion Item #2
               </button>
             </h2>
             <div
               id="flush-collapseTwo"
-              className="accordion-collapse collapse"
+              className="accordion-collapse collapse accordion-flush"
               // data-bs-parent="#accordionFlushExample"
             >
-              <div className="accordion-body">
-                Placeholder content for this accordion, which is intended to
-                demonstrate the <code>.accordion-flush</code> class. This is the
-                second item's accordion body. Let's imagine this being filled
-                with some actual content.
+              <div className="accordion-body ps-0 pe-0 pt-1 pb-3">
+                <div className="list-group list-group-flush pb-2 pb-3">
+                  <a
+                    href="/"
+                    className="list-group-item list-group-item-action ps-5 border-0"
+                    aria-current="true"
+                  >
+                    <Icon id="bi-file-code-fill" />
+                    <div className="vr ms-3 me-3"></div>
+                    Home
+                  </a>
+                  <a
+                    href="/contact/1"
+                    className="list-group-item list-group-item-action ps-5 border-0"
+                  >
+                    <Icon id="bi-file-code-fill" />
+                    <div className="vr ms-3 me-3"></div>
+                    Contact 1
+                  </a>
+                  <a
+                    href="/contact/2"
+                    className="list-group-item list-group-item-action ps-5 border-0"
+                  >
+                    <Icon id="bi-file-code-fill" />
+                    <div className="vr ms-3 me-3"></div>
+                    Contact 2
+                  </a>
+                </div>
               </div>
             </div>
           </div>
-          <div className="accordion-item">
+
+          <div className="accordion-item border-0">
             <h2 className="accordion-header">
               <button
                 className="accordion-button collapsed"
@@ -105,6 +171,8 @@ export const MenuLeft = ({ id }: Props) => {
                 aria-expanded="false"
                 aria-controls="flush-collapseThree"
               >
+                <Icon id="bi-gear-fill" />
+                <div className="vr ms-3 me-3"></div>
                 Accordion Item #3
               </button>
             </h2>
@@ -113,13 +181,34 @@ export const MenuLeft = ({ id }: Props) => {
               className="accordion-collapse collapse"
               // data-bs-parent="#accordionFlushExample"
             >
-              <div className="accordion-body">
-                Placeholder content for this accordion, which is intended to
-                demonstrate the <code>.accordion-flush</code> class. This is the
-                third item's accordion body. Nothing more exciting happening
-                here in terms of content, but just filling up the space to make
-                it look, at least at first glance, a bit more representative of
-                how this would look in a real-world application.
+              <div className="accordion-body ps-0 pe-0 pt-1 pb-3">
+                <div className="list-group list-group-flush pb-2 pb-3">
+                  <a
+                    href="/"
+                    className="list-group-item list-group-item-action ps-5 border-0"
+                    aria-current="true"
+                  >
+                    <Icon id="bi-file-code-fill" />
+                    <div className="vr ms-3 me-3"></div>
+                    Home
+                  </a>
+                  <a
+                    href="/contact/1"
+                    className="list-group-item list-group-item-action ps-5 border-0"
+                  >
+                    <Icon id="bi-file-code-fill" />
+                    <div className="vr ms-3 me-3"></div>
+                    Contact 1
+                  </a>
+                  <a
+                    href="/contact/2"
+                    className="list-group-item list-group-item-action ps-5 border-0"
+                  >
+                    <Icon id="bi-file-code-fill" />
+                    <div className="vr ms-3 me-3"></div>
+                    Contact 2
+                  </a>
+                </div>
               </div>
             </div>
           </div>
