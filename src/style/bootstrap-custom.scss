@@ -27,15 +27,6 @@ body {
   padding: 20px;
 }
 
-.navbar-toggler {
-  min-height: 50px;
-  svg {
-    margin: 0px !important;
-    width: 28px;
-    height: 28px;
-  }
-}
-
 // html:not([data-bs-theme="dark"]) {
 //   button.navbar-toggler,
 //   .btn,
@@ -74,6 +65,21 @@ div.vr {
   // background-color: rgba(15, 23, 42, 0.5);
   // transition: 1s;
   backdrop-filter: blur(4px) !important;
+}
+
+.btn {
+  svg {
+    margin: -3px 0 0 0;
+  }
+}
+
+.navbar-toggler {
+  min-height: 50px;
+  svg {
+    // margin: 0px !important;
+    width: 28px;
+    height: 28px;
+  }
 }
 
 .btn:hover,
@@ -131,11 +137,10 @@ div.vr {
 .accordion-button,
 .list-group-item {
   svg {
-    opacity: 0.3;
+    opacity: 0.4;
   }
 }
-.accordion-button::after {
-  svg {
-    color: black;
-  }
+
+img.app-profile {
+  border: 2px solid white;
 }

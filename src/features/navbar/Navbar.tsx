@@ -1,5 +1,6 @@
 import { useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
+import profile from "../../image/profile.jpg"
 
 import { Icon } from "../../widgets/Icon"
 import { MenuToggler } from "./MenuToggler"
@@ -9,6 +10,7 @@ import { MenuLeft } from "../menu/MenuLeft"
 import { MenuRight } from "../menu/MenuRight"
 import { MenuTop } from "../menu/MenuTop"
 import { MenuBottom } from "../menu/MenuBottom"
+import { Clock } from "./Clock"
 interface Props {
   title: string
 }
@@ -26,33 +28,39 @@ export const Navbar = ({ title }: Props) => {
         </div>
 
         {/* Title */}
-        <a className="navbar-brand w-bolder me-auto text-truncate" href="/">
+        <NavLink className="navbar-brand w-bolder me-auto text-truncate" to="/">
+          <img
+            src={profile}
+            alt="profile"
+            width="36"
+            height="36"
+            className="rounded-circle me-2 app-profile"
+          ></img>
           {title} Sticky top Long Text For Testing
-        </a>
+        </NavLink>
 
         {/* Menu */}
         <div className="vr ms-2 me-3 d-none d-lg-block"></div>
         <div className="d-flex d-none d-lg-block">
-          <Link className="btn" aria-current="page" to="/contact/1">
-            Index 1
-          </Link>
+          <NavLink className="btn" aria-current="page" to="/">
+            Home
+          </NavLink>
 
-          <Link className="btn " aria-current="page" to="/contact/2">
-            Index 2
-          </Link>
+          <NavLink className="btn " aria-current="page" to="/portfolio">
+            Portfolio
+          </NavLink>
         </div>
 
         {/* Buttons */}
         <div className="vr ms-2 me-3 d-none d-md-block"></div>
         <div className="d-flex d-none d-md-block">
-          <button className="btn">OKss</button>
-          <button className="btn">OKss</button>
           <MiniCounter />
         </div>
 
-        <div className="vr ms-2 me-3"></div>
+        <div className="vr ms-3 me-2"></div>
 
         {/* Global Toolbar */}
+        <Clock />
         <ThemeToggler id="ok" />
         <MenuToggler
           id="offcanvasMenuTop"

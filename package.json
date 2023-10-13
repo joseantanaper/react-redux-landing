@@ -34,8 +34,9 @@
     "@types/react-dom": "^18.0.6",
     "@types/testing-library__jest-dom": "^5.14.5",
     "@vitejs/plugin-react": "^4.0.0",
-    "eslint": "^8.0.0",
+    "eslint": "^8.51.0",
     "eslint-config-react-app": "^7.0.1",
+    "eslint-plugin-json": "^3.1.0",
     "eslint-plugin-prettier": "^4.2.1",
     "jsdom": "^21.1.0",
     "prettier": "^2.7.1",
@@ -48,7 +49,8 @@
   "eslintConfig": {
     "extends": [
       "react-app",
-      "react-app/jest"
+      "react-app/jest",
+      "plugin:json/recommended"
     ],
     "plugins": [
       "prettier"
@@ -58,6 +60,34 @@
         "error",
         {
           "endOfLine": "auto"
+        },
+        {
+          "trailingComma": "none",
+          "tabWidth": 2,
+          "semi": false,
+          "singleQuote": true,
+          "endOfLine": "crlf",
+          "plugins": [
+            "prettier-plugin-astro"
+          ],
+          "overrides": [
+            {
+              "files": [
+                "*.astro"
+              ],
+              "options": {
+                "parser": "astro"
+              }
+            },
+            {
+              "files": [
+                "*.json"
+              ],
+              "options": {
+                "parser": "json"
+              }
+            }
+          ]
         }
       ],
       "react/jsx-no-target-blank": "off"

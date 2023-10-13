@@ -9,6 +9,7 @@ import Root from "./routes/root"
 import Error from "./routes/error"
 import Contact from "./routes/contact"
 import Index from "./routes/index"
+import Portfolio from "./routes/portfolio/index"
 
 import { createBrowserRouter, RouterProvider } from "react-router-dom"
 
@@ -21,6 +22,10 @@ const router = createBrowserRouter([
       {
         path: "/",
         element: <Index />,
+      },
+      {
+        path: "/portfolio",
+        element: <Portfolio />,
       },
       {
         path: "contact/:id",
