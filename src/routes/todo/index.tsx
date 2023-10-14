@@ -1,14 +1,12 @@
-import { useDispatch } from "react-redux"
+import { PageLayout } from '../../components/PageLayout'
+import { TodoList } from '../../components/todo/TodoList'
 
 export default function Index() {
-  const dispatch = useDispatch()
+  const handleClick = () => {}
 
   return (
-    <div>
-      <h1>Todo</h1>
-      <hr />
-      <p>Hello, I'm Todo.</p>
-      <hr />
-    </div>
+    <PageLayout title="Simplest Todo List">
+      <TodoList />
+    </PageLayout>
   )
 }

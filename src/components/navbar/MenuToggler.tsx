@@ -1,4 +1,4 @@
-import { Icon } from "../widgets/Icon"
+import { Icon } from '../widgets/Icon'
 
 interface Props {
   id: string
@@ -10,8 +10,8 @@ interface Props {
 export const MenuToggler = ({
   id,
   iconId,
-  type = "navbar-toggler",
-  css = "",
+  type = 'navbar-toggler',
+  css = '',
 }: Props) => {
   return (
     <button

@@ -1,6 +1,6 @@
-import { Icon } from "../widgets/Icon"
-import { useState } from "react"
-import { Link, NavLink } from "react-router-dom"
+import { Icon } from '../widgets/Icon'
+import { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
 
 interface Props {
   id: string

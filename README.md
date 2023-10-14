@@ -53,7 +53,7 @@ $dropdown-item-padding-y: 0.6rem;
 Import your custom scss:
 
 ```ts
-import "/style/bootstrap-custom.scss"
+import '/style/bootstrap-custom.scss'
 ```
 
 ## React-Router

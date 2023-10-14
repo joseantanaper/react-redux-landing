@@ -1,17 +1,17 @@
-import { createAsyncThunk, createSlice, PayloadAction } from "@reduxjs/toolkit"
-import { RootState, AppThunk } from "../../../app/store"
-import { fetchCount } from "./counter.api"
+import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { RootState, AppThunk } from '../store'
+import { fetchCount } from './counter.api'
 
-const storeCount = "count"
+const storeCount = 'count'
 
 export interface CounterState {
   value: number
-  status: "idle" | "loading" | "failed"
+  status: 'idle' | 'loading' | 'failed'
 }
 
 const initialState: CounterState = {
   value: Number(localStorage.getItem(storeCount)) || 0,
-  status: "idle",
+  status: 'idle',
 }
 
 // The function below is called a thunk and allows us to perform async logic. It
@@ -20,17 +20,17 @@ const initialState: CounterState = {
 // code can then be executed and other actions can be dispatched. Thunks are
 // typically used to make async requests.
 export const incrementAsync = createAsyncThunk(
-  "counter/fetchCount",
+  'counter/fetchCount',
   async (amount: number) => {
     const response = await fetchCount(amount)
     // The value we return becomes the `fulfilled` action payload
-    console.log("counterSlice", "incrementAsync", amount, response.data)
+    console.log('counterSlice', 'incrementAsync', amount, response.data)
     return response.data
-  },
+  }
 )
 
 export const counterSlice = createSlice({
-  name: "counter",
+  name: 'counter',
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
@@ -41,12 +41,12 @@ export const counterSlice = createSlice({
       // immutable state based off those changes
       state.value += 1
       localStorage.setItem(storeCount, String(Number(state.value)))
-      console.log("counterSlice", "increment", state.value)
+      console.log('counterSlice', 'increment', state.value)
     },
     decrement: (state) => {
       state.value -= 1
       localStorage.setItem(storeCount, String(Number(state.value)))
-      console.log("counterSlice", "decrement", state.value)
+      console.log('counterSlice', 'decrement', state.value)
     },
     // Use the PayloadAction type to declare the contents of `action.payload`
     incrementByAmount: (state, action: PayloadAction<number>) => {
@@ -58,14 +58,14 @@ export const counterSlice = createSlice({
   extraReducers: (builder) => {
     builder
       .addCase(incrementAsync.pending, (state) => {
-        state.status = "loading"
+        state.status = 'loading'
       })
       .addCase(incrementAsync.fulfilled, (state, action) => {
-        state.status = "idle"
+        state.status = 'idle'
         state.value += action.payload
       })
       .addCase(incrementAsync.rejected, (state) => {
-        state.status = "failed"
+        state.status = 'failed'
       })
   },
 })

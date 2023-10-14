@@ -1,12 +1,12 @@
-import { Form, useParams } from "react-router-dom"
+import { Form, useParams } from 'react-router-dom'
 
 export default function Contact() {
   const contact = {
-    first: "Your",
-    last: "Name",
-    avatar: "https://placekitten.com/g/200/200",
-    twitter: "your_handle",
-    notes: "Some notes",
+    first: 'Your',
+    last: 'Name',
+    avatar: 'https://placekitten.com/g/200/200',
+    twitter: 'your_handle',
+    notes: 'Some notes',
     favorite: true,
   }
 
@@ -26,7 +26,7 @@ export default function Contact() {
             </>
           ) : (
             <i>No Name</i>
-          )}{" "}
+          )}{' '}
         </h1>
 
         {contact.twitter && (
@@ -49,7 +49,7 @@ export default function Contact() {
             onSubmit={(event) => {
               if (
                 !window.confirm(
-                  "Please confirm you want to delete this record.",
+                  'Please confirm you want to delete this record.'
                 )
               ) {
                 event.preventDefault()

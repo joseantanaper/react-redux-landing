@@ -1,8 +1,8 @@
 // import logo from "../logo.svg"
 // import { Counter } from "../features/menu/Counter"
-import { appConfig } from "../config/app.config"
-import { Navbar } from "../components/navbar/Navbar"
-import { Outlet } from "react-router-dom"
+import { appConfig } from '../config/app.config'
+import { Navbar } from '../components/navbar/Navbar'
+import { Outlet } from 'react-router-dom'
 
 function Root() {
   return (

@@ -1,34 +1,34 @@
-import { createSlice } from "@reduxjs/toolkit"
-import { RootState } from "../../../app/store"
+import { createSlice } from '@reduxjs/toolkit'
+import { RootState } from '../store'
 
-export const storeTheme = "theme"
-export const LIGHT = "light"
-export const DARK = "dark"
+export const storeTheme = 'theme'
+export const LIGHT = 'light'
+export const DARK = 'dark'
 
 export interface ThemeState {
   value: string
-  status: "idle" | "loading" | "failed"
+  status: 'idle' | 'loading' | 'failed'
 }
 
 const initialState: ThemeState = {
   value: String(localStorage.getItem(storeTheme)) || LIGHT,
-  status: "idle",
+  status: 'idle',
 }
 
 export const themeSlice = createSlice({
-  name: "theme",
+  name: 'theme',
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
     light: (state) => {
       state.value = LIGHT
       localStorage.setItem(storeTheme, String(state.value))
-      console.log("themeSlice", LIGHT, state.value)
+      console.log('themeSlice', LIGHT, state.value)
     },
     dark: (state) => {
       state.value = DARK
       localStorage.setItem(storeTheme, String(state.value))
-      console.log("themeSlice", DARK, state.value)
+      console.log('themeSlice', DARK, state.value)
     },
   },
 })

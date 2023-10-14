@@ -1,16 +1,16 @@
-import { useState } from "react"
-import { Link, NavLink } from "react-router-dom"
-import profile from "../../image/profile.jpg"
+import { useState } from 'react'
+import { Link, NavLink } from 'react-router-dom'
+import profile from '../../image/profile.jpg'
 
-import { Icon } from "../widgets/Icon"
-import { MenuToggler } from "./MenuToggler"
-import { ThemeToggler } from "./ThemeToggler"
-import { MiniCounter } from "./MiniCounter"
-import { MenuLeft } from "../menu/MenuLeft"
-import { MenuRight } from "../menu/MenuRight"
-import { MenuTop } from "../menu/MenuTop"
-import { MenuBottom } from "../menu/MenuBottom"
-import { Clock } from "./Clock"
+import { Icon } from '../widgets/Icon'
+import { MenuToggler } from './MenuToggler'
+import { ThemeToggler } from './ThemeToggler'
+import { MiniCounter } from './MiniCounter'
+import { MenuLeft } from '../menu/MenuLeft'
+import { MenuRight } from '../menu/MenuRight'
+import { MenuTop } from '../menu/MenuTop'
+import { MenuBottom } from '../menu/MenuBottom'
+import { Clock } from './Clock'
 interface Props {
   title: string
   subtitle?: string

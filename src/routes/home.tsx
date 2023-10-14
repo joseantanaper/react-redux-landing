@@ -1,9 +1,9 @@
-export default function Home() {
+import { PageLayout } from '../components/PageLayout'
+
+export default function Index() {
   return (
-    <div>
-      <h1>Home</h1>
-      <hr />
-      <p>Hello, I'm Home.</p>
-    </div>
+    <PageLayout title="Home">
+      <>I'm Home.</>
+    </PageLayout>
   )
 }

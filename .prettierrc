@@ -1,11 +1,4 @@
 {
-  "prettier/prettier": [
-    "error",
-    {
-      "endOfLine": "auto"
-    }
-  ],
-  "prettier": "prettier-config-nick",
   "trailingComma": "es5",
   "tabWidth": 2,
   "semi": false,

@@ -3,22 +3,22 @@
 // $modal-backdrop-opacity: 0.6;
 // @use "./variables.scss";
 
-@import "./variables.scss";
+@import './variables.scss';
 
 // Bootstrap imports
-@import "/node_modules/bootstrap-icons/font/bootstrap-icons.css";
-@import "/node_modules/bootstrap/scss/bootstrap";
+@import '/node_modules/bootstrap-icons/font/bootstrap-icons.css';
+@import '/node_modules/bootstrap/scss/bootstrap';
 
 // Custom
-@import "./bootstrap-light.scss";
-@import "./bootstrap-dark.scss";
+@import './bootstrap-light.scss';
+@import './bootstrap-dark.scss';
 
 * {
   box-sizing: border-box;
 }
 
-html[data-bs-theme=""],
-html[lang=""] {
+html[data-bs-theme=''],
+html[lang=''] {
   display: none;
 }
 
@@ -87,6 +87,7 @@ div.vr {
 .navbar-toggler:hover {
   transition: 0.5;
   backdrop-filter: brightness(1.4);
+  border-color: $app-btn-active-border-color;
   text-shadow: $app-btn-hover-glow;
   svg {
     filter: drop-shadow($app-btn-hover-glow);
@@ -100,6 +101,7 @@ div.vr {
 .accordion-button:hover {
   text-shadow: $app-btn-hover-glow;
 }
+
 .btn:active,
 .navbar-toggler:active {
   border-color: $app-btn-active-border-color;
@@ -144,6 +146,12 @@ div.vr {
     border-left: 1px solid rgba(0 0 0 / 0.1) !important;
     padding: 0 8px 0 8px;
     margin: 0 8px 0 8px;
+  }
+}
+.accordion-button:hover,
+.list-group-item:hover {
+  svg {
+    filter: drop-shadow($app-btn-active-glow);
   }
 }
 

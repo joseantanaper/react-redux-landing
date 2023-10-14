@@ -7,15 +7,17 @@ import {
 } from '@reduxjs/toolkit'
 import { logger } from './middleware'
 
-import counterReducer from '../components/navbar/reducer/counter.slice'
-import themeReducer from '../components/navbar/reducer/theme.slice'
-import clockReducer from '../components/navbar/reducer/clock.slice'
+import todosReducer from './reducer/todosSlice'
+import counterReducer from './reducersOld/counter.slice'
+import themeReducer from './reducersOld/theme.slice'
+import clockReducer from './reducersOld/clock.slice'
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     theme: themeReducer,
     clock: clockReducer,
+    todos: todosReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 })

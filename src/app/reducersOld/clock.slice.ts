@@ -1,7 +1,7 @@
-import { createSlice } from "@reduxjs/toolkit"
-import { RootState } from "../../../app/store"
+import { createSlice } from '@reduxjs/toolkit'
+import { RootState } from '../store'
 
-const storeClockMode = "clockmode"
+const storeClockMode = 'clockmode'
 
 export interface ClockState {
   value: 0 | 1
@@ -12,14 +12,14 @@ const initialState: ClockState = {
 }
 
 export const clockSlice = createSlice({
-  name: "clock",
+  name: 'clock',
   initialState,
   // The `reducers` field lets us define reducers and generate associated actions
   reducers: {
     modeToggle: (state) => {
       state.value = state.value === 0 ? 1 : 0
       localStorage.setItem(storeClockMode, String(state.value))
-      console.log("clockSlice", state.value)
+      console.log('clockSlice', state.value)
     },
   },
 })
