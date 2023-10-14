@@ -10,8 +10,13 @@ import Error from "./routes/error"
 import Contact from "./routes/contact"
 import Index from "./routes/index"
 import Portfolio from "./routes/portfolio/index"
+import Todo from "./routes/todo/index"
 
-import { createBrowserRouter, RouterProvider } from "react-router-dom"
+import {
+  // BrowserRouterProps,
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom"
 
 const router = createBrowserRouter([
   {
@@ -31,6 +36,10 @@ const router = createBrowserRouter([
         path: "contact/:id",
         element: <Contact />,
       },
+      {
+        path: "/todo",
+        element: <Todo />,
+      },
     ],
   },
 ])
@@ -39,9 +48,6 @@ ReactDOM.createRoot(document.getElementById("root")!).render(
   <React.StrictMode>
     <Provider store={store}>
       <RouterProvider router={router} />
-      {/* <Provider store={store}>
-        <App />
-      </Provider> */}
     </Provider>
   </React.StrictMode>,
 )

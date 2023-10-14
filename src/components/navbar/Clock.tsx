@@ -1,4 +1,4 @@
-import { Icon } from "../../widgets/Icon"
+import { Icon } from "../widgets/Icon"
 import { useState } from "react"
 import { useAppSelector, useAppDispatch } from "../../app/hooks"
 
@@ -39,13 +39,30 @@ export const Clock = () => {
   return (
     <>
       <button
-        name="app-theme-toggler"
+        name="app-clock"
         className="btn"
         type="button"
         onClick={handleClick}
       >
         <Icon id="bi-clock" extra="me-1 app-rotate" style={{ opacity: 0.4 }} />
-        {clockMode === 0 ? time : time.substring(0, 5)}
+        <span>{time.substring(0, time.indexOf(":"))}</span>
+        <span className="opacity-50">:</span>
+        <span>
+          {time.substring(time.indexOf(":") + 1, time.indexOf(":") + 3)}
+        </span>
+        <span className="opacity-50">{clockMode === 0 ? ":" : null}</span>
+        <span>
+          {clockMode === 0
+            ? time.substring(time.indexOf(":") + 4, time.indexOf(":") + 6)
+            : null}
+        </span>
+        {/* <span>
+          {clockMode === 0 ? time : time.substring(0, time.indexOf(":", 1) - 1)}
+        </span>
+        <span>:</span>
+        <span>
+          {clockMode === 0 ? time : time.substring(0, time.indexOf(":", 2) - 1)}
+        </span> */}
       </button>
     </>
   )

@@ -62,6 +62,12 @@ import "/style/bootstrap-custom.scss"
 npm install react-router-dom localforage match-sorter sort-by
 ```
 
+## PropTypes
+
+```sh
+npm install --save prop-types
+```
+
 ---
 
 ---

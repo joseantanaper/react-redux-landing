@@ -1,4 +1,4 @@
-import { Icon } from "../../widgets/Icon"
+import { Icon } from "../widgets/Icon"
 
 interface Props {
   id: string

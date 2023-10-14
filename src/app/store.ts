@@ -1,7 +1,7 @@
 import { configureStore, ThunkAction, Action } from "@reduxjs/toolkit"
-import counterReducer from "../features/navbar/reducer/counter.slice"
-import themeReducer from "../features/navbar/reducer/theme.slice"
-import clockReducer from "../features/navbar/reducer/clock.slice"
+import counterReducer from "../components/navbar/reducer/counter.slice"
+import themeReducer from "../components/navbar/reducer/theme.slice"
+import clockReducer from "../components/navbar/reducer/clock.slice"
 
 export const store = configureStore({
   reducer: {

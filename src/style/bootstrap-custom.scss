@@ -67,9 +67,10 @@ div.vr {
   backdrop-filter: blur(4px) !important;
 }
 
-.btn {
+.btn,
+.list-group-item {
   svg {
-    margin: -3px 0 0 0;
+    margin: -4px 0 0 0;
   }
 }
 
@@ -138,6 +139,11 @@ div.vr {
 .list-group-item {
   svg {
     opacity: 0.4;
+  }
+  span {
+    border-left: 1px solid rgba(0 0 0 / 0.1) !important;
+    padding: 0 8px 0 8px;
+    margin: 0 8px 0 8px;
   }
 }
 

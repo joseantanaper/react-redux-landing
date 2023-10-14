@@ -1,6 +1,6 @@
 import logo from "./logo.svg"
 import { Counter } from "./features/menu/Counter"
-import { Navbar } from "./features/navbar/Navbar"
+import { Navbar } from "./components/navbar/Navbar"
 
 function App() {
   return (

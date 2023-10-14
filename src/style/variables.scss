@@ -22,8 +22,6 @@ $offcanvas-transition-duration: 0.3s;
 
 $btn-focus-width: 2px;
 
-$list-group-item-padding-y: 10px;
-
 // :root {
 //   --bs-tertiary-bg: blue !important;
 // }
@@ -54,10 +52,10 @@ $accordion-icon-color: rgba(0 0 0 / 0.4) !important;
 $accordion-icon-active-color: rgba(0 0 0 / 0.4) !important;
 
 $accordion-icon-color: black !important;
-$accordion-body-padding-y: 10px;
+// $accordion-body-padding-y: 10px;
+// $list-group-item-padding-y: 10px;
 
-$accordion-button-active-bg: var(--bs-accordion-bg);
-// $accordion-button-active-color: var(--bs-body-color);
+$accordion-button-active-bg: var(--bs-secondary-bg);
 $accordion-button-active-color: var(--bs-emphasis-color);
 
 $list-group-border-color: rgba(120 120 120 / 0.08);

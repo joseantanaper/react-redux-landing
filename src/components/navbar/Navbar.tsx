@@ -2,7 +2,7 @@ import { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
 import profile from "../../image/profile.jpg"
 
-import { Icon } from "../../widgets/Icon"
+import { Icon } from "../widgets/Icon"
 import { MenuToggler } from "./MenuToggler"
 import { ThemeToggler } from "./ThemeToggler"
 import { MiniCounter } from "./MiniCounter"
@@ -13,9 +13,10 @@ import { MenuBottom } from "../menu/MenuBottom"
 import { Clock } from "./Clock"
 interface Props {
   title: string
+  subtitle?: string
 }
 
-export const Navbar = ({ title }: Props) => {
+export const Navbar = ({ title, subtitle }: Props) => {
   return (
     <nav className="navbar app-main-navbar bg-body-tertiary border-bottom fixed-top text-truncate shadow-sm">
       <div className="container-fluid flex-nowrap">
@@ -28,15 +29,21 @@ export const Navbar = ({ title }: Props) => {
         </div>
 
         {/* Title */}
-        <NavLink className="navbar-brand w-bolder me-auto text-truncate" to="/">
+        <NavLink
+          className="navbar-brand w-bolder me-auto text-truncate d-flex"
+          to="/"
+        >
           <img
             src={profile}
             alt="profile"
-            width="36"
-            height="36"
-            className="rounded-circle me-2 app-profile"
+            width="40"
+            height="40"
+            className="rounded-circle top-0 mt-2 p-0 app-profile position-fixed"
           ></img>
-          {title} Sticky top Long Text For Testing
+          <span className="align-items-bottom ms-5">{title}</span>
+          <span className="opacity-25 ms-3 fst-italic d-none d-lg-block">
+            {subtitle}
+          </span>
         </NavLink>
 
         {/* Menu */}

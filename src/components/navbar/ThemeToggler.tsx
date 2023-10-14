@@ -1,4 +1,4 @@
-import { Icon } from "../../widgets/Icon"
+import { Icon } from "../widgets/Icon"
 import { useState } from "react"
 import { useAppSelector, useAppDispatch } from "../../app/hooks"
 import {

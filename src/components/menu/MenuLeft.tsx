@@ -1,4 +1,4 @@
-import { Icon } from "../../widgets/Icon"
+import { Icon } from "../widgets/Icon"
 import { useState } from "react"
 import { Link, NavLink } from "react-router-dom"
 
@@ -31,7 +31,7 @@ export const MenuLeft = ({ id }: Props) => {
       {/* Body START */}
       <div className="offcanvas-body text-wrap ps-1 pe-1 pt-3">
         <div
-          className="list-group list-group-flush pb-2"
+          className="list-group list-group-flush pb-2 app-menu"
           data-bs-dismiss="offcanvas"
         >
           <NavLink
@@ -39,18 +39,24 @@ export const MenuLeft = ({ id }: Props) => {
             aria-current="page"
             to="/"
           >
-            <Icon id="bi-file-code-fill" />
-            <div className="vr ms-3 me-3"></div>
-            Home
+            <Icon id="bi-code-square" />
+            <span>Home</span>
           </NavLink>
           <NavLink
             className="list-group-item list-group-item-action ps-4"
             aria-current="page"
             to="/portfolio"
           >
-            <Icon id="bi-file-code-fill" />
-            <div className="vr ms-3 me-3"></div>
-            Portfolio
+            <Icon id="bi-code-square" />
+            <span>Portfolio</span>
+          </NavLink>
+          <NavLink
+            className="list-group-item list-group-item-action ps-4"
+            aria-current="page"
+            to="/todo"
+          >
+            <Icon id="bi-code-square" />
+            <span>Todo</span>
           </NavLink>
         </div>
 
@@ -68,8 +74,7 @@ export const MenuLeft = ({ id }: Props) => {
                 aria-controls="flush-collapseOne"
               >
                 <Icon id="bi-menu-button-wide-fill" />
-                <div className="vr ms-3 me-3"></div>
-                Accordion Item #1
+                <span>Accordion Item #1</span>
               </button>
             </h2>
             <div
@@ -77,9 +82,9 @@ export const MenuLeft = ({ id }: Props) => {
               className="accordion-collapse collapse accordion-flush"
               // data-bs-parent="#accordionFlushExample"
             >
-              <div className="accordion-body ps-0 pe-0 pt-1 pb-3">
+              <div className="accordion-body ps-0 pt-1 pb-3 pe-0">
                 <div
-                  className="list-group list-group-flush pb-2 pb-3"
+                  className="list-group list-group-flush"
                   data-bs-dismiss="offcanvas"
                 >
                   <NavLink
@@ -87,18 +92,16 @@ export const MenuLeft = ({ id }: Props) => {
                     aria-current="page"
                     to="/"
                   >
-                    <Icon id="bi-file-code-fill" />
-                    <div className="vr ms-3 me-3"></div>
-                    Home
+                    <Icon id="bi-code-square" />
+                    <span>Home</span>
                   </NavLink>
                   <NavLink
                     className="list-group-item list-group-item-action ps-4"
                     aria-current="page"
                     to="/portfolio"
                   >
-                    <Icon id="bi-file-code-fill" />
-                    <div className="vr ms-3 me-3"></div>
-                    Portfolio
+                    <Icon id="bi-code-square" />
+                    <span>Portfolio</span>
                   </NavLink>
                 </div>
               </div>
@@ -118,8 +121,7 @@ export const MenuLeft = ({ id }: Props) => {
                 aria-controls="flush-collapseTwo"
               >
                 <Icon id="bi-menu-button-wide-fill" />
-                <div className="vr ms-3 me-3"></div>
-                Accordion Item #2
+                <span>Accordion Item #2</span>
               </button>
             </h2>
             <div
@@ -137,18 +139,16 @@ export const MenuLeft = ({ id }: Props) => {
                     aria-current="page"
                     to="/"
                   >
-                    <Icon id="bi-file-code-fill" />
-                    <div className="vr ms-3 me-3"></div>
-                    Home
+                    <Icon id="bi-code-square" />
+                    <span>Home</span>
                   </NavLink>
                   <NavLink
                     className="list-group-item list-group-item-action ps-4"
                     aria-current="page"
                     to="/portfolio"
                   >
-                    <Icon id="bi-file-code-fill" />
-                    <div className="vr ms-3 me-3"></div>
-                    Portfolio
+                    <Icon id="bi-code-square" />
+                    <span>Portfolio</span>
                   </NavLink>
                 </div>
               </div>
