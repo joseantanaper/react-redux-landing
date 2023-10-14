@@ -47,51 +47,10 @@
     "vitest": "^0.30.1"
   },
   "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest",
-      "plugin:json/recommended"
-    ],
-    "plugins": [
-      "prettier"
-    ],
+    "extends": ["react-app", "react-app/jest", "plugin:json/recommended"],
+    "plugins": ["prettier"],
     "rules": {
-      "prettier/prettier": [
-        "error",
-        {
-          "endOfLine": "auto"
-        },
-        {
-          "trailingComma": "none",
-          "tabWidth": 2,
-          "semi": false,
-          "singleQuote": true,
-          "endOfLine": "crlf",
-          "plugins": [
-            "prettier-plugin-astro"
-          ],
-          "overrides": [
-            {
-              "files": [
-                "*.astro"
-              ],
-              "options": {
-                "parser": "astro"
-              }
-            },
-            {
-              "files": [
-                "*.json"
-              ],
-              "options": {
-                "parser": "json"
-              }
-            }
-          ]
-        }
-      ],
       "react/jsx-no-target-blank": "off"
     }
-  },
-  "prettier": "prettier-config-nick"
+  }
 }
