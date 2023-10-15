@@ -10,6 +10,7 @@ import { MenuLeft } from '../menu/MenuLeft'
 import { MenuRight } from '../menu/MenuRight'
 import { MenuTop } from '../menu/MenuTop'
 import { MenuBottom } from '../menu/MenuBottom'
+import { MenuNav } from '../menu/MenuNav'
 import { Clock } from './Clock'
 interface Props {
   title: string
@@ -33,14 +34,7 @@ export const Navbar = ({ title, subtitle }: Props) => {
           className="navbar-brand w-bolder me-auto text-truncate d-flex"
           to="/"
         >
-          <img
-            src={profile}
-            alt="profile"
-            width="40"
-            height="40"
-            className="rounded-circle top-0 mt-2 p-0 app-profile position-fixed"
-          ></img>
-          <span className="align-items-bottom ms-5">{title}</span>
+          <span className="align-items-bottom">{title}</span>
           <span className="opacity-25 ms-3 fst-italic d-none d-lg-block">
             {subtitle}
           </span>
@@ -71,25 +65,29 @@ export const Navbar = ({ title, subtitle }: Props) => {
         <ThemeToggler id="ok" />
         <MenuToggler
           id="offcanvasMenuTop"
-          type="btn"
+          bsClass="btn"
           iconId="bi-arrow-bar-down"
         />
         <MenuToggler
           id="offcanvasMenuBottom"
-          type="btn"
+          bsClass="btn"
           iconId="bi-arrow-bar-up"
         />
 
-        <MenuToggler
-          id="offcanvasMenuRight"
-          iconId="bi-layout-sidebar-inset-reverse"
-          css="ms-2"
-        />
+        <MenuToggler id="offcanvasMenuRight" extraClass="border-0">
+          <img
+            src={profile}
+            alt="profile"
+            width="40"
+            height="40"
+            className="rounded-circle m-0 p-0 app-profile"
+          ></img>
+        </MenuToggler>
       </div>
 
       {/* Menu Left */}
-      <MenuLeft id="offcanvasMenuLeft" />
-      <MenuRight id="offcanvasMenuRight" />
+      <MenuNav id="offcanvasMenuLeft" title="Navigation" />
+      <MenuRight id="offcanvasMenuRight" title="Settings" />
       <MenuTop id="offcanvasMenuTop" />
       <MenuBottom id="offcanvasMenuBottom" />
     </nav>

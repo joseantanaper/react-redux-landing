@@ -4,9 +4,10 @@ import { Link, NavLink } from 'react-router-dom'
 
 interface Props {
   id: string
+  title: string
 }
 
-export const MenuLeft = ({ id }: Props) => {
+export const MenuLeft = ({ id, title }: Props) => {
   return (
     <div
       className="offcanvas offcanvas-start border-end shadow"
@@ -24,7 +25,7 @@ export const MenuLeft = ({ id }: Props) => {
           <Icon id="bi-chevron-bar-left" />
         </button>
         <h5 className="offcanvas-title" id={`${id}Label`}>
-          Menu Left
+          {title!}
         </h5>
       </div>
 

@@ -2,9 +2,10 @@ import { Icon } from '../widgets/Icon'
 
 interface Props {
   id: string
+  title: string
 }
 
-export const MenuRight = ({ id }: Props) => {
+export const MenuRight = ({ id, title }: Props) => {
   return (
     <div
       className="offcanvas offcanvas-end border-start shadow"
@@ -14,7 +15,7 @@ export const MenuRight = ({ id }: Props) => {
     >
       <div className="offcanvas-header bg-body-tertiary border-bottom shadow-sm">
         <h5 className="offcanvas-title" id={`${id}Label`}>
-          Menu Right
+          {title!}
         </h5>
         <button
           className="navbar-toggler"

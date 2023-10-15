@@ -1,28 +1,32 @@
 import { Icon } from '../widgets/Icon'
+import { ReactNode } from 'react'
 
 interface Props {
   id: string
-  iconId: string
-  type?: string
-  css?: string
+  iconId?: string
+  bsClass?: string
+  extraClass?: string
+  children?: ReactNode
 }
 
 export const MenuToggler = ({
   id,
   iconId,
-  type = 'navbar-toggler',
-  css = '',
+  bsClass = 'navbar-toggler',
+  extraClass = '',
+  children,
 }: Props) => {
   return (
     <button
-      className={`${type} ${css}`}
+      className={`${bsClass} ${extraClass}`}
       type="button"
       data-bs-toggle="offcanvas"
       data-bs-target={`#${id}`}
       aria-controls={`#${id}`}
       aria-label="Toggle navigation"
     >
-      <Icon id={iconId} />
+      {iconId && <Icon id={iconId} />}
+      {children}
     </button>
   )
 }
