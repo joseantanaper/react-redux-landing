@@ -9,6 +9,7 @@ interface Props {
 
 const navlinks = [
   {
+    iconId: '',
     sectionTitle: '',
     links: [
       {
@@ -24,6 +25,7 @@ const navlinks = [
     ],
   },
   {
+    iconId: '',
     sectionTitle: 'Todo Apps',
     links: [
       { iconId: 'bi-code-square', label: 'Simplest Todo App', to: '/todo' },
@@ -76,7 +78,7 @@ export const MenuNav = ({ id, title }: Props) => {
                       aria-expanded="false"
                       aria-controls="flush-collapseOne"
                     >
-                      <Icon id="bi-menu-button-wide-fill" />
+                      <Icon id={navlink.iconId} />
                       <span>{navlink.sectionTitle}</span>
                     </button>
                   </h2>

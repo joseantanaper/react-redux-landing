@@ -71,7 +71,7 @@ export const TodoList = () => {
               return (
                 <>
                   <tr key={id}>
-                    <td className="align-middle flex-nowrap text-truncate">{`# ${id}`}</td>
+                    <td className="align-middle flex-nowrap text-truncate pe-5 text-end">{`# ${id}`}</td>
                     <td className="w-100 align-middle">{todo}</td>
                     <td>
                       <button
