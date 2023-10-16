@@ -68,6 +68,8 @@ npm install react-router-dom localforage match-sorter sort-by
 npm install --save prop-types
 ```
 
+## GitHub Pages Deployment
+
 ---
 
 ---
