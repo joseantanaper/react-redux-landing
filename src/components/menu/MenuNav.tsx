@@ -50,9 +50,9 @@ export const MenuNav = ({ id, title }: Props) => {
         >
           <Icon id="bi-chevron-bar-left" />
         </button>
-        <h5 className="offcanvas-title" id={`${id}Label`}>
+        <h4 className="offcanvas-title" id={`${id}Label`}>
           {title!}
-        </h5>
+        </h4>
       </div>
 
       <div className="offcanvas-body text-wrap ps-1 pe-1 pt-3">

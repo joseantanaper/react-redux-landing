@@ -85,7 +85,7 @@ div.vr {
 
 .btn:hover,
 .navbar-toggler:hover {
-  transition: 0.5;
+  // transition: 0.5;
   backdrop-filter: brightness(1.4);
   border-color: $app-btn-active-border-color;
   text-shadow: $app-btn-hover-glow;

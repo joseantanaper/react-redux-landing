@@ -9,15 +9,14 @@ import { logger } from './middleware'
 
 import todosReducer from './reducer/todosSlice'
 import counterReducer from './reducersOld/counter.slice'
-import themeReducer from './reducersOld/theme.slice'
-import clockReducer from './reducersOld/clock.slice'
+// import clockReducer from './reducersOld/clock.slice'
+import appReducer from './reducer/appSlice'
 
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
-    theme: themeReducer,
-    clock: clockReducer,
     todos: todosReducer,
+    app: appReducer,
   },
   middleware: (getDefaultMiddleware) => getDefaultMiddleware().concat(logger),
 })

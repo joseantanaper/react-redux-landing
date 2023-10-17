@@ -1,0 +1,73 @@
+import { createSlice, PayloadAction } from '@reduxjs/toolkit'
+import { RootState } from '../store'
+import { PageLayout } from '../../components/PageLayout'
+
+export enum Theme {
+  Light = 'light',
+  Dark = 'dark',
+}
+
+export enum Locale {
+  EN = 'en',
+  ES = 'es',
+}
+
+export enum ClockMode {
+  Short = 0,
+  Long = 1,
+}
+
+export enum AppKey {
+  USERNAME = 'username',
+  THEME = 'theme',
+  LOCALE = 'locale',
+  CLOCK_MODE = 'clockmode',
+}
+
+export interface AppState {
+  username: string
+  theme: Theme
+  locale: Locale
+  clockmode: ClockMode
+}
+
+const INITIAL_STATE = {
+  username: localStorage.getItem(AppKey.USERNAME),
+  theme: localStorage.getItem(AppKey.THEME) ?? Theme.Light,
+  locale: localStorage.getItem(AppKey.LOCALE) ?? Locale.EN,
+  clockmode: Number(localStorage.getItem(AppKey.CLOCK_MODE)) ?? ClockMode.Short,
+} as AppState
+
+const appSlice = createSlice({
+  name: 'app',
+  initialState: INITIAL_STATE,
+  reducers: {
+    login: (state, action: PayloadAction<string>) => {
+      state.username = action.payload
+      localStorage.setItem(AppKey.USERNAME, String(state.username))
+    },
+    setTheme: (state, action: PayloadAction<Theme>) => {
+      state.theme = action.payload
+      localStorage.setItem(AppKey.THEME, String(state.theme))
+      console.log('appSlice', 'setTheme', state.theme)
+    },
+    setLocale: (state, action: PayloadAction<Locale>) => {
+      state.locale = action.payload
+      localStorage.setItem(AppKey.LOCALE, String(state.locale))
+      console.log('appSlice', 'setLocale', state.locale)
+    },
+    setClockMode: (state, action: PayloadAction<ClockMode>) => {
+      state.clockmode = action.payload
+      localStorage.setItem(AppKey.CLOCK_MODE, String(state.clockmode))
+      console.log('appSlice', 'setClockMode', state.clockmode)
+    },
+  },
+})
+
+export const { setTheme, setLocale, setClockMode } = appSlice.actions
+
+export const selectTheme = (state: RootState) => state.app.theme
+export const selectLocale = (state: RootState) => state.app.locale
+export const selectClockMode = (state: RootState) => state.app.clockmode
+
+export default appSlice.reducer
