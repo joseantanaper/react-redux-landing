@@ -1,19 +1,18 @@
 // import logo from "../logo.svg"
 // import { Counter } from "../features/menu/Counter"
-import { appConfig } from '../config/appConfig'
-import { Navbar } from '../components/navbar/Navbar'
 import { Outlet } from 'react-router-dom'
+import Footer from '@/components/layout/Footer'
 
-function Root() {
+import { appConfig } from '@config/app.config'
+import { Navbar } from '@components/navbar/Navbar'
+
+const Root = () => {
   return (
-    <div className="App">
+    <>
       <Navbar title={appConfig.title} subtitle={appConfig.subtitle} />
-      <header className="App-header">
-        {/* <img src={logo} className="App-logo" alt="logo" /> */}
-        {/* <Counter /> */}
-      </header>
       <Outlet />
-    </div>
+      <Footer />
+    </>
   )
 }
 

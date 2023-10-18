@@ -3,15 +3,15 @@
 // $modal-backdrop-opacity: 0.6;
 // @use "./variables.scss";
 
-@import './variables.scss';
+@import 'variables.scss';
 
 // Bootstrap imports
-@import '/node_modules/bootstrap-icons/font/bootstrap-icons.css';
-@import '/node_modules/bootstrap/scss/bootstrap';
+@import '@bootstrap-icons';
+@import '@bootstrap-scss';
 
 // Custom
-@import './bootstrap-light.scss';
-@import './bootstrap-dark.scss';
+@import 'bootstrap-light.scss';
+@import 'bootstrap-dark.scss';
 
 * {
   box-sizing: border-box;
@@ -24,7 +24,13 @@ html[lang=''] {
 
 body {
   border-top: 57px solid red;
-  padding: 20px;
+  padding: 20px 10px 240px 10px;
+  overflow-y: scroll;
+}
+
+h1,
+h2 {
+  text-shadow: 0 1px 1px rgba(0 0 0 / 0.4);
 }
 
 // html:not([data-bs-theme="dark"]) {
@@ -76,6 +82,7 @@ div.vr {
 
 .navbar-toggler {
   min-height: 50px;
+
   svg {
     // margin: 0px !important;
     width: 28px;
@@ -89,13 +96,16 @@ div.vr {
   backdrop-filter: brightness(1.4);
   border-color: $app-btn-active-border-color;
   text-shadow: $app-btn-hover-glow;
+
   svg {
     filter: drop-shadow($app-btn-hover-glow);
   }
+
   svg.app-rotate {
     animation: rotation 2s linear infinite;
   }
 }
+
 .navbar-brand:hover,
 .list-group-item:hover,
 .accordion-button:hover {
@@ -107,15 +117,19 @@ div.vr {
   border-color: $app-btn-active-border-color;
   text-shadow: $app-btn-active-glow;
   backdrop-filter: brightness(0.9);
+
   svg {
     filter: drop-shadow($app-btn-active-glow);
   }
+
   svg.app-rotate {
     animation: rotation 1s linear infinite;
   }
 }
+
 .navbar-brand:active {
   text-shadow: $app-btn-active-glow;
+
   svg {
     filter: drop-shadow($app-btn-active-glow);
   }
@@ -132,9 +146,14 @@ div.vr {
   0% {
     transform: rotate(0);
   }
+
   100% {
     transform: rotate(360deg);
   }
+}
+
+.accordion-button {
+  font-weight: bolder;
 }
 
 .accordion-button,
@@ -142,12 +161,14 @@ div.vr {
   svg {
     opacity: 0.4;
   }
+
   span {
-    border-left: 1px solid rgba(0 0 0 / 0.1) !important;
-    padding: 0 8px 0 8px;
-    margin: 0 8px 0 8px;
+    // border-left: 1px solid rgba(0 0 0 / 0.1) !important;
+    // padding: 0 3px 0 3px;
+    margin: 0 3px 0 3px;
   }
 }
+
 a.btn {
   svg {
     opacity: 0.4;
@@ -155,7 +176,7 @@ a.btn {
 }
 
 // Distance between icons and span labels
-svg + span {
+svg+span {
   margin-left: 3px;
 }
 
@@ -168,4 +189,9 @@ svg + span {
 
 img.app-profile {
   border: 2px solid white;
+}
+
+// Removed from Bootstrap 5!-
+.text-justify {
+  text-align: justify;
 }

@@ -38,8 +38,8 @@ Create a custom scss with variable overrides and imports:
 
 ```css
 // Default variable overrides
-// $modal-backdrop-bg: black;
-// $modal-backdrop-opacity: 0.6;
+$modal-backdrop-bg: black;
+$modal-backdrop-opacity: 0.6;
 
 $border-radius: 1px;
 $dropdown-item-padding-y: 0.6rem;
@@ -68,7 +68,59 @@ npm install react-router-dom localforage match-sorter sort-by
 npm install --save prop-types
 ```
 
-## GitHub Pages Deployment
+## Path Alias
+
+```sh
+npm install -D @types/node
+```
+
+Add aliases to **vite.config.ts**
+
+```ts
+import { defineConfig } from 'vite'
+import react from '@vitejs/plugin-react'
+import path from 'path'
+
+// https://vitejs.dev/config/
+export default defineConfig({
+  resolve: {
+    alias: {
+      '@': path.resolve(__dirname, './src'),
+      '@assets': path.resolve(__dirname, './src/assets'),
+      '@components': path.resolve(__dirname, './src/components'),
+      '@routes': path.resolve(__dirname, './src/routes'),
+      '@app': path.resolve(__dirname, './src/app'),
+    },
+  },
+  plugins: [react()],
+})
+```
+
+Add aliases to **tsconfig.json**
+
+```json
+{
+  "compilerOptions": {
+    // ... your other compiler options
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["src/*"],
+      "@assets/*": ["src/assets/*"],
+      "@components/*": ["src/components/*"],
+      "@routes/*": ["src/routes/*"],
+      "@app/*": ["src/app/*"]
+    }
+  },
+  "include": ["src"],
+  "references": [{ "path": "./tsconfig.node.json" }]
+}
+```
+
+## React Lorem Ipsum
+
+```sh
+npm install react-lorem-ipsum
+```
 
 ---
 

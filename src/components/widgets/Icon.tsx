@@ -11,10 +11,18 @@ export const enum IconMap {
   Home = 'bi-house',
   Light = 'bi-sun',
   Dark = 'bi-moon',
-  MenuNavTop = 'bi-arrow-bar-down',
-  MenuNavBottom = 'bi-arrow-bar-up',
-  MenuNavLeft = 'bi-layout-sidebar-inset',
+  MenuTop = 'bi-arrow-bar-down',
+  MenuBottom = 'bi-arrow-bar-up',
+  MenuStart = 'bi-layout-sidebar-inset',
+  MenuTopClose = 'bi-chevron-bar-down',
+  MenuBottomClose = 'bi-chevron-bar-up',
+  MenuStartClose = 'bi-chevron-bar-left',
+  MenuEndClose = 'bi-chevron-bar-right',
   GroupLink = 'bi-menu-button-wide-fill',
+  ToDo = 'bi-list-task',
+  Locale = 'bi-translate',
+  Clock = 'bi-clock',
+  Appareance = 'bi-palette-fill',
 }
 
 export const Icon = ({ id, iconmap, style = {}, extra = '' }: Props) => {
@@ -22,6 +30,24 @@ export const Icon = ({ id, iconmap, style = {}, extra = '' }: Props) => {
 
   const renderIcon = () => {
     switch (idd) {
+      case 'bi-palette-fill':
+        return (
+          <path d="M12.433 10.07C14.133 10.585 16 11.15 16 8a8 8 0 1 0-8 8c1.996 0 1.826-1.504 1.649-3.08-.124-1.101-.252-2.237.351-2.92.465-.527 1.42-.237 2.433.07zM8 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4.5 3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM5 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+        )
+      case 'bi-list-task':
+        return (
+          <>
+            <path
+              fill-rule="evenodd"
+              d="M2 2.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5V3a.5.5 0 0 0-.5-.5H2zM3 3H2v1h1V3z"
+            />
+            <path d="M5 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM5.5 7a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9zm0 4a.5.5 0 0 0 0 1h9a.5.5 0 0 0 0-1h-9z" />
+            <path
+              fill-rule="evenodd"
+              d="M1.5 7a.5.5 0 0 1 .5-.5h1a.5.5 0 0 1 .5.5v1a.5.5 0 0 1-.5.5H2a.5.5 0 0 1-.5-.5V7zM2 7h1v1H2V7zm0 3.5a.5.5 0 0 0-.5.5v1a.5.5 0 0 0 .5.5h1a.5.5 0 0 0 .5-.5v-1a.5.5 0 0 0-.5-.5H2zm1 .5H2v1h1v-1z"
+            />
+          </>
+        )
       case 'bi-linkedin':
         return (
           <>

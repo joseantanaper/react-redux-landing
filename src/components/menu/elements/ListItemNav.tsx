@@ -1,5 +1,6 @@
-import { Icon, IconMap } from '../../widgets/Icon'
 import { NavLink } from 'react-router-dom'
+import { Icon, IconMap } from '@components/widgets/Icon'
+import { Accordion } from './Accordion'
 
 export interface MenuNavHeaderLink {
   iconmap?: IconMap
@@ -10,6 +11,7 @@ export interface MenuNavLink {
   iconmap: IconMap
   label: string
   to: string
+  run?: Function
 }
 
 interface Props {
@@ -23,7 +25,7 @@ export const ListItemNav = ({ navlink, parentIndex }: Props) => {
     return (
       <div
         key={parentIndex}
-        className="list-group list-group-flush"
+        className="list-group list-group-flush mb-3"
         data-bs-dismiss="offcanvas"
       >
         {navlink.items &&
@@ -61,34 +63,14 @@ export const ListItemNav = ({ navlink, parentIndex }: Props) => {
   // Render component
   if (navlink.label) {
     return (
-      <div className="accordion" id="accordionFlushExample">
-        {/* Accordion START */}
-        <div className="accordion-item border-0">
-          <h2 className="accordion-header">
-            <button
-              className="accordion-button collapsed"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#flush-collapseOne"
-              aria-expanded="false"
-              aria-controls="flush-collapseOne"
-            >
-              <Icon iconmap={navlink.iconmap} />
-              <span>{navlink.label}</span>
-            </button>
-          </h2>
-          <div
-            id="flush-collapseOne"
-            className="accordion-collapse collapse accordion-flush"
-            // data-bs-parent="#accordionFlushExample"
-          >
-            <div className="accordion-body ps-0 pt-1 pb-3 pe-0">
-              {renderItems(navlink, parentIndex)}
-            </div>
-          </div>
-        </div>
-        {/* Accordion END */}
-      </div>
+      <Accordion
+        id="accordionNav"
+        label={navlink.label}
+        index={parentIndex}
+        iconmap={navlink.iconmap}
+      >
+        {renderItems(navlink, parentIndex)}
+      </Accordion>
     )
   } else {
     return renderItems(navlink, parentIndex)

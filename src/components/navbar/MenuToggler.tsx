@@ -1,5 +1,5 @@
-import { Icon, IconMap } from '../widgets/Icon'
 import { ReactNode } from 'react'
+import { Icon, IconMap } from '@components/widgets/Icon'
 
 interface Props {
   id: string

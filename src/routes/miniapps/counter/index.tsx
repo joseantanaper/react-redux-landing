@@ -1,11 +1,11 @@
 import { PageLayout } from '@/components/layout/PageLayout'
 
-const Home = () => {
+const Counter = () => {
   return (
-    <PageLayout title="Home">
-      <>I'm Home.</>
+    <PageLayout title="Counter">
+      <>Aha</>
     </PageLayout>
   )
 }
 
-export default Home
+export default Counter

@@ -1,6 +1,6 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { RootState } from '../store'
-import { PageLayout } from '../../components/PageLayout'
+import { RootState } from '@app/store'
+import { PageLayout } from '@/components/layout/PageLayout'
 
 export enum Theme {
   Light = 'light',

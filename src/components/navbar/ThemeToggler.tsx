@@ -1,7 +1,7 @@
-import { Icon, IconMap } from '../widgets/Icon'
-import { useAppSelector, useAppDispatch } from '../../app/hooks'
-import { Theme, setTheme } from '../../app/reducer/app.slice'
-import { RootState } from '../../app/store'
+import { Icon, IconMap } from '@components/widgets/Icon'
+import { useAppSelector, useAppDispatch } from '@app/hooks'
+import { Theme, setTheme } from '@app/reducer/app.slice'
+import { RootState } from '@app/store'
 
 export const enum TogglerType {
   Button = 0,

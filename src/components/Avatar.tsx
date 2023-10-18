@@ -1,4 +1,4 @@
-import profile from '../image/profile.jpg'
+import profile from '@assets/profile.jpg'
 
 interface Props {
   size?: AvatarSize

@@ -1,6 +1,6 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit'
-import { RootState, AppThunk } from '../store'
-import { fetchCount } from './counter.api'
+import { RootState, AppThunk } from '@app/store'
+import { fetchCount } from '@app/reducer/counter.api'
 
 export enum CounterKey {
   COUNTER = 'counter',

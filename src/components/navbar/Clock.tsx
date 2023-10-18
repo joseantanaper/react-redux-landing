@@ -1,6 +1,6 @@
-import { Icon } from '../widgets/Icon'
 import { useState } from 'react'
-import { useAppSelector, useAppDispatch } from '../../app/hooks'
+import { Icon } from '@components/widgets/Icon'
+import { useAppSelector, useAppDispatch } from '@app/hooks'
 
 import {
   setClockMode,

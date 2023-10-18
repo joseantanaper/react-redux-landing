@@ -1,13 +1,13 @@
-import { Icon } from '../widgets/Icon'
 import { useState } from 'react'
-import { useAppSelector, useAppDispatch } from '../../app/hooks'
-import { RootState } from '../../app/store'
-import { Avatar, AvatarSize } from '../Avatar'
+import { Icon } from '@components/widgets/Icon'
+import { useAppSelector, useAppDispatch } from '@app/hooks'
+import { RootState } from '@app/store'
+import { Avatar, AvatarSize } from '@components/Avatar'
 import {
   setUsername,
   selectUsername,
   clearUsername,
-} from '../../app/reducer/app.slice'
+} from '@app/reducer/app.slice'
 
 interface Props {
   id?: string
@@ -25,7 +25,7 @@ export const Login = ({ id }: Props) => {
 
   return (
     <>
-      <div className="container container-fluid text-center">
+      <div className="container-fluid text-center">
         {/* Avatar */}
         <div className="row">
           <div className="col">
@@ -91,9 +91,7 @@ export const Login = ({ id }: Props) => {
 
         {/* Separator */}
         <div className="row mb-3">
-          <div className="col">
-            <hr className="mb-5" />
-          </div>
+          <div className="col"></div>
         </div>
       </div>
     </>

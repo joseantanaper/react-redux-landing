@@ -1,17 +1,16 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
-import { store } from './app/store'
 
-// import App from "./App"
-import './style/bootstrap-custom.scss'
-import '/node_modules/bootstrap/dist/js/bootstrap.bundle.min.js'
-import Root from './routes/root'
-import Error from './routes/error'
-import Contact from './routes/contact'
-import Index from './routes/index'
-import Portfolio from './routes/portfolio/index'
-import Todo from './routes/todo/index'
+import { store } from '@app/store'
+import '@style/bootstrap-custom.scss'
+import '@bootstrap-js'
+import Root from '@routes/root'
+import Error from '@routes/error'
+import Index from '@routes/index'
+import Portfolio from '@routes/portfolio/index'
+import Todo from '@routes/miniapps/todo/index'
+import Counter from '@routes/miniapps/counter/index'
 
 import {
   // BrowserRouterProps,
@@ -34,11 +33,11 @@ const router = createBrowserRouter([
         element: <Portfolio />,
       },
       {
-        path: 'contact/:id',
-        element: <Contact />,
+        path: '/miniapps/counter',
+        element: <Counter />,
       },
       {
-        path: '/todo',
+        path: '/miniapps/todo',
         element: <Todo />,
       },
     ],

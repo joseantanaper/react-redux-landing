@@ -1,6 +1,6 @@
-import { Icon } from '../widgets/Icon'
 import { useState } from 'react'
-import { useAppSelector, useAppDispatch } from '../../app/hooks'
+import { Icon } from '@components/widgets/Icon'
+import { useAppSelector, useAppDispatch } from '@app/hooks'
 import {
   decrement,
   increment,
@@ -8,7 +8,7 @@ import {
   incrementAsync,
   incrementIfOdd,
   selectCount,
-} from '../../app/reducer/counter.slice'
+} from '@app/reducer/counter.slice'
 
 // interface Props {
 //   id: string

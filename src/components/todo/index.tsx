@@ -1,12 +1,11 @@
-import { Icon } from '../widgets/Icon'
 import { useState, useEffect } from 'react'
-import { useAppSelector, useAppDispatch } from '../../app/hooks'
+import { useAppSelector, useAppDispatch } from '@app/hooks'
 import {
   addTodo,
   clearAll,
   selectTodos,
   remove,
-} from '../../app/reducer/todos.slice'
+} from '@app/reducer/todos.slice'
 import { TodoItem } from './TodoItem'
 
 export const TodoList = () => {
@@ -52,7 +51,7 @@ export const TodoList = () => {
           Add
         </button>
         <button
-          className="btn btn-danger ms-2 text-nowrap"
+          className="btn btn-outline-danger ms-5 text-nowrap"
           onClick={() => _clearAll()}
         >
           Clear All

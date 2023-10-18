@@ -5,11 +5,11 @@ import {
   applyMiddleware,
   getDefaultMiddleware,
 } from '@reduxjs/toolkit'
-import { logger } from './middleware'
+import { logger } from '@app/middleware'
 
-import todosReducer from './reducer/todos.slice'
-import counterReducer from './reducer/counter.slice'
-import appReducer from './reducer/app.slice'
+import todosReducer from '@app/reducer/todos.slice'
+import counterReducer from '@app/reducer/counter.slice'
+import appReducer from '@app/reducer/app.slice'
 
 export const store = configureStore({
   reducer: {
