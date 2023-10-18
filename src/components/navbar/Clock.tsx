@@ -6,7 +6,7 @@ import {
   setClockMode,
   selectClockMode,
   ClockMode,
-} from '../../app/reducer/appSlice'
+} from '../../app/reducer/app.slice'
 
 interface Props {
   currentClockMode: ClockMode

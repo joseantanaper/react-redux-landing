@@ -1,5 +1,5 @@
 import { PageLayout } from '../../components/PageLayout'
-import { TodoList } from '../../components/todo/TodoList'
+import { TodoList } from '../../components/todo'
 
 export default function Index() {
   const handleClick = () => {}

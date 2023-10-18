@@ -148,6 +148,17 @@ div.vr {
     margin: 0 8px 0 8px;
   }
 }
+a.btn {
+  svg {
+    opacity: 0.4;
+  }
+}
+
+// Distance between icons and span labels
+svg + span {
+  margin-left: 3px;
+}
+
 .accordion-button:hover,
 .list-group-item:hover {
   svg {

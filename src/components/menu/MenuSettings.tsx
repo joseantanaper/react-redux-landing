@@ -10,11 +10,10 @@ import {
   setClockMode,
   selectClockMode,
   ClockMode,
-} from '../../app/reducer/appSlice'
+} from '../../app/reducer/app.slice'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { Connect } from 'react-redux'
-import { Clock } from '../navbar/Clock'
 import { ThemeToggler, TogglerType, Label } from '../navbar/ThemeToggler'
+import { Login } from '../login'
 
 interface Props {
   id: string
@@ -68,20 +67,10 @@ export const MenuSettings = ({ id, title }: Props) => {
         </button>
       </div>
 
-      <div className="offcanvas-body mt-5">
+      <div className="offcanvas-body pt-5 pb-5">
         {/* Login */}
-        <div className="input-group mb-3">
-          <input
-            className="form-control"
-            type="text"
-            placeholder="Username"
-            aria-label="Username"
-          />
-          <button className="btn btn-outline-success" type="submit">
-            Fake Login
-          </button>
-        </div>
-        <hr />
+        <Login />
+
         {/* Theme START */}
         <div className="row mb-3">
           <h5 className="mb-4">Theme Configuration</h5>
@@ -153,7 +142,7 @@ export const MenuSettings = ({ id, title }: Props) => {
                 onClick={() => clickLocale(Locale.EN)}
               >
                 <Icon id="bi-translate" extra="me-1" />
-                {Locale.EN}
+                <span>{Locale.EN}</span>
               </button>
               <button
                 type="button"
@@ -163,7 +152,7 @@ export const MenuSettings = ({ id, title }: Props) => {
                 onClick={() => clickLocale(Locale.ES)}
               >
                 <Icon id="bi-translate" extra="me-1" />
-                {Locale.ES}
+                <span>{Locale.ES}</span>
               </button>
             </div>
           </div>
@@ -184,7 +173,7 @@ export const MenuSettings = ({ id, title }: Props) => {
                 onClick={() => clickClockMode(ClockMode.Short)}
               >
                 <Icon id="bi-clock" extra="me-1" />
-                hh:mm
+                <span>hh:mm</span>
               </button>
               <button
                 type="button"
@@ -194,7 +183,7 @@ export const MenuSettings = ({ id, title }: Props) => {
                 onClick={() => clickClockMode(ClockMode.Long)}
               >
                 <Icon id="bi-clock" extra="me-1" />
-                hh:mm:ss
+                <span>hh:mm:ss</span>
               </button>
             </div>
           </div>

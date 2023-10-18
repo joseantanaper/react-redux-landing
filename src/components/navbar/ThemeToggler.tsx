@@ -1,6 +1,6 @@
-import { Icon } from '../widgets/Icon'
+import { Icon, IconMap } from '../widgets/Icon'
 import { useAppSelector, useAppDispatch } from '../../app/hooks'
-import { Theme, setTheme, selectTheme } from '../../app/reducer/appSlice'
+import { Theme, setTheme } from '../../app/reducer/app.slice'
 import { RootState } from '../../app/store'
 
 export const enum TogglerType {
@@ -50,17 +50,17 @@ export const ThemeToggler = ({
           onClick={() => handleClick()}
         >
           <Icon
-            id="bi-sun"
+            iconmap={IconMap.Light}
             extra="app-rotate"
             style={{ display: theme !== Theme.Dark ? 'none' : 'inline' }}
           />
           <Icon
-            id="bi-moon"
+            iconmap={IconMap.Dark}
             extra="app-rotate"
             style={{ display: theme !== Theme.Dark ? 'inline' : 'none' }}
           />
           {label === Label.Yes && (
-            <span className="text-capitalize ms-1">{theme}</span>
+            <span className="text-capitalize">{theme}</span>
           )}
         </button>
       )}
@@ -74,9 +74,9 @@ export const ThemeToggler = ({
             }`}
             onClick={() => handleClick(Theme.Light)}
           >
-            <Icon id="bi-sun" extra="app-rotate" />
+            <Icon iconmap={IconMap.Light} extra="app-rotate" />
             {label === Label.Yes && (
-              <span className="text-capitalize ms-1">Light</span>
+              <span className="text-capitalize">{Theme.Light}</span>
             )}
           </button>
           <button
@@ -86,9 +86,9 @@ export const ThemeToggler = ({
             }`}
             onClick={() => handleClick(Theme.Dark)}
           >
-            <Icon id="bi-moon" extra="app-rotate" />
+            <Icon iconmap={IconMap.Dark} extra="app-rotate" />
             {label === Label.Yes && (
-              <span className="text-capitalize ms-1">Dark</span>
+              <span className="text-capitalize">{Theme.Dark}</span>
             )}
           </button>
         </div>

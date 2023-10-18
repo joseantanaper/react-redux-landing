@@ -7,10 +7,9 @@ import {
 } from '@reduxjs/toolkit'
 import { logger } from './middleware'
 
-import todosReducer from './reducer/todosSlice'
-import counterReducer from './reducersOld/counter.slice'
-// import clockReducer from './reducersOld/clock.slice'
-import appReducer from './reducer/appSlice'
+import todosReducer from './reducer/todos.slice'
+import counterReducer from './reducer/counter.slice'
+import appReducer from './reducer/app.slice'
 
 export const store = configureStore({
   reducer: {

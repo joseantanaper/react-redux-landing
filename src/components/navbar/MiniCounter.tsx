@@ -8,7 +8,7 @@ import {
   incrementAsync,
   incrementIfOdd,
   selectCount,
-} from '../../app/reducersOld/counter.slice'
+} from '../../app/reducer/counter.slice'
 
 // interface Props {
 //   id: string

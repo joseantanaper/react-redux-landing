@@ -4,16 +4,10 @@ import { useAppSelector, useAppDispatch } from '../../app/hooks'
 import {
   addTodo,
   clearAll,
-  remove,
   selectTodos,
-} from '../../app/reducer/todosSlice'
-
-// interface Props {
-//   id: string
-//   iconId: string
-//   type?: string
-//   css?: string
-// }
+  remove,
+} from '../../app/reducer/todos.slice'
+import { TodoItem } from './TodoItem'
 
 export const TodoList = () => {
   const [todo, setTodo] = useState('')
@@ -32,12 +26,13 @@ export const TodoList = () => {
       setTodo('')
     }
   }
-  const _clearAll = () => {
-    dispatch(clearAll())
+
+  const _remove = (todo: string) => {
+    dispatch(remove(todo))
   }
 
-  const _remove = (id: string) => {
-    dispatch(remove(id))
+  const _clearAll = () => {
+    dispatch(clearAll())
   }
 
   return (
@@ -64,27 +59,17 @@ export const TodoList = () => {
         </button>
       </div>
       <hr />
-      <table className="table table-hover">
+      <table className="table table-hover ">
         <tbody>
           {state.todos.length > 0 &&
-            state.todos.map((todo, id) => {
+            state.todos.map((todo: string, index: number) => {
               return (
-                <>
-                  <tr key={id}>
-                    <td className="align-middle flex-nowrap text-truncate pe-5 text-end">{`# ${id}`}</td>
-                    <td className="w-100 align-middle">{todo}</td>
-                    <td>
-                      <button
-                        className="btn ms-2"
-                        onClick={() => {
-                          _remove(todo)
-                        }}
-                      >
-                        <Icon id="bi-trash" extra="opacity-25" />
-                      </button>
-                    </td>
-                  </tr>
-                </>
+                <TodoItem
+                  key={index}
+                  todo={todo}
+                  index={index}
+                  remove={_remove}
+                />
               )
             })}
         </tbody>

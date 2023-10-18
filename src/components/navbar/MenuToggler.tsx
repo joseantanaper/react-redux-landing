@@ -1,9 +1,9 @@
-import { Icon } from '../widgets/Icon'
+import { Icon, IconMap } from '../widgets/Icon'
 import { ReactNode } from 'react'
 
 interface Props {
   id: string
-  iconId?: string
+  iconmap?: IconMap
   bsClass?: string
   extraClass?: string
   children?: ReactNode
@@ -11,7 +11,7 @@ interface Props {
 
 export const MenuToggler = ({
   id,
-  iconId,
+  iconmap,
   bsClass = 'navbar-toggler',
   extraClass = '',
   children,
@@ -25,7 +25,7 @@ export const MenuToggler = ({
       aria-controls={`#${id}`}
       aria-label="Toggle navigation"
     >
-      {iconId && <Icon id={iconId} />}
+      {iconmap && <Icon iconmap={iconmap} />}
       {children}
     </button>
   )

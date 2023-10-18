@@ -1,7 +1,4 @@
-import { useState } from 'react'
-import { Link, NavLink } from 'react-router-dom'
-import profile from '../../image/profile.jpg'
-
+import { NavLink } from 'react-router-dom'
 import { MenuToggler } from './MenuToggler'
 import { ThemeToggler } from './ThemeToggler'
 import { MiniCounter } from './MiniCounter'
@@ -10,13 +7,16 @@ import { MenuTop } from '../menu/MenuTop'
 import { MenuBottom } from '../menu/MenuBottom'
 import { MenuNav } from '../menu/MenuNav'
 import { Clock } from './Clock'
+import { Title } from './Title'
+import { Avatar } from '../Avatar'
+import { Icon, IconMap } from '../../components/widgets/Icon'
 import { useAppSelector } from '../../app/hooks'
 // Single Source of Truth in Common Parent Component for AppSlice setttings
 import {
   selectTheme,
   selectLocale,
   selectClockMode,
-} from '../../app/reducer/appSlice'
+} from '../../app/reducer/app.slice'
 
 interface Props {
   title: string
@@ -33,29 +33,23 @@ export const Navbar = ({ title, subtitle }: Props) => {
       <div className="container-fluid flex-nowrap">
         {/* Navigation Left Toggler */}
         <div className="navbar-brand">
-          <MenuToggler id="offcanvasMenuNav" iconId="bi-layout-sidebar-inset" />
+          <MenuToggler id="offcanvasMenuNav" iconmap={IconMap.MenuNavLeft} />
         </div>
 
         {/* Title */}
-        <NavLink
-          className="navbar-brand w-bolder me-auto text-truncate d-flex"
-          to="/"
-        >
-          <span className="align-items-bottom h4 m-0">{title}</span>
-          <span className="opacity-25 ms-3 fst-italic d-none d-lg-block">
-            {subtitle}
-          </span>
-        </NavLink>
+        <Title title={title} subtitle={subtitle} />
 
         {/* Menu */}
         <div className="vr ms-2 me-3 d-none d-lg-block"></div>
         <div className="d-flex d-none d-lg-block">
           <NavLink className="btn" aria-current="page" to="/">
-            Home
+            <Icon iconmap={IconMap.Home} />
+            <span>Home</span>
           </NavLink>
 
           <NavLink className="btn" aria-current="page" to="/portfolio">
-            Portfolio
+            <Icon iconmap={IconMap.Portfolio} />
+            <span>Portfolio</span>
           </NavLink>
         </div>
 
@@ -73,22 +67,16 @@ export const Navbar = ({ title, subtitle }: Props) => {
         <MenuToggler
           id="offcanvasMenuTop"
           bsClass="btn"
-          iconId="bi-arrow-bar-down"
+          iconmap={IconMap.MenuNavTop}
         />
         <MenuToggler
           id="offcanvasMenuBottom"
           bsClass="btn"
-          iconId="bi-arrow-bar-up"
+          iconmap={IconMap.MenuNavBottom}
         />
 
         <MenuToggler id="offcanvasMenuSettings" extraClass="border-0">
-          <img
-            src={profile}
-            alt="profile"
-            width="40"
-            height="40"
-            className="rounded-circle m-0 p-0 app-profile"
-          ></img>
+          <Avatar />
         </MenuToggler>
       </div>
 

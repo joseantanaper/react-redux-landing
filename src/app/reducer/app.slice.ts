@@ -32,7 +32,7 @@ export interface AppState {
 }
 
 const INITIAL_STATE = {
-  username: localStorage.getItem(AppKey.USERNAME),
+  username: localStorage.getItem(AppKey.USERNAME) || '',
   theme: localStorage.getItem(AppKey.THEME) ?? Theme.Light,
   locale: localStorage.getItem(AppKey.LOCALE) ?? Locale.EN,
   clockmode: Number(localStorage.getItem(AppKey.CLOCK_MODE)) ?? ClockMode.Short,
@@ -42,9 +42,12 @@ const appSlice = createSlice({
   name: 'app',
   initialState: INITIAL_STATE,
   reducers: {
-    login: (state, action: PayloadAction<string>) => {
+    setUsername: (state, action: PayloadAction<string>) => {
       state.username = action.payload
       localStorage.setItem(AppKey.USERNAME, String(state.username))
+    },
+    clearUsername: (state) => {
+      localStorage.removeItem(AppKey.USERNAME)
     },
     setTheme: (state, action: PayloadAction<Theme>) => {
       state.theme = action.payload
@@ -64,8 +67,10 @@ const appSlice = createSlice({
   },
 })
 
-export const { setTheme, setLocale, setClockMode } = appSlice.actions
+export const { setTheme, setLocale, setClockMode, setUsername, clearUsername } =
+  appSlice.actions
 
+export const selectUsername = (state: RootState) => state.app.username
 export const selectTheme = (state: RootState) => state.app.theme
 export const selectLocale = (state: RootState) => state.app.locale
 export const selectClockMode = (state: RootState) => state.app.clockmode
