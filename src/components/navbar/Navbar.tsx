@@ -46,13 +46,13 @@ export const Navbar = ({ title, subtitle }: Props) => {
         <Title title={title} subtitle={subtitle} />
 
         {/* Menu */}
+
         <NavMenu routeLinks={routeLinks as RouteLink[]} />
 
         {/* Buttons */}
         <div className="vr ms-2 me-3 d-none d-md-block"></div>
-        <div className="d-flex d-none d-md-block">
-          <MiniCounter />
-        </div>
+
+        <MiniCounter />
 
         <div className="vr ms-3 me-2"></div>
 
@@ -76,7 +76,11 @@ export const Navbar = ({ title, subtitle }: Props) => {
       </div>
 
       {/* Menu Left */}
-      <MenuStart id="offcanvasMenuNav" title="Navigation" />
+      <MenuStart
+        id="offcanvasMenuNav"
+        title="Navigation"
+        routeLinks={routeLinks as RouteLink[]}
+      />
       <MenuEnd id="offcanvasMenuSettings" title="Settings" />
       <MenuTop id="offcanvasMenuTop" title="Menu Top" />
       <MenuBottom id="offcanvasMenuBottom" title="Menu Bottom" />

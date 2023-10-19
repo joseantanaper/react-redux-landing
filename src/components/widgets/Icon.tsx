@@ -14,15 +14,16 @@ export const enum IconMap {
   MenuTop = 'bi-arrow-bar-down',
   MenuBottom = 'bi-arrow-bar-up',
   MenuStart = 'bi-layout-sidebar-inset',
-  MenuTopClose = 'bi-chevron-bar-down',
-  MenuBottomClose = 'bi-chevron-bar-up',
+  MenuTopClose = 'bi-chevron-bar-up',
+  MenuBottomClose = 'bi-chevron-bar-down',
   MenuStartClose = 'bi-chevron-bar-left',
   MenuEndClose = 'bi-chevron-bar-right',
   GroupLink = 'bi-menu-button-wide-fill',
-  ToDo = 'bi-list-task',
+  Todo = 'bi-list-task',
   Locale = 'bi-translate',
   Clock = 'bi-clock',
   Appareance = 'bi-palette-fill',
+  Playground = 'bi-dice-5-fill',
 }
 
 export const Icon = ({ id, iconmap, style = {}, extra = '' }: Props) => {
@@ -30,6 +31,10 @@ export const Icon = ({ id, iconmap, style = {}, extra = '' }: Props) => {
 
   const renderIcon = () => {
     switch (idd) {
+      case 'bi-dice-5-fill':
+        return (
+          <path d="M3 0a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V3a3 3 0 0 0-3-3H3zm2.5 4a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm8 0a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM12 13.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM5.5 12a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zM8 9.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />
+        )
       case 'bi-palette-fill':
         return (
           <path d="M12.433 10.07C14.133 10.585 16 11.15 16 8a8 8 0 1 0-8 8c1.996 0 1.826-1.504 1.649-3.08-.124-1.101-.252-2.237.351-2.92.465-.527 1.42-.237 2.433.07zM8 5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zm4.5 3a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3zM5 6.5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm.5 6.5a1.5 1.5 0 1 1 0-3 1.5 1.5 0 0 1 0 3z" />

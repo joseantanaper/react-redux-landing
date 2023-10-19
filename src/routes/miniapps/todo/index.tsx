@@ -4,7 +4,13 @@ import { TodoList } from '@components/todo'
 const Todo = () => {
   return (
     <PageLayout title="Simplest Todo List">
-      <TodoList />
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col text-justify">
+            <TodoList />
+          </div>
+        </div>
+      </div>
     </PageLayout>
   )
 }

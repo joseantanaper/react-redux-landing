@@ -1,17 +1,17 @@
 import { Icon, IconMap } from '@components/widgets/Icon'
 import { Menu, MenuProps, MenuPosition } from '@components/menu/elements/Menu'
-import {
-  ListItemNav,
-  MenuNavHeaderLink,
-} from '@components/menu/elements/ListItemNav'
-import { navlinks, routeLinks, RouteLink } from '@config/nav.config'
+import { NavRouteLinkList } from './elements/NavRouteLinkList'
+import { routeLinks, RouteLink } from '@config/nav.config'
 
-export const MenuStart = ({ id, title }: MenuProps) => {
+interface Props extends MenuProps {
+  routeLinks: RouteLink[]
+}
+
+export const MenuStart = ({ id, title, routeLinks }: Props) => {
   return (
     <Menu id={id} title={title} position={MenuPosition.Start}>
-      {navlinks.map((navlink, index) => {
-        return <ListItemNav key={index} navlink={navlink} parentIndex={index} />
-      })}
+      <div className="m-5"></div>
+      <NavRouteLinkList routeLinks={routeLinks} parentIndex={0} />
     </Menu>
   )
 }

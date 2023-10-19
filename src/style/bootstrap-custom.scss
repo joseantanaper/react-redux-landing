@@ -29,9 +29,15 @@ body {
 }
 
 h1,
-h2 {
+h2,
+h3,
+h4,
+h5,
+h6 {
   text-shadow: 0 1px 1px rgba(0 0 0 / 0.4);
 }
+
+
 
 // html:not([data-bs-theme="dark"]) {
 //   button.navbar-toggler,
@@ -153,13 +159,17 @@ div.vr {
 }
 
 .accordion-button {
-  font-weight: bolder;
+  font-weight: bold;
 }
 
 .accordion-button,
 .list-group-item {
   svg {
     opacity: 0.4;
+  }
+
+  svg+span {
+    margin-left: 6px;
   }
 
   span {
@@ -173,12 +183,14 @@ a.btn {
   svg {
     opacity: 0.4;
   }
+
+  svg+span {
+    margin-left: 3px;
+  }
 }
 
 // Distance between icons and span labels
-svg+span {
-  margin-left: 3px;
-}
+
 
 .accordion-button:hover,
 .list-group-item:hover {
@@ -194,4 +206,10 @@ img.app-profile {
 // Removed from Bootstrap 5!-
 .text-justify {
   text-align: justify;
+}
+
+.navbar-nav {
+  -webkit-flex-direction: row;
+  -ms-flex-direction: row;
+  flex-direction: row;
 }

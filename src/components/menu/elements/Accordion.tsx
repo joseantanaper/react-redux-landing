@@ -11,9 +11,9 @@ interface Props {
 
 export const Accordion = ({ id, label, index, iconmap, children }: Props) => {
   const accordionId = `accordion-${id}${index}`
-  const target = `accordionCollpase-${id}${index}`
+  const target = `accordionCollapse-${id}${index}`
   return (
-    <div className="accordion" id={`#${accordionId}`}>
+    <div className="accordion" id={`${accordionId}`}>
       {/* Accordion START */}
       <div className="accordion-item border-0">
         <h2 className="accordion-header">
@@ -32,7 +32,7 @@ export const Accordion = ({ id, label, index, iconmap, children }: Props) => {
         <div
           id={`${target}`}
           className="accordion-collapse collapse accordion-flush"
-          // data-bs-parent="#accordionFlushExample"
+          data-bs-parent={`#${accordionId}`}
         >
           <div className="accordion-body ps-0 pt-1 pb-3 pe-0">{children}</div>
         </div>
