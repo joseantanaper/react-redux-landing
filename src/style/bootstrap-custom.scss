@@ -23,8 +23,7 @@ html[lang=''] {
 }
 
 body {
-  border-top: 57px solid red;
-  padding: 20px 10px 240px 10px;
+  border-top: calc(56px + 56px) solid var(--bs-body-bg);
   overflow-y: scroll;
 }
 
@@ -37,6 +36,10 @@ h6 {
   text-shadow: 0 1px 1px rgba(0 0 0 / 0.4);
 }
 
+div#root {
+  margin: 0px;
+  padding: 0px;
+}
 
 
 // html:not([data-bs-theme="dark"]) {
@@ -76,6 +79,7 @@ div.vr {
   // opacity: 1;
   // background-color: rgba(15, 23, 42, 0.5);
   // transition: 1s;
+  // overflow-y: scroll !important;
   backdrop-filter: blur(4px) !important;
 }
 
@@ -87,7 +91,7 @@ div.vr {
 }
 
 .navbar-toggler {
-  min-height: 50px;
+  min-height: 46px;
 
   svg {
     // margin: 0px !important;
@@ -112,16 +116,23 @@ div.vr {
   }
 }
 
+.navbar-brand {
+  background: blue;
+
+  align-items: center;
+  text-shadow: 0 1px 1px rgba(0 0 0 / 0.4);
+}
+
 .navbar-brand:hover,
 .list-group-item:hover,
 .accordion-button:hover {
-  text-shadow: $app-btn-hover-glow;
+  text-shadow: $app-btn-hover-glow, 0 1px 1px rgba(0 0 0 / 0.4);
 }
 
 .btn:active,
 .navbar-toggler:active {
   border-color: $app-btn-active-border-color;
-  text-shadow: $app-btn-active-glow;
+  text-shadow: $app-btn-active-glow, 0 1px 1px rgba(0 0 0 / 0.4);
   backdrop-filter: brightness(0.9);
 
   svg {
@@ -208,8 +219,35 @@ img.app-profile {
   text-align: justify;
 }
 
-.navbar-nav {
-  -webkit-flex-direction: row;
-  -ms-flex-direction: row;
-  flex-direction: row;
+// .navbar-nav {
+//   -webkit-flex-direction: row;
+//   -ms-flex-direction: row;
+//   flex-direction: row;
+// }
+
+.app-main-navbar {
+  min-height: 56px;
+}
+
+.app-main-subnavbar {
+  top: 56px;
+  min-height: 56px;
+  z-index: 1;
+  // opacity: 0.4;
+  // background: rgba(var(--bs-tertiary-bg-rgb) / 0.999) !important;
+  background: rgba(var(--bs-body-bg-rgb) / 0.9999) !important;
+  backdrop-filter: blur(12px) !important;
+  // padding-left: 60px;
+  // transition: 0.15s;
+}
+
+.app-main-subnavbar:hover {
+  // transition: 0.15s;
+
+  // background: var(--bs-tertiary-bg) !important;
+  background: var(--bs-body-bg) !important;
+}
+
+div.app-show-on-scroll {
+  transition: 0.5s;
 }

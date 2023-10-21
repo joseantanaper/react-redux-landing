@@ -18,6 +18,8 @@ import {
   RouterProvider,
 } from 'react-router-dom'
 
+import '@config/i18n'
+
 const router = createBrowserRouter([
   {
     path: '/',

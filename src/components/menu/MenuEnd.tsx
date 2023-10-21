@@ -1,7 +1,9 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import { Icon, IconMap } from '@components/widgets/Icon'
 import { Menu, MenuProps, MenuPosition } from '@components/menu/elements/Menu'
 import { Accordion } from '@components/menu/elements/Accordion'
+import { LocaleToggler } from '../toggler/LocaleToggler'
+import { t } from 'i18next'
 
 import {
   Locale,
@@ -13,7 +15,7 @@ import {
   ClockMode,
 } from '../../app/reducer/app.slice'
 import { useAppDispatch, useAppSelector } from '../../app/hooks'
-import { ThemeToggler, TogglerType, Label } from '../navbar/ThemeToggler'
+import { ThemeToggler, TogglerType, Label } from '../toggler/ThemeToggler'
 import { Login } from '../login'
 
 export const MenuEnd = ({ id, title }: MenuProps) => {
@@ -23,14 +25,6 @@ export const MenuEnd = ({ id, title }: MenuProps) => {
   const currentClockMode = useAppSelector(selectClockMode)
   const [, /*locale*/ applyLocale] = useState(currentLocale)
   const [, /*clockmode*/ applyClockMode] = useState(currentClockMode)
-
-  document.documentElement.setAttribute('lang', currentLocale)
-
-  const clickLocale = (locale: Locale) => {
-    dispatch(setLocale(locale))
-    applyLocale(locale)
-    document.documentElement.setAttribute('lang', locale)
-  }
 
   const clickClockMode = (clockmode: ClockMode) => {
     dispatch(setClockMode(clockmode))
@@ -44,7 +38,7 @@ export const MenuEnd = ({ id, title }: MenuProps) => {
 
       <Accordion
         id="appearanceSt"
-        label="Appearance"
+        label={t('Appearance')}
         iconmap={IconMap.Appareance}
         index={0}
       >
@@ -109,7 +103,7 @@ export const MenuEnd = ({ id, title }: MenuProps) => {
 
       <Accordion
         id="localeSt"
-        label="Locale"
+        label={t('Language')}
         iconmap={IconMap.Locale}
         index={1}
       >
@@ -117,43 +111,27 @@ export const MenuEnd = ({ id, title }: MenuProps) => {
         <div className="container-fluid m-0 mt-2 ms-2 mb-4">
           <div className="row mb-3">
             <div className="col">
-              <label className="col-form-label">Language</label>
+              <label className="col-form-label">{t('Language')}</label>
             </div>
             <div className="col">
-              <div className="btn-group float-end">
-                <button
-                  type="button"
-                  className={`btn ${
-                    currentLocale === Locale.EN ? 'disabled active' : ''
-                  }`}
-                  onClick={() => clickLocale(Locale.EN)}
-                >
-                  <Icon id="bi-translate" extra="me-1" />
-                  <span>{Locale.EN}</span>
-                </button>
-                <button
-                  type="button"
-                  className={`btn ${
-                    currentLocale === Locale.ES ? 'disabled active' : ''
-                  }`}
-                  onClick={() => clickLocale(Locale.ES)}
-                >
-                  <Icon id="bi-translate" extra="me-1" />
-                  <span>{Locale.ES}</span>
-                </button>
-              </div>
+              <LocaleToggler />
             </div>
           </div>
         </div>
         {/* Locale END */}
       </Accordion>
 
-      <Accordion id="clockSt" label="Clock" iconmap={IconMap.Clock} index={0}>
+      <Accordion
+        id="clockSt"
+        label={t('Clock')}
+        iconmap={IconMap.Clock}
+        index={0}
+      >
         {/* Clock START */}
         <div className="container-fluid m-0 mt-2 ms-2 mb-4">
           <div className="row">
             <div className="col">
-              <label className="col-form-label">Clock Mode</label>
+              <label className="col-form-label">{t('Clock Mode')}</label>
             </div>
           </div>
           <div className="row">

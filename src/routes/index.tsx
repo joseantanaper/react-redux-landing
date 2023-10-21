@@ -1,10 +1,14 @@
 import { PageLayout } from '@/components/layout/PageLayout'
 import LoremIpsum from 'react-lorem-ipsum'
+import { Subnavbar } from '@/components/navbar/Subnavbar'
 
 const Index = () => {
+  const title = 'Index'
+  const subtitle = 'This is the Index Subtitle'
   return (
-    <PageLayout title="Index">
+    <PageLayout title={title} subtitle={subtitle}>
       <>
+        <Subnavbar title={title} subtitle={subtitle} />
         <div className="container-fluid">
           <div className="row">
             <div className="col text-justify">

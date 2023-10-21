@@ -18,7 +18,7 @@ const renderNavLink = (
     <NavLink
       key={index}
       className={`list-group-item list-group-item-action ${
-        parentIndex > 0 ? 'ps-5' : ''
+        parentIndex > 0 ? 'ps-4' : ''
       }`}
       aria-current="page"
       to={routeLink.url}
@@ -52,7 +52,7 @@ const renderRouteLink = (
       >
         <div
           key={parentIndex}
-          className="list-group list-group-flush ps-1 mt-1 mb-3"
+          className="list-group list-group-flush mt-1 mb-3"
           // If closing offcanvas when click is needed
           // data-bs-dismiss="offcanvas"
         >

@@ -1,10 +1,4 @@
-import {
-  configureStore,
-  ThunkAction,
-  Action,
-  applyMiddleware,
-  getDefaultMiddleware,
-} from '@reduxjs/toolkit'
+import { configureStore, ThunkAction, Action } from '@reduxjs/toolkit'
 import { logger } from '@app/middleware'
 
 import todosReducer from '@app/reducer/todos.slice'

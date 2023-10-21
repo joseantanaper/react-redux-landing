@@ -3,6 +3,9 @@ import { Icon } from '@components/widgets/Icon'
 import { useAppSelector, useAppDispatch } from '@app/hooks'
 import { RootState } from '@app/store'
 import { Avatar, AvatarSize } from '@components/Avatar'
+
+import { Trans } from 'react-i18next'
+
 import {
   setUsername,
   selectUsername,
@@ -45,10 +48,12 @@ export const Login = ({ id }: Props) => {
           <div className="col">
             {currentUsername ? (
               <span>
-                Welcome, <strong>{currentUsername}</strong>!
+                <Trans>Welcome</Trans>, <strong>{currentUsername}</strong>!
               </span>
             ) : (
-              <span>Please, Sign In</span>
+              <span>
+                <Trans>Please, Sign In</Trans>
+              </span>
             )}
           </div>
         </div>
@@ -73,7 +78,9 @@ export const Login = ({ id }: Props) => {
                   onClick={() => dispatch(setUsername(username))}
                 >
                   <Icon id="bi-box-arrow-in-right" />
-                  <span className="ms-1">Sign In</span>
+                  <span className="ms-1">
+                    <Trans>Sign In</Trans>
+                  </span>
                 </button>
               </div>
             ) : (
@@ -83,7 +90,9 @@ export const Login = ({ id }: Props) => {
                 onClick={clearUsername}
               >
                 <Icon id="bi-box-arrow-left" />
-                <span className="ms-1">Sign Out</span>
+                <span className="ms-1">
+                  <Trans>Sign Out</Trans>
+                </span>
               </button>
             )}
           </div>

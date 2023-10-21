@@ -122,6 +122,8 @@ Add aliases to **tsconfig.json**
 npm install react-lorem-ipsum
 ```
 
+npm install react-i18next i18next --save
+
 ---
 
 ---
