@@ -28,7 +28,7 @@ export const Login = ({ id }: Props) => {
 
   return (
     <>
-      <div className="container-fluid text-center">
+      <div className="container-fluid text-center mt-5">
         {/* Avatar */}
         <div className="row">
           <div className="col">

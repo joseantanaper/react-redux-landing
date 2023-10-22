@@ -44,7 +44,9 @@ export const Title = ({ title, subtitle, type = 0 }: Props) => {
         }`}
       >
         <span className="">{title}</span>
-        <span className="opacity-50 ms-3 fst-italic fw-light">{subtitle}</span>
+        <span className="opacity-50 d-none d-sm-block ms-3 fst-italic fw-light">
+          {subtitle}
+        </span>
       </div>
     </NavLink>
   )

@@ -10,7 +10,6 @@ interface Props extends MenuProps {
 export const MenuStart = ({ id, title, routeLinks }: Props) => {
   return (
     <Menu id={id} title={title} position={MenuPosition.Start}>
-      <div className="m-5"></div>
       <NavRouteLinkList routeLinks={routeLinks} parentIndex={0} />
     </Menu>
   )

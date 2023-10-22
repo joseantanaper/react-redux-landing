@@ -1,53 +1,57 @@
 import { PageLayout } from '@/components/layout/PageLayout'
 import LoremIpsum from 'react-lorem-ipsum'
 import { Subnavbar } from '@/components/navbar/Subnavbar'
+import { Avatar } from 'react-lorem-ipsum'
 
 const Index = () => {
   const dummy = () => {
     alert('dummy')
   }
   const toolbar = (
-    <ul className="navbar-nav border-start ps-3">
-      <li className="nav-item">
-        <hr className="text-body-tertiary" />
-      </li>
+    <>
+      <div className="vr d-none d-lg-block"></div>
+      <hr className="text-body-tertiary d-lg-none" />
+      <ul className="navbar-nav ps-3">
+        <li className="nav-item"></li>
 
-      <li className="nav-item">
-        <a className="btn" href="/">
-          AAAAA
-        </a>
-      </li>
-      <li className="nav-item">
-        <button className="btn" onClick={dummy}>
-          AHA
-        </button>
-      </li>
-      <li className="nav-item">
-        <a className="btn" href="/">
-          AAAAA
-        </a>
-      </li>
-      <li className="nav-item">
-        <a className="btn" href="/">
-          AAAAA
-        </a>
-      </li>
-      <li className="nav-item">
-        <a className="btn" href="/">
-          AAAAA
-        </a>
-      </li>
+        <li className="nav-item">
+          <a className="btn" href="/">
+            AAAAA
+          </a>
+        </li>
+        <li className="nav-item">
+          <button className="btn" onClick={dummy}>
+            AHA
+          </button>
+        </li>
+        <li className="nav-item">
+          <a className="btn" href="/">
+            AAAAA
+          </a>
+        </li>
+        <li className="nav-item">
+          <a className="btn" href="/">
+            AAAAA
+          </a>
+        </li>
+        <li className="nav-item">
+          <a className="btn" href="/">
+            AAAAA
+          </a>
+        </li>
 
-      <li className="nav-item">
-        <br />
-      </li>
-    </ul>
+        <li className="nav-item">
+          <br />
+        </li>
+      </ul>
+    </>
   )
 
   return (
     <PageLayout
       title="Index"
-      subtitle="This is Index Subtitle"
+      subtitle="This is the super long Index Subtitle for testing purposes"
+      subnavbar={true}
       toolbar={toolbar}
     >
       <>
@@ -62,7 +66,31 @@ const Index = () => {
         <div className="container-fluid">
           <div className="row">
             <div className="col text-justify">
-              <LoremIpsum p={10} />
+              <LoremIpsum p={1} />
+            </div>
+          </div>
+        </div>
+        <div className="container-fluid">
+          <div className="row">
+            {[0, 1, 2, 3, 4].map((user) => {
+              return (
+                <div className="col">
+                  <Avatar
+                    gender="male"
+                    className="avatar rounded-circle app-profile"
+                    width="200"
+                    height="200"
+                    alt="Avatar"
+                  />
+                </div>
+              )
+            })}
+          </div>
+        </div>
+        <div className="container-fluid">
+          <div className="row">
+            <div className="col text-justify">
+              <LoremIpsum p={20} />
             </div>
           </div>
         </div>
