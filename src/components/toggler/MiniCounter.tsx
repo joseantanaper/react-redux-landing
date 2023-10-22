@@ -29,26 +29,24 @@ export const MiniCounter = () => {
   }
 
   return (
-    <div className=" d-none d-lg-block">
-      <div className="btn-group">
-        <button
-          name="app-minicounter-decrement"
-          className="btn btn-outline-secondary"
-          type="button"
-          onClick={() => dispatch(decrement())}
-        >
-          -
-        </button>
-        <span className="input-group-text">{count}</span>
-        <button
-          name="app-minicounter-decrement"
-          className="btn btn-outline-secondary"
-          type="button"
-          onClick={() => dispatch(increment())}
-        >
-          +
-        </button>{' '}
-      </div>
+    <div className="btn-group" role="group">
+      <button
+        name="app-minicounter-decrement"
+        className="btn btn-outline-secondary"
+        type="button"
+        onClick={() => dispatch(decrement())}
+      >
+        -
+      </button>
+      <label className="btn">{count}</label>
+      <button
+        name="app-minicounter-decrement"
+        className="btn btn-outline-secondary"
+        type="button"
+        onClick={() => dispatch(increment())}
+      >
+        +
+      </button>{' '}
     </div>
   )
 }

@@ -9,9 +9,6 @@
 @import '@bootstrap-icons';
 @import '@bootstrap-scss';
 
-// Custom
-@import 'bootstrap-light.scss';
-@import 'bootstrap-dark.scss';
 
 * {
   box-sizing: border-box;
@@ -42,38 +39,9 @@ div#root {
 }
 
 
-// html:not([data-bs-theme="dark"]) {
-//   button.navbar-toggler,
-//   .btn,
-//   .nav-link,
-//   .navbar-brand {
-//     transition: 250ms;
-//     opacity: 0.9;
-//     svg {
-//       transition: 250ms;
-//     }
-//   }
-//   button.navbar-toggler:hover,
-//   .btn:hover,
-//   .nav-link:hover {
-//     transition: 150ms;
-//     opacity: 1;
-//     // text-shadow: 0 0 2px slateblue;
-//     // background-color: rgba(106 90 205 / 0.2); // Slateblue
-//     svg {
-//       transition: 150ms;
-//       // filter: drop-shadow(0 0 1px slateblue);
-//     }
-//   }
-// }
-
 div.vr {
   opacity: 0.1;
 }
-
-// .btn:active {
-//   border-color: blue !important;
-// }
 
 .offcanvas-backdrop.show {
   // opacity: 1;
@@ -91,7 +59,9 @@ div.vr {
 }
 
 .navbar-toggler {
-  min-height: 46px;
+
+  min-height: 47px;
+  min-width: 60px;
 
   svg {
     // margin: 0px !important;
@@ -117,8 +87,6 @@ div.vr {
 }
 
 .navbar-brand {
-  background: blue;
-
   align-items: center;
   text-shadow: 0 1px 1px rgba(0 0 0 / 0.4);
 }
@@ -225,7 +193,8 @@ img.app-profile {
 //   flex-direction: row;
 // }
 
-.app-main-navbar {
+.app-main-navbar,
+.offcanvas-header {
   min-height: 56px;
 }
 
@@ -235,17 +204,17 @@ img.app-profile {
   z-index: 1;
   // opacity: 0.4;
   // background: rgba(var(--bs-tertiary-bg-rgb) / 0.999) !important;
-  background: rgba(var(--bs-body-bg-rgb) / 0.9999) !important;
-  backdrop-filter: blur(12px) !important;
+  background: rgba(var(--bs-body-bg-rgb) / 0.9) !important;
+  backdrop-filter: blur(14px) !important;
   // padding-left: 60px;
-  // transition: 0.15s;
+  transition: 0.15s;
 }
 
 .app-main-subnavbar:hover {
-  // transition: 0.15s;
-
-  // background: var(--bs-tertiary-bg) !important;
+  transition: 0.15s;
   background: var(--bs-body-bg) !important;
+  // background: var(--bs-tertiary-bg) !important;
+  // background: var(--bs-secondary-bg) !important;
 }
 
 div.app-show-on-scroll {

@@ -3,12 +3,54 @@ import LoremIpsum from 'react-lorem-ipsum'
 import { Subnavbar } from '@/components/navbar/Subnavbar'
 
 const Index = () => {
-  const title = 'Index'
-  const subtitle = 'This is the Index Subtitle'
+  const dummy = () => {
+    alert('dummy')
+  }
+  const toolbar = (
+    <ul className="navbar-nav border-start ps-3">
+      <li className="nav-item">
+        <hr className="text-body-tertiary" />
+      </li>
+
+      <li className="nav-item">
+        <a className="btn" href="/">
+          AAAAA
+        </a>
+      </li>
+      <li className="nav-item">
+        <button className="btn" onClick={dummy}>
+          AHA
+        </button>
+      </li>
+      <li className="nav-item">
+        <a className="btn" href="/">
+          AAAAA
+        </a>
+      </li>
+      <li className="nav-item">
+        <a className="btn" href="/">
+          AAAAA
+        </a>
+      </li>
+      <li className="nav-item">
+        <a className="btn" href="/">
+          AAAAA
+        </a>
+      </li>
+
+      <li className="nav-item">
+        <br />
+      </li>
+    </ul>
+  )
+
   return (
-    <PageLayout title={title} subtitle={subtitle}>
+    <PageLayout
+      title="Index"
+      subtitle="This is Index Subtitle"
+      toolbar={toolbar}
+    >
       <>
-        <Subnavbar title={title} subtitle={subtitle} />
         <div className="container-fluid">
           <div className="row">
             <div className="col text-justify">

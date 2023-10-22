@@ -24,7 +24,6 @@ export const Menu = ({ id, title, position, children }: Props) => {
   return (
     <div
       className={`offcanvas ${position} shadow`}
-      tabIndex={-1}
       id={id}
       aria-labelledby={`${id}Label`}
     >

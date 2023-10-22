@@ -1,50 +1,53 @@
-$border-radius: 1px;
-$dropdown-item-padding-y: 0.6rem;
-
-$navbar-toggler-padding-y: 0px;
-$navbar-toggler-margin-y: 0px;
-$navbar-brand-padding-y: 0px;
-
-// $navbar-toggler-padding-y: 0rem;
-// $navbar-toggler-padding-x: 0rem;
-$navbar-padding-y: 3px;
-
-$navbar-brand-margin-y: 0px;
-
-// $enable-rounded: false;
-$navbar-nav-link-padding-x: 0.5rem;
-$navbar-brand-margin-end: 1rem;
-
-$offcanvas-padding-y: 3px;
-$offcanvas-horizontal-width: 400px;
-
-// $offcanvas-transition-duration: 0.2s;
-
-$btn-focus-width: 2px;
-
-// :root {
-//   --bs-tertiary-bg: blue !important;
-// }
-// $component-hover-bg: blue;
-// $component-active-bg: red;
-
-// $list-group-hover-bg: var(--bs-tertiary-bg);
-// $list-group-active-color: $component-active-color;
-// $list-group-active-bg: $component-active-bg;
-
 :root {
-  --app-light-border-color: slateblue;
-  --app-dark-border-color: white;
-}
+  // --app-light-border-color: slateblue;
+  // --app-dark-border-color: white;
 
-$btn-border-width: 2px;
+
+
+}
 
 $app-btn-active-border-color: rgba(0 0 0 / 0.1) !important;
 
 $app-btn-hover-glow: 0 0 2px white;
 $app-btn-active-glow: 0 0 1px white;
 
-// $modal-backdrop-bg: rgba(15, 23, 42, 0.5);
+$border-radius: 1px; // // $enable-rounded: false;
+$dropdown-item-padding-y: 0.6rem;
+
+$navbar-toggler-padding-y: 0px;
+$navbar-toggler-padding-x: 2px;
+$navbar-toggler-margin-y: 0px;
+$navbar-brand-padding-y: 0px;
+
+$navbar-padding-y: 0px;
+$navbar-toggler-padding-y: 0px;
+$navbar-brand-margin-y: 0px;
+
+$navbar-nav-link-padding-x: 0.5rem;
+$navbar-brand-margin-end: 1rem;
+
+$offcanvas-padding-y: 3px;
+$offcanvas-horizontal-width: 400px;
+
+// // $offcanvas-transition-duration: 0.2s;
+
+$btn-focus-width: 2px;
+
+// // :root {
+// //   --bs-tertiary-bg: blue !important;
+// // }
+// // $component-hover-bg: blue;
+// // $component-active-bg: red;
+
+// // $list-group-hover-bg: var(--bs-tertiary-bg);
+// // $list-group-active-color: $component-active-color;
+// // $list-group-active-bg: $component-active-bg;
+
+
+
+// $btn-border-width: 2px;
+
+// // $modal-backdrop-bg: rgba(15, 23, 42, 0.5);
 $modal-backdrop-bg: rgba(0 0 0 / 0.4);
 $modal-backdrop-opacity: 1;
 

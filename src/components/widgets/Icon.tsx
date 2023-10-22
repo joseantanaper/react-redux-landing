@@ -1,6 +1,7 @@
 interface Props {
   id?: string
   iconmap?: IconMap
+  size?: number
   extra?: string
   style?: object
 }
@@ -27,7 +28,13 @@ export const enum IconMap {
   More = 'bi-dots-vertical',
 }
 
-export const Icon = ({ id, iconmap, style = {}, extra = '' }: Props) => {
+export const Icon = ({
+  id,
+  iconmap,
+  size = 16,
+  style = {},
+  extra = '',
+}: Props) => {
   let idd = iconmap ?? id
 
   const renderIcon = () => {
@@ -248,8 +255,8 @@ export const Icon = ({ id, iconmap, style = {}, extra = '' }: Props) => {
   return (
     <svg
       fill="currentColor"
-      width="16"
-      height="16"
+      width={size}
+      height={size}
       name={idd}
       className={`bi ${idd} ${extra}`}
       style={style}

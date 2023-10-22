@@ -37,8 +37,10 @@ export const Navbar = ({ title, subtitle }: Props) => {
   const currentLocale = useAppSelector(selectLocale)
   const currentClockMode = useAppSelector(selectClockMode)
 
+  const dividerClass = 'border-start ps-3 me-3'
+
   return (
-    <nav className="navbar app-main-navbar bg-body-tertiary border-bottom fixed-top text-truncate">
+    <nav className="navbar app-main-navbar bg-body-tertiary border-bottom shadow-sm fixed-top text-truncate">
       <div className="container-fluid flex-nowrap">
         {/* Navigation Left Toggler */}
 
@@ -48,35 +50,42 @@ export const Navbar = ({ title, subtitle }: Props) => {
         <Title title={t(title)} subtitle={t(subtitle!)} type={0} />
 
         {/* Menu */}
-        <NavMenu routeLinks={routeLinks as RouteLink[]} />
+        <div className={`d-none d-xxl-block ${dividerClass}`}>
+          <NavMenu routeLinks={routeLinks as RouteLink[]} />
+        </div>
 
         {/* Buttons */}
-        <div className="vr ms-2 me-3 d-none d-lg-block"></div>
-        <LocaleToggler />
+        <div className={`d-none d-lg-block ${dividerClass}`}>
+          <LocaleToggler />
+        </div>
 
-        <div className="vr ms-2 me-3 d-none d-lg-block"></div>
-        <MiniCounter />
+        <div className={`d-none d-md-block ${dividerClass}`}>
+          <MiniCounter />
+        </div>
 
-        <div className="vr ms-3 me-2"></div>
+        <div className={`d-none d-sm-block ${dividerClass}`}>
+          <Clock currentClockMode={currentClockMode} />
+        </div>
+
         {/* Global Toolbar */}
-        <Clock currentClockMode={currentClockMode} />
-        <ThemeToggler currentTheme={currentTheme} />
-        <MenuToggler
-          id="offcanvasMenuTop"
-          bsClass="btn"
-          iconmap={IconMap.MenuTop}
-        />
-        <MenuToggler
-          id="offcanvasMenuBottom"
-          bsClass="btn"
-          iconmap={IconMap.MenuBottom}
-        />
-        <MenuToggler id="offcanvasMenuSettings" extraClass="border-0">
+        <div className="border-start ps-3 me-3">
+          <ThemeToggler currentTheme={currentTheme} />
+          <MenuToggler
+            id="offcanvasMenuTop"
+            bsClass="btn"
+            iconmap={IconMap.MenuTop}
+          />
+          <MenuToggler
+            id="offcanvasMenuBottom"
+            bsClass="btn"
+            iconmap={IconMap.MenuBottom}
+          />
+        </div>
+        <MenuToggler id="offcanvasMenuSettings">
           <Avatar />
         </MenuToggler>
       </div>
 
-      {/* Menu Left */}
       <MenuStart
         id="offcanvasMenuNav"
         title={t('Navigation')}

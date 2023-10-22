@@ -19,7 +19,7 @@ export const Avatar = ({ size = AvatarSize.sm }: Props) => {
   return (
     <img
       src={profile}
-      alt="Profile"
+      alt="Avatar"
       width={sizes.get(size)}
       height={sizes.get(size)}
       className="rounded-circle m-0 p-0 app-profile"

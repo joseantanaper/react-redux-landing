@@ -26,28 +26,26 @@ export const LocaleToggler = () => {
 
   return (
     <>
-      <div className="btn-group float-end d-none d-lg-block">
-        <button
-          type="button"
-          className={`btn text-uppercase  ${
-            currentLocale === Locale.EN ? 'disabled active' : ''
-          }`}
-          onClick={() => clickLocale(Locale.EN)}
-        >
-          <Icon id="bi-translate" extra="me-1" />
-          <span>{Locale.EN}</span>
-        </button>
-        <button
-          type="button"
-          className={`btn text-uppercase ${
-            currentLocale === Locale.ES ? 'disabled active' : ''
-          }`}
-          onClick={() => clickLocale(Locale.ES)}
-        >
-          <Icon id="bi-translate" extra="me-1" />
-          <span>{Locale.ES}</span>
-        </button>
-      </div>
+      <button
+        type="button"
+        className={`btn text-uppercase  ${
+          currentLocale === Locale.EN ? 'disabled active' : ''
+        }`}
+        onClick={() => clickLocale(Locale.EN)}
+      >
+        <Icon id="bi-translate" extra="me-1" />
+        <span>{Locale.EN}</span>
+      </button>
+      <button
+        type="button"
+        className={`btn text-uppercase ${
+          currentLocale === Locale.ES ? 'disabled active' : ''
+        }`}
+        onClick={() => clickLocale(Locale.ES)}
+      >
+        <Icon id="bi-translate" extra="me-1" />
+        <span>{Locale.ES}</span>
+      </button>
     </>
   )
 }
