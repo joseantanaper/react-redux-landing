@@ -4,6 +4,7 @@ interface Props {
   size?: number
   extra?: string
   style?: object
+  onClick?: Function
 }
 
 export const enum IconMap {
@@ -26,6 +27,12 @@ export const enum IconMap {
   Appareance = 'bi-palette-fill',
   Playground = 'bi-dice-5-fill',
   More = 'bi-dots-vertical',
+  Search = 'bi-search',
+  Backspace = 'bi-backspace-fill',
+  TaskPlus = 'bi-plus-square',
+  TaskClear = 'bi-x-circle',
+  TaskRemove = 'bi-x-square',
+  GoTop = 'bi-arrow-up-square',
 }
 
 export const Icon = ({
@@ -34,11 +41,48 @@ export const Icon = ({
   size = 16,
   style = {},
   extra = '',
+  onClick,
 }: Props) => {
   let idd = iconmap ?? id
 
   const renderIcon = () => {
     switch (idd) {
+      case 'bi-arrow-up-square':
+        return (
+          <path
+            fill-rule="evenodd"
+            d="M15 2a1 1 0 0 0-1-1H2a1 1 0 0 0-1 1v12a1 1 0 0 0 1 1h12a1 1 0 0 0 1-1V2zM0 2a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v12a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V2zm8.5 9.5a.5.5 0 0 1-1 0V5.707L5.354 7.854a.5.5 0 1 1-.708-.708l3-3a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1-.708.708L8.5 5.707V11.5z"
+          />
+        )
+      case 'bi-x-circle':
+        return (
+          <>
+            <path d="M8 15A7 7 0 1 1 8 1a7 7 0 0 1 0 14zm0 1A8 8 0 1 0 8 0a8 8 0 0 0 0 16z" />
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+          </>
+        )
+      case 'bi-x-square':
+        return (
+          <>
+            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+            <path d="M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z" />
+          </>
+        )
+      case 'bi-plus-square':
+        return (
+          <>
+            <path d="M14 1a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z" />
+            <path d="M8 4a.5.5 0 0 1 .5.5v3h3a.5.5 0 0 1 0 1h-3v3a.5.5 0 0 1-1 0v-3h-3a.5.5 0 0 1 0-1h3v-3A.5.5 0 0 1 8 4z" />
+          </>
+        )
+      case 'bi-backspace-fill':
+        return (
+          <path d="M15.683 3a2 2 0 0 0-2-2h-7.08a2 2 0 0 0-1.519.698L.241 7.35a1 1 0 0 0 0 1.302l4.843 5.65A2 2 0 0 0 6.603 15h7.08a2 2 0 0 0 2-2V3zM5.829 5.854a.5.5 0 1 1 .707-.708l2.147 2.147 2.146-2.147a.5.5 0 1 1 .707.708L9.39 8l2.146 2.146a.5.5 0 0 1-.707.708L8.683 8.707l-2.147 2.147a.5.5 0 0 1-.707-.708L7.976 8 5.829 5.854z" />
+        )
+      case 'bi-search':
+        return (
+          <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
+        )
       case 'bi-dots-vertical':
         return (
           <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
@@ -258,9 +302,10 @@ export const Icon = ({
       width={size}
       height={size}
       name={idd}
-      className={`bi ${idd} ${extra}`}
+      className={`bi ${idd} ${extra} ${onClick ? 'app-icon-btn' : ''}`}
       style={style}
       viewBox="0 0 16 16"
+      onClick={() => onClick && onClick()}
     >
       {renderIcon()}
     </svg>

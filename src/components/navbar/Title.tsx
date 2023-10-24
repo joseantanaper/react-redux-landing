@@ -10,41 +10,23 @@ interface Props {
 export const Title = ({ title, subtitle, type = 0 }: Props) => {
   useEffect(() => {
     console.log(title, type)
-
-    const showTitle = () => {
-      if (window.scrollY > 100) {
-        document.querySelectorAll('div.app-show-on-scroll').forEach((span) => {
-          span.classList.remove('hide', 'ms-5')
-          span.classList.add('show', 'ms-0')
-        })
-      } else {
-        document.querySelectorAll('div.app-show-on-scroll').forEach((span) => {
-          span.classList.remove('show', 'ms-0')
-          span.classList.add('hide', 'ms-5')
-        })
-      }
-    }
-
-    window.addEventListener('scroll', function () {
-      showTitle()
-    })
-
-    showTitle()
   }, [])
 
   return (
-    <NavLink
-      className={`navbar-brand ${type === 0 ? 'ms-3' : ''} text-truncate`}
-      to="/"
-      style={{ width: '100%' }}
-    >
+    // <NavLink
+    //   className={`navbar-brand ${
+    //     type === 0 ? 'ms-3' : ''
+    //   } w-100 text-truncate text-nowrap`}
+    //   to="/"
+    // >
+    <NavLink className="navbar-brand w-100 text-truncate" to="/">
       <div
-        className={`d-flex d-inline ${
-          type === 1 ? 'app-show-on-scroll hide fade' : ''
+        className={`text-truncate text-nowrap d-flex ${
+          type === 1 ? 'app-show-on-scroll hide fade ps-3' : ''
         }`}
       >
         <span className="">{title}</span>
-        <span className="opacity-50 d-none d-sm-block ms-3 fst-italic fw-light">
+        <span className="w-100 text-truncate opacity-50 ms-3 fst-italic fw-light justify-content-start">
           {subtitle}
         </span>
       </div>

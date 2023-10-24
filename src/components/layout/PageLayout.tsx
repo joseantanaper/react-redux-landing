@@ -19,7 +19,43 @@ export const PageLayout = ({
 }: Props) => {
   useEffect(() => {
     console.log('PageLayout', 'useEffect')
+
+    const showTitle = () => {
+      if (window.scrollY > 100) {
+        document.querySelectorAll('div.app-show-on-scroll').forEach((span) => {
+          span.classList.remove('hide')
+          span.classList.add('show')
+        })
+        document.querySelectorAll('button.app-go-top').forEach((button) => {
+          // button.classList.replace('hide', 'show')
+          button.classList.add('show')
+
+          button.removeAttribute('disabled')
+        })
+      } else {
+        document.querySelectorAll('div.app-show-on-scroll').forEach((span) => {
+          span.classList.remove('show')
+          span.classList.add('hide')
+        })
+        document.querySelectorAll('button.app-go-top').forEach((button) => {
+          // button.classList.replace('show', 'hide')
+          button.classList.remove('show')
+          button.setAttribute('disabled', 'disabled')
+        })
+      }
+    }
+
+    window.addEventListener('scroll', function () {
+      showTitle()
+    })
+
+    showTitle()
   }, [])
+
+  const goTop = () => {
+    document.body.scrollTop = 0
+    document.documentElement.scrollTop = 0
+  }
 
   return (
     <>
@@ -47,6 +83,13 @@ export const PageLayout = ({
       >
         {children}
       </div>
+      <button
+        type="button"
+        className="app-go-top navbar-toggler fade"
+        onClick={goTop}
+      >
+        <Icon id={IconMap.GoTop} />
+      </button>
     </>
   )
 }

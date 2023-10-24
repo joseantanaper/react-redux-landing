@@ -1,0 +1,16 @@
+@import 'variables-app.scss';
+
+.navbar-toggler {
+  justify-content: center;
+  align-items: center;
+  min-width: $app-navbar-toggler-width;
+  width: $app-navbar-toggler-width;
+  min-height: $app-navbar-toggler-height;
+  height: $app-navbar-toggler-height;
+}
+
+.offcanvas-header {
+  min-height: $app-navbar-height;
+  height: $app-navbar-height;
+  max-height: $app-navbar-height;
+}

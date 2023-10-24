@@ -35,6 +35,12 @@ export const routeLinks = [
         label: 'Todo List',
         iconmap: IconMap.Todo,
       },
+      {
+        id: 'counter',
+        url: '/miniapps/counter',
+        label: 'Counter+',
+        iconmap: IconMap.Todo,
+      },
     ],
   },
 ]

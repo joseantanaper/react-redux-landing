@@ -33,7 +33,7 @@ export const LocaleToggler = () => {
         }`}
         onClick={() => clickLocale(Locale.EN)}
       >
-        <Icon id="bi-translate" extra="me-1" />
+        <Icon id="bi-translate" />
         <span>{Locale.EN}</span>
       </button>
       <button
@@ -43,7 +43,7 @@ export const LocaleToggler = () => {
         }`}
         onClick={() => clickLocale(Locale.ES)}
       >
-        <Icon id="bi-translate" extra="me-1" />
+        <Icon id="bi-translate" />
         <span>{Locale.ES}</span>
       </button>
     </>

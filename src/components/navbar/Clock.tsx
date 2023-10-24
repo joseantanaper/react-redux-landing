@@ -53,7 +53,7 @@ export const Clock = ({ currentClockMode }: Props) => {
         type="button"
         onClick={handleClick}
       >
-        <Icon id="bi-clock" extra="me-1 app-rotate" style={{ opacity: 0.4 }} />
+        <Icon id="bi-clock" extra="app-rotate" style={{ opacity: 0.4 }} />
         <span>{time.substring(0, time.indexOf(':'))}</span>
         <span className="opacity-50">:</span>
         <span>

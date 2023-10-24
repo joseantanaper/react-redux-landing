@@ -3,7 +3,7 @@ import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
 
 import { store } from '@app/store'
-import '@style/bootstrap-custom.scss'
+import '@style/bootstrap.scss'
 import '@bootstrap-js'
 import Root from '@routes/root'
 import Error from '@routes/error'

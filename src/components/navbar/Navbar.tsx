@@ -40,60 +40,65 @@ export const Navbar = ({ title, subtitle }: Props) => {
   const dividerClass = 'border-start ps-3 me-3'
 
   return (
-    <nav className="navbar app-main-navbar bg-body-tertiary border-bottom shadow-sm fixed-top text-truncate">
-      <div className="container-fluid flex-nowrap">
-        {/* Navigation Left Toggler */}
+    <>
+      <nav className="app-main-navbar-crystal navbar border-bottom shadow-sm fixed-top text-truncate">
+        {/* Navbar Begin */}
+        <div className="container-fluid flex-nowrap">
+          <MenuToggler id="offcanvasMenuNav" iconmap={IconMap.MenuStart} />
 
-        <MenuToggler id="offcanvasMenuNav" iconmap={IconMap.MenuStart} />
+          {/* Title */}
+          <Title title={t(title)} subtitle={t(subtitle!)} type={0} />
 
-        {/* Title */}
-        <Title title={t(title)} subtitle={t(subtitle!)} type={0} />
+          {/* Menu */}
+          <div className={`d-none d-xxl-block ${dividerClass}`}>
+            <NavMenu routeLinks={routeLinks as RouteLink[]} />
+          </div>
 
-        {/* Menu */}
-        <div className={`d-none d-xxl-block ${dividerClass}`}>
-          <NavMenu routeLinks={routeLinks as RouteLink[]} />
+          {/* Buttons */}
+          <div className={`d-none d-lg-block ${dividerClass}`}>
+            <LocaleToggler />
+          </div>
+
+          {/* Mini Counter */}
+          <div className={`d-none d-md-block ${dividerClass}`}>
+            <MiniCounter />
+          </div>
+
+          {/* Clock */}
+          <div className={`d-none d-sm-block ${dividerClass}`}>
+            <Clock currentClockMode={currentClockMode} />
+          </div>
+
+          {/* Global Toolbar */}
+          <div className="border-start ps-3 me-3">
+            <ThemeToggler currentTheme={currentTheme} />
+            <MenuToggler
+              id="offcanvasMenuTop"
+              bsClass="btn"
+              iconmap={IconMap.MenuTop}
+            />
+            <MenuToggler
+              id="offcanvasMenuBottom"
+              bsClass="btn"
+              iconmap={IconMap.MenuBottom}
+            />
+          </div>
+
+          <MenuToggler id="offcanvasMenuSettings" extraClass="py-0 px-1">
+            <Avatar />
+          </MenuToggler>
+          {/* Navbar End */}
         </div>
 
-        {/* Buttons */}
-        <div className={`d-none d-lg-block ${dividerClass}`}>
-          <LocaleToggler />
-        </div>
-
-        <div className={`d-none d-md-block ${dividerClass}`}>
-          <MiniCounter />
-        </div>
-
-        <div className={`d-none d-sm-block ${dividerClass}`}>
-          <Clock currentClockMode={currentClockMode} />
-        </div>
-
-        {/* Global Toolbar */}
-        <div className="border-start ps-3 me-3">
-          <ThemeToggler currentTheme={currentTheme} />
-          <MenuToggler
-            id="offcanvasMenuTop"
-            bsClass="btn"
-            iconmap={IconMap.MenuTop}
-          />
-          <MenuToggler
-            id="offcanvasMenuBottom"
-            bsClass="btn"
-            iconmap={IconMap.MenuBottom}
-          />
-        </div>
-        <MenuToggler id="offcanvasMenuSettings">
-          <Avatar />
-        </MenuToggler>
-      </div>
-
-      <MenuStart
-        id="offcanvasMenuNav"
-        title={t('Navigation')}
-        routeLinks={routeLinks as RouteLink[]}
-      />
-      <MenuEnd id="offcanvasMenuSettings" title={t('Settings')} />
-      <MenuTop id="offcanvasMenuTop" title={t('Menu Top')} />
-      <MenuBottom id="offcanvasMenuBottom" title={t('Menu Bottom')} />
-    </nav>
+        <MenuStart
+          id="offcanvasMenuNav"
+          title={t('Navigation')}
+          routeLinks={routeLinks as RouteLink[]}
+        />
+        <MenuEnd id="offcanvasMenuSettings" title={t('Settings')} />
+        <MenuTop id="offcanvasMenuTop" title={t('Menu Top')} />
+        <MenuBottom id="offcanvasMenuBottom" title={t('Menu Bottom')} />
+      </nav>
+    </>
   )
 }

@@ -66,12 +66,7 @@ export const Menu = ({ id, title, position, children }: Props) => {
         )}
       </div>
 
-      <div
-        className="offcanvas-body text-wrap ps-1 pe-1 pt-2 pb-5"
-        style={{
-          scrollbarWidth: 'thin',
-        }}
-      >
+      <div className="offcanvas-body text-wrap ps-1 pe-1 pt-2 pb-5">
         {children}
       </div>
     </div>

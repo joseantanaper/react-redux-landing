@@ -11,7 +11,7 @@ export const enum AvatarSize {
 }
 
 const sizes: Map<AvatarSize, number> = new Map()
-sizes.set(AvatarSize.sm, 40)
+sizes.set(AvatarSize.sm, 36)
 sizes.set(AvatarSize.md, 100)
 sizes.set(AvatarSize.lg, 180)
 

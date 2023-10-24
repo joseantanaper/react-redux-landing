@@ -1,0 +1,94 @@
+@import 'variables-bootstrap.scss';
+@import 'variables-app.scss';
+
+.app-main-navbar {
+  background: var(--bs-tertiary-bg) !important;
+}
+
+.app-main-subnavbar {
+  background: var(--bs-body-bg) !important;
+}
+
+.app-main-navbar,
+.app-main-navbar-crystal {
+
+  .navbar-toggler:first-child {
+    margin-right: 12px;
+  }
+
+  .navbar-toggler:last-child {
+    // margin-left: 16px;
+  }
+
+}
+
+.app-main-navbar,
+.app-main-navbar-crystal,
+.app-main-subnavbar,
+.app-main-subnavbar-crystal {
+  padding: 0px;
+
+  div.collapse {
+    // height: $app-navbar-height;
+  }
+
+  div.container-fluid {
+    height: $app-navbar-height;
+
+    a.navbar-brand {
+      // Avoid title to move up on navbar-toggler
+      display: flex;
+      min-height: $app-navbar-height;
+      align-items: center;
+    }
+  }
+
+  div.collapse {}
+}
+
+.app-main-navbar-crystal {
+  background: rgba(var(--bs-tertiary-bg-rgb), $app-navbar-crystal-opacity);
+
+  div.container-fluid:first-child {
+    backdrop-filter: blur(8px);
+  }
+}
+
+.app-main-subnavbar-crystal {
+  background: rgba(var(--bs-body-bg-rgb), $app-subnavbar-crystal-opacity) !important;
+
+
+  div.container-fluid {
+    min-height: $app-navbar-height;
+    background: rgba(var(--bs-body-bg-rgb), $app-subnavbar-crystal-opacity) !important;
+    backdrop-filter: blur(8px);
+  }
+
+  div.collapse,
+  div.collapsing {
+    min-height: $app-navbar-height;
+    background: rgba(var(--bs-body-bg-rgb), $app-subnavbar-crystal-opacity) !important;
+    backdrop-filter: blur(8px);
+  }
+
+}
+
+.app-main-subnavbar,
+.app-main-subnavbar-crystal {
+  top: $app-navbar-height - 1px;
+  height: $app-navbar-height + 1px;
+
+  .navbar-toggler {
+    position: absolute !important;
+    right: 16px;
+    top: 8px;
+  }
+
+  // padding-left: 60px;
+  // transition: 0.15s;
+
+  // height: 60px;
+  // z-index: 1;
+  // background: orange !important;
+
+}
