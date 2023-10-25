@@ -10,48 +10,45 @@ const Index = () => {
 
   const toolbar = (
     <>
-      <div className="vr d-none d-lg-block"></div>
-      <hr className="text-body-tertiary d-lg-none" />
-      <ul className="navbar-nav ps-3">
-        <li className="nav-item"></li>
+      {/* <div className="vr d-none d-lg-block"></div> */}
+      {/* <hr className="text-body-tertiary d-lg-none" /> */}
 
-        <li className="nav-item">
-          <a className="btn" href="/">
-            AAAAA
-          </a>
-        </li>
-        <li className="nav-item">
-          <button className="btn" onClick={dummy}>
-            AHA
-          </button>
-        </li>
-        <li className="nav-item">
-          <a className="btn" href="/">
-            AAAAA
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="btn" href="/">
-            AAAAA
-          </a>
-        </li>
-        <li className="nav-item">
-          <a className="btn" href="/">
-            AAAAA
-          </a>
-        </li>
+      <li className="nav-item">
+        <a className="btn" href="/">
+          AAAAA
+        </a>
+      </li>
+      <li className="nav-item">
+        <button className="btn" onClick={dummy}>
+          AHA
+        </button>
+      </li>
+      <li className="nav-item">
+        <a className="btn" href="/">
+          AAAAA
+        </a>
+      </li>
+      <li className="nav-item">
+        <a className="btn" href="/">
+          AAAAA
+        </a>
+      </li>
+      <li className="nav-item">
+        <a className="btn" href="/">
+          AAAAA
+        </a>
+      </li>
 
-        <li className="nav-item">
-          <br />
-        </li>
-      </ul>
+      <li className="nav-item">
+        <br />
+      </li>
     </>
   )
 
   return (
     <PageLayout
       title="Index"
-      subtitle="This is the super long Index Subtitle for testing purposes"
+      subtitle="This is a very long subtitle for testing purposes"
       subnavbar={true}
       toolbar={toolbar}
     >

@@ -53,85 +53,77 @@ const Todo = () => {
 
   const toolbar = (
     <>
-      <div className="vr d-none d-md-block"></div>
-      <hr className="text-body-tertiary d-md-none" />
-      <ul className="navbar-nav ps-3">
-        <li className="nav-item"></li>
-        <li className="nav-item">
-          <div className="btn-group">
-            <input
-              className="form-control"
-              type="text"
-              placeholder="Search tasks..."
-              value={search}
-              style={{
-                paddingRight: '44px',
-                marginRight: '20px',
-                minWidth: '120px',
-              }}
-              onChange={(e) => FilterTodos(e.target.value)}
-            />
-            <Icon
-              id={IconMap.Search}
-              extra="text-primary"
-              style={{
-                position: 'absolute',
-                top: '11px',
-                right: '46px',
-                opacity: 0.4,
-              }}
-            />
-            <Icon
-              id={IconMap.Backspace}
-              extra="text-danger"
-              style={{
-                position: 'absolute',
-                top: '11px',
-                right: '26px',
-                opacity: 0.4,
-              }}
-              onClick={() => {
-                ClearSearch()
-              }}
-            />
-          </div>
-        </li>
-        <li className="nav-item">
-          <div className="btn-group">
-            <input
-              className="form-control"
-              type="text"
-              value={todo}
-              style={{
-                minWidth: '120px',
-              }}
-              onChange={(e) => setTodo(e.target.value)}
-            />
-            <button
-              className="btn btn-outline-primary"
-              disabled={!todo}
-              onClick={() => AddTodo()}
-            >
-              <Icon id={IconMap.TaskPlus} />
-              <span>Add</span>
-            </button>
-          </div>
-        </li>
-        <li className="nav-item d-none d-md-block me-3"></li>
-        <li className="nav-item">
+      <li className="nav-item">
+        <div className="btn-group">
+          <input
+            className="form-control"
+            type="text"
+            placeholder="Search tasks..."
+            value={search}
+            style={{
+              paddingRight: '44px',
+              marginRight: '20px',
+              minWidth: '120px',
+            }}
+            onChange={(e) => FilterTodos(e.target.value)}
+          />
+          <Icon
+            id={IconMap.Search}
+            extra="text-primary"
+            style={{
+              position: 'absolute',
+              top: '11px',
+              right: '46px',
+              opacity: 0.4,
+            }}
+          />
+          <Icon
+            id={IconMap.Backspace}
+            extra="text-danger"
+            style={{
+              position: 'absolute',
+              top: '11px',
+              right: '26px',
+              opacity: 0.4,
+            }}
+            onClick={() => {
+              ClearSearch()
+            }}
+          />
+        </div>
+      </li>
+      <li className="nav-item">
+        <div className="btn-group">
+          <input
+            className="form-control"
+            type="text"
+            value={todo}
+            style={{
+              minWidth: '120px',
+            }}
+            onChange={(e) => setTodo(e.target.value)}
+          />
           <button
-            className="btn btn-outline-danger text-nowrap"
-            onClick={() => ClearAll()}
+            className="btn btn-outline-primary"
+            disabled={!todo}
+            onClick={() => AddTodo()}
           >
-            <Icon id={IconMap.TaskClear} />
-            <span>Clear All</span>
+            <Icon id={IconMap.TaskPlus} />
+            <span>Add</span>
           </button>
-        </li>
+        </div>
+      </li>
+      <li className="nav-item d-none d-md-block me-3"></li>
+      <li className="nav-item">
+        <button className="btn btn-outline-danger" onClick={() => ClearAll()}>
+          <Icon id={IconMap.TaskClear} />
+          <span>Clear All</span>
+        </button>
+      </li>
 
-        <li className="nav-item">
-          <br />
-        </li>
-      </ul>
+      <li className="nav-item">
+        <br />
+      </li>
     </>
   )
 

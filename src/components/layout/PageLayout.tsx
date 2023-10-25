@@ -74,15 +74,7 @@ export const PageLayout = ({
       {subnavbar && (
         <Subnavbar title={title} subtitle={subtitle} toolbar={toolbar} />
       )}
-      <div
-        className="app-content ps-4 pe-3"
-        style={{
-          paddingTop: '60px',
-          paddingBottom: '120px',
-        }}
-      >
-        {children}
-      </div>
+      <div className="app-content ps-4 pe-3">{children}</div>
       <button
         type="button"
         className="app-go-top navbar-toggler fade"

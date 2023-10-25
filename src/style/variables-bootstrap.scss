@@ -9,6 +9,11 @@ $navbar-padding-y: 0px;
 
 $offcanvas-padding-y: 3px;
 $offcanvas-horizontal-width: 400px;
+$modal-backdrop-bg: rgba(0 0 0 / 0.4);
+$modal-backdrop-opacity: 1;
+
+// $btn-focus-width: 2px;
+$navbar-toggler-focus-width: 1px;
 
 // $dropdown-item-padding-y: 0.6rem;
 
@@ -45,8 +50,7 @@ $offcanvas-horizontal-width: 400px;
 // // $btn-border-width: 2px;
 
 // // // $modal-backdrop-bg: rgba(15, 23, 42, 0.5);
-// $modal-backdrop-bg: rgba(0 0 0 / 0.4);
-// $modal-backdrop-opacity: 1;
+
 
 // $accordion-icon-color: rgba(0 0 0 / 0.4) !important;
 // $accordion-icon-active-color: rgba(0 0 0 / 0.4) !important;

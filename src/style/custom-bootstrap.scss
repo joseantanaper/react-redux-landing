@@ -25,8 +25,6 @@
     height: 100%;
   }
 
-
-
 }
 
 .btn,
@@ -34,6 +32,8 @@
 .nav-link,
 .list-group-item,
 .accordion-button {
+  white-space: nowrap;
+
   svg+span {
     margin-left: 3px;
   }
@@ -45,4 +45,13 @@
   svg {
     margin-top: -3px;
   }
+}
+
+
+.offcanvas-backdrop.show {
+  // opacity: 1;
+  // background-color: rgba(15, 23, 42, 0.5);
+  // transition: 1s;
+  // overflow-y: scroll !important;
+  backdrop-filter: blur(6px) !important;
 }

@@ -40,10 +40,10 @@ export const Navbar = ({ title, subtitle }: Props) => {
   const dividerClass = 'border-start ps-3 me-3'
 
   return (
-    <>
+    <header>
       <nav className="app-main-navbar-crystal navbar border-bottom shadow-sm fixed-top text-truncate">
         {/* Navbar Begin */}
-        <div className="container-fluid flex-nowrap">
+        <div className="app-navbar-container container-fluid flex-nowrap">
           <MenuToggler id="offcanvasMenuNav" iconmap={IconMap.MenuStart} />
 
           {/* Title */}
@@ -102,6 +102,6 @@ export const Navbar = ({ title, subtitle }: Props) => {
         <MenuTop id="offcanvasMenuTop" title={t('Menu Top')} />
         <MenuBottom id="offcanvasMenuBottom" title={t('Menu Bottom')} />
       </nav>
-    </>
+    </header>
   )
 }

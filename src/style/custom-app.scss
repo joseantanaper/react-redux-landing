@@ -1,6 +1,22 @@
 @import 'variables-bootstrap.scss';
 @import 'variables-app.scss';
 
+
+// PageLayout
+.app-content {
+  padding-top: 60px;
+  padding-bottom: 120px;
+  text-align: justify;
+}
+
+/* Toolbars
+nav.app-main-navbar/crystal
+div.container-fluid.app-navbar-content
+
+nav.app-main-subnavbar/crystal
+div.container-fluid.app-navbar-content
+*/
+
 .app-main-navbar {
   background: var(--bs-tertiary-bg) !important;
 }
@@ -32,7 +48,7 @@
     // height: $app-navbar-height;
   }
 
-  div.container-fluid {
+  div.container-fluid.app-navbar-container {
     height: $app-navbar-height;
 
     a.navbar-brand {
@@ -43,27 +59,20 @@
     }
   }
 
-  div.collapse {}
 }
 
 .app-main-navbar-crystal {
   background: rgba(var(--bs-tertiary-bg-rgb), $app-navbar-crystal-opacity);
 
-  div.container-fluid:first-child {
+  div.container-fluid.app-navbar-container {
     backdrop-filter: blur(8px);
   }
+
 }
 
 .app-main-subnavbar-crystal {
-  // background: rgba(var(--bs-body-bg-rgb), $app-subnavbar-crystal-opacity) !important;
 
-  // div.container-fluid:first-child {
-  //   min-height: $app-navbar-height;
-  //   background: rgba(var(--bs-body-bg-rgb), $app-subnavbar-crystal-opacity) !important;
-  //   backdrop-filter: blur(8px);
-  // }
-
-  div.container-fluid {
+  div.container-fluid.app-navbar-container {
     background: rgba(var(--bs-body-bg-rgb), $app-subnavbar-crystal-opacity) !important;
     backdrop-filter: blur(8px);
   }
@@ -74,14 +83,31 @@
 
   @include media-breakpoint-down(sm) {
 
+    .navbar-brand {
+      padding-right: $app-navbar-toggler-width + 20px;
+    }
 
     div.navbar-collapse.collapse.show,
     div.collapsing {
-      background: var(--bs-body-bg);
-
-      // This background is not working properly???
+      // background: var(--bs-body-bg);
       // background: rgba(var(--bs-body-bg-rgb), $app-subnavbar-crystal-opacity) !important;
-      // backdrop-filter: blur(8px);
+
+      // background: rgba(var(--bs-body-bg-rgb), $app-subnavbar-crystal-opacity) !important;
+
+
+      box-shadow: $box-shadow;
+      border: 0.8px solid var(--bs-border-color-translucent);
+
+      background: rgba(var(--bs-body-bg-rgb), 0.8) !important;
+
+      ul {
+        text-align: right;
+        border: 0px;
+        // background: rgba(var(--bs-body-bg-rgb), $app-subnavbar-crystal-opacity) !important;
+        // This effect is not working properly???
+        backdrop-filter: blur(8px);
+      }
+
     }
   }
 
@@ -94,15 +120,124 @@
 
   .navbar-toggler {
     position: absolute !important;
-    right: 16px;
-    top: 8px;
+    right: 12px;
+    top: 9px;
   }
 
-  // padding-left: 60px;
-  // transition: 0.15s;
+}
 
-  // height: 60px;
-  // z-index: 1;
-  // background: orange !important;
+// Navbar-Togglers, Buttons and IconButtons
 
+.btn:hover,
+.navbar-toggler:hover {
+  img {
+    filter: brightness(1.4);
+  }
+
+  svg.app-rotate {
+    animation: rotation 2s linear infinite;
+  }
+}
+
+.btn:active,
+.navbar-toggler:active {
+  svg.app-rotate {
+    animation: rotation 1s linear infinite;
+  }
+}
+
+.btn svg,
+.navbar-toggler svg,
+svg.app-icon-btn {
+
+  opacity: $app-icon-opacity;
+
+}
+
+.btn:hover svg,
+.navbar-toggler:hover svg,
+svg.app-icon-btn:hover {
+  // filter: drop-shadow($app-btn-hover-glow) drop-shadow(0 2px 0px rgba(0 0 0 / 0.4));
+  filter: drop-shadow(0 1px 0px rgba(0 0 0 / 0.3));
+  opacity: $app-icon-opacity-hover;
+
+}
+
+.btn:active svg,
+.navbar-toggler:active svg,
+svg.app-icon-btn:active {
+  opacity: $app-icon-opacity-active;
+}
+
+.btn.disabled svg,
+.navbar-toggler.disabled svg,
+svg.app-icon-btn.disabled {
+  opacity: $app-icon-opacity-disabled !important;
+}
+
+// svg.app-icon-btn:hover {
+//   opacity: 1 !important;
+//   filter: drop-shadow($app-btn-hover-glow);
+//   cursor: pointer;
+// }
+
+// svg.app-icon-btn:active {
+//   opacity: 0.8 !important;
+// }
+
+// svg.app-icon-btn:hover {
+//   opacity: 1 !important;
+//   filter: drop-shadow($app-btn-hover-glow);
+//   cursor: pointer;
+// }
+
+// svg.app-icon-btn:active {
+//   opacity: 0.8 !important;
+// }
+
+
+
+
+@keyframes rotation {
+  0% {
+    transform-origin: 50% 50%;
+    transform: rotate(0);
+  }
+
+  100% {
+    transform-origin: 50% 50%;
+    transform: rotate(360deg);
+  }
+}
+
+
+
+
+
+img.app-profile {
+  border: 2px solid white;
+}
+
+button.app-go-top {
+  transition: 0.5s;
+  opacity: $app-icon-opacity;
+  width: 80px;
+  height: 80px;
+  bottom: 50px;
+  right: 50px;
+  position: fixed;
+  padding: 20px;
+  visibility: hidden;
+}
+
+button.app-go-top.show {
+  visibility: visible;
+}
+
+button.app-go-top:hover {
+  opacity: $app-icon-opacity-hover;
+}
+
+button.app-go-top:active {
+  opacity: $app-icon-opacity-active;
 }

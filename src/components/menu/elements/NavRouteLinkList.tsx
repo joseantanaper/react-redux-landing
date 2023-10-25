@@ -52,7 +52,7 @@ const renderRouteLink = (
       >
         <div
           key={parentIndex}
-          className="list-group list-group-flush mt-1 mb-3"
+          className="list-group list-group-flush my-2"
           // If closing offcanvas when click is needed
           // data-bs-dismiss="offcanvas"
         >
@@ -90,13 +90,15 @@ export const NavRouteLinkList = ({ routeLinks, parentIndex }: Props) => {
           </div>
         </div>
       </div>
-      <div className="container-fluid">
+
+      {/* <div className="container-fluid">
         <div className="row">
           <div className="col">
             <hr />
           </div>
         </div>
-      </div>
+      </div> */}
+
       <div className="container-fluid">
         <div
           key={parentIndex}
@@ -112,13 +114,14 @@ export const NavRouteLinkList = ({ routeLinks, parentIndex }: Props) => {
         </div>
       </div>
 
-      <div className="container-fluid">
+      {/* <div className="container-fluid">
         <div className="row">
           <div className="col">
             <hr />
           </div>
         </div>
-      </div>
+      </div> */}
+
       <div className="container-fluid">
         <div className="row">
           <div className="col">
