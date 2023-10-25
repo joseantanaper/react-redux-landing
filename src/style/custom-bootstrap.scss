@@ -1,8 +1,10 @@
 @import 'variables-app.scss';
 
 .navbar-toggler {
-  justify-content: center;
-  align-items: center;
+  // justify-content: center;
+  // align-items: center;
+  // display: flex;
+  // align-items: center;
   min-width: $app-navbar-toggler-width;
   width: $app-navbar-toggler-width;
   min-height: $app-navbar-toggler-height;
@@ -13,4 +15,34 @@
   min-height: $app-navbar-height;
   height: $app-navbar-height;
   max-height: $app-navbar-height;
+}
+
+.navbar-toggler {
+  svg {
+    // margin-top: -3px;
+    // margin: -1px 0px 0px -3px;
+    width: 100%;
+    height: 100%;
+  }
+
+
+
+}
+
+.btn,
+.navbar-toggler,
+.nav-link,
+.list-group-item,
+.accordion-button {
+  svg+span {
+    margin-left: 3px;
+  }
+}
+
+.btn,
+.nav-link,
+.list-group-item {
+  svg {
+    margin-top: -3px;
+  }
 }

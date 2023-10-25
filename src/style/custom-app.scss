@@ -55,20 +55,34 @@
 }
 
 .app-main-subnavbar-crystal {
-  background: rgba(var(--bs-body-bg-rgb), $app-subnavbar-crystal-opacity) !important;
+  // background: rgba(var(--bs-body-bg-rgb), $app-subnavbar-crystal-opacity) !important;
 
+  // div.container-fluid:first-child {
+  //   min-height: $app-navbar-height;
+  //   background: rgba(var(--bs-body-bg-rgb), $app-subnavbar-crystal-opacity) !important;
+  //   backdrop-filter: blur(8px);
+  // }
 
   div.container-fluid {
-    min-height: $app-navbar-height;
     background: rgba(var(--bs-body-bg-rgb), $app-subnavbar-crystal-opacity) !important;
     backdrop-filter: blur(8px);
   }
 
-  div.collapse,
-  div.collapsing {
+  div.navbar-collapse.collapse {
     min-height: $app-navbar-height;
-    background: rgba(var(--bs-body-bg-rgb), $app-subnavbar-crystal-opacity) !important;
-    backdrop-filter: blur(8px);
+  }
+
+  @include media-breakpoint-down(sm) {
+
+
+    div.navbar-collapse.collapse.show,
+    div.collapsing {
+      background: var(--bs-body-bg);
+
+      // This background is not working properly???
+      // background: rgba(var(--bs-body-bg-rgb), $app-subnavbar-crystal-opacity) !important;
+      // backdrop-filter: blur(8px);
+    }
   }
 
 }

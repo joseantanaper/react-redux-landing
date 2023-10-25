@@ -23,104 +23,108 @@ export const Subnavbar = ({ title, subtitle, toolbar }: Props) => {
         className="app-main-subnavbar-crystal navbar navbar-expand-sm sticky-top border-bottom shadow-sm"
         style={{}}
       >
-        <div className="container-fluid text-truncate">
-          {/* Title */}
-          <Title title={t(title)} subtitle={t(subtitle!)} type={1} />
+        <div className="container-fluid app-subnavbar">
+          <div className="row text-truncate">
+            {/* Title */}
+            <Title title={t(title)} subtitle={t(subtitle!)} type={1} />
 
-          <MenuToggler
-            id="subnavbarMenu"
-            iconmap={IconMap.More}
-            toggleMode="collapse"
-            extraClass="bg-body"
-          />
-        </div>
+            <MenuToggler
+              id="subnavbarMenu"
+              iconmap={IconMap.More}
+              toggleMode="collapse"
+              extraClass="bg-body"
+            />
+          </div>
 
-        {/* Nav Menu Start */}
-        <div
-          className="collapse navbar-collapse px-3 justify-content-end"
-          id="subnavbarMenu"
-        >
-          <ul className="navbar-nav border-start ps-3">
-            <li className="nav-item">
-              <hr />
-            </li>
-            <li className="nav-item">
-              <a className="nav-link active" aria-current="page" href="#">
-                Home
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link" href="#">
-                Link
-              </a>
-            </li>
-            <li className="nav-item dropdown">
-              <a
-                className="nav-link dropdown-toggle"
-                href="#"
-                role="button"
-                data-bs-toggle="dropdown"
-                aria-expanded="false"
-              >
-                Dropdown
-              </a>
-              <ul className="dropdown-menu">
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Action
+          {/* Nav Menu Start */}
+          <div className="row col">
+            <div
+              className="collapse navbar-collapse px-3 justify-content-end"
+              id="subnavbarMenu"
+            >
+              <ul className="navbar-nav border-start ps-3">
+                <li className="nav-item">
+                  <hr />
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link active" aria-current="page" href="#">
+                    Home
                   </a>
                 </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Another action
+                <li className="nav-item">
+                  <a className="nav-link" href="#">
+                    Link
                   </a>
                 </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a className="dropdown-item" href="#">
-                    Something else here
+                <li className="nav-item dropdown">
+                  <a
+                    className="nav-link dropdown-toggle"
+                    href="#"
+                    role="button"
+                    data-bs-toggle="dropdown"
+                    aria-expanded="false"
+                  >
+                    Dropdown
                   </a>
+                  <ul className="dropdown-menu">
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Action
+                      </a>
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Another action
+                      </a>
+                    </li>
+                    <li>
+                      <hr className="dropdown-divider" />
+                    </li>
+                    <li>
+                      <a className="dropdown-item" href="#">
+                        Something else here
+                      </a>
+                    </li>
+                  </ul>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link disabled" aria-disabled="true">
+                    Disabled
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link disabled" aria-disabled="true">
+                    Disabled
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link disabled" aria-disabled="true">
+                    Disabled
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link disabled" aria-disabled="true">
+                    Disabled
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link disabled" aria-disabled="true">
+                    Disabled
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <a className="nav-link disabled" aria-disabled="true">
+                    Disabled
+                  </a>
+                </li>
+                <li className="nav-item">
+                  <br />
                 </li>
               </ul>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" aria-disabled="true">
-                Disabled
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" aria-disabled="true">
-                Disabled
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" aria-disabled="true">
-                Disabled
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" aria-disabled="true">
-                Disabled
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" aria-disabled="true">
-                Disabled
-              </a>
-            </li>
-            <li className="nav-item">
-              <a className="nav-link disabled" aria-disabled="true">
-                Disabled
-              </a>
-            </li>
-            <li className="nav-item">
-              <br />
-            </li>
-          </ul>
+            </div>
+            {/* Nav Menu End */}
+          </div>
         </div>
-        {/* Nav Menu End */}
       </nav>
 
       {/* <nav className="navbar app-main-subnavbar navbar-expand-md app-main-subnavbar sticky-top border-bottom shadow-sm text-truncate ps-3">

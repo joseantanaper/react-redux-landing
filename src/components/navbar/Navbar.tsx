@@ -84,7 +84,10 @@ export const Navbar = ({ title, subtitle }: Props) => {
             />
           </div>
 
-          <MenuToggler id="offcanvasMenuSettings" extraClass="py-0 px-1">
+          <MenuToggler
+            id="offcanvasMenuSettings"
+            extraClass="py-0 px-1 position-relative"
+          >
             <Avatar />
           </MenuToggler>
           {/* Navbar End */}
