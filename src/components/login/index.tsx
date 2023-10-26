@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Icon } from '@components/widgets/Icon'
+import { Icon, IconMap } from '@components/widgets/Icon'
+import { Button } from '../widgets/Button'
 import { useAppSelector, useAppDispatch } from '@app/hooks'
 import { RootState } from '@app/store'
 import { Avatar, AvatarSize } from '@components/Avatar'
@@ -71,29 +72,21 @@ export const Login = ({ id }: Props) => {
                   value={username}
                   onChange={(e) => applyUsername(e.target.value)}
                 />
-                <button
+                <Button
                   className="btn btn-outline-success"
-                  type="button"
                   disabled={!username}
                   onClick={() => dispatch(setUsername(username))}
-                >
-                  <Icon id="bi-box-arrow-in-right" />
-                  <span className="ms-1">
-                    <Trans>Sign In</Trans>
-                  </span>
-                </button>
+                  iconmap={IconMap.Login}
+                  label="Sign In"
+                />
               </div>
             ) : (
-              <button
+              <Button
                 className="btn btn-outline-danger"
-                type="button"
                 onClick={clearUsername}
-              >
-                <Icon id="bi-box-arrow-left" />
-                <span className="ms-1">
-                  <Trans>Sign Out</Trans>
-                </span>
-              </button>
+                iconmap={IconMap.Logout}
+                label="Sign Out"
+              />
             )}
           </div>
         </div>

@@ -29,7 +29,7 @@ export const LocaleToggler = () => {
       <button
         type="button"
         className={`btn text-uppercase  ${
-          currentLocale === Locale.EN ? 'disabled active' : ''
+          currentLocale === Locale.EN ? 'active disabled' : ''
         }`}
         onClick={() => clickLocale(Locale.EN)}
       >
@@ -39,7 +39,7 @@ export const LocaleToggler = () => {
       <button
         type="button"
         className={`btn text-uppercase ${
-          currentLocale === Locale.ES ? 'disabled active' : ''
+          currentLocale === Locale.ES ? 'active disabled' : ''
         }`}
         onClick={() => clickLocale(Locale.ES)}
       >

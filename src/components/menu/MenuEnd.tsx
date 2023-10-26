@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { Icon, IconMap } from '@components/widgets/Icon'
+import { Button } from '../widgets/Button'
 import { Menu, MenuProps, MenuPosition } from '@components/menu/elements/Menu'
 import { Accordion } from '@components/menu/elements/Accordion'
 import { LocaleToggler } from '../toggler/LocaleToggler'
@@ -153,30 +154,26 @@ export const MenuEnd = ({ id, title }: MenuProps) => {
                 <div className="row">
                   <div className="col">
                     <div className="btn-group float-end">
-                      <button
-                        type="button"
-                        className={`btn text-nowrap ${
+                      <Button
+                        className={`text-nowrap ${
                           currentClockMode === ClockMode.Short
                             ? 'disabled active'
                             : ''
                         }`}
                         onClick={() => clickClockMode(ClockMode.Short)}
-                      >
-                        <Icon id="bi-clock" extra="me-1" />
-                        <span>hh:mm</span>
-                      </button>
-                      <button
-                        type="button"
+                        iconmap={IconMap.Clock}
+                        label="hh:mm"
+                      />
+                      <Button
                         className={`btn text-nowrap ${
                           currentClockMode === ClockMode.Long
                             ? 'disabled active'
                             : ''
                         }`}
                         onClick={() => clickClockMode(ClockMode.Long)}
-                      >
-                        <Icon id="bi-clock" extra="me-1" />
-                        <span>hh:mm:ss</span>
-                      </button>
+                        iconmap={IconMap.Clock}
+                        label="hh:mm:ss"
+                      />
                     </div>
                   </div>
                 </div>

@@ -19,12 +19,12 @@ const Index = () => {
         </a>
       </li>
       <li className="nav-item float-end">
-        <button className="btn nav-link text-end w-100" onClick={dummy}>
+        <button className="nav-link text-end w-100" onClick={dummy}>
           AHA
         </button>
       </li>
       <li className="nav-item">
-        <a className="btn" href="/">
+        <a className="nav-link" href="/">
           BBBBBB
         </a>
       </li>

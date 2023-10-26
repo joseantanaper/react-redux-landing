@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom'
 import { MenuToggler } from '../toggler/MenuToggler'
+import { ButtonToggler } from '../widgets/Button'
 import { ThemeToggler } from '../toggler/ThemeToggler'
 import { MiniCounter } from '../toggler/MiniCounter'
 import { MenuEnd } from '@components/menu/MenuEnd'
@@ -44,7 +45,10 @@ export const Navbar = ({ title, subtitle }: Props) => {
       <nav className="app-main-navbar-crystal navbar border-bottom shadow-sm fixed-top text-truncate">
         {/* Navbar Begin */}
         <div className="app-navbar-container container-fluid flex-nowrap">
-          <MenuToggler id="offcanvasMenuNav" iconmap={IconMap.MenuStart} />
+          <ButtonToggler
+            targetId="offcanvasMenuNav"
+            iconmap={IconMap.MenuStart}
+          />
 
           {/* Title */}
           <Title title={t(title)} subtitle={t(subtitle!)} type={0} />
@@ -55,41 +59,38 @@ export const Navbar = ({ title, subtitle }: Props) => {
           </div>
 
           {/* Buttons */}
-          {/* <div className={`d-none d-lg-block ${dividerClass}`}>
+          <div className={`d-none d-lg-block ${dividerClass}`}>
             <LocaleToggler />
-          </div> */}
+          </div>
 
           {/* Mini Counter */}
-          {/* <div className={`d-none d-md-block ${dividerClass}`}>
+          <div className={`d-none d-md-block ${dividerClass}`}>
             <MiniCounter />
-          </div> */}
+          </div>
 
           {/* Clock */}
-          {/* <div className={`d-none d-sm-block ${dividerClass}`}>
+          <div className={`d-none d-sm-block ${dividerClass}`}>
             <Clock currentClockMode={currentClockMode} />
-          </div> */}
+          </div>
 
           {/* Global Toolbar */}
           <div className="border-start ps-3 me-3">
             <ThemeToggler currentTheme={currentTheme} />
-            <MenuToggler
-              id="offcanvasMenuTop"
-              bsClass="btn"
+            <ButtonToggler
+              targetId="offcanvasMenuTop"
+              className="btn"
               iconmap={IconMap.MenuTop}
             />
-            <MenuToggler
-              id="offcanvasMenuBottom"
-              bsClass="btn"
+            <ButtonToggler
+              targetId="offcanvasMenuBottom"
+              className="btn"
               iconmap={IconMap.MenuBottom}
             />
           </div>
 
-          <MenuToggler
-            id="offcanvasMenuSettings"
-            extraClass="py-0 px-1 position-relative"
-          >
+          <ButtonToggler targetId="offcanvasMenuSettings" extraClass="p-0 m-0">
             <Avatar />
-          </MenuToggler>
+          </ButtonToggler>
           {/* Navbar End */}
         </div>
 

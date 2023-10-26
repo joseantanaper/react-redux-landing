@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import { Icon, IconMap } from '@components/widgets/Icon'
-
+import { Button, ButtonDismiss } from '@/components/widgets/Button'
 export const enum MenuPosition {
   Start = 'offcanvas-start border-end',
   Top = 'offcanvas-top border-bottom',
@@ -21,6 +21,23 @@ export interface MenuProps {
 }
 
 export const Menu = ({ id, title, position, children }: Props) => {
+  let icon: IconMap = IconMap.None
+
+  switch (position) {
+    case MenuPosition.Top:
+      icon = IconMap.MenuTopClose
+      break
+    case MenuPosition.End:
+      icon = IconMap.MenuEndClose
+      break
+    case MenuPosition.Bottom:
+      icon = IconMap.MenuBottomClose
+      break
+    default:
+      icon = IconMap.None
+      break
+  }
+
   return (
     <div
       className={`offcanvas ${position} shadow user-select-none`}
@@ -31,13 +48,11 @@ export const Menu = ({ id, title, position, children }: Props) => {
       <div className="offcanvas-header bg-body-tertiary border-bottom shadow-sm">
         {position === MenuPosition.Start ? (
           <>
-            <button
+            <ButtonDismiss
               className="navbar-toggler"
-              type="button"
-              data-bs-dismiss="offcanvas"
-            >
-              {MenuPosition.Start && <Icon iconmap={IconMap.MenuStartClose} />}
-            </button>
+              iconmap={IconMap.MenuStartClose}
+              dismiss="offcanvas"
+            />
             <h4 className="offcanvas-title" id={`${id}Label`}>
               {title!}
             </h4>
@@ -47,21 +62,11 @@ export const Menu = ({ id, title, position, children }: Props) => {
             <h4 className="offcanvas-title" id={`${id}Label`}>
               {title!}
             </h4>
-            <button
+            <ButtonDismiss
               className="navbar-toggler"
-              type="button"
-              data-bs-dismiss="offcanvas"
-            >
-              {position === MenuPosition.Top && (
-                <Icon iconmap={IconMap.MenuTopClose} />
-              )}
-              {position === MenuPosition.End && (
-                <Icon iconmap={IconMap.MenuEndClose} />
-              )}
-              {position === MenuPosition.Bottom && (
-                <Icon iconmap={IconMap.MenuBottomClose} />
-              )}
-            </button>
+              iconmap={icon}
+              dismiss="offcanvas"
+            />
           </>
         )}
       </div>

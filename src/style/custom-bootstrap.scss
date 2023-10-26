@@ -5,11 +5,12 @@ $app-bg-active: rgba(var(--bs-secondary-bg-rgb), 0.9);
 $app-bg-active-click: var(--bs-secondary-bg);
 $app-bg-active-pending: var(--bs-tertiary-bg);
 
-$app-text: rgba(var(--bs-emphasis-color-rgb), 0.6);
-$app-text-hover: rgba(var(--bs-emphasis-color-rgb), 0.8);
-$app-text-active: rgba(var(--bs-emphasis-color-rgb), 0.9);
-$app-text-active-click: var(--bs-emphasis-color);
-$app-text-active-pending: var(--bs-secondary-color);
+$app-color: rgba(var(--bs-emphasis-color-rgb), 0.6) !important;
+$app-color-hover: rgba(var(--bs-emphasis-color-rgb), 0.8) !important;
+$app-color-active: rgba(var(--bs-emphasis-color-rgb), 0.9) !important;
+$app-color-active-click: var(--bs-emphasis-color) !important;
+$app-color-active-pending: var(--bs-secondary-color) !important;
+$app-color-disabled: rgba(var(--bs-emphasis-color-rgb), 0.3) !important;
 
 @include media-breakpoint-up(sm) {
   .navbar-nav {
@@ -53,8 +54,12 @@ $app-text-active-pending: var(--bs-secondary-color);
   height: $app-navbar-height - 8px;
   max-height: $app-navbar-height - 8px;
 
+  span {
+    color: $app-color;
+  }
+
   svg {
-    color: $app-text;
+    color: $app-color;
     // margin-top: -3px;
     // margin: -1px 0px 0px -3px;
     width: 100%;
@@ -64,19 +69,69 @@ $app-text-active-pending: var(--bs-secondary-color);
 
 }
 
+.btn:not(.btn-primary,
+  .btn-secondary,
+  .btn-success,
+  .btn-danger,
+  .btn-warning,
+  .btn-info,
+  .btn-light,
+  .btn-dark,
+  .btn-outline-primary,
+  .btn-outline-secondary,
+  .btn-outline-success,
+  .btn-outline-danger,
+  .btn-outline-warning,
+  .btn-outline-info,
+  .btn-outline-light,
+  .btn-outline-dark).disabled,
+.nav-link.disabled {
+  color: $app-color-disabled;
+
+  svg,
+  span {
+    color: $app-color-disabled;
+  }
+}
+
 .btn,
-.nav-link {
+.nav-link,
+input.form-control {
   padding: .5rem 1rem;
   white-space: nowrap;
 
   svg+span {
     margin-left: 3px;
   }
+
 }
 
+
+
+.btn:not(.btn-primary,
+  .btn-secondary,
+  .btn-success,
+  .btn-danger,
+  .btn-warning,
+  .btn-info,
+  .btn-light,
+  .btn-dark,
+  .btn-outline-primary,
+  .btn-outline-secondary,
+  .btn-outline-success,
+  .btn-outline-danger,
+  .btn-outline-warning,
+  .btn-outline-info,
+  .btn-outline-light,
+  .btn-outline-dark),
 .accordion-button,
 .list-group-item {
   white-space: nowrap;
+
+  svg,
+  span {
+    color: $app-color;
+  }
 
   svg+span {
     margin-left: 3px;
@@ -104,11 +159,11 @@ $app-text-active-pending: var(--bs-secondary-color);
 .nav-link,
 .list-group-item,
 .accordion-button {
-  color: $app-text;
+  color: $app-color;
 
   svg,
   span {
-    color: $app-text;
+    color: $app-color;
   }
 
 }
@@ -142,11 +197,11 @@ $app-text-active-pending: var(--bs-secondary-color);
 .nav-link:hover,
 .navbar-toggler:hover,
 .list-group-item:hover {
-  color: $app-text-hover;
+  color: $app-color-hover;
 
   svg,
   span {
-    color: $app-text-hover;
+    color: $app-color-hover;
   }
 
   background: $app-bg-hover;
@@ -173,14 +228,14 @@ $app-text-active-pending: var(--bs-secondary-color);
 .nav-link:active,
 .navbar-toggler:active,
 .list-group-item:active {
-  color: $app-text-active-click;
+  color: $app-color-active-click;
 
   svg {
-    color: $app-text-active-click;
+    color: $app-color-active-click;
   }
 
   span {
-    color: $app-text-active-click;
+    color: $app-color-active-click;
   }
 
   // background-color: $primary !important;
@@ -208,10 +263,10 @@ $app-text-active-pending: var(--bs-secondary-color);
 .nav-link.active,
 .navbar-toggler.active,
 .list-group-item.active {
-  color: $app-text-active;
+  color: $app-color-active;
 
   span {
-    color: $app-text-active;
+    color: $app-color-active;
   }
 
   // background-color: rgba(var(--bs-secondary-bg-rgb), 1);

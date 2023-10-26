@@ -8,6 +8,7 @@ import {
 } from '@app/reducer/todos.slice'
 
 import { PageLayout } from '@/components/layout/PageLayout'
+import { Button } from '@/components/widgets/Button'
 import { TodoList } from '@components/todo'
 
 import { Icon, IconMap } from '@/components/widgets/Icon'
@@ -54,7 +55,8 @@ const Todo = () => {
   const toolbar = (
     <>
       <li className="nav-item">
-        <div className="btn-group">
+        {/* TODO: TextSearch component */}
+        <div className="input-group">
           <input
             className="form-control"
             type="text"
@@ -64,6 +66,7 @@ const Todo = () => {
               paddingRight: '44px',
               marginRight: '20px',
               minWidth: '120px',
+              zIndex: 0,
             }}
             onChange={(e) => FilterTodos(e.target.value)}
           />
@@ -72,7 +75,7 @@ const Todo = () => {
             extra="text-primary"
             style={{
               position: 'absolute',
-              top: '11px',
+              top: '14px',
               right: '46px',
               opacity: 0.4,
             }}
@@ -82,7 +85,7 @@ const Todo = () => {
             extra="text-danger"
             style={{
               position: 'absolute',
-              top: '11px',
+              top: '14px',
               right: '26px',
               opacity: 0.4,
             }}
@@ -102,6 +105,13 @@ const Todo = () => {
               minWidth: '120px',
             }}
             onChange={(e) => setTodo(e.target.value)}
+          />
+          <Button
+            className="btn-outline-primary"
+            disabled={!todo}
+            onClick={() => AddTodo()}
+            iconmap={IconMap.TaskPlus}
+            label="Add"
           />
           <button
             className="btn btn-outline-primary"

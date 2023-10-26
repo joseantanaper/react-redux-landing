@@ -38,7 +38,7 @@ export const MiniCounter = () => {
       >
         -
       </button>
-      <label className="btn">{count}</label>
+      <label className="btn btn-outline-primary z-1">{count}</label>
       <button
         name="app-minicounter-decrement"
         className="btn btn-outline-secondary"

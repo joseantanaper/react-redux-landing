@@ -1,6 +1,6 @@
 import { ReactNode } from 'react'
 import { Icon, IconMap } from '@components/widgets/Icon'
-
+import { ButtonToggler } from '@/components/widgets/Button'
 interface Props {
   id: string
   label: string
@@ -17,17 +17,13 @@ export const Accordion = ({ id, label, index, iconmap, children }: Props) => {
       {/* Accordion START */}
       <div className="accordion-item border-0">
         <h2 className="accordion-header">
-          <button
+          <ButtonToggler
             className="accordion-button collapsed"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target={`#${target}`}
-            aria-expanded="false"
-            aria-controls={`${target}`}
-          >
-            <Icon iconmap={iconmap} />
-            <span>{label}</span>
-          </button>
+            iconmap={iconmap}
+            label={label}
+            targetId={target}
+            toggle="collapse"
+          />
         </h2>
         <div
           id={`${target}`}

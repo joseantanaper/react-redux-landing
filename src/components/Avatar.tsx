@@ -22,7 +22,7 @@ export const Avatar = ({ size = AvatarSize.sm }: Props) => {
       alt="Avatar"
       width={sizes.get(size)}
       height={sizes.get(size)}
-      className="rounded-circle m-0 p-0 app-profile"
-    ></img>
+      className="rounded-circle mx-auto app-profile"
+    />
   )
 }

@@ -108,6 +108,11 @@ div.container-fluid.app-navbar-content
         // background: rgba(var(--bs-body-bg-rgb), $app-subnavbar-crystal-opacity) !important;
         // This effect is not working properly???
         backdrop-filter: blur(8px);
+
+        .nav-link {
+          padding: 0.65rem 1rem;
+          white-space: nowrap;
+        }
       }
 
     }
