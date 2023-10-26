@@ -1,5 +1,6 @@
 import { remove } from '../../app/reducer/todos.slice'
 import { Icon, IconMap } from '../widgets/Icon'
+import { Button } from '../widgets/Button'
 import { useAppDispatch } from '../../app/hooks'
 
 export const TodoItem = ({ todo, index, remove }: any) => {
@@ -10,14 +11,13 @@ export const TodoItem = ({ todo, index, remove }: any) => {
       </td>
       <td className="w-100 align-middle">{todo}</td>
       <td>
-        <button
-          className="btn text-danger ms-2"
+        <Button
+          className="btn text-danger"
+          iconmap={IconMap.TaskRemove}
           onClick={() => {
             remove(todo)
           }}
-        >
-          <Icon id={IconMap.TaskRemove} />
-        </button>
+        />
       </td>
     </tr>
   )

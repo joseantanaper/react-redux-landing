@@ -1,6 +1,7 @@
 import React from 'react'
 import { RouteLink } from '@/config/nav.config'
-import { Icon } from '@/components/widgets/Icon'
+import { Icon, IconMap } from '@/components/widgets/Icon'
+import { Button } from '@/components/widgets/Button'
 import { Accordion } from './Accordion'
 import { NavLink } from 'react-router-dom'
 
@@ -76,13 +77,11 @@ export const NavRouteLinkList = ({ routeLinks, parentIndex }: Props) => {
           aria-label="Example text with button addon"
           aria-describedby="button-addon1"
         />
-        <button
-          className="btn btn-outline-success"
-          type="button"
-          id="button-addon1"
-        >
-          Search
-        </button>
+        <Button
+          className="btn-outline-success"
+          iconmap={IconMap.Search}
+          label="Search"
+        />
       </div>
 
       <br />

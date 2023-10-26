@@ -5,13 +5,6 @@ $app-bg-active: rgba(var(--bs-secondary-bg-rgb), 0.9);
 $app-bg-active-click: var(--bs-secondary-bg);
 $app-bg-active-pending: var(--bs-tertiary-bg);
 
-$app-color: rgba(var(--bs-emphasis-color-rgb), 0.6) !important;
-$app-color-hover: rgba(var(--bs-emphasis-color-rgb), 0.8) !important;
-$app-color-active: rgba(var(--bs-emphasis-color-rgb), 0.9) !important;
-$app-color-active-click: var(--bs-emphasis-color) !important;
-$app-color-active-pending: var(--bs-secondary-color) !important;
-$app-color-disabled: rgba(var(--bs-emphasis-color-rgb), 0.3) !important;
-
 @include media-breakpoint-up(sm) {
   .navbar-nav {
     -webkit-flex-direction: row;
@@ -21,7 +14,6 @@ $app-color-disabled: rgba(var(--bs-emphasis-color-rgb), 0.3) !important;
 }
 
 // OFFCANVAS
-
 .offcanvas-header {
   min-height: $app-navbar-height;
   height: $app-navbar-height;
@@ -40,8 +32,6 @@ $app-color-disabled: rgba(var(--bs-emphasis-color-rgb), 0.3) !important;
   backdrop-filter: blur(6px) !important;
 }
 
-// BUTTONS
-
 .navbar-toggler {
   // justify-content: center;
   // align-items: center;
@@ -55,87 +45,15 @@ $app-color-disabled: rgba(var(--bs-emphasis-color-rgb), 0.3) !important;
   max-height: $app-navbar-height - 8px;
 
   span {
-    color: $app-color;
+    // color: $app-color;
   }
 
   svg {
-    color: $app-color;
-    // margin-top: -3px;
-    // margin: -1px 0px 0px -3px;
+    // color: $app-color;
     width: 100%;
     height: 100%;
     padding: 0px !important;
   }
-
-}
-
-.btn:not(.btn-primary,
-  .btn-secondary,
-  .btn-success,
-  .btn-danger,
-  .btn-warning,
-  .btn-info,
-  .btn-light,
-  .btn-dark,
-  .btn-outline-primary,
-  .btn-outline-secondary,
-  .btn-outline-success,
-  .btn-outline-danger,
-  .btn-outline-warning,
-  .btn-outline-info,
-  .btn-outline-light,
-  .btn-outline-dark).disabled,
-.nav-link.disabled {
-  color: $app-color-disabled;
-
-  svg,
-  span {
-    color: $app-color-disabled;
-  }
-}
-
-.btn,
-.nav-link,
-input.form-control {
-  padding: .5rem 1rem;
-  white-space: nowrap;
-
-  svg+span {
-    margin-left: 3px;
-  }
-
-}
-
-
-
-.btn:not(.btn-primary,
-  .btn-secondary,
-  .btn-success,
-  .btn-danger,
-  .btn-warning,
-  .btn-info,
-  .btn-light,
-  .btn-dark,
-  .btn-outline-primary,
-  .btn-outline-secondary,
-  .btn-outline-success,
-  .btn-outline-danger,
-  .btn-outline-warning,
-  .btn-outline-info,
-  .btn-outline-light,
-  .btn-outline-dark),
-.accordion-button,
-.list-group-item {
-  white-space: nowrap;
-
-  svg,
-  span {
-    color: $app-color;
-  }
-
-  svg+span {
-    margin-left: 3px;
-  }
 }
 
 .btn:not(.btn-primary,
@@ -154,31 +72,15 @@ input.form-control {
   .btn-outline-info,
   .btn-outline-light,
   .btn-outline-dark),
-.accordion-button,
-.navbar-toggler,
 .nav-link,
+.accordion-button,
 .list-group-item,
-.accordion-button {
-  color: $app-color;
-
-  svg,
-  span {
-    color: $app-color;
-  }
-
+.navbar-toggler {
+  cursor: pointer;
+  opacity: 0.4;
 }
 
-.btn,
-.nav-link,
-.list-group-item {
-  svg {
-    margin-top: -3px;
-  }
-}
-
-// BUTTONS: Hover
-
-.btn:hover:not(.btn-primary,
+.btn:not(.btn-primary,
   .btn-secondary,
   .btn-success,
   .btn-danger,
@@ -193,23 +95,16 @@ input.form-control {
   .btn-outline-warning,
   .btn-outline-info,
   .btn-outline-light,
-  .btn-outline-dark),
+  .btn-outline-dark):hover,
 .nav-link:hover,
-.navbar-toggler:hover,
-.list-group-item:hover {
-  color: $app-color-hover;
-
-  svg,
-  span {
-    color: $app-color-hover;
-  }
-
+.accordion-button:hover,
+.list-group-item:hover,
+.navbar-toggler:hover {
+  opacity: 0.8;
   background: $app-bg-hover;
 }
 
-// BUTTONS: Active (click)
-
-.btn:active:not(.btn-primary,
+.btn:not(.btn-primary,
   .btn-secondary,
   .btn-success,
   .btn-danger,
@@ -224,55 +119,11 @@ input.form-control {
   .btn-outline-warning,
   .btn-outline-info,
   .btn-outline-light,
-  .btn-outline-dark),
+  .btn-outline-dark):active,
 .nav-link:active,
-.navbar-toggler:active,
-.list-group-item:active {
-  color: $app-color-active-click;
-
-  svg {
-    color: $app-color-active-click;
-  }
-
-  span {
-    color: $app-color-active-click;
-  }
-
-  // background-color: $primary !important;
-  background: $app-bg-active-click !important;
-}
-
-// BUTTONS: Active (class)
-
-.btn.active:not(.btn-primary,
-  .btn-secondary,
-  .btn-success,
-  .btn-danger,
-  .btn-warning,
-  .btn-info,
-  .btn-light,
-  .btn-dark,
-  .btn-outline-primary,
-  .btn-outline-secondary,
-  .btn-outline-success,
-  .btn-outline-danger,
-  .btn-outline-warning,
-  .btn-outline-info,
-  .btn-outline-light,
-  .btn-outline-dark),
-.nav-link.active,
-.navbar-toggler.active,
-.list-group-item.active {
-  color: $app-color-active;
-
-  span {
-    color: $app-color-active;
-  }
-
-  // background-color: rgba(var(--bs-secondary-bg-rgb), 1);
-  background: $app-bg-active !important;
-}
-
-.list-group-item.active {
-  border-left: 0.8px solid var(--bs-primary);
+.accordion-button:active,
+.list-group-item:active,
+.navbar-toggler:active {
+  opacity: 1;
+  background: $app-bg-hover;
 }

@@ -1,5 +1,6 @@
 import React from 'react'
-import { Icon } from '@/components/widgets/Icon'
+import { Icon, IconMap } from '@/components/widgets/Icon'
+import { Button } from '../widgets/Button'
 import { useState, useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
 
@@ -26,26 +27,22 @@ export const LocaleToggler = () => {
 
   return (
     <>
-      <button
-        type="button"
+      <Button
         className={`btn text-uppercase  ${
           currentLocale === Locale.EN ? 'active disabled' : ''
         }`}
+        iconmap={IconMap.Locale}
         onClick={() => clickLocale(Locale.EN)}
-      >
-        <Icon id="bi-translate" />
-        <span>{Locale.EN}</span>
-      </button>
-      <button
-        type="button"
-        className={`btn text-uppercase ${
+        label={Locale.EN}
+      />
+      <Button
+        className={`btn text-uppercase  ${
           currentLocale === Locale.ES ? 'active disabled' : ''
         }`}
+        iconmap={IconMap.Locale}
         onClick={() => clickLocale(Locale.ES)}
-      >
-        <Icon id="bi-translate" />
-        <span>{Locale.ES}</span>
-      </button>
+        label={Locale.ES}
+      />
     </>
   )
 }

@@ -15,12 +15,13 @@ interface Props {
 }
 
 export const Button = ({
-  className,
+  className = 'btn',
   extraClass = '',
   disabled = false,
   iconmap,
   label,
   onClick,
+  children,
 }: Props) => {
   return (
     <button
@@ -33,6 +34,7 @@ export const Button = ({
     >
       {iconmap ? <Icon id={iconmap} /> : null}
       {label ? <span>{label}</span> : null}
+      {children ? children : null}
     </button>
   )
 }

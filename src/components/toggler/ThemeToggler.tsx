@@ -1,4 +1,5 @@
 import { Icon, IconMap } from '@components/widgets/Icon'
+import { Button } from '../widgets/Button'
 import { useAppSelector, useAppDispatch } from '@app/hooks'
 import { Theme, setTheme } from '@app/reducer/app.slice'
 import { RootState } from '@app/store'
@@ -43,12 +44,7 @@ export const ThemeToggler = ({
   return (
     <>
       {togglerType === TogglerType.Button && (
-        <button
-          name="app-theme-toggler"
-          className="btn"
-          type="button"
-          onClick={() => handleClick()}
-        >
+        <Button onClick={() => handleClick()} extraClass="app-rotate">
           <Icon
             iconmap={IconMap.Light}
             extra="app-rotate"
@@ -59,16 +55,12 @@ export const ThemeToggler = ({
             extra="app-rotate"
             style={{ display: theme !== Theme.Dark ? 'inline' : 'none' }}
           />
-          {label === Label.Yes && (
-            <span className="text-capitalize">{theme}</span>
-          )}
-        </button>
+        </Button>
       )}
 
       {togglerType === TogglerType.ButtonSelector && (
         <div className="btn-group float-end">
-          <button
-            type="button"
+          <Button
             className={`btn ${
               currentTheme === Theme.Light ? 'disabled active' : ''
             }`}
@@ -78,9 +70,8 @@ export const ThemeToggler = ({
             {label === Label.Yes && (
               <span className="text-capitalize">{Theme.Light}</span>
             )}
-          </button>
-          <button
-            type="button"
+          </Button>
+          <Button
             className={`btn ${
               currentTheme === Theme.Dark ? 'disabled active' : ''
             }`}
@@ -90,7 +81,7 @@ export const ThemeToggler = ({
             {label === Label.Yes && (
               <span className="text-capitalize">{Theme.Dark}</span>
             )}
-          </button>
+          </Button>
         </div>
       )}
     </>

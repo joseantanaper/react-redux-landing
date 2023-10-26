@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Icon } from '@components/widgets/Icon'
+import { Button } from '../widgets/Button'
 import { useAppSelector, useAppDispatch } from '@app/hooks'
 
 import {
@@ -45,15 +46,12 @@ export const Clock = ({ currentClockMode }: Props) => {
     setTime(tick())
   }, 1000)
 
+  const clock = time.substring(0, time.indexOf(':'))
+
   return (
     <>
-      <button
-        name="app-clock"
-        className="btn"
-        type="button"
-        onClick={handleClick}
-      >
-        <Icon id="bi-clock" extra="app-rotate" style={{ opacity: 0.4 }} />
+      <Button onClick={handleClick}>
+        <Icon id="bi-clock" extra="app-rotate" />
         <span>{time.substring(0, time.indexOf(':'))}</span>
         <span className="opacity-50">:</span>
         <span>
@@ -67,14 +65,7 @@ export const Clock = ({ currentClockMode }: Props) => {
             ? time.substring(time.indexOf(':') + 4, time.indexOf(':') + 6)
             : null}
         </span>
-        {/* <span>
-          {clockMode === 0 ? time : time.substring(0, time.indexOf(":", 1) - 1)}
-        </span>
-        <span>:</span>
-        <span>
-          {clockMode === 0 ? time : time.substring(0, time.indexOf(":", 2) - 1)}
-        </span> */}
-      </button>
+      </Button>
     </>
   )
 }

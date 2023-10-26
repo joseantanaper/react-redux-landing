@@ -58,7 +58,7 @@ const Todo = () => {
         {/* TODO: TextSearch component */}
         <div className="input-group">
           <input
-            className="form-control"
+            className="form-control app-search"
             type="text"
             placeholder="Search tasks..."
             value={search}
@@ -72,22 +72,20 @@ const Todo = () => {
           />
           <Icon
             id={IconMap.Search}
-            extra="text-primary"
+            extra="app-search text-primary"
             style={{
               position: 'absolute',
               top: '14px',
               right: '46px',
-              opacity: 0.4,
             }}
           />
           <Icon
             id={IconMap.Backspace}
-            extra="text-danger"
+            extra="app-search-btn text-danger"
             style={{
               position: 'absolute',
               top: '14px',
               right: '26px',
-              opacity: 0.4,
             }}
             onClick={() => {
               ClearSearch()

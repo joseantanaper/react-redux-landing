@@ -1,5 +1,6 @@
 import { useState } from 'react'
-import { Icon } from '@components/widgets/Icon'
+import { Icon, IconMap } from '@components/widgets/Icon'
+import { Button } from '../widgets/Button'
 import { useAppSelector, useAppDispatch } from '@app/hooks'
 import {
   decrement,
@@ -30,23 +31,17 @@ export const MiniCounter = () => {
 
   return (
     <div className="btn-group" role="group">
-      <button
-        name="app-minicounter-decrement"
+      <Button
         className="btn btn-outline-secondary"
-        type="button"
         onClick={() => dispatch(decrement())}
-      >
-        -
-      </button>
+        label="-"
+      />
       <label className="btn btn-outline-primary z-1">{count}</label>
-      <button
-        name="app-minicounter-decrement"
+      <Button
         className="btn btn-outline-secondary"
-        type="button"
         onClick={() => dispatch(increment())}
-      >
-        +
-      </button>{' '}
+        label="+"
+      />
     </div>
   )
 }

@@ -1,0 +1,105 @@
+// :root {
+//   // --app-light-border-color: slateblue;
+//   // --app-dark-border-color: white;
+// }
+
+// GLOBAL
+$border-radius: 1px; // // $enable-rounded: false;
+
+
+// NAVBAR
+$navbar-padding-y: 0px;
+$navbar-toggler-focus-width: 1px;
+
+
+// OFFCANVAS
+$offcanvas-padding-y: 3px;
+$offcanvas-horizontal-width: 400px;
+$modal-backdrop-bg: rgba(0 0 0 / 0.4);
+$modal-backdrop-opacity: 1;
+
+
+// FORMS
+$input-placeholder-color: rgba(var(--bs-secondary-color-rgb), 0.4) !important;
+
+
+
+
+// ACCORDION
+$accordion-button-padding-y: 1rem;
+// $accordion-button-padding-x: 2rem;
+$accordion-icon-width: 1rem;
+$accordion-button-active-bg: var(--bs-body-bg);
+$accordion-body-padding-y: 0.6rem;
+$accordion-body-padding-x: 0;
+$list-group-item-padding-y: 0.6rem;
+$list-group-active-bg: rgba(var(--bs-tertiary-bg-rgb), 0.8);
+
+
+
+$navbar-nav-link-padding-x: 1rem;
+
+
+// $navbar-light-hover-color: red;
+
+// $list-group-border-color: rgba(0 0 0 / 0.1);
+// $list-group-border-width: 0;
+
+// $accordion-padding-y: 16px;
+// $accordion-button-padding-y: 24px;
+
+// $dropdown-item-padding-y: 0.6rem;
+
+// $navbar-toggler-padding-y: 0px;
+// $navbar-toggler-padding-x: 2px;
+// $navbar-toggler-margin-y: 0px;
+// $navbar-brand-padding-y: 0px;
+
+// $navbar-padding-y: 0px;
+// $navbar-toggler-padding-y: 0px;
+// $navbar-brand-margin-y: 0px;
+
+// $navbar-nav-link-padding-x: 0.5rem;
+// $navbar-brand-margin-end: 1rem;
+
+
+
+// // // $offcanvas-transition-duration: 0.2s;
+
+
+
+// // // :root {
+// // //   --bs-tertiary-bg: blue !important;
+// // // }
+// // // $component-hover-bg: blue;
+// // // $component-active-bg: red;
+
+// // // $list-group-hover-bg: var(--bs-tertiary-bg);
+// // // $list-group-active-color: $component-active-color;
+// // // $list-group-active-bg: $component-active-bg;
+
+
+
+// // $btn-border-width: 2px;
+
+// // // $modal-backdrop-bg: rgba(15, 23, 42, 0.5);
+
+
+// $accordion-icon-color: rgba(0 0 0 / 0.4) !important;
+// $accordion-icon-active-color: rgba(0 0 0 / 0.4) !important;
+
+// $accordion-icon-color: black !important;
+// // $accordion-body-padding-y: 10px;
+
+
+
+// $accordion-button-active-bg: var(--bs-secondary-bg);
+// $accordion-button-active-color: var(--bs-emphasis-color);
+
+// $list-group-border-color: rgba(120 120 120 / 0.1);
+
+
+
+// $app-bg-hover: rgba(var(--bs-tertiary-bg-rgb), 0.6);
+// $app-bg-active-click: rgba(var(--bs-tertiary-bg-rgb), 1);
+// $app-bg-active: rgba(var(--bs-tertiary-bg-rgb), 0.8);
