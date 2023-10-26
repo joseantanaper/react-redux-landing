@@ -14,24 +14,34 @@ export const NavMenu = ({ routeLinks }: Props) => {
   return (
     <>
       {/* <div className="vr ms-2 me-3 d-none d-xxl-block"></div> */}
-      {routeLinks
-        .filter((routeLink) => routeLink.url.startsWith('/'))
-        .map((routeLink, index) => {
-          // if (index < 3)
-          return (
-            <>
-              <NavLink
-                key={index}
-                className="btn"
-                aria-current="page"
-                to={routeLink.url}
-              >
-                <Icon iconmap={routeLink.iconmap} />
-                <span>{t(routeLink.label)}</span>
-              </NavLink>
-            </>
-          )
-        })}
+      <div className="d-flex">
+        <ul className="navbar-nav">
+          {routeLinks
+            .filter((routeLink) => routeLink.url.startsWith('/'))
+            .map((routeLink, index) => {
+              // if (index < 3)
+              return (
+                <li className="nav-item">
+                  <NavLink
+                    key={index}
+                    className={({ isActive, isPending }) =>
+                      isPending
+                        ? 'nav-link pending'
+                        : isActive
+                        ? 'nav-link active'
+                        : 'nav-link'
+                    }
+                    aria-current="page"
+                    to={routeLink.url}
+                  >
+                    <Icon iconmap={routeLink.iconmap} />
+                    <span>{t(routeLink.label)}</span>
+                  </NavLink>
+                </li>
+              )
+            })}
+        </ul>
+      </div>
     </>
   )
 }

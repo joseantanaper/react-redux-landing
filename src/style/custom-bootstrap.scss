@@ -1,15 +1,25 @@
 @import 'variables-app.scss';
 
-.navbar-toggler {
-  // justify-content: center;
-  // align-items: center;
-  // display: flex;
-  // align-items: center;
-  min-width: $app-navbar-toggler-width;
-  width: $app-navbar-toggler-width;
-  min-height: $app-navbar-toggler-height;
-  height: $app-navbar-toggler-height;
+$app-bg-hover: var(--bs-tertiary-bg);
+$app-bg-active: rgba(var(--bs-secondary-bg-rgb), 0.9);
+$app-bg-active-click: var(--bs-secondary-bg);
+$app-bg-active-pending: var(--bs-tertiary-bg);
+
+$app-text: rgba(var(--bs-emphasis-color-rgb), 0.6);
+$app-text-hover: rgba(var(--bs-emphasis-color-rgb), 0.8);
+$app-text-active: rgba(var(--bs-emphasis-color-rgb), 0.9);
+$app-text-active-click: var(--bs-emphasis-color);
+$app-text-active-pending: var(--bs-secondary-color);
+
+@include media-breakpoint-up(sm) {
+  .navbar-nav {
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+  }
 }
+
+// OFFCANVAS
 
 .offcanvas-header {
   min-height: $app-navbar-height;
@@ -17,26 +27,90 @@
   max-height: $app-navbar-height;
 }
 
+.offcanvas-body {
+  padding: 20px;
+}
+
+.offcanvas-backdrop.show {
+  // opacity: 1;
+  // background-color: rgba(15, 23, 42, 0.5);
+  // transition: 1s;
+  // overflow-y: scroll !important;
+  backdrop-filter: blur(6px) !important;
+}
+
+// BUTTONS
+
 .navbar-toggler {
+  // justify-content: center;
+  // align-items: center;
+  // display: flex;
+  // align-items: center;
+  min-width: $app-navbar-toggler-width;
+  width: $app-navbar-toggler-width;
+  max-width: $app-navbar-toggler-width;
+  min-height: $app-navbar-height - 8px;
+  height: $app-navbar-height - 8px;
+  max-height: $app-navbar-height - 8px;
+
   svg {
+    color: $app-text;
     // margin-top: -3px;
     // margin: -1px 0px 0px -3px;
     width: 100%;
     height: 100%;
+    padding: 0px !important;
   }
 
 }
 
 .btn,
-.navbar-toggler,
-.nav-link,
-.list-group-item,
-.accordion-button {
+.nav-link {
+  padding: .5rem 1rem;
   white-space: nowrap;
 
   svg+span {
     margin-left: 3px;
   }
+}
+
+.accordion-button,
+.list-group-item {
+  white-space: nowrap;
+
+  svg+span {
+    margin-left: 3px;
+  }
+}
+
+.btn:not(.btn-primary,
+  .btn-secondary,
+  .btn-success,
+  .btn-danger,
+  .btn-warning,
+  .btn-info,
+  .btn-light,
+  .btn-dark,
+  .btn-outline-primary,
+  .btn-outline-secondary,
+  .btn-outline-success,
+  .btn-outline-danger,
+  .btn-outline-warning,
+  .btn-outline-info,
+  .btn-outline-light,
+  .btn-outline-dark),
+.accordion-button,
+.navbar-toggler,
+.nav-link,
+.list-group-item,
+.accordion-button {
+  color: $app-text;
+
+  svg,
+  span {
+    color: $app-text;
+  }
+
 }
 
 .btn,
@@ -47,11 +121,103 @@
   }
 }
 
+// BUTTONS: Hover
 
-.offcanvas-backdrop.show {
-  // opacity: 1;
-  // background-color: rgba(15, 23, 42, 0.5);
-  // transition: 1s;
-  // overflow-y: scroll !important;
-  backdrop-filter: blur(6px) !important;
+.btn:hover:not(.btn-primary,
+  .btn-secondary,
+  .btn-success,
+  .btn-danger,
+  .btn-warning,
+  .btn-info,
+  .btn-light,
+  .btn-dark,
+  .btn-outline-primary,
+  .btn-outline-secondary,
+  .btn-outline-success,
+  .btn-outline-danger,
+  .btn-outline-warning,
+  .btn-outline-info,
+  .btn-outline-light,
+  .btn-outline-dark),
+.nav-link:hover,
+.navbar-toggler:hover,
+.list-group-item:hover {
+  color: $app-text-hover;
+
+  svg,
+  span {
+    color: $app-text-hover;
+  }
+
+  background: $app-bg-hover;
+}
+
+// BUTTONS: Active (click)
+
+.btn:active:not(.btn-primary,
+  .btn-secondary,
+  .btn-success,
+  .btn-danger,
+  .btn-warning,
+  .btn-info,
+  .btn-light,
+  .btn-dark,
+  .btn-outline-primary,
+  .btn-outline-secondary,
+  .btn-outline-success,
+  .btn-outline-danger,
+  .btn-outline-warning,
+  .btn-outline-info,
+  .btn-outline-light,
+  .btn-outline-dark),
+.nav-link:active,
+.navbar-toggler:active,
+.list-group-item:active {
+  color: $app-text-active-click;
+
+  svg {
+    color: $app-text-active-click;
+  }
+
+  span {
+    color: $app-text-active-click;
+  }
+
+  // background-color: $primary !important;
+  background: $app-bg-active-click !important;
+}
+
+// BUTTONS: Active (class)
+
+.btn.active:not(.btn-primary,
+  .btn-secondary,
+  .btn-success,
+  .btn-danger,
+  .btn-warning,
+  .btn-info,
+  .btn-light,
+  .btn-dark,
+  .btn-outline-primary,
+  .btn-outline-secondary,
+  .btn-outline-success,
+  .btn-outline-danger,
+  .btn-outline-warning,
+  .btn-outline-info,
+  .btn-outline-light,
+  .btn-outline-dark),
+.nav-link.active,
+.navbar-toggler.active,
+.list-group-item.active {
+  color: $app-text-active;
+
+  span {
+    color: $app-text-active;
+  }
+
+  // background-color: rgba(var(--bs-secondary-bg-rgb), 1);
+  background: $app-bg-active !important;
+}
+
+.list-group-item.active {
+  border-left: 0.8px solid var(--bs-primary);
 }

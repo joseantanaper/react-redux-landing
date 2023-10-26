@@ -1,19 +1,51 @@
-:root {
-  // --app-light-border-color: slateblue;
-  // --app-dark-border-color: white;
-}
+// :root {
+//   // --app-light-border-color: slateblue;
+//   // --app-dark-border-color: white;
+// }
 
-
+// GLOBAL
 $border-radius: 1px; // // $enable-rounded: false;
-$navbar-padding-y: 0px;
 
+
+// NAVBAR
+$navbar-padding-y: 0px;
+$navbar-toggler-focus-width: 1px;
+
+
+// OFFCANVAS
 $offcanvas-padding-y: 3px;
 $offcanvas-horizontal-width: 400px;
 $modal-backdrop-bg: rgba(0 0 0 / 0.4);
 $modal-backdrop-opacity: 1;
 
-// $btn-focus-width: 2px;
-$navbar-toggler-focus-width: 1px;
+
+// FORMS
+
+$input-placeholder-color: rgba(var(--bs-secondary-color-rgb), 0.4) !important;
+
+
+$list-group-active-bg: rgba(var(--bs-tertiary-bg-rgb), 0.8);
+
+// ACCORDION
+$accordion-button-padding-y: 1rem;
+// $accordion-button-padding-x: 2rem;
+$accordion-icon-width: 1rem;
+$accordion-button-active-bg: var(--bs-body-bg);
+$list-group-item-padding-y: 0.6rem;
+$accordion-body-padding-y: 0.6rem;
+$accordion-body-padding-x: 0;
+
+
+$navbar-nav-link-padding-x: 1rem;
+
+
+// $navbar-light-hover-color: red;
+
+// $list-group-border-color: rgba(0 0 0 / 0.1);
+// $list-group-border-width: 0;
+
+// $accordion-padding-y: 16px;
+// $accordion-button-padding-y: 24px;
 
 // $dropdown-item-padding-y: 0.6rem;
 
@@ -33,7 +65,7 @@ $navbar-toggler-focus-width: 1px;
 
 // // // $offcanvas-transition-duration: 0.2s;
 
-// $btn-focus-width: 2px;
+
 
 // // // :root {
 // // //   --bs-tertiary-bg: blue !important;
@@ -57,11 +89,16 @@ $navbar-toggler-focus-width: 1px;
 
 // $accordion-icon-color: black !important;
 // // $accordion-body-padding-y: 10px;
-// // $list-group-item-padding-y: 10px;
+
+
 
 // $accordion-button-active-bg: var(--bs-secondary-bg);
 // $accordion-button-active-color: var(--bs-emphasis-color);
 
 // $list-group-border-color: rgba(120 120 120 / 0.1);
 
-// $input-placeholder-color: rgba(var(--bs-secondary-color-rgb), 0.4) !important;
+
+
+// $app-bg-hover: rgba(var(--bs-tertiary-bg-rgb), 0.6);
+// $app-bg-active-click: rgba(var(--bs-tertiary-bg-rgb), 1);
+// $app-bg-active: rgba(var(--bs-tertiary-bg-rgb), 0.8);

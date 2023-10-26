@@ -28,7 +28,7 @@ export const MenuToggler = ({
       aria-expanded="false"
       aria-label="Toggle navigation"
     >
-      {iconmap && <Icon iconmap={iconmap} />}
+      {iconmap && <Icon iconmap={iconmap} size={16} />}
       {children}
     </button>
   )

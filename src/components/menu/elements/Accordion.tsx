@@ -34,7 +34,7 @@ export const Accordion = ({ id, label, index, iconmap, children }: Props) => {
           className="accordion-collapse collapse accordion-flush"
           data-bs-parent={`#${accordionId}`}
         >
-          <div className="accordion-body ps-0 pt-1 pb-3 pe-0">{children}</div>
+          <div className="accordion-body">{children}</div>
         </div>
       </div>
       {/* Accordion END */}

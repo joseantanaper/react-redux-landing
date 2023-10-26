@@ -52,7 +52,7 @@ const renderRouteLink = (
       >
         <div
           key={parentIndex}
-          className="list-group list-group-flush my-2"
+          className="list-group list-group-flush"
           // If closing offcanvas when click is needed
           // data-bs-dismiss="offcanvas"
         >
@@ -68,71 +68,45 @@ const renderRouteLink = (
 export const NavRouteLinkList = ({ routeLinks, parentIndex }: Props) => {
   return (
     <>
-      <div className="container-fluid mt-2">
-        <div className="row">
-          <div className="col">
-            <div className="input-group">
-              <input
-                type="text"
-                className="form-control"
-                placeholder=""
-                aria-label="Example text with button addon"
-                aria-describedby="button-addon1"
-              />
-              <button
-                className="btn btn-outline-success"
-                type="button"
-                id="button-addon1"
-              >
-                Search
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* <div className="container-fluid">
-        <div className="row">
-          <div className="col">
-            <hr />
-          </div>
-        </div>
-      </div> */}
-
-      <div className="container-fluid">
-        <div
-          key={parentIndex}
-          className="list-group list-group-flush"
-          // If closing offcanvas when click is needed
-          data-bs-dismiss="offcanvas"
+      <div className="input-group">
+        <input
+          type="text"
+          className="form-control"
+          placeholder=""
+          aria-label="Example text with button addon"
+          aria-describedby="button-addon1"
+        />
+        <button
+          className="btn btn-outline-success"
+          type="button"
+          id="button-addon1"
         >
-          {routeLinks
-            .filter((routeLink) => routeLink.url.startsWith('/'))
-            .map((routeLink, index) => {
-              return renderRouteLink(routeLink, parentIndex, index)
-            })}
-        </div>
+          Search
+        </button>
       </div>
 
-      {/* <div className="container-fluid">
-        <div className="row">
-          <div className="col">
-            <hr />
-          </div>
-        </div>
-      </div> */}
+      <br />
 
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col">
-            {routeLinks
-              .filter((routeLink) => !routeLink.url.startsWith('/'))
-              .map((routeLink, index) => {
-                return renderRouteLink(routeLink, parentIndex, index)
-              })}
-          </div>
-        </div>
+      <div
+        key={parentIndex}
+        className="list-group list-group-flush"
+        // If closing offcanvas when click is needed
+        data-bs-dismiss="offcanvas"
+      >
+        {routeLinks
+          .filter((routeLink) => routeLink.url.startsWith('/'))
+          .map((routeLink, index) => {
+            return renderRouteLink(routeLink, parentIndex, index)
+          })}
       </div>
+
+      <br />
+
+      {routeLinks
+        .filter((routeLink) => !routeLink.url.startsWith('/'))
+        .map((routeLink, index) => {
+          return renderRouteLink(routeLink, parentIndex, index)
+        })}
     </>
   )
 }

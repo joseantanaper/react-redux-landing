@@ -14,33 +14,29 @@ const Index = () => {
       {/* <hr className="text-body-tertiary d-lg-none" /> */}
 
       <li className="nav-item">
-        <a className="btn" href="/">
+        <a className="nav-link" href="/">
           AAAAA
         </a>
       </li>
-      <li className="nav-item">
-        <button className="btn" onClick={dummy}>
+      <li className="nav-item float-end">
+        <button className="btn nav-link text-end w-100" onClick={dummy}>
           AHA
         </button>
       </li>
       <li className="nav-item">
         <a className="btn" href="/">
-          AAAAA
+          BBBBBB
         </a>
       </li>
       <li className="nav-item">
-        <a className="btn" href="/">
-          AAAAA
+        <a className="nav-link" href="/">
+          CC
         </a>
       </li>
       <li className="nav-item">
-        <a className="btn" href="/">
-          AAAAA
+        <a className="nav-link" href="/">
+          DDD DD
         </a>
-      </li>
-
-      <li className="nav-item">
-        <br />
       </li>
     </>
   )

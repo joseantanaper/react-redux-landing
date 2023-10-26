@@ -1,5 +1,5 @@
-@import 'variables-bootstrap.scss';
-@import 'variables-app.scss';
+// @import 'variables-bootstrap.scss';
+// @import 'variables-app.scss';
 
 
 // PageLayout
@@ -42,7 +42,7 @@ div.container-fluid.app-navbar-content
 .app-main-navbar-crystal,
 .app-main-subnavbar,
 .app-main-subnavbar-crystal {
-  padding: 0px;
+  // padding: 0px;
 
   div.collapse {
     // height: $app-navbar-height;
@@ -101,6 +101,8 @@ div.container-fluid.app-navbar-content
       background: rgba(var(--bs-body-bg-rgb), 0.8) !important;
 
       ul {
+        padding-top: 20px;
+        padding-bottom: 20px;
         text-align: right;
         border: 0px;
         // background: rgba(var(--bs-body-bg-rgb), $app-subnavbar-crystal-opacity) !important;
@@ -121,7 +123,7 @@ div.container-fluid.app-navbar-content
   .navbar-toggler {
     position: absolute !important;
     right: 12px;
-    top: 9px;
+    top: 6px;
   }
 
 }
@@ -146,34 +148,34 @@ div.container-fluid.app-navbar-content
   }
 }
 
-.btn svg,
-.navbar-toggler svg,
-svg.app-icon-btn {
+// .btn svg,
+// .navbar-toggler svg,
+// svg.app-icon-btn {
 
-  opacity: $app-icon-opacity;
+//   opacity: $app-icon-opacity;
 
-}
+// }
 
-.btn:hover svg,
-.navbar-toggler:hover svg,
-svg.app-icon-btn:hover {
-  // filter: drop-shadow($app-btn-hover-glow) drop-shadow(0 2px 0px rgba(0 0 0 / 0.4));
-  filter: drop-shadow(0 1px 0px rgba(0 0 0 / 0.3));
-  opacity: $app-icon-opacity-hover;
+// .btn:hover svg,
+// .navbar-toggler:hover svg,
+// svg.app-icon-btn:hover {
+//   // filter: drop-shadow($app-btn-hover-glow) drop-shadow(0 2px 0px rgba(0 0 0 / 0.4));
+//   filter: drop-shadow(0 1px 0px rgba(0 0 0 / 0.3));
+//   opacity: $app-icon-opacity-hover;
 
-}
+// }
 
-.btn:active svg,
-.navbar-toggler:active svg,
-svg.app-icon-btn:active {
-  opacity: $app-icon-opacity-active;
-}
+// .btn:active svg,
+// .navbar-toggler:active svg,
+// svg.app-icon-btn:active {
+//   opacity: $app-icon-opacity-active;
+// }
 
-.btn.disabled svg,
-.navbar-toggler.disabled svg,
-svg.app-icon-btn.disabled {
-  opacity: $app-icon-opacity-disabled !important;
-}
+// .btn.disabled svg,
+// .navbar-toggler.disabled svg,
+// svg.app-icon-btn.disabled {
+//   opacity: $app-icon-opacity-disabled !important;
+// }
 
 // svg.app-icon-btn:hover {
 //   opacity: 1 !important;
@@ -234,10 +236,23 @@ button.app-go-top.show {
   visibility: visible;
 }
 
-button.app-go-top:hover {
-  opacity: $app-icon-opacity-hover;
-}
+// button.app-go-top:hover {
+//   opacity: $app-icon-opacity-hover;
+// }
 
-button.app-go-top:active {
-  opacity: $app-icon-opacity-active;
+// button.app-go-top:active {
+//   opacity: $app-icon-opacity-active;
+// }
+
+
+div.app-shadow-divider {
+  width: 96%;
+  border-radius: 50px;
+  height: 3rem;
+  margin-left: auto;
+  margin-right: auto;
+  background-color: rgba(0, 0, 0, .1);
+  border: solid rgba(0, 0, 0, .15);
+  border-width: 1px 0;
+  box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, .1), inset 0 0.125em 0.5em rgba(0, 0, 0, .15);
 }

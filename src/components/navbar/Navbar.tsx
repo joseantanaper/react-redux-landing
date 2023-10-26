@@ -55,19 +55,19 @@ export const Navbar = ({ title, subtitle }: Props) => {
           </div>
 
           {/* Buttons */}
-          <div className={`d-none d-lg-block ${dividerClass}`}>
+          {/* <div className={`d-none d-lg-block ${dividerClass}`}>
             <LocaleToggler />
-          </div>
+          </div> */}
 
           {/* Mini Counter */}
-          <div className={`d-none d-md-block ${dividerClass}`}>
+          {/* <div className={`d-none d-md-block ${dividerClass}`}>
             <MiniCounter />
-          </div>
+          </div> */}
 
           {/* Clock */}
-          <div className={`d-none d-sm-block ${dividerClass}`}>
+          {/* <div className={`d-none d-sm-block ${dividerClass}`}>
             <Clock currentClockMode={currentClockMode} />
-          </div>
+          </div> */}
 
           {/* Global Toolbar */}
           <div className="border-start ps-3 me-3">

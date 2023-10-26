@@ -23,7 +23,7 @@ export interface MenuProps {
 export const Menu = ({ id, title, position, children }: Props) => {
   return (
     <div
-      className={`offcanvas ${position} shadow`}
+      className={`offcanvas ${position} shadow user-select-none`}
       id={id}
       aria-labelledby={`${id}Label`}
     >
@@ -66,9 +66,8 @@ export const Menu = ({ id, title, position, children }: Props) => {
         )}
       </div>
 
-      <div className="offcanvas-body text-wrap ps-1 pe-1 pt-2 pb-5">
-        {children}
-      </div>
+      {/* Body */}
+      <div className="offcanvas-body text-wrap">{children}</div>
     </div>
   )
 }
