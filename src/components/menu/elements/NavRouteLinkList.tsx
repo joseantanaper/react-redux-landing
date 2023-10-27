@@ -17,7 +17,7 @@ const renderNavLink = (
 ) => {
   return (
     <NavLink
-      key={index}
+      key={`nav-${parentIndex}-${index}`}
       className={`list-group-item list-group-item-action ${
         parentIndex > 0 ? 'ps-4' : ''
       }`}
@@ -39,7 +39,7 @@ const renderRouteLink = (
   parentIndex: number,
   index: number
 ) => {
-  const customKey = `${parentIndex}_${index}`
+  // const customKey = `${parentIndex}_${index}`
   if (routeLink.url.startsWith('/')) {
     return renderNavLink(routeLink, 0, index)
   } else {

@@ -49,7 +49,7 @@ export const Menu = ({ id, title, position, children }: Props) => {
         {position === MenuPosition.Start ? (
           <>
             <ButtonDismiss
-              className="navbar-toggler"
+              className="navbar-toggler btn-outline-secondary"
               iconmap={IconMap.MenuStartClose}
               dismiss="offcanvas"
             />
@@ -63,7 +63,7 @@ export const Menu = ({ id, title, position, children }: Props) => {
               {title!}
             </h4>
             <ButtonDismiss
-              className="navbar-toggler"
+              className="navbar-toggler btn-outline-secondary"
               iconmap={icon}
               dismiss="offcanvas"
             />

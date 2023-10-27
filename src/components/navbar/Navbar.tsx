@@ -76,18 +76,21 @@ export const Navbar = ({ title, subtitle }: Props) => {
           {/* Global Toolbar */}
           <div className="border-start ps-3 me-3">
             <ThemeToggler currentTheme={currentTheme} />
-            <ButtonToggler
-              targetId="offcanvasMenuTop"
-              className="btn"
-              iconmap={IconMap.MenuTop}
-            />
-            <ButtonToggler
-              targetId="offcanvasMenuBottom"
-              className="btn"
-              iconmap={IconMap.MenuBottom}
-            />
           </div>
-
+          <div className="border-start ps-3 me-3">
+            <div className="btn-group">
+              <ButtonToggler
+                targetId="offcanvasMenuTop"
+                className="btn-outline-secondary"
+                iconmap={IconMap.MenuTop}
+              />
+              <ButtonToggler
+                targetId="offcanvasMenuBottom"
+                className="btn-outline-secondary"
+                iconmap={IconMap.MenuBottom}
+              />
+            </div>
+          </div>
           <ButtonToggler targetId="offcanvasMenuSettings" extraClass="p-0 m-0">
             <Avatar />
           </ButtonToggler>

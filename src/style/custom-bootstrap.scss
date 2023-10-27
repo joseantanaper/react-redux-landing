@@ -1,10 +1,20 @@
 @import 'variables-app.scss';
 
+/* GLOBAL VARIABLES ----------------------------------------------------------*/
 $app-bg-hover: var(--bs-tertiary-bg);
 $app-bg-active: rgba(var(--bs-secondary-bg-rgb), 0.9);
 $app-bg-active-click: var(--bs-secondary-bg);
-$app-bg-active-pending: var(--bs-tertiary-bg);
+$app-bg-pending: var(--bs-tertiary-bg);
 
+$app-default-opacity: 0.7;
+$app-hover-opacity: 0.8;
+$app-active-opacity: 0.9;
+$app-active-click-opacity: 1;
+$app-pending-opacity: 0.6;
+
+$app-icon-text-margin: 3px;
+
+/* BOOTSTRAP HACKS -----------------------------------------------------------*/
 @include media-breakpoint-up(sm) {
   .navbar-nav {
     -webkit-flex-direction: row;
@@ -13,7 +23,37 @@ $app-bg-active-pending: var(--bs-tertiary-bg);
   }
 }
 
-// OFFCANVAS
+.btn,
+.nav-link,
+.list-group-item {
+
+  padding: .5rem 1rem;
+
+  svg {
+    margin-top: -($app-icon-text-margin);
+  }
+
+  svg+span {
+    margin-left: ($app-icon-text-margin);
+  }
+}
+
+.accordion-button {
+  svg+span {
+    margin-left: ($app-icon-text-margin);
+  }
+}
+
+.btn,
+.nav-link,
+.accordion-button,
+.list-group-item,
+.navbar-toggler {
+  cursor: pointer;
+  white-space: nowrap;
+}
+
+/* OFFCANVAS -----------------------------------------------------------------*/
 .offcanvas-header {
   min-height: $app-navbar-height;
   height: $app-navbar-height;
@@ -32,6 +72,8 @@ $app-bg-active-pending: var(--bs-tertiary-bg);
   backdrop-filter: blur(6px) !important;
 }
 
+
+/* BUTTONS AND TOGGLERS ------------------------------------------------------*/
 .navbar-toggler {
   // justify-content: center;
   // align-items: center;
@@ -76,8 +118,7 @@ $app-bg-active-pending: var(--bs-tertiary-bg);
 .accordion-button,
 .list-group-item,
 .navbar-toggler {
-  cursor: pointer;
-  opacity: 0.4;
+  opacity: $app-default-opacity;
 }
 
 .btn:not(.btn-primary,
@@ -100,8 +141,8 @@ $app-bg-active-pending: var(--bs-tertiary-bg);
 .accordion-button:hover,
 .list-group-item:hover,
 .navbar-toggler:hover {
-  opacity: 0.8;
-  background: $app-bg-hover;
+  opacity: $app-hover-opacity;
+  // background: $app-bg-hover;
 }
 
 .btn:not(.btn-primary,
@@ -124,6 +165,30 @@ $app-bg-active-pending: var(--bs-tertiary-bg);
 .accordion-button:active,
 .list-group-item:active,
 .navbar-toggler:active {
-  opacity: 1;
-  background: $app-bg-hover;
+  opacity: $app-active-click-opacity;
+  // background: $app-bg-active-click;
+}
+
+.btn:not(.btn-primary,
+  .btn-secondary,
+  .btn-success,
+  .btn-danger,
+  .btn-warning,
+  .btn-info,
+  .btn-light,
+  .btn-dark,
+  .btn-outline-primary,
+  .btn-outline-secondary,
+  .btn-outline-success,
+  .btn-outline-danger,
+  .btn-outline-warning,
+  .btn-outline-info,
+  .btn-outline-light,
+  .btn-outline-dark).active,
+.nav-link.active,
+.accordion-button.active,
+.list-group-item.active,
+.navbar-toggler.active {
+  opacity: $app-active-opacity;
+  // background: $app-bg-active;
 }

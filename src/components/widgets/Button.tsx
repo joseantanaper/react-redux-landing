@@ -49,7 +49,7 @@ interface ButtonDismissProps {
 }
 
 export const ButtonDismiss = ({
-  className,
+  className = 'btn-outline-secondary',
   extraClass = '',
   disabled = false,
   iconmap,
@@ -85,7 +85,7 @@ interface ButtonTogglerProps {
 }
 
 export const ButtonToggler = ({
-  className = 'navbar-toggler',
+  className = 'navbar-toggler btn-outline-secondary',
   extraClass = '',
   iconmap,
   label,
