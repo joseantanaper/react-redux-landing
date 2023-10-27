@@ -63,6 +63,21 @@
     min-height: $app-navbar-height;
   }
 
+  @include media-breakpoint-only(xs) {
+
+    li.nav-item {
+
+      padding-bottom: 10px;
+
+      .form-control,
+      .btn-group {
+        width: 100% !important;
+      }
+
+    }
+
+  }
+
   @include media-breakpoint-down(sm) {
 
     .navbar-brand {

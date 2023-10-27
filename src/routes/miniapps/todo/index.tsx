@@ -49,52 +49,47 @@ const Todo = () => {
 
   const ClearAll = () => {
     dispatch(clearAll())
-    setFilteredTodos([...todos])
+    setFilteredTodos([])
   }
 
   const toolbar = (
     <>
       <li className="nav-item">
         {/* TODO: TextSearch component */}
-        <div className="input-group">
-          <input
-            className="form-control app-search"
-            type="text"
-            placeholder="Search tasks..."
-            value={search}
-            style={{
-              paddingRight: '44px',
-              marginRight: '20px',
-              minWidth: '120px',
-              zIndex: 0,
-            }}
-            onChange={(e) => FilterTodos(e.target.value)}
-          />
-          <Icon
-            id={IconMap.Search}
-            extra="app-search text-primary"
-            style={{
-              position: 'absolute',
-              top: '14px',
-              right: '46px',
-            }}
-          />
-          <Icon
-            id={IconMap.Backspace}
-            extra="app-search-btn text-danger"
-            style={{
-              position: 'absolute',
-              top: '14px',
-              right: '26px',
-            }}
-            onClick={() => {
-              ClearSearch()
-            }}
+        <div className="btn-group sm-w-100">
+          <div className="input-group">
+            <input
+              className="form-control app-search"
+              type="text"
+              placeholder="Search tasks..."
+              value={search}
+              style={{
+                paddingRight: '26px',
+                minWidth: '120px',
+                zIndex: 0,
+              }}
+              onChange={(e) => FilterTodos(e.target.value)}
+            />
+            <Icon
+              id={IconMap.Search}
+              extra="app-search text-primary"
+              style={{
+                position: 'absolute',
+                top: '14px',
+                right: '8px',
+              }}
+            />
+          </div>
+          <Button
+            className="btn-outline-danger"
+            iconmap={IconMap.Backspace}
+            onClick={ClearSearch}
           />
         </div>
       </li>
+      <li className="nav-item d-none d-sm-block me-3"></li>
       <li className="nav-item">
-        <div className="btn-group">
+        <div className="btn-group sm-w-100">
           <input
             className="form-control"
             type="text"
@@ -111,22 +106,17 @@ const Todo = () => {
             iconmap={IconMap.TaskPlus}
             label="Add"
           />
-          <button
-            className="btn btn-outline-primary"
-            disabled={!todo}
-            onClick={() => AddTodo()}
-          >
-            <Icon id={IconMap.TaskPlus} />
-            <span>Add</span>
-          </button>
         </div>
       </li>
-      <li className="nav-item d-none d-md-block me-3"></li>
+      <li className="nav-item d-none d-sm-block me-3"></li>
       <li className="nav-item">
-        <button className="btn btn-outline-danger" onClick={() => ClearAll()}>
-          <Icon id={IconMap.TaskClear} />
-          <span>Clear All</span>
-        </button>
+        <Button
+          className="btn-outline-danger"
+          disabled={todos.length <= 0}
+          onClick={ClearAll}
+          iconmap={IconMap.TaskClear}
+          label="Clear All"
+        />
       </li>
 
       <li className="nav-item">

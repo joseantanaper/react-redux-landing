@@ -1,4 +1,4 @@
-import { ReactNode } from 'react'
+import { ReactNode, useEffect } from 'react'
 import { Icon, IconMap } from '@components/widgets/Icon'
 import { Button, ButtonDismiss } from '@/components/widgets/Button'
 export const enum MenuPosition {
@@ -21,6 +21,10 @@ export interface MenuProps {
 }
 
 export const Menu = ({ id, title, position, children }: Props) => {
+  useEffect(() => {
+    console.log('Menu')
+  }, [])
+
   let icon: IconMap = IconMap.None
 
   switch (position) {

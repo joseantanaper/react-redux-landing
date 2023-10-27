@@ -61,6 +61,13 @@ $app-icon-text-margin: 3px;
   white-space: nowrap;
 }
 
+// @include media-breakpoint-only(xs) {
+//   .sm-w-100 {
+//     width: 100% !important;
+//     padding-bottom: 10px;
+//   }
+// }
+
 /* OFFCANVAS -----------------------------------------------------------------*/
 .offcanvas-header {
   min-height: $app-navbar-height;
