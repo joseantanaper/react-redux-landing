@@ -17,7 +17,7 @@ const renderNavLink = (
 ) => {
   return (
     <NavLink
-      key={`nav-${parentIndex}-${index}`}
+      key={`nav-link-${parentIndex}-${index}`}
       className={`list-group-item list-group-item-action ${
         parentIndex > 0 ? 'ps-4' : ''
       }`}
@@ -47,18 +47,19 @@ const renderRouteLink = (
     return (
       <Accordion
         id="accordionNav"
+        key={`accordion-${index}`}
         label={routeLink.label}
         index={parentIndex}
         iconmap={routeLink.iconmap}
       >
         <div
-          key={parentIndex}
+          key={`accordion-${parentIndex}`}
           className="list-group list-group-flush"
           // If closing offcanvas when click is needed
           // data-bs-dismiss="offcanvas"
         >
           {subRouteLinks.map((routeLink: RouteLink, index: number) => {
-            return renderNavLink(routeLink, 1, index)
+            return renderNavLink(routeLink, parentIndex, index)
           })}
         </div>
       </Accordion>

@@ -66,9 +66,9 @@ const Index = () => {
         </div>
         <div className="container-fluid">
           <div className="row">
-            {[0, 1, 2, 3, 4].map((user) => {
+            {[0, 1, 2, 3, 4].map((user, index) => {
               return (
-                <div className="col">
+                <div key={`div-avatar-${index}`} className="col">
                   <Avatar
                     gender="male"
                     className="avatar rounded-circle app-profile"

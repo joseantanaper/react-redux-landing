@@ -21,9 +21,8 @@ export const NavMenu = ({ routeLinks }: Props) => {
             .map((routeLink, index) => {
               // if (index < 3)
               return (
-                <li className="nav-item">
+                <li key={`route-link-${index}`} className="nav-item">
                   <NavLink
-                    key={index}
                     className={({ isActive, isPending }) =>
                       isPending
                         ? 'nav-link pending'

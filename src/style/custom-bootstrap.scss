@@ -38,6 +38,14 @@ $app-icon-text-margin: 3px;
   }
 }
 
+.nav-link:hover {
+  background: rgba(var(--bs-secondary-bg-rgb), $app-default-opacity);
+}
+
+.nav-link:active {
+  background: rgba(var(--bs-secondary-bg-rgb), $app-active-opacity);
+}
+
 .accordion-button {
   svg+span {
     margin-left: ($app-icon-text-margin);
@@ -74,6 +82,7 @@ $app-icon-text-margin: 3px;
 
 
 /* BUTTONS AND TOGGLERS ------------------------------------------------------*/
+.navbar-toggler,
 .navbar-toggler {
   // justify-content: center;
   // align-items: center;
@@ -85,16 +94,14 @@ $app-icon-text-margin: 3px;
   min-height: $app-navbar-height - 8px;
   height: $app-navbar-height - 8px;
   max-height: $app-navbar-height - 8px;
+  padding: 12px;
 
-  span {
-    // color: $app-color;
-  }
+  span {}
 
   svg {
-    // color: $app-color;
-    width: 100%;
-    height: 100%;
-    padding: 0px !important;
+    width: 100% !important;
+    height: 100% !important;
+
   }
 }
 
@@ -118,7 +125,12 @@ $app-icon-text-margin: 3px;
 .accordion-button,
 .list-group-item,
 .navbar-toggler {
-  opacity: $app-default-opacity;
+  // opacity: $app-default-opacity;
+
+  svg,
+  span {
+    opacity: $app-default-opacity;
+  }
 }
 
 .btn:not(.btn-primary,
@@ -141,8 +153,18 @@ $app-icon-text-margin: 3px;
 .accordion-button:hover,
 .list-group-item:hover,
 .navbar-toggler:hover {
-  opacity: $app-hover-opacity;
-  // background: $app-bg-hover;
+  // opacity: $app-hover-opacity;
+
+  svg,
+  span {
+    opacity: $app-hover-opacity;
+  }
+
+  svg {
+    filter:
+      drop-shadow(0 0 1px white) drop-shadow(0 0 3px rgba(var(--bs-emphasis-color-rgb), 0.8));
+  }
+
 }
 
 .btn:not(.btn-primary,
@@ -165,8 +187,12 @@ $app-icon-text-margin: 3px;
 .accordion-button:active,
 .list-group-item:active,
 .navbar-toggler:active {
-  opacity: $app-active-click-opacity;
-  // background: $app-bg-active-click;
+  // opacity: $app-active-click-opacity;
+
+  svg,
+  span {
+    opacity: $app-active-click-opacity;
+  }
 }
 
 .btn:not(.btn-primary,
@@ -189,6 +215,11 @@ $app-icon-text-margin: 3px;
 .accordion-button.active,
 .list-group-item.active,
 .navbar-toggler.active {
-  opacity: $app-active-opacity;
-  // background: $app-bg-active;
+
+  // opacity: $app-active-opacity;
+
+  svg,
+  span {
+    opacity: $app-active-opacity;
+  }
 }
