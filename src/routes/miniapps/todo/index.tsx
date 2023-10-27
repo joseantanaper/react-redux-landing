@@ -54,11 +54,17 @@ const Todo = () => {
 
   const toolbar = (
     <>
+      <li className="nav-item pe-3">
+        <label for={'app-search'} className="col-form-label text-nowrap">
+          Tasks: {filteredTodos.length} / {todos.length}
+        </label>
+      </li>
       <li className="nav-item">
         {/* TODO: TextSearch component */}
         <div className="btn-group sm-w-100">
           <div className="input-group">
             <input
+              id="app-search"
               className="form-control app-search"
               type="text"
               placeholder="Search tasks..."
@@ -133,6 +139,15 @@ const Todo = () => {
       toolbar={toolbar}
     >
       <TodoList todos={filteredTodos} Remove={Remove} />
+      <div className="container-fluid text-end">
+        <div className="row">
+          <div className="col">
+            <label className="col-form-label text-nowrap">
+              Tasks: {filteredTodos.length} / {todos.length}
+            </label>
+          </div>
+        </div>
+      </div>
     </PageLayout>
   )
 }
