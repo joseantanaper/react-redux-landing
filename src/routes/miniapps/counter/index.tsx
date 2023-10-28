@@ -1,10 +1,12 @@
 import { useState } from 'react'
-
+import { Button } from '@/components/widgets/Button'
+import { IconMap } from '@/components/widgets/Icon'
 import { useAppSelector, useAppDispatch } from '@app/hooks'
 import {
   decrement,
   increment,
   incrementByAmount,
+  clear,
   incrementAsync,
   incrementIfOdd,
   selectCount,
@@ -25,44 +27,64 @@ const Counter = () => {
 
   const toolbar = (
     <>
-      <div className="vr d-none d-lg-block"></div>
-      <hr className="text-body-tertiary d-lg-none" />
       <ul className="navbar-nav ps-3">
         <li className="nav-item">
+          <div className="btn-group">
+            <Button
+              iconmap={IconMap.CircleMinus}
+              label="Decrement"
+              className="btn-outline-danger"
+              onClick={() => dispatch(decrement())}
+            />
+            <Button
+              iconmap={IconMap.CirclePlus}
+              label="Increment"
+              className="btn btn-outline-success"
+              onClick={() => dispatch(increment())}
+            />
+          </div>
+        </li>
+        <li className="nav-item">
+          <Button
+            iconmap={IconMap.CircleX}
+            label="Clear"
+            className="btn-outline-warning"
+            onClick={() => dispatch(clear())}
+          />
+        </li>
+        <li className="nav-item d-none d-sm-block me-3"></li>
+        <li className="nav-item">
           <input
-            className="form-control"
+            style={{ maxWidth: '120px', minWidth: '120px' }}
+            className="form-control float-end"
             aria-label="Set increment amount"
             value={incrementAmount}
             onChange={(e) => setIncrementAmount(e.target.value)}
           />
         </li>
         <li className="nav-item">
-          <button
-            className="btn"
+          <Button
+            iconmap={IconMap.CirclePlus}
+            className="btn-outline-success"
+            label="Add Sync"
             onClick={() => dispatch(incrementByAmount(incrementValue))}
-          >
-            Add Amount
-          </button>
+          />
         </li>
         <li className="nav-item">
-          <button
-            className="btn"
+          <Button
+            iconmap={IconMap.CirclePlus}
+            className="btn-outline-primary"
+            label="Add Async"
             onClick={() => dispatch(incrementAsync(incrementValue))}
-          >
-            Add Async
-          </button>
+          />
         </li>
         <li className="nav-item">
-          <button
-            className="btn"
+          <Button
+            iconmap={IconMap.CirclePlus}
+            className="btn-outline-info"
+            label="Add If Odd"
             onClick={() => dispatch(incrementIfOdd(incrementValue))}
-          >
-            Add If Odd
-          </button>
-        </li>
-
-        <li className="nav-item">
-          <br />
+          />
         </li>
       </ul>
     </>
@@ -77,27 +99,82 @@ const Counter = () => {
     >
       <div className="container-fluid">
         <div className="row">
-          <div className="col-3 p-4">
-            <button
-              className="btn btn-outline-secondary w-100 h-100"
-              onClick={() => dispatch(decrement())}
-            >
-              <h1>-</h1>
-            </button>
-          </div>
-          <div className="col-6">
-            <h1 className="text-center" style={{ fontSize: 120 }}>
+          <div className="col">
+            <h1 className="text-center" style={{ fontSize: 160 }}>
               {count}
             </h1>
           </div>
-          <div className="col-3 p-4">
-            <button
-              className="btn btn-outline-secondary w-100 h-100"
-              onClick={() => dispatch(increment())}
-            >
-              <h1>+</h1>
-            </button>
+          <div className="col">
+            <div className="container-fluid">
+              <div className="row text-end">
+                <div className="col">
+                  <div className="btn-group">
+                    <Button
+                      iconmap={IconMap.CircleMinus}
+                      label="Decrement"
+                      className="btn-outline-danger"
+                      onClick={() => dispatch(decrement())}
+                    />
+                    <Button
+                      iconmap={IconMap.CirclePlus}
+                      label="Increment"
+                      className="btn btn-outline-success"
+                      onClick={() => dispatch(increment())}
+                    />
+                    <Button
+                      iconmap={IconMap.CircleX}
+                      label="Clear"
+                      className="btn-outline-warning"
+                      onClick={() => dispatch(clear())}
+                    />
+                  </div>
+                </div>
+              </div>
+
+              <div className="row float-end mt-3">
+                <div className="col">
+                  <div className="input-group">
+                    <input
+                      type="number"
+                      style={{ maxWidth: '120px', minWidth: '120px' }}
+                      className="form-control"
+                      aria-label="Set increment amount"
+                      value={incrementAmount}
+                      onChange={(e) => setIncrementAmount(e.target.value)}
+                    />
+                    <Button
+                      iconmap={IconMap.CirclePlus}
+                      className="btn-outline-success"
+                      label="Add Sync"
+                      onClick={() =>
+                        dispatch(incrementByAmount(incrementValue))
+                      }
+                    />
+                    <Button
+                      iconmap={IconMap.CirclePlus}
+                      className="btn-outline-primary"
+                      label="Add Async"
+                      onClick={() => dispatch(incrementAsync(incrementValue))}
+                    />
+                    <Button
+                      iconmap={IconMap.CirclePlus}
+                      className="btn-outline-info"
+                      label="Add If Odd"
+                      onClick={() => dispatch(incrementIfOdd(incrementValue))}
+                    />
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
+        </div>
+      </div>
+
+      <div className="container-fluid">
+        <div className="row">
+          <div className="col-3 p-4"></div>
+          <div className="col-6"></div>
+          <div className="col-3 p-4"></div>
         </div>
 
         <div className="container-fluid">
@@ -110,35 +187,7 @@ const Counter = () => {
 
         <div className="container-fluid">
           <div className="row">
-            <div className="col">
-              <div className="input-group">
-                <input
-                  className="form-control"
-                  aria-label="Set increment amount"
-                  value={incrementAmount}
-                  onChange={(e) => setIncrementAmount(e.target.value)}
-                />
-
-                <button
-                  className="btn"
-                  onClick={() => dispatch(incrementByAmount(incrementValue))}
-                >
-                  Add Amount
-                </button>
-                <button
-                  className="btn"
-                  onClick={() => dispatch(incrementAsync(incrementValue))}
-                >
-                  Add Async
-                </button>
-                <button
-                  className="btn"
-                  onClick={() => dispatch(incrementIfOdd(incrementValue))}
-                >
-                  Add If Odd
-                </button>
-              </div>
-            </div>
+            <div className="col"></div>
           </div>
         </div>
       </div>

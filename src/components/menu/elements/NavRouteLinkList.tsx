@@ -56,7 +56,7 @@ const renderRouteLink = (
           key={`accordion-${parentIndex}`}
           className="list-group list-group-flush"
           // If closing offcanvas when click is needed
-          // data-bs-dismiss="offcanvas"
+          data-bs-dismiss="offcanvas"
         >
           {subRouteLinks.map((routeLink: RouteLink, index: number) => {
             return renderNavLink(routeLink, parentIndex, index)

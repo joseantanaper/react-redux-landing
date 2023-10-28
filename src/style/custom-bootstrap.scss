@@ -23,10 +23,18 @@ $app-icon-text-margin: 3px;
   }
 }
 
+.col-form-label {
+  /*Label has no borders,
+  and vertically alignment is subtle different compared to inputs and buttons.
+  */
+  border: 0.8px solid transparent !important;
+}
+
 .btn,
 .nav-link,
-.list-group-item {
-
+.list-group-item,
+.form-control,
+.col-form-label {
   padding: .5rem 1rem;
 
   svg {
