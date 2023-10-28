@@ -21,8 +21,36 @@ const Counter = () => {
 
   const incrementValue = Number(incrementAmount) || 0
 
-  const dummy = () => {
-    alert('dummy')
+  const localIncrementAsync = (incrementValue: number) => {
+    document
+      .querySelectorAll('button[name="app-async-button"]')
+      .forEach((button) => {
+        button.classList.add('disabled')
+        button.querySelectorAll('div[class^="spinner"]').forEach((spin) => {
+          spin.classList.remove('invisible')
+        })
+        // button.querySelectorAll('svg').forEach((spin) => {
+        //   spin.classList.add('invisible')
+        // })
+      })
+    document
+      .querySelectorAll('button[name="app-async-button"]')
+      .forEach((spin) => {
+        spin.classList.remove('invisible')
+      })
+    dispatch(incrementAsync(incrementValue)).then(() => {
+      document
+        .querySelectorAll('button[name="app-async-button"]')
+        .forEach((button) => {
+          button.classList.remove('disabled')
+          button.querySelectorAll('div[class^="spinner"]').forEach((spin) => {
+            spin.classList.add('invisible')
+          })
+          // button.querySelectorAll('svg').forEach((spin) => {
+          //   spin.classList.remove('invisible')
+          // })
+        })
+    })
   }
 
   const toolbar = (
@@ -75,7 +103,7 @@ const Counter = () => {
             iconmap={IconMap.CirclePlus}
             className="btn-outline-primary"
             label="Add Async"
-            onClick={() => dispatch(incrementAsync(incrementValue))}
+            onClick={() => localIncrementAsync(incrementValue)}
           />
         </li>
         <li className="nav-item">
@@ -151,11 +179,14 @@ const Counter = () => {
                       }
                     />
                     <Button
+                      name="app-async-button"
                       iconmap={IconMap.CirclePlus}
                       className="btn-outline-primary"
                       label="Add Async"
-                      onClick={() => dispatch(incrementAsync(incrementValue))}
-                    />
+                      onClick={() => localIncrementAsync(incrementValue)}
+                    >
+                      <div className="spinner-border invisible"></div>
+                    </Button>
                     <Button
                       iconmap={IconMap.CirclePlus}
                       className="btn-outline-info"
@@ -166,28 +197,6 @@ const Counter = () => {
                 </div>
               </div>
             </div>
-          </div>
-        </div>
-      </div>
-
-      <div className="container-fluid">
-        <div className="row">
-          <div className="col-3 p-4"></div>
-          <div className="col-6"></div>
-          <div className="col-3 p-4"></div>
-        </div>
-
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col">
-              <hr />
-            </div>
-          </div>
-        </div>
-
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col"></div>
           </div>
         </div>
       </div>

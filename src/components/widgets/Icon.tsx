@@ -38,6 +38,7 @@ export const enum IconMap {
   CirclePlus = 'bi-plus-circle',
   CircleMinus = 'bi-dash-circle',
   CircleX = 'bi-x-circle',
+  Spinner = 'spinner',
 }
 
 export const Icon = ({
@@ -52,6 +53,8 @@ export const Icon = ({
 
   const renderIcon = () => {
     switch (idd) {
+      case 'spinner':
+        return <div className="spinner-border spinner-border-sm"></div>
       case 'bi-x-circle':
         return (
           <>
@@ -331,7 +334,9 @@ export const Icon = ({
     }
   }
 
-  return (
+  return idd === 'spinner' ? (
+    renderIcon()
+  ) : (
     <svg
       fill="currentColor"
       width={size}

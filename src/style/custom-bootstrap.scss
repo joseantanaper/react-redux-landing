@@ -6,13 +6,13 @@ $app-bg-active: rgba(var(--bs-secondary-bg-rgb), 0.9);
 $app-bg-active-click: var(--bs-secondary-bg);
 $app-bg-pending: var(--bs-tertiary-bg);
 
-$app-default-opacity: 0.7;
-$app-hover-opacity: 0.8;
-$app-active-opacity: 0.9;
+$app-default-opacity: .7;
+$app-hover-opacity: .8;
+$app-active-opacity: .9;
 $app-active-click-opacity: 1;
-$app-pending-opacity: 0.6;
+$app-pending-opacity: .6;
 
-$app-icon-text-margin: 3px;
+$app-icon-text-margin: 0.2rem;
 
 /* BOOTSTRAP HACKS -----------------------------------------------------------*/
 @include media-breakpoint-up(sm) {
@@ -46,7 +46,7 @@ $app-icon-text-margin: 3px;
   }
 }
 
-.nav-link:hover {
+.nav-link:active {
   background: rgba(var(--bs-secondary-bg-rgb), $app-default-opacity);
 }
 
@@ -67,6 +67,31 @@ $app-icon-text-margin: 3px;
 .navbar-toggler {
   cursor: pointer;
   white-space: nowrap;
+}
+
+.btn {
+
+  div.spinner-border,
+  div.spinner-grow,
+  div.spinner-border-sm,
+  div.spinner-grow-sm {
+    position: absolute;
+    display: flex;
+    align-items: center;
+    // filter: drop-shadow(0 0 1px var(--bs-emphasis-color));
+  }
+
+  div.spinner-border,
+  div.spinner-grow {
+    top: .3rem;
+    left: .5rem;
+  }
+
+  div.spinner-border-sm,
+  div.spinner-grow-sm {
+    top: .8rem;
+    left: 1rem;
+  }
 }
 
 // @include media-breakpoint-only(xs) {
@@ -120,22 +145,7 @@ $app-icon-text-margin: 3px;
   }
 }
 
-.btn:not(.btn-primary,
-  .btn-secondary,
-  .btn-success,
-  .btn-danger,
-  .btn-warning,
-  .btn-info,
-  .btn-light,
-  .btn-dark,
-  .btn-outline-primary,
-  .btn-outline-secondary,
-  .btn-outline-success,
-  .btn-outline-danger,
-  .btn-outline-warning,
-  .btn-outline-info,
-  .btn-outline-light,
-  .btn-outline-dark),
+.btn,
 .nav-link,
 .accordion-button,
 .list-group-item,
@@ -163,11 +173,11 @@ $app-icon-text-margin: 3px;
   .btn-outline-warning,
   .btn-outline-info,
   .btn-outline-light,
-  .btn-outline-dark):hover,
-.nav-link:hover,
-.accordion-button:hover,
-.list-group-item:hover,
-.navbar-toggler:hover {
+  .btn-outline-dark):active,
+.nav-link:active,
+.accordion-button:active,
+.list-group-item:active,
+.navbar-toggler:active {
   // opacity: $app-hover-opacity;
 
   svg,
@@ -181,6 +191,34 @@ $app-icon-text-margin: 3px;
   }
 
 }
+
+.btn-primary:hover,
+.btn-secondary:hover,
+.btn-success:hover,
+.btn-danger:hover,
+.btn-warning:hover,
+.btn-info:hover,
+.btn-light:hover,
+.btn-dark:hover,
+.btn-outline-primary:hover,
+.btn-outline-secondary:hover,
+.btn-outline-success:hover,
+.btn-outline-danger:hover,
+.btn-outline-warning:hover,
+.btn-outline-info:hover,
+.btn-outline-light:hover,
+.btn-outline-dark:hover {
+
+  svg,
+  span {
+    opacity: $app-hover-opacity;
+  }
+
+  svg {
+    filter: drop-shadow(0 0 1px white) drop-shadow(0 0 3px white);
+  }
+}
+
 
 .btn:not(.btn-primary,
   .btn-secondary,
@@ -208,6 +246,30 @@ $app-icon-text-margin: 3px;
   span {
     opacity: $app-active-click-opacity;
   }
+}
+
+.btn-primary:active,
+.btn-secondary:active,
+.btn-success:active,
+.btn-danger:active,
+.btn-warning:active,
+.btn-info:active,
+.btn-light:active,
+.btn-dark:active,
+.btn-outline-primary:active,
+.btn-outline-secondary:active,
+.btn-outline-success:active,
+.btn-outline-danger:active,
+.btn-outline-warning:active,
+.btn-outline-info:active,
+.btn-outline-light:active,
+.btn-outline-dark:active {
+
+  svg,
+  span {
+    opacity: $app-active-click-opacity;
+  }
+
 }
 
 .btn:not(.btn-primary,

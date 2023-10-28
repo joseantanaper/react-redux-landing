@@ -2,6 +2,7 @@ import { Icon, IconMap } from '@/components/widgets/Icon'
 import { ReactNode } from 'react'
 
 interface Props {
+  name?: string
   className?: string
   extraClass?: string
   disabled?: boolean
@@ -15,6 +16,7 @@ interface Props {
 }
 
 export const Button = ({
+  name,
   className = 'btn',
   extraClass = '',
   disabled = false,
@@ -25,6 +27,7 @@ export const Button = ({
 }: Props) => {
   return (
     <button
+      name={name}
       className={
         (className!.includes('btn-') ? `btn ${className}` : `${className}`) +
         (extraClass ? ` ${extraClass}` : '')
