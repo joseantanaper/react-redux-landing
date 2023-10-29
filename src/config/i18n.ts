@@ -16,9 +16,9 @@ i18n
           clearall: 'Clear All',
           todo: {
             subtitle: 'The simplest ToDo List app',
-            description: `[html]This is a very simple Todo List App based on <strong>Array</strong> and
-      LocalStorage. It includes add, remove, clear all and search
-      actions. Tasks are shown in a responsive table.`,
+            description: `This is a very simple Todo List App based on
+            <1>Array</1> and LocalStorage. It includes add, remove, clear all
+            and search actions. Tasks are shown in a responsive table.`,
             search: 'Search tasks...',
             content: 'Task content...',
             tasks: 'Tasks',
@@ -41,7 +41,7 @@ i18n
           'To get started, edit <1>src/App.js</1> and save to reload.':
             'To get started, edit <1>src/App.js</1> and save to reload.',
           'Welcome to React': 'Welcome to React and react-i18next',
-          welcome: 'Hello <br/> <strong>World</strong>',
+          welcome: 'Hello World',
           Add: 'Add',
         },
       },

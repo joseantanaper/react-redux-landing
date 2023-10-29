@@ -15,6 +15,7 @@ import { PageLayout } from '@/components/layout/PageLayout'
 import { Button } from '@/components/widgets/Button'
 import { Input } from '@/components/widgets/Input'
 import { TodoList } from '@components/todo'
+import { Modal } from '@/components/widgets/Modal'
 
 import { Icon, IconMap } from '@/components/widgets/Icon'
 
@@ -60,7 +61,10 @@ const Todo = () => {
     // TODO: Open Modal with Javascript, NO with button click,.
     setModalTitle('Clear All')
     setModalContent('Are you sure you want to clear all tasks?')
-    document.getElementById('modalToggler')?.click()
+    const button = document.querySelectorAll(
+      '#TodoConfirm button'
+    )[0] as HTMLButtonElement
+    button.click()
   }
 
   const ClearAll = () => {
@@ -127,7 +131,7 @@ const Todo = () => {
 
   return (
     <PageLayout
-      title="Todo List"
+      title="ToDo List"
       subtitle={t('app:todo:subtitle')}
       description={t('app:todo:description')}
       subnavbar={true}
@@ -149,58 +153,12 @@ const Todo = () => {
         </div>
       </div>
 
-      {/* MODAL */}
-      <button
-        id="modalToggler"
-        type="button"
-        data-bs-toggle="modal"
-        data-bs-target="#exampleModal"
-        className="invisible"
+      <Modal
+        id="TodoConfirm"
+        title={modalTitle}
+        content={modalContent}
+        confirm={ClearAll}
       />
-
-      <div
-        className="modal fade"
-        id="exampleModal"
-        tabIndex={-1}
-        aria-labelledby="exampleModalLabel"
-        aria-hidden="true"
-        data-bs-backdrop="true"
-      >
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-header">
-              <h1 className="modal-title fs-5" id="exampleModalLabel">
-                {modalTitle}
-              </h1>
-              <button
-                type="button"
-                className="btn-close"
-                data-bs-dismiss="modal"
-                aria-label="Close"
-              ></button>
-            </div>
-            <div className="modal-body">{modalContent}</div>
-            <div className="modal-footer">
-              <button
-                id="modalCloser"
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                No
-              </button>
-              <button
-                type="button"
-                className="btn btn-danger"
-                onClick={ClearAll}
-              >
-                <Icon iconmap={IconMap.TaskClear} />
-                <span>Clear All</span>
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
     </PageLayout>
   )
 }

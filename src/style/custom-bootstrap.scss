@@ -23,6 +23,34 @@ $app-icon-text-margin: 0.2rem;
   }
 }
 
+@include media-breakpoint-only(sm) {
+
+  .btn:not([name='app-clock']),
+  .nav-link {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 80px;
+  }
+}
+
+input[type=number] {
+  text-align: right;
+  padding-right: 24px;
+}
+
+input[type=number]::-webkit-inner-spin-button {
+  position: absolute;
+  cursor: pointer;
+  width: 25% !important;
+  height: 98%;
+  right: 0.05rem;
+  top: 0.05rem;
+}
+
+input.form-control {
+  min-width: 120px;
+}
+
 .col-form-label {
   /*Label has no borders,
   and vertically alignment is subtle different compared to inputs and buttons.
@@ -190,8 +218,7 @@ $app-icon-text-margin: 0.2rem;
   }
 
   svg {
-    filter:
-      drop-shadow(0 0 1px white) drop-shadow(0 0 3px rgba(var(--bs-emphasis-color-rgb), 0.8));
+    filter: drop-shadow(0 0 1px white) drop-shadow(0 0 3px rgba(var(--bs-emphasis-color-rgb), 0.8));
   }
 
 }

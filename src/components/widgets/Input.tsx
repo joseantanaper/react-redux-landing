@@ -5,9 +5,10 @@ import { Button } from './Button'
 interface Props {
   name?: string
   placeholder?: string
+  className?: string
+  style?: Object
   value?: string
   type?: 'text' | 'number'
-  // extraClass?: string
   disabled?: boolean
   search?: boolean
   onChange?: Function
@@ -17,6 +18,8 @@ interface Props {
 export const Input = ({
   name,
   placeholder,
+  className,
+  style,
   value,
   type = 'text',
   disabled,
@@ -27,16 +30,17 @@ export const Input = ({
   if (search) {
     return (
       <div className="btn-group">
-        <div className="input-group">
+        <div className={`input-group ${className}`}>
           <input
-            className="form-control z-0 text-truncate"
+            className={`form-control z-0 text-truncate ${className}`}
             name={name}
             placeholder={placeholder}
             value={value}
             type={type}
             disabled={disabled}
             onChange={(e) => (onChange ? onChange(e.target.value) : null)}
-            style={{ paddingRight: '26px', minWidth: '240px' }}
+            // style={{ paddingRight: '26px', minWidth: '120px' }}
+            style={{ ...style, minWidth: '120px', paddingRight: '26px' }}
           />
           <Icon
             id={IconMap.Search}
@@ -67,6 +71,8 @@ export const Input = ({
         type={type}
         disabled={disabled}
         onChange={(e) => (onChange ? onChange(e.target.value) : null)}
+        style={style}
+        // style={{ minWidth: '120px' }}
       />
     )
   }

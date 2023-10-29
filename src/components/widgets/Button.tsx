@@ -11,7 +11,7 @@ interface Props {
   async?: boolean
   onClick?: Function
   targetId?: string
-  toggle?: string
+  toggle?: 'offcanvas'
   dismiss?: string
   children?: ReactNode
 }

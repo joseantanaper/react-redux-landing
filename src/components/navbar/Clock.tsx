@@ -50,7 +50,7 @@ export const Clock = ({ currentClockMode }: Props) => {
 
   return (
     <>
-      <Button onClick={handleClick}>
+      <Button name="app-clock" onClick={handleClick}>
         <Icon id="bi-clock" extra="app-rotate" />
         <span>{time.substring(0, time.indexOf(':'))}</span>
         <span className="opacity-50">:</span>

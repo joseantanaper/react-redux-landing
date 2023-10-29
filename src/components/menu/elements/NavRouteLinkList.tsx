@@ -4,6 +4,7 @@ import { Icon, IconMap } from '@/components/widgets/Icon'
 import { Button } from '@/components/widgets/Button'
 import { Accordion } from './Accordion'
 import { NavLink } from 'react-router-dom'
+import { Input } from '@/components/widgets/Input'
 
 interface Props {
   routeLinks: RouteLink[]
@@ -71,9 +72,8 @@ export const NavRouteLinkList = ({ routeLinks, parentIndex }: Props) => {
   return (
     <>
       <div className="input-group">
-        <input
+        <Input
           type="text"
-          className="form-control"
           placeholder=""
           aria-label="Example text with button addon"
           aria-describedby="button-addon1"

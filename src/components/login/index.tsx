@@ -1,9 +1,10 @@
 import { useState } from 'react'
 import { Icon, IconMap } from '@components/widgets/Icon'
-import { Button } from '../widgets/Button'
+import { Button } from '@components/widgets/Button'
 import { useAppSelector, useAppDispatch } from '@app/hooks'
 import { RootState } from '@app/store'
 import { Avatar, AvatarSize } from '@components/Avatar'
+import { Input } from '@components/widgets/Input'
 
 import { Trans } from 'react-i18next'
 
@@ -64,13 +65,12 @@ export const Login = ({ id }: Props) => {
           <div className="col">
             {!currentUsername ? (
               <div className="input-group">
-                <input
-                  className="form-control"
+                <Input
                   type="text"
                   placeholder="Username"
                   aria-label="Username"
                   value={username}
-                  onChange={(e) => applyUsername(e.target.value)}
+                  onChange={applyUsername}
                 />
                 <Button
                   className="btn btn-outline-success"

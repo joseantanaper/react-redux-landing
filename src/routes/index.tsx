@@ -14,28 +14,28 @@ const Index = () => {
       {/* <hr className="text-body-tertiary d-lg-none" /> */}
 
       <li className="nav-item">
-        <a className="nav-link" href="/">
-          AAAAA
+        <a className="nav-link" href="#section1">
+          Section 1
         </a>
       </li>
       <li className="nav-item float-end">
-        <button className="nav-link text-end w-100" onClick={dummy}>
-          AHA
-        </button>
-      </li>
-      <li className="nav-item">
-        <a className="nav-link" href="/">
-          BBBBBB
+        <a className="nav-link" href="#section2">
+          Section 2
         </a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="/">
-          CC
+        <a className="nav-link" href="#section3">
+          Section 3
         </a>
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="/">
-          DDD DD
+        <a className="nav-link" href="#section4">
+          Section 4
+        </a>
+      </li>
+      <li className="nav-item">
+        <a className="nav-link" href="#section5">
+          Section 5
         </a>
       </li>
     </>
@@ -49,42 +49,79 @@ const Index = () => {
       toolbar={toolbar}
     >
       <>
-        <div className="container-fluid">
+        <div className="container-fluid mb-5">
           <div className="row">
             <div className="col text-justify">
-              I'm Index.
-              <hr />
-            </div>
-          </div>
-        </div>
-        <div className="container-fluid">
-          <div className="row">
-            <div className="col text-justify">
+              <h2 id="section1">Section 1</h2>
               <LoremIpsum p={1} />
             </div>
           </div>
         </div>
-        <div className="container-fluid">
+
+        <div className="container-fluid mb-5">
           <div className="row">
-            {[0, 1, 2, 3, 4].map((user, index) => {
-              return (
-                <div key={`div-avatar-${index}`} className="col">
-                  <Avatar
-                    gender="male"
-                    className="avatar rounded-circle app-profile"
-                    width="200"
-                    height="200"
-                    alt="Avatar"
-                  />
+            <div className="col">
+              <h2 id="section2">Section 2</h2>
+              <div className="container-fluid">
+                <div className="row">
+                  {[0, 1, 2, 3, 4].map((user, index) => {
+                    return (
+                      <div key={`div-avatar-${index}`} className="col">
+                        <Avatar
+                          gender="male"
+                          className="avatar rounded-circle app-profile"
+                          width="200"
+                          height="200"
+                          alt="Avatar"
+                        />
+                      </div>
+                    )
+                  })}
                 </div>
-              )
-            })}
+              </div>
+            </div>
           </div>
         </div>
-        <div className="container-fluid">
+
+        <div className="container-fluid mb-5">
           <div className="row">
             <div className="col text-justify">
-              <LoremIpsum p={20} />
+              <h2 id="section3">Section 3</h2>
+              <LoremIpsum p={8} />
+            </div>
+          </div>
+        </div>
+
+        <div className="container-fluid mb-5">
+          <div className="row">
+            <div className="col">
+              <h2 id="section4">Section 4</h2>
+              <div className="container-fluid">
+                <div className="row">
+                  {[0, 1, 2, 3, 4].map((user, index) => {
+                    return (
+                      <div key={`div-avatar-${index}`} className="col">
+                        <Avatar
+                          gender="male"
+                          className="avatar rounded-circle app-profile"
+                          width="200"
+                          height="200"
+                          alt="Avatar"
+                        />
+                      </div>
+                    )
+                  })}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="container-fluid mb-5">
+          <div className="row">
+            <div className="col text-justify">
+              <h2 id="section5">Section 5</h2>
+              <LoremIpsum p={24} />
             </div>
           </div>
         </div>

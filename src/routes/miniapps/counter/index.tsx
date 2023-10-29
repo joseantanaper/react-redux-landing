@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Button } from '@/components/widgets/Button'
+import { Input } from '@/components/widgets/Input'
 import { IconMap } from '@/components/widgets/Icon'
 import { useAppSelector, useAppDispatch } from '@app/hooks'
 import {
@@ -54,12 +55,13 @@ const Counter = () => {
         </li>
         <li className="nav-item d-none d-sm-block me-3"></li>
         <li className="nav-item">
-          <input
+          <Input
+            type="number"
             style={{ maxWidth: '120px', minWidth: '120px' }}
             className="form-control float-end"
             aria-label="Set increment amount"
             value={incrementAmount}
-            onChange={(e) => setIncrementAmount(e.target.value)}
+            onChange={setIncrementAmount}
           />
         </li>
         <li className="nav-item">
@@ -136,13 +138,13 @@ const Counter = () => {
               <div className="row float-end mt-3">
                 <div className="col">
                   <div className="input-group">
-                    <input
+                    <Input
                       type="number"
                       style={{ maxWidth: '120px', minWidth: '120px' }}
                       className="form-control"
                       aria-label="Set increment amount"
                       value={incrementAmount}
-                      onChange={(e) => setIncrementAmount(e.target.value)}
+                      onChange={setIncrementAmount}
                     />
                     <Button
                       iconmap={IconMap.CirclePlus}

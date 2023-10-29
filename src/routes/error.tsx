@@ -1,9 +1,9 @@
 import { useRouteError, isRouteErrorResponse } from 'react-router-dom'
+import { PageLayout } from '@/components/layout/PageLayout'
 
 const ErrorPage = () => {
   const error = useRouteError()
   let errorMessage
-  console.error(error)
 
   if (isRouteErrorResponse(error)) {
     // error is type `ErrorResponse`
@@ -17,13 +17,17 @@ const ErrorPage = () => {
   }
 
   return (
-    <div id="error-page">
-      <h1>Oops!</h1>
-      <p>Sorry, an unexpected error has occurred.</p>
-      <p>
-        <i>{errorMessage}</i>
-      </p>
-    </div>
+    <PageLayout title="Error" subtitle="Details">
+      <div className="text-danger border-top p-5 fs-2 fw-bold text-center">
+        {errorMessage}
+      </div>
+      <div className="border-top p-5 text-center fs-3">
+        Return to{' '}
+        <a href="/" className="fw-bold">
+          Home
+        </a>
+      </div>
+    </PageLayout>
   )
 }
 
