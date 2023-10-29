@@ -6,6 +6,7 @@ import { Subnavbar } from '../navbar/Subnavbar'
 interface Props {
   title: string
   subtitle?: string
+  description?: string
   subnavbar?: boolean
   toolbar?: ReactNode
   children: ReactNode
@@ -14,6 +15,7 @@ interface Props {
 export const PageLayout = ({
   title,
   subtitle,
+  description,
   subnavbar = false,
   toolbar,
   children,
@@ -73,10 +75,10 @@ export const PageLayout = ({
 
   return (
     <>
-      <div className="container-fluid">
+      <div className="container-fluid mb-4">
         <div className="row">
           <div className="col">
-            <h1 className="mb-5 text-center">
+            <h1 className="text-center">
               <span>{title}</span>{' '}
               <span className="opacity-25 ms-3 fst-italic fw-light">
                 {subtitle}
@@ -85,10 +87,24 @@ export const PageLayout = ({
           </div>
         </div>
       </div>
+
+      {description && (
+        <div className="app-header mb-4">
+          <div className="container-fluid">
+            <div className="row">
+              <div className="col fw-lighter text-body-secondary">
+                {description}
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
+
       {subnavbar && (
         <Subnavbar title={title} subtitle={subtitle} toolbar={toolbar} />
       )}
-      <div className="app-content ps-3 pe-2">{children}</div>
+
+      <div className="app-content">{children}</div>
 
       <Button
         className="navbar-toggler app-go-top"

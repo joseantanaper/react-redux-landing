@@ -14,7 +14,7 @@ $modal-backdrop-bg: rgba(0 0 0 / 0.4);
 $modal-backdrop-opacity: 1;
 
 // FORMS
-$input-placeholder-color: rgba(var(--bs-secondary-color-rgb), 0.4) !important;
+$input-placeholder-color: rgba(var(--bs-secondary-color-rgb), 0.2) !important;
 
 // ACCORDION
 $accordion-button-padding-y: 1rem;
@@ -27,3 +27,4 @@ $accordion-body-padding-x: 0;
 $list-group-item-padding-y: 0.6rem;
 $list-group-active-bg: var(--bs-secondary-bg);
 $list-group-active-color: var(--bs-text-body);
+$list-group-border-color: rgba(var(--bs-secondary-bg-rgb), 0.4);

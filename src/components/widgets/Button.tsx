@@ -8,6 +8,7 @@ interface Props {
   disabled?: boolean
   iconmap?: IconMap
   label?: string
+  async?: boolean
   onClick?: Function
   targetId?: string
   toggle?: string
@@ -22,9 +23,50 @@ export const Button = ({
   disabled = false,
   iconmap,
   label,
+  async = false,
   onClick,
   children,
 }: Props) => {
+  const handleClick = (name: string) => {
+    if (onClick) {
+      console.log('Button', 'handleClick')
+      if (async) {
+        document
+          .querySelectorAll('button[name="' + name + '"]')
+          .forEach((button) => {
+            button.classList.add('disabled')
+            button.querySelectorAll('svg').forEach((icon) => {
+              icon.classList.add('d-none')
+            })
+            button.querySelectorAll('div[class^="spinner"]').forEach((spin) => {
+              spin.classList.remove('d-none')
+            })
+          })
+        document
+          .querySelectorAll('button[name="' + name + '"]')
+          .forEach((spin) => {
+            spin.classList.remove('invisible')
+          })
+      }
+      onClick().then(() => {
+        if (async) {
+          document
+            .querySelectorAll('button[name="' + name + '"]')
+            .forEach((button) => {
+              button.classList.remove('disabled')
+              button.querySelectorAll('svg').forEach((icon) => {
+                icon.classList.remove('d-none')
+              })
+              button
+                .querySelectorAll('div[class^="spinner"]')
+                .forEach((spin) => {
+                  spin.classList.add('d-none')
+                })
+            })
+        }
+      })
+    }
+  }
   return (
     <button
       name={name}
@@ -33,22 +75,16 @@ export const Button = ({
         (extraClass ? ` ${extraClass}` : '')
       }
       disabled={disabled}
-      onClick={() => onClick && onClick()}
+      onClick={() =>
+        onClick ? (async ? handleClick(name!) : onClick()) : null
+      }
     >
+      <div className="spinner-border spinner-border-sm d-none"></div>
       {iconmap ? <Icon id={iconmap} /> : null}
       {label ? <span>{label}</span> : null}
       {children ? children : null}
     </button>
   )
-}
-
-interface ButtonDismissProps {
-  className?: string
-  extraClass?: string
-  disabled?: boolean
-  iconmap?: IconMap
-  label?: string
-  dismiss?: string
 }
 
 export const ButtonDismiss = ({
@@ -72,19 +108,6 @@ export const ButtonDismiss = ({
       {label ? <span>{label}</span> : null}
     </button>
   )
-}
-
-interface ButtonTogglerProps {
-  className?: string
-  extraClass?: string
-  disabled?: boolean
-  iconmap?: IconMap
-  label?: string
-  onClick?: Function
-  targetId?: string
-  toggle?: string
-  dismiss?: string
-  children?: ReactNode
 }
 
 export const ButtonToggler = ({

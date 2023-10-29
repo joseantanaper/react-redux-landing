@@ -53,8 +53,6 @@ export const Icon = ({
 
   const renderIcon = () => {
     switch (idd) {
-      case 'spinner':
-        return <div className="spinner-border spinner-border-sm"></div>
       case 'bi-x-circle':
         return (
           <>

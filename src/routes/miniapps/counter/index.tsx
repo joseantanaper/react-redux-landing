@@ -22,35 +22,7 @@ const Counter = () => {
   const incrementValue = Number(incrementAmount) || 0
 
   const localIncrementAsync = (incrementValue: number) => {
-    document
-      .querySelectorAll('button[name="app-async-button"]')
-      .forEach((button) => {
-        button.classList.add('disabled')
-        button.querySelectorAll('div[class^="spinner"]').forEach((spin) => {
-          spin.classList.remove('invisible')
-        })
-        // button.querySelectorAll('svg').forEach((spin) => {
-        //   spin.classList.add('invisible')
-        // })
-      })
-    document
-      .querySelectorAll('button[name="app-async-button"]')
-      .forEach((spin) => {
-        spin.classList.remove('invisible')
-      })
-    dispatch(incrementAsync(incrementValue)).then(() => {
-      document
-        .querySelectorAll('button[name="app-async-button"]')
-        .forEach((button) => {
-          button.classList.remove('disabled')
-          button.querySelectorAll('div[class^="spinner"]').forEach((spin) => {
-            spin.classList.add('invisible')
-          })
-          // button.querySelectorAll('svg').forEach((spin) => {
-          //   spin.classList.remove('invisible')
-          // })
-        })
-    })
+    return dispatch(incrementAsync(incrementValue))
   }
 
   const toolbar = (
@@ -100,10 +72,12 @@ const Counter = () => {
         </li>
         <li className="nav-item">
           <Button
+            name="app-async-navbar-button"
             iconmap={IconMap.CirclePlus}
             className="btn-outline-primary"
             label="Add Async"
-            onClick={() => localIncrementAsync(incrementValue)}
+            async={true}
+            onClick={() => dispatch(incrementAsync(incrementValue))}
           />
         </li>
         <li className="nav-item">
@@ -183,10 +157,9 @@ const Counter = () => {
                       iconmap={IconMap.CirclePlus}
                       className="btn-outline-primary"
                       label="Add Async"
-                      onClick={() => localIncrementAsync(incrementValue)}
-                    >
-                      <div className="spinner-border invisible"></div>
-                    </Button>
+                      async={true}
+                      onClick={() => dispatch(incrementAsync(incrementValue))}
+                    />
                     <Button
                       iconmap={IconMap.CirclePlus}
                       className="btn-outline-info"

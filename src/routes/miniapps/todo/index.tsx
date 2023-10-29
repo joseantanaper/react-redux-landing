@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useAppSelector, useAppDispatch } from '@app/hooks'
+
 import {
   addTodo,
   clearAll,
@@ -7,8 +8,12 @@ import {
   remove,
 } from '@app/reducer/todos.slice'
 
+import i18n from 'i18next'
+import { useTranslation, initReactI18next } from 'react-i18next'
+
 import { PageLayout } from '@/components/layout/PageLayout'
 import { Button } from '@/components/widgets/Button'
+import { Input } from '@/components/widgets/Input'
 import { TodoList } from '@components/todo'
 
 import { Icon, IconMap } from '@/components/widgets/Icon'
@@ -16,9 +21,13 @@ import { Icon, IconMap } from '@/components/widgets/Icon'
 const Todo = () => {
   const [todo, setTodo] = useState('')
   const [search, setSearch] = useState('')
+  const [modalTitle, setModalTitle] = useState('')
+  const [modalContent, setModalContent] = useState('')
   const dispatch = useAppDispatch()
   const { todos } = useAppSelector(selectTodos)
   const [filteredTodos, setFilteredTodos] = useState([...todos])
+
+  const { t } = useTranslation()
 
   const FilterTodos = (search: string) => {
     setSearch(search)
@@ -47,9 +56,18 @@ const Todo = () => {
     setFilteredTodos([...filteredTodos].filter((t) => t !== todo))
   }
 
+  const PreClearAll = () => {
+    // TODO: Open Modal with Javascript, NO with button click,.
+    setModalTitle('Clear All')
+    setModalContent('Are you sure you want to clear all tasks?')
+    document.getElementById('modalToggler')?.click()
+  }
+
   const ClearAll = () => {
+    // TODO: Close Modal with Javascript, NO with button click,.
     dispatch(clearAll())
     setFilteredTodos([])
+    document.getElementById('modalCloser')?.click()
   }
 
   const toolbar = (
@@ -57,7 +75,7 @@ const Todo = () => {
       <li className="nav-item">
         <div className="btn-group">
           <span className="btn btn-outline-secondary disabled text-body">
-            Tasks
+            {t('app:todo:tasks')}
           </span>
           <span className="btn btn-outline-secondary disabled text-body">
             {filteredTodos.length} / {todos.length}
@@ -68,55 +86,29 @@ const Todo = () => {
       <li className="nav-item">
         {/* TODO: TextSearch component */}
         <div className="btn-group sm-w-100">
-          <div className="input-group">
-            <input
-              id="app-search"
-              className="form-control app-search"
-              type="text"
-              placeholder="Search tasks..."
-              value={search}
-              style={{
-                paddingRight: '26px',
-                minWidth: '120px',
-                zIndex: 0,
-              }}
-              onChange={(e) => FilterTodos(e.target.value)}
-            />
-            <Icon
-              id={IconMap.Search}
-              extra="app-search text-primary"
-              style={{
-                position: 'absolute',
-                top: '14px',
-                right: '8px',
-              }}
-            />
-          </div>
-          <Button
-            className="btn-outline-danger"
-            iconmap={IconMap.Backspace}
-            onClick={ClearSearch}
+          <Input
+            search={true}
+            placeholder={t('app:todo:search')}
+            value={search}
+            onChange={FilterTodos}
+            clear={ClearSearch}
           />
         </div>
       </li>
       <li className="nav-item d-none d-sm-block me-3"></li>
       <li className="nav-item">
         <div className="btn-group sm-w-100">
-          <input
-            className="form-control"
-            type="text"
+          <Input
             value={todo}
-            style={{
-              minWidth: '120px',
-            }}
-            onChange={(e) => setTodo(e.target.value)}
+            placeholder={t('app:todo:content')}
+            onChange={setTodo}
           />
           <Button
             className="btn-outline-primary"
             disabled={!todo}
-            onClick={() => AddTodo()}
+            onClick={AddTodo}
             iconmap={IconMap.TaskPlus}
-            label="Add"
+            label={t('app:add')}
           />
         </div>
       </li>
@@ -125,14 +117,10 @@ const Todo = () => {
         <Button
           className="btn-outline-danger"
           disabled={todos.length <= 0}
-          onClick={ClearAll}
+          onClick={PreClearAll}
           iconmap={IconMap.TaskClear}
-          label="Clear All"
+          label={t('app:clearall')}
         />
-      </li>
-
-      <li className="nav-item">
-        <br />
       </li>
     </>
   )
@@ -140,7 +128,8 @@ const Todo = () => {
   return (
     <PageLayout
       title="Todo List"
-      subtitle="Simplest Todo List App"
+      subtitle={t('app:todo:subtitle')}
+      description={t('app:todo:description')}
       subnavbar={true}
       toolbar={toolbar}
     >
@@ -150,11 +139,64 @@ const Todo = () => {
           <div className="col">
             <div className="btn-group">
               <span className="btn btn-outline-secondary disabled text-body">
-                Tasks
+                {t('app:todo:tasks')}
               </span>
               <span className="btn btn-outline-secondary disabled text-body">
                 {filteredTodos.length} / {todos.length}
               </span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* MODAL */}
+      <button
+        id="modalToggler"
+        type="button"
+        data-bs-toggle="modal"
+        data-bs-target="#exampleModal"
+        className="invisible"
+      />
+
+      <div
+        className="modal fade"
+        id="exampleModal"
+        tabIndex={-1}
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+        data-bs-backdrop="true"
+      >
+        <div className="modal-dialog">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="exampleModalLabel">
+                {modalTitle}
+              </h1>
+              <button
+                type="button"
+                className="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div className="modal-body">{modalContent}</div>
+            <div className="modal-footer">
+              <button
+                id="modalCloser"
+                type="button"
+                className="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                No
+              </button>
+              <button
+                type="button"
+                className="btn btn-danger"
+                onClick={ClearAll}
+              >
+                <Icon iconmap={IconMap.TaskClear} />
+                <span>Clear All</span>
+              </button>
             </div>
           </div>
         </div>

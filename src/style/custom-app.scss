@@ -1,4 +1,16 @@
 // PageLayout
+.app-header,
+.app-content {
+  padding-left: 20px;
+  padding-right: 10px;
+}
+
+.app-header {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  text-align: justify;
+}
+
 .app-content {
   padding-top: 60px;
   padding-bottom: 120px;
@@ -162,14 +174,40 @@ img.app-profile {
 
 button.app-go-top {
   padding: 0px;
-  transition: 0.4s opacity ease-in-out;
+  // transition: 0.4s opacity ease-in-out;
   opacity: 0.3;
-  filter: drop-shadow(0 3px 2px rgba(0 0 0 / 0.8));
+  // filter: drop-shadow(0 3px 2px rgba(0 0 0 / 0.8));
+}
+
+button.app-go-top:hover {
+  opacity: 0.6;
 }
 
 button.app-go-top.hide {
   visibility: hidden;
 }
+
+// button.app-go-top.show:hover {
+
+//   svg,
+//   span {
+//     opacity: $app-hover-opacity;
+//   }
+
+//   svg {
+//     filter: drop-shadow(0 0 1px white) drop-shadow(0 0 3px white);
+//   }
+
+// }
+
+// button.app-go-top.show:active {
+
+//   svg,
+//   span {
+//     opacity: $app-active-click-opacity;
+//   }
+
+// }
 
 // button.app-go-top.show {
 //   opacity: 0.2;
@@ -220,19 +258,20 @@ div.app-shadow-divider {
   box-shadow: inset 0 0.5em 1.5em rgba(0, 0, 0, .1), inset 0 0.125em 0.5em rgba(0, 0, 0, .15);
 }
 
-svg.app-search,
-svg.app-search-btn {
-  opacity: 0.4;
-}
 
-svg.app-search-btn {
-  cursor: pointer;
-}
+// svg.app-search,
+// svg.app-search-btn {
+//   opacity: 0.4;
+// }
 
-svg.app-search-btn:hover {
-  opacity: 0.8;
-}
+// svg.app-search-btn {
+//   cursor: pointer;
+// }
 
-svg.app-search-btn:active {
-  opacity: 1;
-}
+// svg.app-search-btn:hover {
+//   opacity: 0.8;
+// }
+
+// svg.app-search-btn:active {
+//   opacity: 1;
+// }

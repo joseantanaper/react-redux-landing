@@ -10,6 +10,20 @@ i18n
     lng: 'en',
     resources: {
       en: {
+        app: {
+          add: 'Add',
+          remove: 'Remove',
+          clearall: 'Clear All',
+          todo: {
+            subtitle: 'The simplest ToDo List app',
+            description: `[html]This is a very simple Todo List App based on <strong>Array</strong> and
+      LocalStorage. It includes add, remove, clear all and search
+      actions. Tasks are shown in a responsive table.`,
+            search: 'Search tasks...',
+            content: 'Task content...',
+            tasks: 'Tasks',
+          },
+        },
         translations: {
           Home: 'Home',
           Portfolio: 'Portfolio',
@@ -28,9 +42,24 @@ i18n
             'To get started, edit <1>src/App.js</1> and save to reload.',
           'Welcome to React': 'Welcome to React and react-i18next',
           welcome: 'Hello <br/> <strong>World</strong>',
+          Add: 'Add',
         },
       },
       es: {
+        app: {
+          add: 'Añadir',
+          remove: 'Borrar',
+          clearall: 'Vaciar todo',
+          todo: {
+            subtitle: 'La más sencilla aplicación de Lista de Tareas',
+            description: `Esta es una sencilla aplicación de Lista de Tareas basada en Arrays y en almacenamiento local.
+            Incluye las acciones de añadir, eliminar, vaciar todo y búsqueda. Las tareas se muestran en una 
+            tabla con diseño flexible.`,
+            search: 'Buscar tareas...',
+            content: 'Contenido tarea...',
+            tasks: 'Tareas',
+          },
+        },
         translations: {
           Home: 'Inicio',
 
@@ -52,10 +81,11 @@ i18n
       },
     },
     fallbackLng: 'en',
+
     debug: true,
 
     // have a common namespace used around the full app
-    ns: ['translations'],
+    ns: ['translations', 'app'],
     defaultNS: 'translations',
 
     keySeparator: false, // we use content as keys
