@@ -7,6 +7,7 @@ export interface RouteLink {
   label: string
   iconmap: IconMap
   items?: RouteLink[]
+  parent?: RouteLink
 }
 
 export const routeLinks = [
@@ -32,7 +33,7 @@ export const routeLinks = [
       {
         id: 'todo',
         url: '/miniapps/todo',
-        label: 'Todo List',
+        label: 'Todo List again',
         iconmap: IconMap.Todo,
       },
       {
@@ -44,13 +45,13 @@ export const routeLinks = [
       {
         id: 'todo',
         url: '/miniapps/todo',
-        label: 'Todo List',
+        label: 'Todo List more',
         iconmap: IconMap.Todo,
       },
       {
         id: 'counter',
         url: '/miniapps/counter',
-        label: 'Counter+',
+        label: 'Counter+ repeat',
         iconmap: IconMap.Todo,
       },
     ],

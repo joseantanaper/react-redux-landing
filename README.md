@@ -124,6 +124,16 @@ npm install react-lorem-ipsum
 
 npm install react-i18next i18next --save
 
+## Execute code only during build time (version / timestamp)
+
+```sh
+npm install --save-dev preval.macro
+npm install --save-dev babel-plugin-macros
+npm install --save-dev @types/preval.macro
+```
+
+.babelrc
+
 ---
 
 ---

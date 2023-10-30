@@ -30,7 +30,12 @@ const renderNavLink = (
       {/* <div className="vr ms-2 m-0 p-0 bottom-0 position-absolute top-0"></div> */}
       <span>
         {routeLink.label}
-        {/* <span className="opacity-25 m-0">|</span> {routeLink.url} */}
+        {routeLink.parent && (
+          <span className="ms-3 border-start ps-3 small fst-italic text-secondary float-end">
+            <Icon iconmap={routeLink.parent.iconmap} />
+            <span>{routeLink.parent.label}</span>
+          </span>
+        )}
       </span>
     </NavLink>
   )
@@ -72,19 +77,35 @@ export const NavRouteLinkList = ({ routeLinks, parentIndex }: Props) => {
   const [search, setSearch] = useState('')
   const [filteredRouteLinks, setFilteredRouteLinks] = useState(routeLinks)
 
-  const FilterLinks = (search: string) => {
+  const filterLinks = (search: string) => {
     setSearch(search)
-    setFilteredRouteLinks(
-      [...routeLinks].filter(
-        (link: RouteLink) =>
-          link.label.toUpperCase().includes(search.toUpperCase())
-        // .concat(
-        //   link.items!.filter((sublink) =>
-        //     sublink.label.toUpperCase().includes(search.toUpperCase())
-        //   )
-        // )
-      )
-    )
+    if (search) {
+      let filtered: RouteLink[] = []
+      ;[...routeLinks].forEach((link: RouteLink) => {
+        if (link.label.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
+          filtered.push(link)
+      })
+      ;[...routeLinks].forEach((link: RouteLink) => {
+        // if (link.label.includes(search)) filtered.push(link)
+        link.items &&
+          link.items.forEach((sublink: RouteLink) => {
+            if (
+              sublink.label
+                .toLocaleLowerCase()
+                .includes(search.toLocaleLowerCase())
+            )
+              filtered.push({ ...sublink, parent: link })
+          })
+      })
+      setFilteredRouteLinks(filtered)
+    } else {
+      setFilteredRouteLinks([...routeLinks])
+    }
+  }
+
+  const clearFilter = () => {
+    setSearch('')
+    setFilteredRouteLinks([...routeLinks])
   }
 
   return (
@@ -94,8 +115,8 @@ export const NavRouteLinkList = ({ routeLinks, parentIndex }: Props) => {
         search={true}
         value={search}
         placeholder="Search links..."
-        onChange={FilterLinks}
-        clear={() => setSearch('')}
+        onChange={filterLinks}
+        clear={clearFilter}
       />
 
       <hr />

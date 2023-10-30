@@ -30,6 +30,9 @@ const Index = () => {
       <li className="nav-item">
         <Linko iconmap={IconMap.Code} label="Section 5" href="#section5" />{' '}
       </li>
+      <li className="nav-item">
+        <Linko iconmap={IconMap.Code} label="Footer" href="#footer" />{' '}
+      </li>
     </>
   )
 

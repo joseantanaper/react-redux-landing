@@ -4,6 +4,18 @@ import path from 'path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
+  define: {
+    APP_BUILD_TIME: JSON.stringify(
+      new Date()
+        .toISOString()
+        .substring(0, 16)
+        .replace('T', '.')
+        .replace(/:/g, '')
+        .replace(/-/g, '')
+    ),
+    __APP_VERSION__: JSON.stringify(process.env.name),
+    __BUILD_TIME__: JSON.stringify(new Date()),
+  },
   plugins: [react()],
   server: {
     open: true,
