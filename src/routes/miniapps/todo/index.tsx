@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react'
-import { useAppSelector, useAppDispatch } from '@app/hooks'
+import { useAppDispatch, useAppSelector } from '@/app/hooks'
+import { Trans } from 'react-i18next'
 
 import {
   addTodo,
@@ -132,8 +133,8 @@ const Todo = () => {
   return (
     <PageLayout
       title="ToDo List"
-      subtitle={t('app:todo:subtitle')}
-      description={t('app:todo:description')}
+      subtitle="app:todo:subtitle"
+      description="app:todo:description"
       subnavbar={true}
       toolbar={toolbar}
     >

@@ -39,6 +39,7 @@ export const enum IconMap {
   CircleMinus = 'bi-dash-circle',
   CircleX = 'bi-x-circle',
   Spinner = 'spinner',
+  Code = 'bi-code-square',
 }
 
 export const Icon = ({

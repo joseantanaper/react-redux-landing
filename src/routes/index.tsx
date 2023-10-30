@@ -2,6 +2,8 @@ import { PageLayout } from '@/components/layout/PageLayout'
 import LoremIpsum from 'react-lorem-ipsum'
 import { Subnavbar } from '@/components/navbar/Subnavbar'
 import { Avatar } from 'react-lorem-ipsum'
+import { Icon, IconMap } from '@/components/widgets/Icon'
+import { Linko } from '@/components/widgets/Linko'
 
 const Index = () => {
   const dummy = () => {
@@ -14,29 +16,19 @@ const Index = () => {
       {/* <hr className="text-body-tertiary d-lg-none" /> */}
 
       <li className="nav-item">
-        <a className="nav-link" href="#section1">
-          Section 1
-        </a>
+        <Linko iconmap={IconMap.Code} label="Section 1" href="#section1" />
       </li>
       <li className="nav-item float-end">
-        <a className="nav-link" href="#section2">
-          Section 2
-        </a>
+        <Linko iconmap={IconMap.Code} label="Section 2" href="#section2" />
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#section3">
-          Section 3
-        </a>
+        <Linko iconmap={IconMap.Code} label="Section 3" href="#section3" />{' '}
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#section4">
-          Section 4
-        </a>
+        <Linko iconmap={IconMap.Code} label="Section 4" href="#section4" />{' '}
       </li>
       <li className="nav-item">
-        <a className="nav-link" href="#section5">
-          Section 5
-        </a>
+        <Linko iconmap={IconMap.Code} label="Section 5" href="#section5" />{' '}
       </li>
     </>
   )

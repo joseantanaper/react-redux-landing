@@ -79,7 +79,7 @@ export const Button = ({
         onClick ? (async ? handleClick(name!) : onClick()) : null
       }
     >
-      <div className="spinner-border spinner-border-sm d-none"></div>
+      {async && <div className="spinner-border spinner-border-sm d-none"></div>}
       {iconmap ? <Icon id={iconmap} /> : null}
       {label ? <span>{label}</span> : null}
       {children ? children : null}

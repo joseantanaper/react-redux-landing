@@ -1,9 +1,10 @@
 import React from 'react'
+import { useState } from 'react'
 import { RouteLink } from '@/config/nav.config'
 import { Icon, IconMap } from '@/components/widgets/Icon'
 import { Button } from '@/components/widgets/Button'
 import { Accordion } from './Accordion'
-import { NavLink } from 'react-router-dom'
+import { NavLink, NavLinkProps } from 'react-router-dom'
 import { Input } from '@/components/widgets/Input'
 
 interface Props {
@@ -40,7 +41,6 @@ const renderRouteLink = (
   parentIndex: number,
   index: number
 ) => {
-  // const customKey = `${parentIndex}_${index}`
   if (routeLink.url.startsWith('/')) {
     return renderNavLink(routeLink, 0, index)
   } else {
@@ -69,23 +69,36 @@ const renderRouteLink = (
 }
 
 export const NavRouteLinkList = ({ routeLinks, parentIndex }: Props) => {
+  const [search, setSearch] = useState('')
+  const [filteredRouteLinks, setFilteredRouteLinks] = useState(routeLinks)
+
+  const FilterLinks = (search: string) => {
+    setSearch(search)
+    setFilteredRouteLinks(
+      [...routeLinks].filter(
+        (link: RouteLink) =>
+          link.label.toUpperCase().includes(search.toUpperCase())
+        // .concat(
+        //   link.items!.filter((sublink) =>
+        //     sublink.label.toUpperCase().includes(search.toUpperCase())
+        //   )
+        // )
+      )
+    )
+  }
+
   return (
     <>
-      <div className="input-group">
-        <Input
-          type="text"
-          placeholder=""
-          aria-label="Example text with button addon"
-          aria-describedby="button-addon1"
-        />
-        <Button
-          className="btn-outline-success"
-          iconmap={IconMap.Search}
-          label="Search"
-        />
-      </div>
+      <Input
+        type="text"
+        search={true}
+        value={search}
+        placeholder="Search links..."
+        onChange={FilterLinks}
+        clear={() => setSearch('')}
+      />
 
-      <br />
+      <hr />
 
       <div
         key={parentIndex}
@@ -93,7 +106,7 @@ export const NavRouteLinkList = ({ routeLinks, parentIndex }: Props) => {
         // If closing offcanvas when click is needed
         data-bs-dismiss="offcanvas"
       >
-        {routeLinks
+        {filteredRouteLinks
           .filter((routeLink) => routeLink.url.startsWith('/'))
           .map((routeLink, index) => {
             return renderRouteLink(routeLink, parentIndex, index)
@@ -102,7 +115,7 @@ export const NavRouteLinkList = ({ routeLinks, parentIndex }: Props) => {
 
       <br />
 
-      {routeLinks
+      {filteredRouteLinks
         .filter((routeLink) => !routeLink.url.startsWith('/'))
         .map((routeLink, index) => {
           return renderRouteLink(routeLink, parentIndex, index)

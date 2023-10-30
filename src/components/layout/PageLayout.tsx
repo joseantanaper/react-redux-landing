@@ -2,6 +2,7 @@ import { useEffect, ReactNode } from 'react'
 import { Icon, IconMap } from '../widgets/Icon'
 import { Button } from '../widgets/Button'
 import { Subnavbar } from '../navbar/Subnavbar'
+import { Trans } from 'react-i18next'
 
 interface Props {
   title: string
@@ -81,7 +82,7 @@ export const PageLayout = ({
             <h1 className="text-center">
               <span>{title}</span>{' '}
               <span className="opacity-25 ms-3 fst-italic fw-light">
-                {subtitle}
+                <Trans>{subtitle}</Trans>
               </span>
             </h1>
           </div>
@@ -93,7 +94,7 @@ export const PageLayout = ({
           <div className="container-fluid">
             <div className="row">
               <div className="col fw-lighter text-body-secondary">
-                {description}
+                <Trans>{description}</Trans>
               </div>
             </div>
           </div>

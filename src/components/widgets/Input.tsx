@@ -29,7 +29,7 @@ export const Input = ({
 }: Props) => {
   if (search) {
     return (
-      <div className="btn-group">
+      <div className="btn-group w-100">
         <div className={`input-group ${className}`}>
           <input
             className={`form-control z-0 text-truncate ${className}`}
@@ -56,7 +56,8 @@ export const Input = ({
           <Button
             className="btn-outline-danger"
             iconmap={IconMap.Backspace}
-            onClick={clear}
+            disabled={!value}
+            onClick={() => clear && clear()}
           />
         )}
       </div>

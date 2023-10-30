@@ -17,8 +17,9 @@ i18n
           todo: {
             subtitle: 'The simplest ToDo List app',
             description: `This is a very simple Todo List App based on
-            <1>Array</1> and LocalStorage. It includes add, remove, clear all
-            and search actions. Tasks are shown in a responsive table.`,
+            <strong>Array</strong> and <strong>LocalStorage</strong>. It
+            includes add, remove, clear all and search actions. Tasks are shown
+            in a <strong>responsive table</strong>.`,
             search: 'Search tasks...',
             content: 'Task content...',
             tasks: 'Tasks',
@@ -52,9 +53,11 @@ i18n
           clearall: 'Vaciar todo',
           todo: {
             subtitle: 'La más sencilla aplicación de Lista de Tareas',
-            description: `Esta es una sencilla aplicación de Lista de Tareas basada en Arrays y en almacenamiento local.
-            Incluye las acciones de añadir, eliminar, vaciar todo y búsqueda. Las tareas se muestran en una 
-            tabla con diseño flexible.`,
+            description: `Esta es una sencilla aplicación de Lista de Tareas
+            basada en <strong>Arrays</strong> y en <strong>almacenamiento
+            local</strong>. Incluye las acciones de añadir, eliminar, vaciar
+            todo y búsqueda. Las tareas se muestran en una <strong>tabla con
+            diseño flexible</strong>.`,
             search: 'Buscar tareas...',
             content: 'Contenido tarea...',
             tasks: 'Tareas',
