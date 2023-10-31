@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
-import { Trans } from 'react-i18next'
+import t from 'i18next'
 
 import {
   addTodo,

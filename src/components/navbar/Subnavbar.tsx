@@ -3,7 +3,7 @@
 import { ReactNode } from 'react'
 import { Title } from './Title'
 import { Icon, IconMap } from '../widgets/Icon'
-import { MenuToggler } from '../toggler/MenuToggler'
+import { ButtonToggler } from '../widgets/Button'
 import { MiniCounter } from '../toggler/MiniCounter'
 import { NavMenu } from './NavMenu'
 import { RouteLink } from '@/config/nav.config'
@@ -25,10 +25,10 @@ export const Subnavbar = ({ title, subtitle, toolbar }: Props) => {
             {/* Title */}
             <Title title={t(title)} subtitle={t(subtitle!)} type={1} />
 
-            <MenuToggler
-              id="subnavbarMenu"
+            <ButtonToggler
               iconmap={IconMap.More}
-              toggleMode="collapse"
+              toggle="collapse"
+              targetId="subnavbarMenu"
             />
           </div>
 

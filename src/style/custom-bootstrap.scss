@@ -331,3 +331,11 @@ input.form-control {
     opacity: $app-active-opacity;
   }
 }
+
+footer {
+  h5 {
+    border-bottom: 2px solid rgba(var(--bs-secondary-bg-rgb), 1);
+    padding-bottom: 20px;
+    margin-bottom: 20px;
+  }
+}

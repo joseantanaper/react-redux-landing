@@ -275,3 +275,31 @@ div.app-shadow-divider {
 // svg.app-search-btn:active {
 //   opacity: 1;
 // }
+
+h1.app-counter {
+  text-shadow: 0 0 8px var(--bs-emphasis-color);
+}
+
+div.app-pageLayout {
+  animation: 0.25s ease-in 0s 1 pageLoadTransition;
+}
+
+@keyframes pageLoadTransition {
+  0% {
+    opacity: 0;
+    -webkit-filter: blur(8px);
+    -moz-filter: blur(8px);
+    -o-filter: blur(8px);
+    -ms-filter: blur(8px);
+    transform: translateY(-8px);
+  }
+
+  100% {
+    opacity: 1;
+    -webkit-filter: blur(0px);
+    -moz-filter: blur(0px);
+    -o-filter: blur(0px);
+    -ms-filter: blur(0px);
+    transform: translateY(0);
+  }
+}

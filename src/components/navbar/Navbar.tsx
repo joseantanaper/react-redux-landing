@@ -1,5 +1,4 @@
 import { NavLink } from 'react-router-dom'
-import { MenuToggler } from '../toggler/MenuToggler'
 import { ButtonToggler } from '../widgets/Button'
 import { ThemeToggler } from '../toggler/ThemeToggler'
 import { MiniCounter } from '../toggler/MiniCounter'

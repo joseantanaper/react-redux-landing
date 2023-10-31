@@ -13,7 +13,6 @@ export default defineConfig({
         .replace(/:/g, '')
         .replace(/-/g, '')
     ),
-    __APP_VERSION__: JSON.stringify(process.env.name),
     __BUILD_TIME__: JSON.stringify(new Date()),
   },
   plugins: [react()],

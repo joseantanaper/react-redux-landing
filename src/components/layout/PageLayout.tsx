@@ -66,16 +66,25 @@ export const PageLayout = ({
     )
 
     showTitle()
+    goTop(true)
+
+    return () => {
+      console.log('PageLayout', 'useEffect', 'unload')
+    }
   }, [])
 
-  const goTop = () => {
+  const goTop = (instant: boolean = false) => {
     console.log('PageLayout', 'goTop')
-    document.body.scrollTop = 0
+    if (instant) {
+      window.scrollTo({ top: 0, left: 0, behavior: 'instant' })
+    } else {
+      document.body.scrollTop = 0
+    }
     document.documentElement.scrollTop = 0
   }
 
   return (
-    <>
+    <div id="app-pageLayout" className="app-pageLayout">
       <div className="container-fluid mb-4">
         <div className="row">
           <div className="col">
@@ -109,10 +118,10 @@ export const PageLayout = ({
 
       <Button
         className="navbar-toggler app-go-top"
-        extraClass="position-fixed end-0 bottom-0 me-5 mb-5 hide fade"
+        extraClass="position-fixed end-0 bottom-0 me-5 mb-5 hide fade z-3"
         iconmap={IconMap.GoTop}
         onClick={goTop}
       />
-    </>
+    </div>
   )
 }

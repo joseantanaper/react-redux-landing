@@ -52,9 +52,13 @@ const counterSlice = createSlice({
     // Use the PayloadAction type to declare the contents of `action.payload`
     incrementByAmount: (state, action: PayloadAction<number>) => {
       state.value += action.payload
+      localStorage.setItem(CounterKey.COUNTER, String(Number(state.value)))
+      console.log('counterSlice', 'incrementByAmount', state.value)
     },
     clear: (state) => {
       state.value = 0
+      localStorage.setItem(CounterKey.COUNTER, String(Number(state.value)))
+      console.log('counterSlice', 'clear', state.value)
     },
   },
   // The `extraReducers` field lets the slice handle actions defined elsewhere,
@@ -67,6 +71,8 @@ const counterSlice = createSlice({
       .addCase(incrementAsync.fulfilled, (state, action) => {
         state.status = 'idle'
         state.value += action.payload
+        localStorage.setItem(CounterKey.COUNTER, String(Number(state.value)))
+        console.log('counterSlice', 'extra', 'fulfilled', state.value)
       })
       .addCase(incrementAsync.rejected, (state) => {
         state.status = 'failed'

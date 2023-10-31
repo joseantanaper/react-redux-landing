@@ -1,92 +1,21 @@
 import i18n from 'i18next'
-// import LanguageDetector from 'i18next-browser-languagedetector'
+import detector from 'i18next-browser-languagedetector'
+import backend from 'i18next-http-backend'
 import { initReactI18next } from 'react-i18next'
 
+import { translationEN } from './locales/en/translation'
+import { translationES } from './locales/es/translation'
+
 i18n
-  // .use(LanguageDetector)
+  // .use(detector)
+  .use(backend) // Avoid glitches on page refresh
+  .use(detector)
   .use(initReactI18next)
   .init({
-    // we init with resources
-    lng: 'en',
-    resources: {
-      en: {
-        app: {
-          add: 'Add',
-          remove: 'Remove',
-          clearall: 'Clear All',
-          todo: {
-            subtitle: 'The simplest ToDo List app',
-            description: `This is a very simple Todo List App based on
-            <strong>Array</strong> and <strong>LocalStorage</strong>. It
-            includes add, remove, clear all and search actions. Tasks are shown
-            in a <strong>responsive table</strong>.`,
-            search: 'Search tasks...',
-            content: 'Task content...',
-            tasks: 'Tasks',
-          },
-        },
-        translations: {
-          Home: 'Home',
-          Portfolio: 'Portfolio',
-          'Todo List': 'Todo List',
-          Appearance: 'Appearance',
-          Language: 'Language',
-          Clock: 'Clock',
-          'Clock Mode': 'Clock Mode',
-          Welcome: 'Welcome',
-          Navigation: 'Navigation',
-          Settings: 'Settings',
-          'Please, Sign In': 'Please, Sign In',
-          'Sign In': 'Sign In',
-          'Sign Out': 'Sign Out',
-          'To get started, edit <1>src/App.js</1> and save to reload.':
-            'To get started, edit <1>src/App.js</1> and save to reload.',
-          'Welcome to React': 'Welcome to React and react-i18next',
-          welcome: 'Hello World',
-          Add: 'Add',
-        },
-      },
-      es: {
-        app: {
-          add: 'Añadir',
-          remove: 'Borrar',
-          clearall: 'Vaciar todo',
-          todo: {
-            subtitle: 'La más sencilla aplicación de Lista de Tareas',
-            description: `Esta es una sencilla aplicación de Lista de Tareas
-            basada en <strong>Arrays</strong> y en <strong>almacenamiento
-            local</strong>. Incluye las acciones de añadir, eliminar, vaciar
-            todo y búsqueda. Las tareas se muestran en una <strong>tabla con
-            diseño flexible</strong>.`,
-            search: 'Buscar tareas...',
-            content: 'Contenido tarea...',
-            tasks: 'Tareas',
-          },
-        },
-        translations: {
-          Home: 'Inicio',
-
-          'Todo List': 'Lista Tareas',
-          Appearance: 'Apariencia',
-          Language: 'Idioma',
-          Clock: 'Reloj',
-          'Clock Mode': 'Modo Reloj',
-          Welcome: 'Bienvenido',
-          Navigation: 'Navegación',
-          Settings: 'Ajustes',
-          'Please, Sign In': 'Por favor, inicia sesión',
-          'Sign In': 'Entrar',
-          'Sign Out': 'Salir',
-          'To get started, edit <1>src/App.js</1> and save to reload.':
-            'Starte in dem du, <1>src/App.js</1> editierst und speicherst.',
-          'Welcome to React': 'Willkommen bei React und react-i18next',
-        },
-      },
-    },
-    fallbackLng: 'en',
-
     debug: true,
-
+    fallbackLng: 'es',
+    lng: 'es',
+    // lng: 'en',
     // have a common namespace used around the full app
     ns: ['translations', 'app'],
     defaultNS: 'translations',
@@ -95,6 +24,11 @@ i18n
 
     interpolation: {
       escapeValue: false,
+    },
+
+    resources: {
+      en: translationEN,
+      es: translationES,
     },
   })
 

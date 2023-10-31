@@ -1,5 +1,6 @@
 import React from 'react'
 import { Avatar, AvatarSize } from '../Avatar'
+import { Icon, IconMap } from '../widgets/Icon'
 
 const Footer = () => {
   return (
@@ -59,8 +60,45 @@ const Footer = () => {
               ***
             </div>
             <div className="col text-center">
-              <h5>Contact</h5>
-              ***
+              <h5>More</h5>
+              <div className="list-group list-group-flush">
+                <a
+                  className="list-group-item list-group-item-action"
+                  href="https://www.linkedin.com/in/josean/"
+                  target="_blank"
+                >
+                  <Icon iconmap={IconMap.Portfolio} />
+                  <span>LinkedIn</span>
+                  <Icon
+                    iconmap={IconMap.External}
+                    extra="position-absolute end-0 opacity-25"
+                  />
+                </a>
+                <a
+                  className="list-group-item list-group-item-action"
+                  href="https://www.linkedin.com/in/josean/"
+                  target="_blank"
+                >
+                  <Icon iconmap={IconMap.GitHub} />
+                  <span>GitHub</span>
+                  <Icon
+                    iconmap={IconMap.External}
+                    extra="position-absolute end-0 opacity-25"
+                  />
+                </a>
+                <a
+                  className="list-group-item list-group-item-action"
+                  href="https://www.linkedin.com/in/josean/"
+                  target="_blank"
+                >
+                  <Icon iconmap={IconMap.GitLab} />
+                  <span>GitLab</span>
+                  <Icon
+                    iconmap={IconMap.External}
+                    extra="position-absolute end-0 opacity-25"
+                  />
+                </a>
+              </div>
             </div>
           </div>
         </div>

@@ -1,6 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
 import { RootState } from '@app/store'
 import { PageLayout } from '@/components/layout/PageLayout'
+import { useTranslation } from 'react-i18next'
 
 export enum Theme {
   Light = 'light',
@@ -21,6 +22,7 @@ export enum AppKey {
   USERNAME = 'username',
   THEME = 'theme',
   LOCALE = 'locale',
+  I18N = 'i18nextLng',
   CLOCK_MODE = 'clockmode',
 }
 
@@ -34,7 +36,8 @@ export interface AppState {
 const INITIAL_STATE = {
   username: localStorage.getItem(AppKey.USERNAME) || '',
   theme: localStorage.getItem(AppKey.THEME) ?? Theme.Light,
-  locale: localStorage.getItem(AppKey.LOCALE) ?? Locale.EN,
+  locale:
+    localStorage.getItem(AppKey.LOCALE) ?? localStorage.getItem(AppKey.I18N),
   clockmode: Number(localStorage.getItem(AppKey.CLOCK_MODE)) ?? ClockMode.Short,
 } as AppState
 

@@ -1,11 +1,12 @@
 import React from 'react'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { RouteLink } from '@/config/nav.config'
 import { Icon, IconMap } from '@/components/widgets/Icon'
 import { Button } from '@/components/widgets/Button'
 import { Accordion } from './Accordion'
 import { NavLink, NavLinkProps } from 'react-router-dom'
 import { Input } from '@/components/widgets/Input'
+import { t } from 'i18next'
 
 interface Props {
   routeLinks: RouteLink[]
@@ -20,22 +21,28 @@ const renderNavLink = (
   return (
     <NavLink
       key={`nav-link-${parentIndex}-${index}`}
-      className={`list-group-item list-group-item-action ${
+      className={`list-group-item text-nowrap list-group-item-action ${
         parentIndex > 0 ? 'ps-4' : ''
       }`}
       aria-current="page"
       to={routeLink.url}
     >
       <Icon iconmap={routeLink.iconmap} />
-      {/* <div className="vr ms-2 m-0 p-0 bottom-0 position-absolute top-0"></div> */}
-      <span>
-        {routeLink.label}
-        {routeLink.parent && (
-          <span className="ms-3 border-start ps-3 small fst-italic text-secondary float-end">
-            <Icon iconmap={routeLink.parent.iconmap} />
-            <span>{routeLink.parent.label}</span>
+      <span className="">
+        {/* <div className="vr ms-2 m-0 p-0 bottom-0 position-absolute top-0"></div> */}
+        <span>{routeLink.label}</span>
+        <span className="small text-body-secondary">
+          <span className="float-end border-start ps-2 ms-2">
+            {routeLink.parent && (
+              <>
+                <span className="end-0">
+                  <Icon iconmap={routeLink.parent.iconmap} />
+                  <span className="inline">{routeLink.parent.label}</span>
+                </span>
+              </>
+            )}
           </span>
-        )}
+        </span>
       </span>
     </NavLink>
   )
@@ -47,13 +54,14 @@ const renderRouteLink = (
   index: number
 ) => {
   if (routeLink.url.startsWith('/')) {
-    return renderNavLink(routeLink, 0, index)
+    return renderNavLink(routeLink, parentIndex, index)
   } else {
     const subRouteLinks: RouteLink[] = routeLink.items as RouteLink[]
+    const accordionId = `accordion-${index}`
     return (
       <Accordion
-        id="accordionNav"
-        key={`accordion-${index}`}
+        id={accordionId}
+        key={accordionId}
         label={routeLink.label}
         index={parentIndex}
         iconmap={routeLink.iconmap}
@@ -75,18 +83,31 @@ const renderRouteLink = (
 
 export const NavRouteLinkList = ({ routeLinks, parentIndex }: Props) => {
   const [search, setSearch] = useState('')
+  const [linkCount, setLinkCount] = useState(0)
   const [filteredRouteLinks, setFilteredRouteLinks] = useState(routeLinks)
+
+  const countLinks = () => {
+    let counter: number = 0
+    counter += [...routeLinks].filter((link) => link.url.startsWith('/')).length
+    ;[...routeLinks].map((link) => {
+      if (link.items) counter += link.items!.length
+    })
+    return counter
+  }
 
   const filterLinks = (search: string) => {
     setSearch(search)
+    let filtered: RouteLink[] = []
+    setLinkCount(countLinks())
     if (search) {
-      let filtered: RouteLink[] = []
       ;[...routeLinks].forEach((link: RouteLink) => {
-        if (link.label.toLocaleLowerCase().includes(search.toLocaleLowerCase()))
+        if (
+          link.url.startsWith('/') &&
+          link.label.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+        )
           filtered.push(link)
       })
       ;[...routeLinks].forEach((link: RouteLink) => {
-        // if (link.label.includes(search)) filtered.push(link)
         link.items &&
           link.items.forEach((sublink: RouteLink) => {
             if (
@@ -108,6 +129,10 @@ export const NavRouteLinkList = ({ routeLinks, parentIndex }: Props) => {
     setFilteredRouteLinks([...routeLinks])
   }
 
+  useEffect(() => {
+    filterLinks('')
+  }, [])
+
   return (
     <>
       <Input
@@ -119,7 +144,16 @@ export const NavRouteLinkList = ({ routeLinks, parentIndex }: Props) => {
         clear={clearFilter}
       />
 
-      <hr />
+      <div className="text-end mt-3 mb-3">
+        <div className="btn-group">
+          <span className="btn btn-outline-secondary disabled text-body">
+            {t('app:links')}
+          </span>
+          <span className="btn btn-outline-secondary disabled text-body">
+            {search ? filteredRouteLinks.length : linkCount} / {linkCount}
+          </span>
+        </div>
+      </div>
 
       <div
         key={parentIndex}

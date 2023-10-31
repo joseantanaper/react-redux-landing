@@ -133,7 +133,11 @@ export const ButtonToggler = ({
       aria-label="Toggler"
     >
       {iconmap && <Icon iconmap={iconmap} />}
-      {label ? <span>{label}</span> : null}
+      {label ? (
+        <span className="">
+          <span className="text-truncate">{label}</span>
+        </span>
+      ) : null}
       {children ? children : null}
     </button>
   )

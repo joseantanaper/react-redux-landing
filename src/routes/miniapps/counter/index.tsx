@@ -104,7 +104,7 @@ const Counter = () => {
       <div className="container-fluid">
         <div className="row">
           <div className="col">
-            <h1 className="text-center" style={{ fontSize: 160 }}>
+            <h1 className="text-center app-counter" style={{ fontSize: 160 }}>
               {count}
             </h1>
           </div>

@@ -122,17 +122,48 @@ Add aliases to **tsconfig.json**
 npm install react-lorem-ipsum
 ```
 
-npm install react-i18next i18next --save
-
-## Execute code only during build time (version / timestamp)
+# i18n
 
 ```sh
-npm install --save-dev preval.macro
-npm install --save-dev babel-plugin-macros
-npm install --save-dev @types/preval.macro
+npm install react-i18next i18next --save
+npm install i18next-browser-languagedetector --save
+npm install i18next-http-backend --save
 ```
 
-.babelrc
+## Custom properties
+
+vite.config.ts
+
+```ts
+export default defineConfig({
+  define: {
+    APP_BUILD_TIME: JSON.stringify(
+      new Date()
+        .toISOString()
+        .substring(0, 16)
+        .replace('T', '.')
+        .replace(/:/g, '')
+        .replace(/-/g, '')
+    ),
+    __BUILD_TIME__: JSON.stringify(new Date()),
+  },
+  ...
+```
+
+vite-env.d.ts
+
+```ts
+/// <reference types="vite/client" />
+declare const APP_BUILD_TIME: string
+...
+```
+
+## Add transitions
+
+```sh
+npm install react-transition-group --save
+npm install @types/react-transition-group
+```
 
 ---
 

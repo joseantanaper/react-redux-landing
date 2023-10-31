@@ -10,8 +10,8 @@ interface Props {
 }
 
 export const Accordion = ({ id, label, index, iconmap, children }: Props) => {
-  const accordionId = `accordion-${id}${index}`
-  const target = `accordionCollapse-${id}${index}`
+  const accordionId = `accordion-${id}-${index}`
+  const target = `accordionCollapse-${id}-${index}`
   return (
     <div className="accordion" id={`${accordionId}`}>
       {/* Accordion START */}

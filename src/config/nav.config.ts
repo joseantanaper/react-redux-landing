@@ -25,9 +25,41 @@ export const routeLinks = [
     iconmap: IconMap.Todo,
   },
   {
-    id: 'miniapps',
+    id: 'playground',
     url: '#',
     label: 'Playground',
+    iconmap: IconMap.Playground,
+    items: [
+      {
+        id: 'todo',
+        url: '/miniapps/todo',
+        label: 'Todo List again',
+        iconmap: IconMap.Todo,
+      },
+      {
+        id: 'counter',
+        url: '/miniapps/counter',
+        label: 'Counter+',
+        iconmap: IconMap.Todo,
+      },
+      {
+        id: 'todo',
+        url: '/miniapps/todo',
+        label: 'Todo List more',
+        iconmap: IconMap.Todo,
+      },
+      {
+        id: 'counter',
+        url: '/miniapps/counter',
+        label: 'Counter+ repeat',
+        iconmap: IconMap.Todo,
+      },
+    ],
+  },
+  {
+    id: 'playgroundplus',
+    url: '#',
+    label: 'Playground plus extra text for testing purposes',
     iconmap: IconMap.Playground,
     items: [
       {

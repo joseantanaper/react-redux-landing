@@ -15,14 +15,13 @@ export const LocaleToggler = () => {
 
   const clickLocale = (locale: Locale) => {
     dispatch(setLocale(locale))
-    // applyLocale(locale)
     i18n.changeLanguage(locale)
     document.documentElement.setAttribute('lang', locale)
   }
 
   useEffect(() => {
-    document.documentElement.setAttribute('lang', currentLocale)
-    i18n.changeLanguage(currentLocale)
+    // document.documentElement.setAttribute('lang', currentLocale)
+    // i18n.changeLanguage(currentLocale)
   }, [])
 
   return (
