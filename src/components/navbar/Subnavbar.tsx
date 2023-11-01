@@ -11,19 +11,25 @@ import { routeLinks } from '@/config/nav.config'
 import { t } from 'i18next'
 
 interface Props {
-  title: string
+  title?: string
   subtitle?: string
+  iconmap?: IconMap
   toolbar?: ReactNode
 }
 
-export const Subnavbar = ({ title, subtitle, toolbar }: Props) => {
+export const Subnavbar = ({ title, subtitle, iconmap, toolbar }: Props) => {
   return (
     <>
       <nav className="app-main-subnavbar-crystal navbar navbar-expand-sm sticky-top border-bottom shadow-sm">
         <div className="app-navbar-container container-fluid app-subnavbar">
           <div className="row text-truncate">
             {/* Title */}
-            <Title title={t(title)} subtitle={t(subtitle!)} type={1} />
+            <Title
+              title={t(title!)}
+              subtitle={subtitle && t(subtitle!)}
+              iconmap={iconmap && iconmap}
+              type={1}
+            />
 
             <ButtonToggler
               iconmap={IconMap.More}
@@ -35,15 +41,17 @@ export const Subnavbar = ({ title, subtitle, toolbar }: Props) => {
           {/* Nav Menu Start */}
           <div className="row col">
             {/* <div className="container-fluid border-bottom d-sm-none"></div> */}
-            <div
-              className="collapse navbar-collapse px-3 justify-content-end"
-              id="subnavbarMenu"
-            >
-              <ul className="navbar-nav justify-content-end border-start ps-3">
-                {toolbar}
-              </ul>
-              {/* <div className="container-fluid d-sm-none"></div> */}
-            </div>
+            {toolbar && (
+              <div
+                className="collapse navbar-collapse px-3 justify-content-end"
+                id="subnavbarMenu"
+              >
+                <ul className="navbar-nav justify-content-end border-start ps-3">
+                  {toolbar}
+                </ul>
+                {/* <div className="container-fluid d-sm-none"></div> */}
+              </div>
+            )}
             {/* <div className="container-fluid border-top d-sm-none"></div> */}
             {/* Nav Menu End */}
           </div>

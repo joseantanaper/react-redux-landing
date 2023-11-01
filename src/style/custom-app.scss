@@ -52,8 +52,31 @@
       display: flex;
       min-height: $app-navbar-height;
       align-items: center;
+
+      span:first-child {}
+
+      span:nth-child(2) {
+        margin-left: 1rem;
+      }
+
+      svg {
+        width: auto;
+        margin-top: -$app-icon-text-margin*2;
+        height: 24px;
+        margin-right: 20px;
+      }
+
+
+      // svg {
+      //   height: 100%;
+      //   width: auto;
+      //   margin-top: -$app-icon-text-margin;
+      //   margin-right: 1rem;
+      //   opacity: 0.2;
+      // }
     }
   }
+
 }
 
 .app-main-navbar-crystal {
@@ -246,12 +269,14 @@ button.app-go-top.hide {
 // }
 
 
+
 div.app-shadow-divider {
   width: 96%;
   border-radius: 50px;
-  height: 3rem;
+  height: 2rem;
   margin-left: auto;
   margin-right: auto;
+  // margin-bottom: 60px;
   background-color: rgba(0, 0, 0, .1);
   border: solid rgba(0, 0, 0, .15);
   border-width: 1px 0;

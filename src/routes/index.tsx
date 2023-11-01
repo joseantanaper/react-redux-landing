@@ -37,12 +37,7 @@ const Index = () => {
   )
 
   return (
-    <PageLayout
-      title="Index"
-      subtitle="This is a very long subtitle for testing purposes"
-      subnavbar={true}
-      toolbar={toolbar}
-    >
+    <PageLayout subnavbar={true} toolbar={toolbar}>
       <>
         <div className="container-fluid mb-5">
           <div className="row">

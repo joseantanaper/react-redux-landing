@@ -131,13 +131,7 @@ const Todo = () => {
   )
 
   return (
-    <PageLayout
-      title="ToDo List"
-      subtitle="app:todo:subtitle"
-      description="app:todo:description"
-      subnavbar={true}
-      toolbar={toolbar}
-    >
+    <PageLayout subnavbar={true} toolbar={toolbar}>
       <TodoList todos={filteredTodos} Remove={Remove} />
       <div className="container-fluid text-end">
         <div className="row">

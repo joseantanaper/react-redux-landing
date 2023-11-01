@@ -20,6 +20,8 @@ export const Accordion = ({ id, label, index, iconmap, children }: Props) => {
           <ButtonToggler
             className="accordion-button collapsed"
             iconmap={iconmap}
+            iconSize={20}
+            iconClass="text-primary"
             label={label}
             targetId={target}
             toggle="collapse"

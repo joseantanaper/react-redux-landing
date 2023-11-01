@@ -1,19 +1,5 @@
 @import 'variables-app.scss';
 
-/* GLOBAL VARIABLES ----------------------------------------------------------*/
-$app-bg-hover: var(--bs-tertiary-bg);
-$app-bg-active: rgba(var(--bs-secondary-bg-rgb), 0.9);
-$app-bg-active-click: var(--bs-secondary-bg);
-$app-bg-pending: var(--bs-tertiary-bg);
-
-$app-default-opacity: .7;
-$app-hover-opacity: .8;
-$app-active-opacity: .9;
-$app-active-click-opacity: 1;
-$app-pending-opacity: .6;
-
-$app-icon-text-margin: 0.2rem;
-
 /* BOOTSTRAP HACKS -----------------------------------------------------------*/
 @include media-breakpoint-up(sm) {
   .navbar-nav {
@@ -29,7 +15,15 @@ $app-icon-text-margin: 0.2rem;
   .nav-link {
     overflow: hidden;
     text-overflow: ellipsis;
-    max-width: 80px;
+    max-width: $app-button-sm-max-width;
+  }
+}
+
+@include media-breakpoint-up(sm) {
+  .nav-link {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: $app-button-md-max-width;
   }
 }
 
@@ -63,14 +57,25 @@ input.form-control {
 .list-group-item,
 .form-control,
 .col-form-label {
-  padding: .5rem 1rem;
+  padding: $app-button-y-padding $app-button-x-padding;
 
   svg {
+    min-width: 16px;
+    min-height: 16px;
     margin-top: -($app-icon-text-margin);
   }
 
   svg+span {
     margin-left: ($app-icon-text-margin);
+  }
+}
+
+.accordion-button {
+  padding: $app-button-y-padding*2 $app-button-x-padding;
+
+  svg {
+    min-width: 16px;
+    min-height: 16px;
   }
 }
 
@@ -83,7 +88,12 @@ input.form-control {
 }
 
 .accordion-button {
+  svg {
+    // margin-top: -($app-icon-text-margin);
+  }
+
   svg+span {
+    padding: 2px 0px 2px 0px;
     margin-left: ($app-icon-text-margin);
   }
 }
@@ -182,8 +192,8 @@ input.form-control {
 .accordion-button,
 .list-group-item,
 .navbar-toggler {
-  // opacity: $app-default-opacity;
 
+  // opacity: $app-default-opacity;
   svg,
   span {
     opacity: $app-default-opacity;
@@ -210,7 +220,14 @@ input.form-control {
 .accordion-button:hover,
 .list-group-item:hover,
 .navbar-toggler:hover {
-  // opacity: $app-hover-opacity;
+
+  // overflow: visible;
+  text-overflow: clip;
+
+  span {
+    // overflow: visible;
+    text-overflow: clip;
+  }
 
   svg,
   span {
@@ -338,4 +355,10 @@ footer {
     padding-bottom: 20px;
     margin-bottom: 20px;
   }
+}
+
+
+.accordion-button:after {
+  -webkit-filter: grayscale(1) invert(0.6);
+  filter: grayscale(1) invert(0.6);
 }

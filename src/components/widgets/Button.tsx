@@ -7,6 +7,8 @@ interface Props {
   extraClass?: string
   disabled?: boolean
   iconmap?: IconMap
+  iconSize?: number
+  iconClass?: string
   label?: string
   async?: boolean
   onClick?: Function
@@ -114,6 +116,8 @@ export const ButtonToggler = ({
   className = 'navbar-toggler btn-outline-secondary',
   extraClass = '',
   iconmap,
+  iconSize,
+  iconClass,
   label,
   targetId,
   toggle = 'offcanvas',
@@ -132,12 +136,8 @@ export const ButtonToggler = ({
       aria-expanded={false}
       aria-label="Toggler"
     >
-      {iconmap && <Icon iconmap={iconmap} />}
-      {label ? (
-        <span className="">
-          <span className="text-truncate">{label}</span>
-        </span>
-      ) : null}
+      {iconmap && <Icon iconmap={iconmap} size={iconSize} extra={iconClass} />}
+      {label ? <span className="text-truncate">{label}</span> : null}
       {children ? children : null}
     </button>
   )

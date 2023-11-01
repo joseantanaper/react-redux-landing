@@ -1,6 +1,7 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
 import { RouteLink } from '@/config/nav.config'
+import { NavLinko } from '@/components/widgets/NavLinko'
 import { Icon, IconMap } from '@/components/widgets/Icon'
 import { Button } from '@/components/widgets/Button'
 import { Accordion } from './Accordion'
@@ -13,48 +14,15 @@ interface Props {
   parentIndex: number
 }
 
-const renderNavLink = (
-  routeLink: RouteLink,
-  parentIndex: number,
-  index: number
-) => {
-  return (
-    <NavLink
-      key={`nav-link-${parentIndex}-${index}`}
-      className={`list-group-item text-nowrap list-group-item-action ${
-        parentIndex > 0 ? 'ps-4' : ''
-      }`}
-      aria-current="page"
-      to={routeLink.url}
-    >
-      <Icon iconmap={routeLink.iconmap} />
-      <span className="">
-        {/* <div className="vr ms-2 m-0 p-0 bottom-0 position-absolute top-0"></div> */}
-        <span>{routeLink.label}</span>
-        <span className="small text-body-secondary">
-          <span className="float-end border-start ps-2 ms-2">
-            {routeLink.parent && (
-              <>
-                <span className="end-0">
-                  <Icon iconmap={routeLink.parent.iconmap} />
-                  <span className="inline">{routeLink.parent.label}</span>
-                </span>
-              </>
-            )}
-          </span>
-        </span>
-      </span>
-    </NavLink>
-  )
-}
-
 const renderRouteLink = (
   routeLink: RouteLink,
   parentIndex: number,
   index: number
 ) => {
   if (routeLink.url.startsWith('/')) {
-    return renderNavLink(routeLink, parentIndex, index)
+    return (
+      <NavLinko routeLink={routeLink} parentIndex={parentIndex} index={index} />
+    )
   } else {
     const subRouteLinks: RouteLink[] = routeLink.items as RouteLink[]
     const accordionId = `accordion-${index}`
@@ -72,9 +40,13 @@ const renderRouteLink = (
           // If closing offcanvas when click is needed
           data-bs-dismiss="offcanvas"
         >
-          {subRouteLinks.map((routeLink: RouteLink, index: number) => {
-            return renderNavLink(routeLink, parentIndex, index)
-          })}
+          {subRouteLinks.map((routeLink: RouteLink, index: number) => (
+            <NavLinko
+              routeLink={routeLink}
+              parentIndex={parentIndex}
+              index={index}
+            />
+          ))}
         </div>
       </Accordion>
     )
@@ -144,7 +116,7 @@ export const NavRouteLinkList = ({ routeLinks, parentIndex }: Props) => {
         clear={clearFilter}
       />
 
-      <div className="text-end mt-3 mb-3">
+      <div className="text-end mt-1 mb-3">
         <div className="btn-group">
           <span className="btn btn-outline-secondary disabled text-body">
             {t('app:links')}

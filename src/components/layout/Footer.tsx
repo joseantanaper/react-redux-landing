@@ -1,22 +1,16 @@
 import React from 'react'
-import { Avatar, AvatarSize } from '../Avatar'
-import { Icon, IconMap } from '../widgets/Icon'
+import { Avatar, AvatarSize } from '@components/Avatar'
+import { Icon, IconMap } from '@components/widgets/Icon'
+import { routeLinks, moreLinks, RouteLink } from '@config/nav.config'
+import { NavLinko } from '../widgets/NavLinko'
 
 const Footer = () => {
   return (
     <>
       <footer id="footer">
-        <div className="app-shadow-divider"></div>
+        <div className="app-shadow-divider mt-5"></div>
 
-        <div className="container" style={{ paddingBottom: '80px' }}>
-          <div className="row text-center">
-            <div className="col">
-              {/* <h1 className="text-center">- Footer -</h1> */}
-            </div>
-          </div>
-        </div>
-
-        <div className="container">
+        <div className="container mt-5">
           <div className="row">
             <div className="col fw-lighter border-end">
               <Avatar size={AvatarSize.md} className="d-flex shadow" />
@@ -51,58 +45,51 @@ const Footer = () => {
                 </div>
               </code>
             </div>
-            <div className="col text-center">
+            <div className="col text-truncate">
               <h5>Main Sections</h5>
-              ***
+              <div className="list-group list-group-flush">
+                {routeLinks
+                  .filter((routeLink) => !routeLink.items)
+                  .map((routeLink, index) => (
+                    <NavLinko routeLink={routeLink} parentIndex={0} index={0} />
+                  ))}
+              </div>
             </div>
-            <div className="col text-center">
-              <h5>Subsections</h5>
-              ***
+            <div className="col text-center text-truncate">
+              <h5>Secondary Sections</h5>
+              <div className="list-group list-group-flush">
+                {routeLinks
+                  .filter((routeLink) => routeLink.items)
+                  .map((routeLink) => {
+                    return (
+                      routeLink.items &&
+                      routeLink.items.map((subrouteLink) => (
+                        <NavLinko
+                          routeLink={subrouteLink}
+                          parentIndex={0}
+                          index={0}
+                        />
+                      ))
+                    )
+                  })}
+              </div>
             </div>
-            <div className="col text-center">
+            <div className="col text-end text-truncate">
               <h5>More</h5>
               <div className="list-group list-group-flush">
-                <a
-                  className="list-group-item list-group-item-action"
-                  href="https://www.linkedin.com/in/josean/"
-                  target="_blank"
-                >
-                  <Icon iconmap={IconMap.Portfolio} />
-                  <span>LinkedIn</span>
-                  <Icon
-                    iconmap={IconMap.External}
-                    extra="position-absolute end-0 opacity-25"
+                {moreLinks.map((moreLink, index) => (
+                  <NavLinko
+                    routeLink={moreLink}
+                    parentIndex={0}
+                    index={0}
+                    external={true}
                   />
-                </a>
-                <a
-                  className="list-group-item list-group-item-action"
-                  href="https://www.linkedin.com/in/josean/"
-                  target="_blank"
-                >
-                  <Icon iconmap={IconMap.GitHub} />
-                  <span>GitHub</span>
-                  <Icon
-                    iconmap={IconMap.External}
-                    extra="position-absolute end-0 opacity-25"
-                  />
-                </a>
-                <a
-                  className="list-group-item list-group-item-action"
-                  href="https://www.linkedin.com/in/josean/"
-                  target="_blank"
-                >
-                  <Icon iconmap={IconMap.GitLab} />
-                  <span>GitLab</span>
-                  <Icon
-                    iconmap={IconMap.External}
-                    extra="position-absolute end-0 opacity-25"
-                  />
-                </a>
+                ))}
               </div>
             </div>
           </div>
         </div>
-        <div className="container" style={{ paddingBottom: '80px' }}></div>
+        <div className="container mb-5"></div>
       </footer>
     </>
   )

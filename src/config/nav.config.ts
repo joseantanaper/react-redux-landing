@@ -21,38 +21,38 @@ export const routeLinks = [
   {
     id: 'todo',
     url: '/miniapps/todo',
-    label: 'Todo List',
-    iconmap: IconMap.Todo,
+    label: 'Todo List with long long long text to check menu',
+    iconmap: IconMap.Task,
   },
   {
     id: 'playground',
     url: '#',
     label: 'Playground',
-    iconmap: IconMap.Playground,
+    iconmap: IconMap.Folder,
     items: [
       {
         id: 'todo',
         url: '/miniapps/todo',
         label: 'Todo List again',
-        iconmap: IconMap.Todo,
+        iconmap: IconMap.Task,
       },
       {
         id: 'counter',
         url: '/miniapps/counter',
         label: 'Counter+',
-        iconmap: IconMap.Todo,
+        iconmap: IconMap.Counter,
       },
       {
         id: 'todo',
         url: '/miniapps/todo',
         label: 'Todo List more',
-        iconmap: IconMap.Todo,
+        iconmap: IconMap.Task,
       },
       {
         id: 'counter',
         url: '/miniapps/counter',
         label: 'Counter+ repeat',
-        iconmap: IconMap.Todo,
+        iconmap: IconMap.Counter,
       },
     ],
   },
@@ -60,32 +60,60 @@ export const routeLinks = [
     id: 'playgroundplus',
     url: '#',
     label: 'Playground plus extra text for testing purposes',
-    iconmap: IconMap.Playground,
+    iconmap: IconMap.Folder,
     items: [
       {
         id: 'todo',
         url: '/miniapps/todo',
         label: 'Todo List again',
-        iconmap: IconMap.Todo,
+        iconmap: IconMap.Task,
       },
       {
         id: 'counter',
         url: '/miniapps/counter',
-        label: 'Counter+',
-        iconmap: IconMap.Todo,
+        label:
+          'Counter+ with super super long long text title for testing only',
+        iconmap: IconMap.Counter,
       },
       {
         id: 'todo',
         url: '/miniapps/todo',
-        label: 'Todo List more',
-        iconmap: IconMap.Todo,
+        label: 'Todo List more with long text title',
+        iconmap: IconMap.Task,
       },
       {
         id: 'counter',
         url: '/miniapps/counter',
         label: 'Counter+ repeat',
-        iconmap: IconMap.Todo,
+        iconmap: IconMap.Counter,
       },
     ],
+  },
+]
+
+export const moreLinks = [
+  {
+    id: 'linkedin',
+    url: 'https://www.linkedin.com/in/josean/',
+    label: 'LinkedIn',
+    iconmap: IconMap.Portfolio,
+  },
+  {
+    id: 'github',
+    url: 'https://github.com/joseantanaper',
+    label: 'GitHub',
+    iconmap: IconMap.GitHub,
+  },
+  {
+    id: 'gitlab',
+    url: 'https://gitlab.com/joseantanaper',
+    label: 'GitLab',
+    iconmap: IconMap.GitLab,
+  },
+  {
+    id: 'youtube',
+    url: 'https://www.youtube.com/channel/UCJv0Ru8VQr5z_mvi6ZJKp4A',
+    label: 'YouTube Channel',
+    iconmap: IconMap.YouTube,
   },
 ]

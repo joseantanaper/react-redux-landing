@@ -16,3 +16,23 @@ $app-icon-opacity: 0.4;
 $app-icon-opacity-hover: 0.8;
 $app-icon-opacity-active: 0.6;
 $app-icon-opacity-disabled: 0.2;
+
+$app-button-sm-max-width: 5em;
+$app-button-md-max-width: 10em;
+
+/* GLOBAL VARIABLES ----------------------------------------------------------*/
+$app-bg-hover: var(--bs-tertiary-bg);
+$app-bg-active: rgba(var(--bs-secondary-bg-rgb), 0.9);
+$app-bg-active-click: var(--bs-secondary-bg);
+$app-bg-pending: var(--bs-tertiary-bg);
+
+$app-default-opacity: .7;
+$app-hover-opacity: .8;
+$app-active-opacity: .9;
+$app-active-click-opacity: 1;
+$app-pending-opacity: .6;
+
+$app-icon-text-margin: 0.2rem;
+
+$app-button-x-padding: 1rem;
+$app-button-y-padding: .5rem;

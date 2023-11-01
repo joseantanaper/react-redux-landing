@@ -3,24 +3,28 @@ import { Icon, IconMap } from '../widgets/Icon'
 import { Button } from '../widgets/Button'
 import { Subnavbar } from '../navbar/Subnavbar'
 import { Trans } from 'react-i18next'
+import { useLoaderData } from 'react-router-dom'
+import { t } from 'i18next'
 
-interface Props {
-  title: string
+export interface LoaderData {
+  title?: string
   subtitle?: string
   description?: string
+  subnavbar?: boolean
+  toolbar?: ReactNode
+  iconmap?: IconMap
+}
+
+interface Props {
   subnavbar?: boolean
   toolbar?: ReactNode
   children: ReactNode
 }
 
-export const PageLayout = ({
-  title,
-  subtitle,
-  description,
-  subnavbar = false,
-  toolbar,
-  children,
-}: Props) => {
+export const PageLayout = ({ subnavbar = false, toolbar, children }: Props) => {
+  const loader = (useLoaderData() as LoaderData) || {}
+  const { title, subtitle, description, iconmap } = loader
+
   useEffect(() => {
     console.log('PageLayout', 'useEffect')
 
@@ -89,9 +93,10 @@ export const PageLayout = ({
         <div className="row">
           <div className="col">
             <h1 className="text-center">
-              <span>{title}</span>{' '}
+              {iconmap && <Icon iconmap={iconmap} />}
+              <span>{title ? title : '###'}</span>{' '}
               <span className="opacity-25 ms-3 fst-italic fw-light">
-                <Trans>{subtitle}</Trans>
+                <Trans>{subtitle ? subtitle : '###'}</Trans>
               </span>
             </h1>
           </div>
@@ -102,7 +107,7 @@ export const PageLayout = ({
         <div className="app-header mb-4">
           <div className="container-fluid">
             <div className="row">
-              <div className="col fw-lighter text-body-secondary">
+              <div className="col text-center fw-lighter text-body-secondary">
                 <Trans>{description}</Trans>
               </div>
             </div>
@@ -111,7 +116,12 @@ export const PageLayout = ({
       )}
 
       {subnavbar && (
-        <Subnavbar title={title} subtitle={subtitle} toolbar={toolbar} />
+        <Subnavbar
+          title={loader.title}
+          subtitle={loader.subtitle}
+          toolbar={toolbar}
+          iconmap={loader.iconmap}
+        />
       )}
 
       <div className="app-content">{children}</div>

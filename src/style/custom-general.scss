@@ -4,6 +4,7 @@
   box-sizing: border-box;
 }
 
+
 body {
   margin: 0;
   padding: 0;
@@ -27,7 +28,26 @@ h6 {
   scroll-margin-top: 150px;
 }
 
+h1 {
+  svg {
+    position: absolute;
+    margin-top: -40px;
+    left: 16px;
+    width: 120px;
+    height: 120px;
+    opacity: 0.04;
+    z-index: 99999;
+    filter: drop-shadow(0 0 4px rgba(var(--bs-emphasis-color-rgb), 1));
+  }
+}
+
 div#root {
   margin: 0px;
   padding: 0px;
+  // padding-bottom: 120px;
+}
+
+footer {
+  // margin-bottom: 60px;
+  // padding-top: 60px;
 }

@@ -1,6 +1,6 @@
 // import logo from "../logo.svg"
 // import { Counter } from "../features/menu/Counter"
-import { Outlet } from 'react-router-dom'
+import { Outlet, Route } from 'react-router-dom'
 import Footer from '@/components/layout/Footer'
 import { useEffect } from 'react'
 import { useAppSelector, useAppDispatch } from '@/app/hooks'
@@ -27,6 +27,8 @@ const Root = () => {
     if (i18n.language !== currentLocale) i18n.changeLanguage(currentLocale)
     // Setting HTML lang
     document.documentElement.setAttribute('lang', currentLocale)
+
+    console.log('root', 'Route')
 
     return () => {
       console.log('root', 'useEffect', 'unload')

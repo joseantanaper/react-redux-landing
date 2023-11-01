@@ -14,6 +14,11 @@ export const translationEN = {
       content: 'Task content...',
       tasks: 'Tasks',
     },
+    counter: {
+      title: 'Counter',
+      subtitle: 'A simple counter application',
+      description: 'A simple counter application',
+    },
   },
   translations: {
     Home: 'Home',
