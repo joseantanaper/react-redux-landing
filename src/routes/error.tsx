@@ -17,7 +17,7 @@ const ErrorPage = () => {
   }
 
   return (
-    <PageLayout title="Error" subtitle="Details">
+    <PageLayout>
       <div className="text-danger border-top p-5 fs-2 fw-bold text-center">
         {errorMessage}
       </div>

@@ -95,12 +95,7 @@ const Counter = () => {
   )
 
   return (
-    <PageLayout
-      title="Counter+"
-      subtitle="Global Counter with extra features"
-      subnavbar={true}
-      toolbar={toolbar}
-    >
+    <PageLayout subnavbar={true} toolbar={toolbar}>
       <div className="container-fluid">
         <div className="row">
           <div className="col">
