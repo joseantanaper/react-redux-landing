@@ -1,6 +1,6 @@
 import React from 'react'
-import { Icon, IconMap } from './Icon'
-import { ButtonToggler } from './Button'
+import { Icon, IconMap } from '@components/widgets/Icon'
+import { Button, ButtonToggler } from '@components/widgets/Button'
 
 interface Props {
   id: string
@@ -37,26 +37,24 @@ export const Modal = ({ id, title, content, confirm }: Props) => {
                 className="btn-close"
                 data-bs-dismiss="modal"
                 aria-label="Close"
-              ></button>
+              />
             </div>
             <div className="modal-body">{content}</div>
             <div className="modal-footer">
-              <button
-                id="modalCloser"
-                type="button"
-                className="btn btn-secondary"
-                data-bs-dismiss="modal"
-              >
-                No
-              </button>
-              <button
-                type="button"
+              <ButtonToggler
+                className="btn btn-outline-secondary"
+                iconmap={IconMap.Cancel}
+                targetId={id}
+                toggle="modal"
+                label="No"
+              />
+
+              <Button
                 className="btn btn-danger"
+                iconmap={IconMap.TaskClear}
                 onClick={() => confirm()}
-              >
-                <Icon iconmap={IconMap.TaskClear} />
-                <span>Clear All</span>
-              </button>
+                label="Confirm"
+              />
             </div>
           </div>
         </div>

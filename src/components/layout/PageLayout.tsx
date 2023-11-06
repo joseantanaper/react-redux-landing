@@ -4,7 +4,7 @@ import { Button } from '../widgets/Button'
 import { Subnavbar } from '../navbar/Subnavbar'
 import { Trans } from 'react-i18next'
 import { useLoaderData } from 'react-router-dom'
-import { t } from 'i18next'
+import { useTranslation } from 'react-i18next'
 
 export interface LoaderData {
   title?: string
@@ -24,6 +24,8 @@ interface Props {
 export const PageLayout = ({ subnavbar = false, toolbar, children }: Props) => {
   const loader = (useLoaderData() as LoaderData) || {}
   const { title, subtitle, description, iconmap } = loader
+
+  const { t, i18n } = useTranslation()
 
   useEffect(() => {
     console.log('PageLayout', 'useEffect')
@@ -94,10 +96,12 @@ export const PageLayout = ({ subnavbar = false, toolbar, children }: Props) => {
           <div className="col">
             <h1 className="text-center">
               {iconmap && <Icon iconmap={iconmap} />}
-              <span>{title ? title : '###'}</span>{' '}
-              <span className="opacity-25 ms-3 fst-italic fw-light">
-                <Trans>{subtitle ? subtitle : '###'}</Trans>
-              </span>
+              {title ? <span>{t(title)}</span> : null}
+              {subtitle ? (
+                <span className="opacity-25 ms-3 fst-italic fw-light">
+                  {t(subtitle)}
+                </span>
+              ) : null}
             </h1>
           </div>
         </div>

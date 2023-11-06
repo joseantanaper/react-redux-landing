@@ -1,5 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useAppSelector, useAppDispatch } from '@app/hooks'
+import { Modal } from '../widgets/Modal'
+
 import {
   addTodo,
   clearAll,
@@ -14,10 +16,14 @@ interface Props {
   Remove: Function
 }
 
+// TODO: Move Todo reducers here. Remove one is difficult bypassing the functions...
+
 export const TodoList = ({ todos, search, Remove }: Props) => {
   const [todo, setTodo] = useState('')
 
   const dispatch = useAppDispatch()
+
+  const PreConfirm = () => {}
 
   console.log(todos)
 

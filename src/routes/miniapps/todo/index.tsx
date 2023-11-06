@@ -1,6 +1,5 @@
 import { useState, useEffect } from 'react'
 import { useAppDispatch, useAppSelector } from '@/app/hooks'
-import t from 'i18next'
 
 import {
   addTodo,
@@ -9,22 +8,18 @@ import {
   remove,
 } from '@app/reducer/todos.slice'
 
-import i18n from 'i18next'
-import { useTranslation, initReactI18next } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 
 import { PageLayout } from '@/components/layout/PageLayout'
 import { Button } from '@/components/widgets/Button'
 import { Input } from '@/components/widgets/Input'
 import { TodoList } from '@components/todo'
 import { Modal } from '@/components/widgets/Modal'
-
-import { Icon, IconMap } from '@/components/widgets/Icon'
+import { IconMap } from '@/components/widgets/Icon'
 
 const Todo = () => {
   const [todo, setTodo] = useState('')
   const [search, setSearch] = useState('')
-  const [modalTitle, setModalTitle] = useState('')
-  const [modalContent, setModalContent] = useState('')
   const dispatch = useAppDispatch()
   const { todos } = useAppSelector(selectTodos)
   const [filteredTodos, setFilteredTodos] = useState([...todos])
@@ -54,18 +49,9 @@ const Todo = () => {
   }
 
   const Remove = (todo: string) => {
+    console.log('miniapps', 'ToDo', 'Remove', todo)
     dispatch(remove(todo))
     setFilteredTodos([...filteredTodos].filter((t) => t !== todo))
-  }
-
-  const PreClearAll = () => {
-    // TODO: Open Modal with Javascript, NO with button click,.
-    setModalTitle('Clear All')
-    setModalContent('Are you sure you want to clear all tasks?')
-    const button = document.querySelectorAll(
-      '#TodoConfirm button'
-    )[0] as HTMLButtonElement
-    button.click()
   }
 
   const ClearAll = () => {
@@ -122,7 +108,13 @@ const Todo = () => {
         <Button
           className="btn-outline-danger"
           disabled={todos.length <= 0}
-          onClick={PreClearAll}
+          onClick={() =>
+            (
+              document.querySelectorAll(
+                '#TodoConfirm button'
+              )[0] as HTMLButtonElement
+            ).click()
+          }
           iconmap={IconMap.TaskClear}
           label={t('app:clearall')}
         />
@@ -150,8 +142,8 @@ const Todo = () => {
 
       <Modal
         id="TodoConfirm"
-        title={modalTitle}
-        content={modalContent}
+        title="Clear All tasks"
+        content="This will clear all current tasks. Continue?"
         confirm={ClearAll}
       />
     </PageLayout>

@@ -1,11 +1,8 @@
 import React from 'react'
 import { useEffect, useState } from 'react'
-import { RouteLink } from '@/config/nav.config'
+import { RouteLink } from '@/config/routes/routes'
 import { NavLinko } from '@/components/widgets/NavLinko'
-import { Icon, IconMap } from '@/components/widgets/Icon'
-import { Button } from '@/components/widgets/Button'
 import { Accordion } from './Accordion'
-import { NavLink, NavLinkProps } from 'react-router-dom'
 import { Input } from '@/components/widgets/Input'
 import { t } from 'i18next'
 
@@ -21,7 +18,7 @@ const renderRouteLink = (
 ) => {
   if (routeLink.url.startsWith('/')) {
     return (
-      <NavLinko routeLink={routeLink} parentIndex={parentIndex} index={index} />
+      <NavLinko key={`menu-${parentIndex}-${index}`} routeLink={routeLink} />
     )
   } else {
     const subRouteLinks: RouteLink[] = routeLink.items as RouteLink[]
@@ -30,7 +27,7 @@ const renderRouteLink = (
       <Accordion
         id={accordionId}
         key={accordionId}
-        label={routeLink.label}
+        title={routeLink.title}
         index={parentIndex}
         iconmap={routeLink.iconmap}
       >
@@ -42,9 +39,8 @@ const renderRouteLink = (
         >
           {subRouteLinks.map((routeLink: RouteLink, index: number) => (
             <NavLinko
+              key={`menu-2nd-${parentIndex}-${index}`}
               routeLink={routeLink}
-              parentIndex={parentIndex}
-              index={index}
             />
           ))}
         </div>
@@ -61,7 +57,7 @@ export const NavRouteLinkList = ({ routeLinks, parentIndex }: Props) => {
   const countLinks = () => {
     let counter: number = 0
     counter += [...routeLinks].filter((link) => link.url.startsWith('/')).length
-    ;[...routeLinks].map((link) => {
+    ;[...routeLinks].forEach((link) => {
       if (link.items) counter += link.items!.length
     })
     return counter
@@ -75,7 +71,7 @@ export const NavRouteLinkList = ({ routeLinks, parentIndex }: Props) => {
       ;[...routeLinks].forEach((link: RouteLink) => {
         if (
           link.url.startsWith('/') &&
-          link.label.toLocaleLowerCase().includes(search.toLocaleLowerCase())
+          link.title.toLocaleLowerCase().includes(search.toLocaleLowerCase())
         )
           filtered.push(link)
       })
@@ -83,7 +79,7 @@ export const NavRouteLinkList = ({ routeLinks, parentIndex }: Props) => {
         link.items &&
           link.items.forEach((sublink: RouteLink) => {
             if (
-              sublink.label
+              sublink.title
                 .toLocaleLowerCase()
                 .includes(search.toLocaleLowerCase())
             )

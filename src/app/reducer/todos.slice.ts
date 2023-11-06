@@ -16,6 +16,7 @@ export const todosSlice = createSlice({
   initialState,
   reducers: {
     addTodo: (state, action) => {
+      console.log('todos.slice', 'addTodo', action.payload)
       localStorage.setItem(
         name,
         JSON.stringify([...state.todos, action.payload])

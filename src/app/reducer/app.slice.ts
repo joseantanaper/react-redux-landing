@@ -9,8 +9,8 @@ export enum Theme {
 }
 
 export enum Locale {
-  EN = 'en',
-  ES = 'es',
+  EN = 'en-US',
+  ES = 'es-ES',
 }
 
 export enum ClockMode {

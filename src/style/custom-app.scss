@@ -157,6 +157,16 @@
 
 // Navbar-Togglers, Buttons and IconButtons
 
+.app-self-rotate {
+  filter: drop-shadow(0 0 1px white) drop-shadow(0 0 8px rgba(var(--bs-emphasis-color-rgb), 0.8));
+  animation: rotation 2s linear infinite;
+}
+
+.app-self-rotate:hover {
+  filter: drop-shadow(0 0 1px white) drop-shadow(0 0 18px rgba(var(--bs-emphasis-color-rgb), 0.8));
+  animation: rotation 1s linear infinite;
+}
+
 .btn:hover,
 .navbar-toggler:hover {
   img {
@@ -302,21 +312,23 @@ div.app-shadow-divider {
 // }
 
 h1.app-counter {
-  text-shadow: 0 0 8px var(--bs-emphasis-color);
+  text-shadow: 0 0 128px var(--bs-emphasis-color);
 }
 
 div.app-pageLayout {
   animation: 0.25s ease-in 0s 1 pageLoadTransition;
 }
 
+$app-blur: 16px;
+
 @keyframes pageLoadTransition {
   0% {
     opacity: 0;
-    -webkit-filter: blur(8px);
-    -moz-filter: blur(8px);
-    -o-filter: blur(8px);
-    -ms-filter: blur(8px);
-    transform: translateY(-8px);
+    -webkit-filter: blur($app-blur);
+    -moz-filter: blur($app-blur);
+    -o-filter: blur($app-blur);
+    -ms-filter: blur($app-blur);
+    transform: translateY(-16px);
   }
 
   100% {

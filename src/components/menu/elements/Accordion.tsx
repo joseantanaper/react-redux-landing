@@ -3,13 +3,13 @@ import { Icon, IconMap } from '@components/widgets/Icon'
 import { ButtonToggler } from '@/components/widgets/Button'
 interface Props {
   id: string
-  label: string
+  title: string
   index: number
   iconmap?: IconMap
   children: ReactNode
 }
 
-export const Accordion = ({ id, label, index, iconmap, children }: Props) => {
+export const Accordion = ({ id, title, index, iconmap, children }: Props) => {
   const accordionId = `accordion-${id}-${index}`
   const target = `accordionCollapse-${id}-${index}`
   return (
@@ -22,7 +22,7 @@ export const Accordion = ({ id, label, index, iconmap, children }: Props) => {
             iconmap={iconmap}
             iconSize={20}
             iconClass="text-primary"
-            label={label}
+            label={title}
             targetId={target}
             toggle="collapse"
           />

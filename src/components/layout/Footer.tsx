@@ -1,7 +1,6 @@
 import React from 'react'
 import { Avatar, AvatarSize } from '@components/Avatar'
-import { Icon, IconMap } from '@components/widgets/Icon'
-import { routeLinks, moreLinks, RouteLink } from '@config/nav.config'
+import { routeLinks, moreLinks, RouteLink } from '@/config/routes/routes'
 import { NavLinko } from '../widgets/NavLinko'
 
 const Footer = () => {
@@ -48,26 +47,28 @@ const Footer = () => {
             <div className="col text-truncate">
               <h5>Main Sections</h5>
               <div className="list-group list-group-flush">
-                {routeLinks
+                {[...(routeLinks as RouteLink[])]
                   .filter((routeLink) => !routeLink.items)
-                  .map((routeLink, index) => (
-                    <NavLinko routeLink={routeLink} parentIndex={0} index={0} />
+                  .map((routeLink, index: number) => (
+                    <NavLinko
+                      key={`footer-main-${index}`}
+                      routeLink={routeLink}
+                    />
                   ))}
               </div>
             </div>
             <div className="col text-center text-truncate">
               <h5>Secondary Sections</h5>
               <div className="list-group list-group-flush">
-                {routeLinks
+                {[...routeLinks]
                   .filter((routeLink) => routeLink.items)
-                  .map((routeLink) => {
+                  .map((routeLink, index) => {
                     return (
                       routeLink.items &&
-                      routeLink.items.map((subrouteLink) => (
+                      routeLink.items.map((subrouteLink, subindex) => (
                         <NavLinko
+                          key={`footer-2nd-${index}-${subindex}`}
                           routeLink={subrouteLink}
-                          parentIndex={0}
-                          index={0}
                         />
                       ))
                     )
@@ -77,11 +78,10 @@ const Footer = () => {
             <div className="col text-end text-truncate">
               <h5>More</h5>
               <div className="list-group list-group-flush">
-                {moreLinks.map((moreLink, index) => (
+                {moreLinks.map((moreLink: RouteLink, index: number) => (
                   <NavLinko
+                    key={`more-${index}`}
                     routeLink={moreLink}
-                    parentIndex={0}
-                    index={0}
                     external={true}
                   />
                 ))}

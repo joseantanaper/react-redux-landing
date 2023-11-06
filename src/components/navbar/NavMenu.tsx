@@ -1,10 +1,6 @@
 import React from 'react'
-import { NavLink } from 'react-router-dom'
-import { Icon, IconMap } from '@components/widgets/Icon'
-import { RouteLink } from '@config/nav.config'
-
-import { t } from 'i18next'
-import { ThemeToggler } from '../toggler/ThemeToggler'
+import { RouteLink } from '@/config/routes/routes'
+import { NavLinko } from '../widgets/NavLinko'
 
 interface Props {
   routeLinks: RouteLink[]
@@ -18,24 +14,15 @@ export const NavMenu = ({ routeLinks }: Props) => {
         <ul className="navbar-nav">
           {routeLinks
             .filter((routeLink) => routeLink.url.startsWith('/'))
-            .map((routeLink, index) => {
+            .map((routeLink: RouteLink, index: number) => {
               // if (index < 3)
               return (
                 <li key={`route-link-${index}`} className="nav-item">
-                  <NavLink
-                    className={({ isActive, isPending }) =>
-                      isPending
-                        ? 'nav-link pending'
-                        : isActive
-                        ? 'nav-link active'
-                        : 'nav-link'
-                    }
-                    aria-current="page"
-                    to={routeLink.url}
-                  >
-                    <Icon iconmap={routeLink.iconmap} />
-                    <span>{t(routeLink.label)}</span>
-                  </NavLink>
+                  <NavLinko
+                    key={`navmenu-${index}`}
+                    routeLink={routeLink}
+                    mode="nav"
+                  />
                 </li>
               )
             })}

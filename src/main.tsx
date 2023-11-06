@@ -13,6 +13,8 @@ import Portfolio from '@routes/portfolio/index'
 import Todo from '@routes/miniapps/todo/index'
 import Counter from '@routes/miniapps/counter/index'
 
+import { routes } from './config/routes/routes'
+
 import {
   // BrowserRouterProps,
   createBrowserRouter,
@@ -26,54 +28,7 @@ const router = createBrowserRouter([
     path: '/',
     element: <Root />,
     errorElement: <Error />,
-    children: [
-      {
-        path: '/',
-        element: <Index />,
-        loader: () => {
-          return {
-            title: 'Home',
-            subtitle: 'This is the Home description',
-            iconmap: IconMap.Home,
-          }
-        },
-      },
-      {
-        path: '/portfolio',
-        element: <Portfolio />,
-        loader: () => {
-          return {
-            title: 'Portfolio',
-            subtitle: 'This is the Portfolio description',
-            iconmap: IconMap.Portfolio,
-          }
-        },
-      },
-      {
-        path: '/miniapps/counter',
-        element: <Counter />,
-        loader: () => {
-          return {
-            title: 'Counter',
-            subtitle: 'app:counter:subtitle',
-            description: 'app:counter:description',
-            iconmap: IconMap.Counter,
-          }
-        },
-      },
-      {
-        path: '/miniapps/todo',
-        element: <Todo />,
-        loader: () => {
-          return {
-            title: 'ToDo',
-            subtitle: 'app:todo:subtitle',
-            description: 'app:todo:description',
-            iconmap: IconMap.Task,
-          }
-        },
-      },
-    ],
+    children: routes,
   },
 ])
 

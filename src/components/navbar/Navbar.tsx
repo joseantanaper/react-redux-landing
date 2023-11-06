@@ -14,7 +14,8 @@ import { Avatar } from '@components/Avatar'
 import { Icon, IconMap } from '@components/widgets/Icon'
 import { useAppSelector } from '@app/hooks'
 
-import { routeLinks, RouteLink } from '@config/nav.config'
+// import { routeLinks, RouteLink } from '@config/nav.config'
+import { routeLinks, RouteLink } from '@/config/routes/routes'
 
 import { t } from 'i18next'
 

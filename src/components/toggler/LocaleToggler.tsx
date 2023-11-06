@@ -32,7 +32,7 @@ export const LocaleToggler = () => {
         }`}
         iconmap={IconMap.Locale}
         onClick={() => clickLocale(Locale.EN)}
-        label={Locale.EN}
+        label={Locale.EN.substring(0, 2)}
       />
       <Button
         className={`btn text-uppercase  ${
@@ -40,7 +40,7 @@ export const LocaleToggler = () => {
         }`}
         iconmap={IconMap.Locale}
         onClick={() => clickLocale(Locale.ES)}
-        label={Locale.ES}
+        label={Locale.ES.substring(0, 2)}
       />
     </>
   )

@@ -50,7 +50,7 @@ export const MenuEnd = ({ id, title }: MenuProps) => {
           <div className="col">
             <Accordion
               id="appearanceSt"
-              label={t('Appearance')}
+              title={t('Appearance')}
               iconmap={IconMap.Appareance}
               index={0}
             >
@@ -120,7 +120,7 @@ export const MenuEnd = ({ id, title }: MenuProps) => {
 
             <Accordion
               id="localeSt"
-              label={t('Language')}
+              title={t('Language')}
               iconmap={IconMap.Locale}
               index={1}
             >
@@ -140,7 +140,7 @@ export const MenuEnd = ({ id, title }: MenuProps) => {
 
             <Accordion
               id="clockSt"
-              label={t('Clock')}
+              title={t('Clock')}
               iconmap={IconMap.Clock}
               index={0}
             >
@@ -155,7 +155,7 @@ export const MenuEnd = ({ id, title }: MenuProps) => {
                   <div className="col">
                     <div className="btn-group float-end">
                       <Button
-                        className={`text-nowrap ${
+                        className={`btn text-nowrap ${
                           currentClockMode === ClockMode.Short
                             ? 'disabled active'
                             : ''

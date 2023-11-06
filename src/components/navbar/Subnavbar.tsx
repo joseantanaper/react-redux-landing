@@ -2,12 +2,9 @@
 // Common Parent Component for AppSlice setttings
 import { ReactNode } from 'react'
 import { Title } from './Title'
-import { Icon, IconMap } from '../widgets/Icon'
+import { IconMap } from '../widgets/Icon'
 import { ButtonToggler } from '../widgets/Button'
-import { MiniCounter } from '../toggler/MiniCounter'
-import { NavMenu } from './NavMenu'
-import { RouteLink } from '@/config/nav.config'
-import { routeLinks } from '@/config/nav.config'
+
 import { t } from 'i18next'
 
 interface Props {
