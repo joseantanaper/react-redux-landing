@@ -3,7 +3,7 @@ import { useAppDispatch, useAppSelector } from '@/app/hooks'
 
 import {
   addTodo,
-  clearAll,
+  removeAll,
   selectTodos,
   remove,
 } from '@app/reducer/todos.slice'
@@ -18,62 +18,51 @@ import { Modal } from '@/components/widgets/Modal'
 import { IconMap } from '@/components/widgets/Icon'
 
 const Todo = () => {
+  const { todos } = useAppSelector(selectTodos)
+  const dispatch = useAppDispatch()
   const [todo, setTodo] = useState('')
   const [search, setSearch] = useState('')
-  const dispatch = useAppDispatch()
-  const { todos } = useAppSelector(selectTodos)
-  const [filteredTodos, setFilteredTodos] = useState([...todos])
-
   const { t } = useTranslation()
-
-  const FilterTodos = (search: string) => {
-    setSearch(search)
-    setFilteredTodos(
-      [...todos].filter((todo: string) =>
-        todo.toUpperCase().includes(String(search.toUpperCase()))
-      )
-    )
-  }
 
   const ClearSearch = () => {
     setSearch('')
-    setFilteredTodos([...todos])
   }
 
-  const AddTodo = () => {
+  const AddTodo = (todo: string) => {
     if (todo) {
+      console.log('miniapps', 'ToDo', 'AddTodo', todo)
       dispatch(addTodo(todo))
-      setFilteredTodos([...todos, todo])
       setTodo('')
     }
   }
 
   const Remove = (todo: string) => {
     console.log('miniapps', 'ToDo', 'Remove', todo)
-    dispatch(remove(todo))
-    setFilteredTodos([...filteredTodos].filter((t) => t !== todo))
+    if (todo) {
+      dispatch(remove(todo))
+    }
   }
 
-  const ClearAll = () => {
+  const ConfirmRemoveAll = () => {
+    ;(
+      document
+        .getElementById('todoRemoveAllConfirm')
+        ?.getElementsByTagName('button')[0] as HTMLButtonElement
+    ).click()
+  }
+
+  const RemoveAll = () => {
     // TODO: Close Modal with Javascript, NO with button click,.
-    dispatch(clearAll())
-    setFilteredTodos([])
-    document.getElementById('modalCloser')?.click()
+    dispatch(removeAll())
+    ;(
+      document
+        .getElementById('todoRemoveAllConfirm')
+        ?.getElementsByTagName('button')[1] as HTMLButtonElement
+    ).click()
   }
 
   const toolbar = (
     <>
-      <li className="nav-item">
-        <div className="btn-group">
-          <span className="btn btn-outline-secondary disabled text-body">
-            {t('app:todo:tasks')}
-          </span>
-          <span className="btn btn-outline-secondary disabled text-body">
-            {filteredTodos.length} / {todos.length}
-          </span>
-        </div>
-      </li>
-      <li className="nav-item d-none d-sm-block me-3"></li>
       <li className="nav-item">
         {/* TODO: TextSearch component */}
         <div className="btn-group sm-w-100">
@@ -81,7 +70,7 @@ const Todo = () => {
             search={true}
             placeholder={t('app:todo:search')}
             value={search}
-            onChange={FilterTodos}
+            onChange={setSearch}
             clear={ClearSearch}
           />
         </div>
@@ -95,9 +84,15 @@ const Todo = () => {
             onChange={setTodo}
           />
           <Button
+            className="btn-outline-danger"
+            disabled={!todo}
+            onClick={() => setTodo('')}
+            iconmap={IconMap.Backspace}
+          />
+          <Button
             className="btn-outline-primary"
             disabled={!todo}
-            onClick={AddTodo}
+            onClick={() => AddTodo(todo)}
             iconmap={IconMap.TaskPlus}
             label={t('app:add')}
           />
@@ -108,15 +103,9 @@ const Todo = () => {
         <Button
           className="btn-outline-danger"
           disabled={todos.length <= 0}
-          onClick={() =>
-            (
-              document.querySelectorAll(
-                '#TodoConfirm button'
-              )[0] as HTMLButtonElement
-            ).click()
-          }
-          iconmap={IconMap.TaskClear}
-          label={t('app:clearall')}
+          onClick={ConfirmRemoveAll}
+          iconmap={IconMap.TaskRemove}
+          label={t('app:todo:removeAll')}
         />
       </li>
     </>
@@ -124,27 +113,13 @@ const Todo = () => {
 
   return (
     <PageLayout subnavbar={true} toolbar={toolbar}>
-      <TodoList todos={filteredTodos} Remove={Remove} />
-      <div className="container-fluid text-end">
-        <div className="row">
-          <div className="col">
-            <div className="btn-group">
-              <span className="btn btn-outline-secondary disabled text-body">
-                {t('app:todo:tasks')}
-              </span>
-              <span className="btn btn-outline-secondary disabled text-body">
-                {filteredTodos.length} / {todos.length}
-              </span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <TodoList todos={todos} search={search} add={AddTodo} remove={Remove} />
 
       <Modal
-        id="TodoConfirm"
-        title="Clear All tasks"
-        content="This will clear all current tasks. Continue?"
-        confirm={ClearAll}
+        id="todoRemoveAllConfirm"
+        title="app:todo:removeAll"
+        content="app:todo:removeAllWarning"
+        confirm={RemoveAll}
       />
     </PageLayout>
   )

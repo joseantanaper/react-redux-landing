@@ -1,15 +1,23 @@
 import React from 'react'
 import { Icon, IconMap } from '@components/widgets/Icon'
 import { Button, ButtonToggler } from '@components/widgets/Button'
+import { Trans } from 'react-i18next'
 
 interface Props {
   id: string
   title: string
   content: string
   confirm: Function
+  bsColor?: 'primary' | 'success' | 'danger'
 }
 
-export const Modal = ({ id, title, content, confirm }: Props) => {
+export const Modal = ({
+  id,
+  title,
+  content,
+  confirm,
+  bsColor = 'danger',
+}: Props) => {
   return (
     <>
       <div
@@ -28,9 +36,15 @@ export const Modal = ({ id, title, content, confirm }: Props) => {
         />
         <div className="modal-dialog shadow">
           <div className="modal-content">
-            <div className="modal-header bg-danger text-light">
-              <h1 className="modal-title fs-5" id={`${id}-label`}>
-                {title}
+            <div className={`modal-header bg-${bsColor} text-light`}>
+              <h1
+                className="modal-title d-flex align-items-center fs-5"
+                id={`${id}-label`}
+              >
+                <Icon iconmap={IconMap.Question} />
+                <span>
+                  <Trans>{title}</Trans>
+                </span>
               </h1>
               <button
                 type="button"
@@ -39,21 +53,23 @@ export const Modal = ({ id, title, content, confirm }: Props) => {
                 aria-label="Close"
               />
             </div>
-            <div className="modal-body">{content}</div>
+            <div className="modal-body">
+              <Trans>{content}</Trans>
+            </div>
             <div className="modal-footer">
               <ButtonToggler
                 className="btn btn-outline-secondary"
                 iconmap={IconMap.Cancel}
                 targetId={id}
                 toggle="modal"
-                label="No"
+                label="app:no"
               />
 
               <Button
-                className="btn btn-danger"
-                iconmap={IconMap.TaskClear}
+                className={`btn btn-${bsColor}`}
+                iconmap={IconMap.Check}
                 onClick={() => confirm()}
-                label="Confirm"
+                label="app:confirm"
               />
             </div>
           </div>

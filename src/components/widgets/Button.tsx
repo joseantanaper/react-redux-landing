@@ -1,5 +1,6 @@
 import { Icon, IconMap } from '@/components/widgets/Icon'
 import { ReactNode } from 'react'
+import { Trans } from 'react-i18next'
 
 interface Props {
   name?: string
@@ -24,6 +25,7 @@ export const Button = ({
   extraClass = '',
   disabled = false,
   iconmap,
+  iconSize,
   label,
   async = false,
   onClick,
@@ -82,8 +84,12 @@ export const Button = ({
       }
     >
       {async && <div className="spinner-border spinner-border-sm d-none"></div>}
-      {iconmap ? <Icon id={iconmap} /> : null}
-      {label ? <span>{label}</span> : null}
+      {iconmap ? <Icon id={iconmap} size={iconSize} /> : null}
+      {label ? (
+        <span>
+          <Trans>{label}</Trans>
+        </span>
+      ) : null}
       {children ? children : null}
     </button>
   )
@@ -107,7 +113,11 @@ export const ButtonDismiss = ({
       data-bs-dismiss={dismiss}
     >
       {iconmap ? <Icon id={iconmap} /> : null}
-      {label ? <span>{label}</span> : null}
+      {label ? (
+        <span>
+          <Trans>{label}</Trans>
+        </span>
+      ) : null}
     </button>
   )
 }
@@ -137,7 +147,11 @@ export const ButtonToggler = ({
       aria-label="Toggler"
     >
       {iconmap && <Icon iconmap={iconmap} size={iconSize} extra={iconClass} />}
-      {label ? <span className="text-truncate">{label}</span> : null}
+      {label ? (
+        <span className="text-truncate">
+          <Trans>{label}</Trans>
+        </span>
+      ) : null}
       {children ? children : null}
     </button>
   )

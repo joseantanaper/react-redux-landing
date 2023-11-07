@@ -25,7 +25,7 @@ export const PageLayout = ({ subnavbar = false, toolbar, children }: Props) => {
   const loader = (useLoaderData() as LoaderData) || {}
   const { title, subtitle, description, iconmap } = loader
 
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
 
   useEffect(() => {
     console.log('PageLayout', 'useEffect')
@@ -94,7 +94,7 @@ export const PageLayout = ({ subnavbar = false, toolbar, children }: Props) => {
       <div className="container-fluid mb-4">
         <div className="row">
           <div className="col">
-            <h1 className="text-center">
+            <h1 className="app-layout-title text-center">
               {iconmap && <Icon iconmap={iconmap} />}
               {title ? <span>{t(title)}</span> : null}
               {subtitle ? (

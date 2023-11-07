@@ -1,7 +1,14 @@
 import { IconMap } from '../widgets/Icon'
 import { Button } from '../widgets/Button'
 import { Modal } from '../widgets/Modal'
-export const TodoItem = ({ todo, index, remove }: any) => {
+
+interface Props {
+  todo: string
+  index: number
+  remove: Function
+}
+
+export const TodoItem = ({ todo, index, remove }: Props) => {
   return (
     <>
       <tr>
@@ -13,9 +20,7 @@ export const TodoItem = ({ todo, index, remove }: any) => {
           <Button
             className="btn text-danger"
             iconmap={IconMap.TaskRemove}
-            onClick={() => {
-              remove(todo)
-            }}
+            onClick={remove}
           />
         </td>
       </tr>

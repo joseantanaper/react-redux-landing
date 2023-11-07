@@ -31,7 +31,7 @@ export const Title = ({ title, subtitle, iconmap, type = 0 }: Props) => {
           {iconmap && <Icon iconmap={iconmap} />}
           {title}
         </span>
-        <span className="w-100 text-truncate opacity-50 fst-italic fw-light justify-content-start">
+        <span className="w-100 text-truncate opacity-25 fst-italic fw-light justify-content-start">
           {subtitle}
         </span>
       </div>

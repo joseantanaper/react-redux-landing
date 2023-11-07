@@ -26,7 +26,7 @@ export const todosSlice = createSlice({
         todos: [...state.todos, action.payload],
       }
     },
-    clearAll: () => {
+    removeAll: () => {
       localStorage.setItem(name, JSON.stringify([]))
       return {
         todos: [],
@@ -46,7 +46,7 @@ export const todosSlice = createSlice({
   },
 })
 
-export const { addTodo, clearAll, remove } = todosSlice.actions
+export const { addTodo, removeAll, remove } = todosSlice.actions
 
 export const selectTodos = (state: RootState) => state.todos
 
