@@ -3,13 +3,6 @@ import { useAppSelector, useAppDispatch } from '@app/hooks'
 import { Modal } from '@components/widgets/Modal'
 import { useTranslation } from 'react-i18next'
 import { Icon, IconMap } from '@components/widgets/Icon'
-
-import {
-  addTodo,
-  clearAll,
-  selectTodos,
-  remove,
-} from '@app/reducer/todos.slice'
 import { TodoItem } from './TodoItem'
 
 interface Props {
@@ -23,7 +16,6 @@ export const TodoList = ({ todos, search, remove }: Props) => {
   const [currentTodo, setCurrentTodo] = useState('')
   const [filteredTodos, setFilteredTodos] = useState([...todos])
   const { t } = useTranslation()
-  const dispatch = useAppDispatch()
 
   const confirmRemove = (todo: string) => {
     setCurrentTodo(todo)
