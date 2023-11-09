@@ -42,7 +42,7 @@ export const Subnavbar = ({ title, subtitle, iconmap, toolbar }: Props) => {
                 className="collapse navbar-collapse justify-content-end"
                 id="subnavbarMenu"
               >
-                <ul className="navbar-nav navbar-nav-scroll  border-start ps-3">
+                <ul className="navbar-nav navbar-nav-scroll border-start ps-3">
                   {toolbar}
                 </ul>
               </div>

@@ -84,8 +84,8 @@ const Index = () => {
           <div className="col text-center">
             <Icon
               iconmap={IconMap.Hypnotize}
-              size={240}
-              extra="app-self-rotate"
+              size={360}
+              extra="app-hypnotize-rotate mb-3"
             />
             <br />
             <span className="app-legend">SVG with CSS animation</span>
@@ -112,22 +112,13 @@ const Index = () => {
           </div>
           <div className="col">
             <div className="row d-flex align-items-center text-center px-5">
-              {[0, 1, 2, 3].map((user, index) => {
-                return (
-                  <div key={`div-avatar-${index}`} className="col">
-                    <Avatar
-                      gender="all"
-                      className="avatar app-rotate rounded-circle app-profile mb-2 shadow"
-                      width="200"
-                      height="200"
-                      alt="Avatar"
-                    />
-                  </div>
-                )
-              })}
-              <span className="app-legend">
-                Random Avatars. Rotate on hover!
-              </span>
+              <Icon
+                iconmap={IconMap.Radar}
+                size={360}
+                extra="app-radar-rotate"
+              />
+              <br />
+              <span className="app-legend">Radar looking for ghosts</span>
             </div>
           </div>
         </div>
@@ -141,21 +132,22 @@ const Index = () => {
         </div>
         <div className="row">
           <div className="col">
-            <div className="bg-black text-center p-2 overflow-hidden rounded-5 shadow">
-              <iframe
-                width="480"
-                height="400"
-                src="https://www.youtube.com/embed/bbwQL_YJCnY?si=qO5WLUJ_W5pxE_IC"
-                title="Arkanoid"
-                frameBorder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-              ></iframe>
-            </div>
-            <br />
-            <div className="text-center">
+            <div className="row">
+              {[0, 1, 2, 3].map((user, index) => {
+                return (
+                  <div key={`div-avatar-${index}`} className="col px-5">
+                    <Avatar
+                      gender="all"
+                      className="avatar app-rotate rounded-circle app-profile mb-5 shadow-lg"
+                      width="200"
+                      height="200"
+                      alt="Avatar"
+                    />
+                  </div>
+                )
+              })}
               <span className="app-legend">
-                Arkanoid · アルカノイド. MSX. Taito 1986. Full Insane No-Death
-                Playthrough
+                Random Avatars. Rotate on hover!
               </span>
             </div>
           </div>
@@ -182,10 +174,24 @@ const Index = () => {
             <LoremIpsum p={6} />
           </div>
           <div className="col">
-            <LoremIpsum p={6} />
-          </div>
-          <div className="col">
-            <LoremIpsum p={6} />
+            <div className="bg-black text-center p-2 overflow-hidden rounded-5 shadow">
+              <iframe
+                width="480"
+                height="400"
+                src="https://www.youtube.com/embed/bbwQL_YJCnY?si=qO5WLUJ_W5pxE_IC"
+                title="Arkanoid"
+                frameBorder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              ></iframe>
+            </div>
+            <br />
+            <div className="text-center mb-5">
+              <span className="app-legend">
+                Arkanoid · アルカノイド. MSX. Taito 1986. Full Insane No-Death
+                Playthrough
+              </span>
+            </div>
+            <LoremIpsum p={2} />
           </div>
         </div>
       </div>

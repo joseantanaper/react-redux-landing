@@ -120,22 +120,19 @@
       overflow-x: auto;
       overflow-y: hidden;
       scrollbar-width: none;
-
-
     }
 
     *::-webkit-scrollbar {
-      width: 3px;
-      height: 3px;
+      // width: 4px;
+      height: 2px;
     }
 
     *::-webkit-scrollbar-thumb {
-      background-color: var(--bs-secondary-bg);
+      background-color: rgba(var(--bs-emphasis-color-rgb), 0.4);
     }
 
     *::-webkit-scrollbar-track {
-      height: 3px;
-      background: black;
+      height: 2px;
     }
   }
 
@@ -218,20 +215,6 @@
 
 // Navbar-Togglers, Buttons and IconButtons
 
-.app-self-rotate {
-  filter: drop-shadow(0 0 1px white) drop-shadow(0 0 8px rgba(var(--bs-emphasis-color-rgb), 0.6));
-  animation: rotation 2s linear infinite;
-}
-
-.app-self-rotate:hover {
-  filter: drop-shadow(0 0 1px white) drop-shadow(0 0 16px rgba(var(--bs-emphasis-color-rgb), 0.6));
-  animation: rotation 1s linear infinite;
-}
-
-img.app-rotate:hover {
-  animation: rotation 2s linear infinite;
-}
-
 .btn:hover,
 .navbar-toggler:hover {
   img {
@@ -253,12 +236,16 @@ img.app-rotate:hover {
 @keyframes rotation {
   0% {
     transform-origin: 50% 50%;
-    transform: rotate(0);
+    transform: rotate(0) scale(1);
+  }
+
+  50% {
+    transform: rotate(180deg) scale(1.06);
   }
 
   100% {
     transform-origin: 50% 50%;
-    transform: rotate(360deg);
+    transform: rotate(360deg) scale(1);
   }
 }
 
@@ -275,10 +262,11 @@ img.app-profile {
 }
 
 button.app-go-top {
+  color: var(--bs-text-body);
   padding: 0px;
   // transition: 0.4s opacity ease-in-out;
-  opacity: 0.3;
-  // filter: drop-shadow(0 3px 2px rgba(0 0 0 / 0.8));
+  opacity: 0.4;
+  filter: drop-shadow(0 0px 1px white) drop-shadow($app-h-global-shadow);
 }
 
 button.app-go-top:hover {
@@ -310,6 +298,21 @@ div.app-pageLayout {
   animation: 0.25s ease-in 0s 1 pageLoadTransition;
 }
 
+h1.app-layout-title {
+  svg {
+    position: absolute;
+    margin-top: -40px;
+    left: 16px;
+    width: 120px;
+    height: 120px;
+    opacity: 0.1;
+
+    filter: drop-shadow(0 0 4px rgba(var(--bs-emphasis-color-rgb), 1));
+  }
+}
+
+
+
 $app-blur: 16px;
 
 @keyframes pageLoadTransition {
@@ -330,4 +333,54 @@ $app-blur: 16px;
     -ms-filter: blur(0px);
     transform: translateY(0);
   }
+}
+
+
+// Animations
+
+.app-radar-rotate {
+  cursor: crosshair;
+  color: limegreen;
+  filter: drop-shadow(0 0 1px green) drop-shadow(0 0 4px rgba(lime, 0.6));
+  animation: rotation 12s linear infinite;
+}
+
+.app-radar-rotate:hover {
+  filter: drop-shadow(0 0 1px white) drop-shadow(0 0 4px rgba(lime, 0.8));
+  animation-duration: 6s;
+}
+
+.app-radar-rotate:active {
+  filter: drop-shadow(0 0 1px white) drop-shadow(0 0 6px rgba(lime, 1));
+  animation-duration: 2s;
+}
+
+.app-hypnotize-rotate {
+  cursor: pointer;
+  filter: drop-shadow(0 0 1px white) drop-shadow(0 0 8px rgba(var(--bs-emphasis-color-rgb), 0.6));
+  animation: rotation 4s linear infinite;
+}
+
+.app-hypnotize-rotate:hover {
+  filter: drop-shadow(0 0 1px white) drop-shadow(0 0 16px rgba(var(--bs-emphasis-color-rgb), 0.6));
+  animation-duration: 2s;
+}
+
+.app-hypnotize-rotate:active {
+  filter: blur(0.06rem) drop-shadow(0 0 1px red) drop-shadow(0 0 16px rgba(var(--bs-emphasis-color-rgb), 0.6));
+  animation-duration: 1s;
+}
+
+// img.app-rotate:hover {
+//   animation: rotation 2s linear infinite;
+//   transform: scale(1.2);
+// }
+
+img.app-rotate {
+  cursor: grab;
+  transition: all 1s ease-in-out;
+}
+
+img.app-rotate:hover {
+  animation: rotation 2s linear infinite;
 }

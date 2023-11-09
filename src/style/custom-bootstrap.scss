@@ -74,6 +74,7 @@ input.form-control {
   padding: $app-button-y-padding $app-button-x-padding;
 
   svg {
+    transition: $app-global-quick-transition;
     min-width: 16px;
     min-height: 16px;
     margin-top: -($app-icon-text-margin);
@@ -88,6 +89,7 @@ input.form-control {
   padding: $app-button-y-padding*2 $app-button-x-padding;
 
   svg {
+    transition: $app-global-quick-transition;
     min-width: 16px;
     min-height: 16px;
   }
@@ -107,6 +109,7 @@ input.form-control {
   }
 
   svg+span {
+    transition: $app-global-quick-transition;
     padding: 2px 0px 2px 0px;
     margin-left: ($app-icon-text-margin);
   }
@@ -120,41 +123,6 @@ input.form-control {
   cursor: pointer;
   white-space: nowrap;
 }
-
-.btn {
-
-  div.spinner-border,
-  div.spinner-grow,
-  div.spinner-border-sm,
-  div.spinner-grow-sm {
-    // position: fixed;
-    // text-align: center;
-
-
-    // filter: drop-shadow(0 0 1px var(--bs-emphasis-color));
-  }
-
-  // div.spinner-border,
-  // div.spinner-grow {
-  //   display: flex;
-  //   top: 0;
-  //   align-items: baseline;
-  //   justify-content: baseline;
-  // }
-
-  // div.spinner-border-sm,
-  // div.spinner-grow-sm {
-  //   top: .8rem;
-  //   left: 1rem;
-  // }
-}
-
-// @include media-breakpoint-only(xs) {
-//   .sm-w-100 {
-//     width: 100% !important;
-//     padding-bottom: 10px;
-//   }
-// }
 
 /* OFFCANVAS -----------------------------------------------------------------*/
 .offcanvas-header {
@@ -209,6 +177,7 @@ h1.modal-title {
   span {}
 
   svg {
+    transition: $app-global-quick-transition;
     width: 100% !important;
     height: 100% !important;
 
@@ -224,8 +193,34 @@ h1.modal-title {
   // opacity: $app-default-opacity;
   svg,
   span {
+    transition: $app-global-quick-transition;
     opacity: $app-default-opacity;
   }
+}
+
+.btn:not(.btn-primary,
+  .btn-secondary,
+  .btn-success,
+  .btn-danger,
+  .btn-warning,
+  .btn-info,
+  .btn-light,
+  .btn-dark,
+  .btn-outline-primary,
+  .btn-outline-secondary,
+  .btn-outline-success,
+  .btn-outline-danger,
+  .btn-outline-warning,
+  .btn-outline-info,
+  .btn-outline-light,
+  .btn-outline-dark),
+.nav-link,
+.accordion-button,
+.list-group-item,
+.navbar-toggler {
+
+  transition: $app-global-quick-transition;
+
 }
 
 .btn:not(.btn-primary,

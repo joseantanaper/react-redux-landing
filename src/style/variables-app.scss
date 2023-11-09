@@ -38,3 +38,6 @@ $app-button-x-padding: 1rem;
 $app-button-y-padding: .5rem;
 
 $app-h-global-shadow: 0 1px 1px rgba(0 0 0 / 0.4);
+
+$app-global-animation-duration: 0.2s;
+$app-global-quick-transition: all $app-global-animation-duration ease-in-out;
