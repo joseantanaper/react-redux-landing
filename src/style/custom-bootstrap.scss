@@ -9,15 +9,24 @@
   }
 }
 
-@include media-breakpoint-only(sm) {
+// @include media-breakpoint-down(md) {
 
-  .btn:not([name='app-clock']),
-  .nav-link {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    max-width: $app-button-sm-max-width;
-  }
+.btn:not([name='app-clock']),
+.nav-link {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
+
+// }
+
+// @include media-breakpoint-only(sm) {
+
+//   .btn:not([name='app-clock']),
+//   .nav-link {
+//     max-width: $app-button-sm-max-width;
+//   }
+// }
 
 @include media-breakpoint-up(sm) {
   .nav-link {
@@ -52,11 +61,16 @@ input.form-control {
   border: 0.8px solid transparent !important;
 }
 
+.nav-link {
+  border-radius: $border-radius;
+}
+
 .btn,
 .nav-link,
 .list-group-item,
 .form-control,
 .col-form-label {
+
   padding: $app-button-y-padding $app-button-x-padding;
 
   svg {
@@ -365,6 +379,8 @@ h1.modal-title {
 }
 
 footer {
+  padding-bottom: 80px;
+
   h5 {
     border-bottom: 2px solid rgba(var(--bs-secondary-bg-rgb), 1);
     padding-bottom: 20px;

@@ -4,12 +4,13 @@
   box-sizing: border-box;
 }
 
-
 body {
   margin: 0;
   padding: 0;
   border-top: calc(56px + 56px) solid var(--bs-body-bg);
   overflow-y: scroll;
+  // border-bottom: 500px solid red;
+  // height: 100%;
 }
 
 html[data-bs-theme=''],
@@ -46,9 +47,4 @@ div#root {
   margin: 0px;
   padding: 0px;
   // padding-bottom: 120px;
-}
-
-footer {
-  // margin-bottom: 60px;
-  // padding-top: 60px;
 }

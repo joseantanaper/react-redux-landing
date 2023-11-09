@@ -21,9 +21,9 @@ export const Title = ({ title, subtitle, iconmap, type = 0 }: Props) => {
     //   } w-100 text-truncate text-nowrap`}
     //   to="/"
     // >
-    <NavLink className="navbar-brand w-100 text-truncate" to="/">
+    <NavLink className="navbar-brand text-truncate" to="/">
       <div
-        className={`text-truncate text-nowrap d-flex ${
+        className={`text-nowrap text-truncate d-flex ${
           type === 1 ? 'app-show-on-scroll hide fade ps-3' : ''
         }`}
       >
@@ -31,7 +31,7 @@ export const Title = ({ title, subtitle, iconmap, type = 0 }: Props) => {
           {iconmap && <Icon iconmap={iconmap} />}
           {title}
         </span>
-        <span className="w-100 text-truncate opacity-25 fst-italic fw-light justify-content-start">
+        <span className="w-100 text-truncate opacity-50 fst-italic fw-light justify-content-start">
           {subtitle}
         </span>
       </div>

@@ -1,7 +1,6 @@
 // import logo from "../logo.svg"
 // import { Counter } from "../features/menu/Counter"
 import { Outlet, Route } from 'react-router-dom'
-import Footer from '@/components/layout/Footer'
 import { useEffect } from 'react'
 import { useAppSelector, useAppDispatch } from '@/app/hooks'
 import { Locale, setLocale, selectLocale } from '@/app/reducer/app.slice'
@@ -37,9 +36,10 @@ const Root = () => {
 
   return (
     <>
-      <Navbar title={appConfig.title} subtitle={appConfig.subtitle} />
-      <Outlet />
-      <Footer />
+      <div className="app-root">
+        <Navbar title={appConfig.title} subtitle={appConfig.subtitle} />
+        <Outlet />
+      </div>
     </>
   )
 }

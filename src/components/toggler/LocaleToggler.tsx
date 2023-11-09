@@ -25,7 +25,7 @@ export const LocaleToggler = () => {
   }, [])
 
   return (
-    <>
+    <div className="btn-group">
       <Button
         className={`btn text-uppercase  ${
           currentLocale === Locale.EN ? 'active disabled' : ''
@@ -42,6 +42,6 @@ export const LocaleToggler = () => {
         onClick={() => clickLocale(Locale.ES)}
         label={Locale.ES.substring(0, 2)}
       />
-    </>
+    </div>
   )
 }

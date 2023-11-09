@@ -27,7 +27,7 @@ export const NavLinko = ({ routeLink, external, mode = 'menu' }: Props) => {
     >
       <Icon iconmap={routeLink.iconmap} />
       {/* <div className="vr ms-2 m-0 p-0 bottom-0 position-absolute top-0"></div> */}
-      <span className="text-truncate">{t(routeLink.title)}</span>
+      <span className="text-nowrap text-truncate">{t(routeLink.title)}</span>
       {external && (
         <Icon iconmap={IconMap.External} extra="ms-2 end-0 opacity-25" />
       )}

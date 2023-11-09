@@ -37,21 +37,18 @@ export const Subnavbar = ({ title, subtitle, iconmap, toolbar }: Props) => {
 
           {/* Nav Menu Start */}
           <div className="row col">
-            {/* <div className="container-fluid border-bottom d-sm-none"></div> */}
             {toolbar && (
               <div
-                className="collapse navbar-collapse px-3 justify-content-end"
+                className="collapse navbar-collapse justify-content-end"
                 id="subnavbarMenu"
               >
-                <ul className="navbar-nav justify-content-end border-start ps-3">
+                <ul className="navbar-nav navbar-nav-scroll  border-start ps-3">
                   {toolbar}
                 </ul>
-                {/* <div className="container-fluid d-sm-none"></div> */}
               </div>
             )}
-            {/* <div className="container-fluid border-top d-sm-none"></div> */}
-            {/* Nav Menu End */}
           </div>
+          {/* Nav Menu End */}
         </div>
       </nav>
     </>

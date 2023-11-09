@@ -65,7 +65,7 @@ const Todo = () => {
     <>
       <li className="nav-item">
         {/* TODO: TextSearch component */}
-        <div className="btn-group sm-w-100">
+        <div className="input-group w-100">
           <Input
             search={true}
             placeholder={t('app:todo:search')}
@@ -77,8 +77,9 @@ const Todo = () => {
       </li>
       <li className="nav-item d-none d-sm-block me-3"></li>
       <li className="nav-item">
-        <div className="btn-group sm-w-100">
+        <div className="input-group d-flex flex-nowrap sm-w-100">
           <Input
+            style={{ minWidth: '120px' }}
             value={todo}
             placeholder={t('app:todo:content')}
             onChange={setTodo}
@@ -101,7 +102,7 @@ const Todo = () => {
       <li className="nav-item d-none d-sm-block me-3"></li>
       <li className="nav-item">
         <Button
-          className="btn-outline-danger"
+          className="btn-outline-danger w-100"
           disabled={todos.length <= 0}
           onClick={ConfirmRemoveAll}
           iconmap={IconMap.TaskRemove}

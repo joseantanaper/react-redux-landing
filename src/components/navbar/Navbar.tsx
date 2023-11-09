@@ -10,7 +10,7 @@ import { NavMenu } from './NavMenu'
 import { LocaleToggler } from '../toggler/LocaleToggler'
 import { Clock } from './Clock'
 import { Title } from './Title'
-import { Avatar } from '@components/Avatar'
+import { Avataro } from '@/components/widgets/Avataro'
 import { Icon, IconMap } from '@components/widgets/Icon'
 import { useAppSelector } from '@app/hooks'
 
@@ -54,7 +54,7 @@ export const Navbar = ({ title, subtitle }: Props) => {
           <Title title={t(title)} subtitle={t(subtitle!)} type={0} />
 
           {/* Menu */}
-          <div className={`d-none d-xxl-block ${dividerClass}`}>
+          <div className={`d-none d-lg-block ${dividerClass}`}>
             <NavMenu routeLinks={routeLinks as RouteLink[]} />
           </div>
 
@@ -92,7 +92,7 @@ export const Navbar = ({ title, subtitle }: Props) => {
             </div>
           </div>
           <ButtonToggler targetId="offcanvasMenuSettings" extraClass="p-0 m-0">
-            <Avatar />
+            <Avataro />
           </ButtonToggler>
           {/* Navbar End */}
         </div>

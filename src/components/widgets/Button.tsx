@@ -86,7 +86,7 @@ export const Button = ({
       {async && <div className="spinner-border spinner-border-sm d-none"></div>}
       {iconmap ? <Icon id={iconmap} size={iconSize} /> : null}
       {label ? (
-        <span>
+        <span className="text-truncate">
           <Trans>{label}</Trans>
         </span>
       ) : null}
@@ -114,7 +114,7 @@ export const ButtonDismiss = ({
     >
       {iconmap ? <Icon id={iconmap} /> : null}
       {label ? (
-        <span>
+        <span className="text-truncate">
           <Trans>{label}</Trans>
         </span>
       ) : null}

@@ -3,7 +3,7 @@ import { Icon, IconMap } from '@components/widgets/Icon'
 import { Button } from '@components/widgets/Button'
 import { useAppSelector, useAppDispatch } from '@app/hooks'
 import { RootState } from '@app/store'
-import { Avatar, AvatarSize } from '@components/Avatar'
+import { Avataro } from '@/components/widgets/Avataro'
 import { Input } from '@components/widgets/Input'
 
 import { Trans } from 'react-i18next'
@@ -35,7 +35,7 @@ export const Login = ({ id }: Props) => {
         <div className="row">
           <div className="col">
             {currentUsername ? (
-              <Avatar size={AvatarSize.lg} />
+              <Avataro size="240px" />
             ) : (
               <Icon
                 id="bi-person-slash"

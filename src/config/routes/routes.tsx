@@ -4,12 +4,14 @@ import Counter from '@/routes/miniapps/counter'
 import Todo from '@/routes/miniapps/todo'
 import { IconMap } from '@/components/widgets/Icon'
 import { RouteObject } from 'react-router-dom'
+import { Lorem } from '@/routes/playground/lorem'
 
 export const enum routePath {
   HOME = '/',
   PORTFOLIO = '/portfolio',
   TODO = '/miniapps/todo',
   COUNTER = '/miniapps/counter',
+  LOREM = '/playground/lorem',
 }
 export const routes = [
   {
@@ -59,6 +61,18 @@ export const routes = [
       }
     },
   },
+  {
+    path: '/playground/lorem',
+    element: <Lorem />,
+    loader: () => {
+      return {
+        title: 'app:playground:lorem:loremTitle',
+        subtitle: 'app:playground:lorem:loremSubtitle',
+        description: 'app:playground:lorem:loremDescription',
+        iconmap: IconMap.Locale,
+      }
+    },
+  },
 ]
 
 const getRouteByPath = (path: string): RouteLink => {
@@ -88,11 +102,14 @@ export const routeLinks: RouteLink[] = [
     url: '#0',
     title: 'Playground',
     iconmap: IconMap.Folder,
-    items: [getRouteByPath(routePath.TODO), getRouteByPath(routePath.COUNTER)],
+    items: [
+      { ...getRouteByPath(routePath.LOREM), title: 'Lorem Ipsum' },
+      { ...getRouteByPath(routePath.TODO), title: 'ToDo with title changed' },
+    ],
   },
   {
     url: '#1',
-    title: 'Playground Plus',
+    title: 'More',
     iconmap: IconMap.Folder,
     items: [
       { ...getRouteByPath(routePath.TODO), title: 'ToDo with title changed' },

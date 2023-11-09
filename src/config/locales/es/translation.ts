@@ -19,7 +19,7 @@ export const translationES = {
       de ambos frameworks, comprobarlas, mejorar su implementación con buenas
       prácticas, y disponer así de una buena plantilla para iniciar cualquier
       proyecto web. Espero que os guste!`,
-      navbartitle: 'Barra de Navegación',
+      navbarTitle: 'Barra de Navegación',
       navbar: `La <strong>barra de navegación principal</strong> es fija en la
       parte superior y está compuesta por varios elementos bien diferenciados:
       una <strong>barra de título</strong>; una <strong>barra con los enlaces principales</strong>; diversos
@@ -37,7 +37,7 @@ export const translationES = {
       pero que estén igualmente disponibles en tamaño pequeño.
       <strong>Se debe poder hacer lo mismo desde un
       monitor que desde un móvil</strong>.`,
-      routetitle: 'Rutas',
+      routeTitle: 'Rutas',
       route: `Para la colección de rutas de este Sitio se ha utilizado la
       clásica estructura <strong>routes</strong> del
       <strong>createBrowserRouter</strong> de <strong>React-Router</strong> y su
@@ -49,6 +49,26 @@ export const translationES = {
       de los datos descriptivos de cada ruta en todas las secciones en donde
       aparezcan.
       `,
+      layoutTitle: 'Plantilla de Página',
+      layout: `Las rutas cargan dentro de una Plantilla de Página para que las
+      todas las vistas mantengan un formato homogéneo y, sobretodo, para que
+      cualquier cambio de diseño pueda aplicarse de forma extremadamente fácil
+      y sencilla.<br />
+      La Plantilla de Página actual consta de una zona de título, que incluye
+      subtitulo y descripción opcionales, y una Barra de Navegación Secundaria
+      que al desplazarse hacia abajo se "adhiere" a la Barra de Navegación
+      Principal, quedando ambas fijas en la zona superior.
+      Esta Barra de Navegación Secundaria, cuyas opciones y herramientas se
+      definen en cada ruta, permiten mantener siempre a mano aquellas funciones
+      necesarias en cada ruta.<br />
+      Un detalle interesante de esta barra es que,
+      al desplazarse hacia abajo, el gran titular que aparece en cabecera se
+      incorpora a esta barra en un tamaño más compacto, con el objetivo de tener
+      siempre a la vista la ruta en la que nos encontramos, junto con las
+      opciones y herramientas de la misma. Como no podría ser de otra manera,
+      todos estos elementos tiene diseño responsivo y se adaptan perfectamente
+      al tamaño de pantalla, colapsando en un botón de menú desplegable cuando
+      es necesario.`,
       subnavbar: `Debajo`,
       // de idioma,
       //  Algunos menús de

@@ -12,7 +12,7 @@ i18n
   .use(detector)
   .use(initReactI18next)
   .init({
-    debug: true,
+    debug: false,
     fallbackLng: 'en',
     // lng: 'es',
     // lng: 'en',

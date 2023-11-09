@@ -29,29 +29,28 @@ export const Input = ({
 }: Props) => {
   if (search) {
     return (
-      <div className="btn-group w-100">
-        <div className={`input-group ${className}`}>
-          <input
-            className={`form-control z-0 text-truncate ${className}`}
-            name={name}
-            placeholder={placeholder}
-            value={value}
-            type={type}
-            disabled={disabled}
-            onChange={(e) => (onChange ? onChange(e.target.value) : null)}
-            // style={{ paddingRight: '26px', minWidth: '120px' }}
-            style={{ ...style, minWidth: '120px', paddingRight: '26px' }}
-          />
-          <Icon
-            id={IconMap.Search}
-            extra="app-search text-primary opacity-50"
-            style={{
-              position: 'absolute',
-              top: '14px',
-              right: '8px',
-            }}
-          />
-        </div>
+      // <div className="btn-group w-100">
+      <div className={`input-group flex-nowrap ${className}`}>
+        <input
+          className={`form-control z-0 text-truncate ${className}`}
+          name={name}
+          placeholder={placeholder}
+          value={value}
+          type={type}
+          disabled={disabled}
+          onChange={(e) => (onChange ? onChange(e.target.value) : null)}
+          // style={{ paddingRight: '26px', minWidth: '120px' }}
+          style={{ ...style, minWidth: '120px', paddingRight: '26px' }}
+        />
+        <Icon
+          id={IconMap.Search}
+          extra="app-search text-primary opacity-50"
+          style={{
+            position: 'absolute',
+            top: '14px',
+            right: '58px',
+          }}
+        />
         {clear && (
           <Button
             className="btn-outline-danger"
@@ -61,6 +60,7 @@ export const Input = ({
           />
         )}
       </div>
+      // </div>
     )
   } else {
     return (
