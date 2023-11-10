@@ -20,6 +20,7 @@ export const routes = [
     loader: () => {
       return {
         title: 'app:home:title',
+        subtitle: 'app:home:subtitle',
         description: 'app:home:description',
         iconmap: IconMap.Home,
       }

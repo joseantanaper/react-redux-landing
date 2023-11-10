@@ -1,4 +1,6 @@
 // @import '@bootstrap-icons';
+@import 'variables-bootstrap.scss';
+@import 'variables-app.scss';
 
 // PageLayout
 .app-header,
@@ -61,22 +63,39 @@
     height: $app-navbar-height;
 
     a.navbar-brand {
+      min-width: 15rem;
       // Avoid title to move up on navbar-toggler
       display: flex;
       min-height: $app-navbar-height;
       align-items: center;
 
-      span:first-child {}
-
-      span:nth-child(2) {
-        margin-left: 1rem;
-      }
+      // overflow: hidden;
+      // text-overflow: ellipsis;
+      // margin-right: 0px;
+      // padding-right: 0px;
 
       svg {
+        color: var(--bs-emphasis-color);
         width: auto;
+        margin-right: 0px;
+        padding: 0px;
         margin-top: -$app-icon-text-margin*2;
-        height: 24px;
-        margin-right: 20px;
+        margin-right: $app-icon-text-margin*7;
+        height: $font-size-lg;
+        opacity: $app-icon-opacity;
+      }
+
+      color: var(--bs-border-color);
+
+      span.app-navbar-title {
+        // background: yellow;
+        color: var(--bs-emphasis-color);
+      }
+
+      span.app-navbar-subtitle {
+        color: var(--bs-tertiary-color);
+        margin-left: 1rem;
+        // background: orange;
       }
 
     }
@@ -298,15 +317,6 @@ h1.app-counter {
 
 div.app-pageLayout {
   animation: 0.25s ease-in 0s 1 pageLoadTransition;
-
-  h2 {
-    margin-bottom: 2rem;
-  }
-
-  h2::before {
-    content: '📘 ';
-  }
-
 }
 
 h1.app-layout-title {

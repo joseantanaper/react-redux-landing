@@ -15,16 +15,16 @@ export const NavMenu = ({ routeLinks }: Props) => {
           {routeLinks
             .filter((routeLink) => routeLink.url.startsWith('/'))
             .map((routeLink: RouteLink, index: number) => {
-              // if (index < 3)
-              return (
-                <li key={`route-link-${index}`} className="nav-item">
-                  <NavLinko
-                    key={`navmenu-${index}`}
-                    routeLink={routeLink}
-                    mode="nav"
-                  />
-                </li>
-              )
+              if (index < 3)
+                return (
+                  <li key={`route-link-${index}`} className="nav-item">
+                    <NavLinko
+                      key={`navmenu-${index}`}
+                      routeLink={routeLink}
+                      mode="nav"
+                    />
+                  </li>
+                )
             })}
         </ul>
       </div>

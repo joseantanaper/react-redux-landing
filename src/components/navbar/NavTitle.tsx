@@ -9,7 +9,7 @@ interface Props {
   type?: 0 | 1
 }
 
-export const Title = ({ title, subtitle, iconmap, type = 0 }: Props) => {
+export const NavTitle = ({ title, subtitle, iconmap, type = 0 }: Props) => {
   useEffect(() => {
     console.log(title, type)
   }, [])
@@ -21,19 +21,19 @@ export const Title = ({ title, subtitle, iconmap, type = 0 }: Props) => {
     //   } w-100 text-truncate text-nowrap`}
     //   to="/"
     // >
-    <NavLink className="navbar-brand text-truncate" to="/">
+    <NavLink className="navbar-brand" to="/">
       <div
-        className={`text-nowrap text-truncate d-flex ${
+        className={`text-nowrap overflow-hidden text-truncate ${
           type === 1 ? 'app-show-on-scroll hide fade ps-3' : ''
         }`}
       >
-        <span>
-          {iconmap && <Icon iconmap={iconmap} />}
-          {title}
-        </span>
-        <span className="w-100 text-truncate opacity-50 fst-italic fw-light justify-content-start">
-          {subtitle}
-        </span>
+        {iconmap && <Icon iconmap={iconmap} />}
+        {title && <span className="app-navbar-title">{title}</span>}
+        {subtitle && (
+          <span className="app-navbar-subtitle fst-italic fw-light justify-content-start">
+            {subtitle}
+          </span>
+        )}
       </div>
     </NavLink>
   )

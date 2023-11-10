@@ -1,7 +1,7 @@
 // Global Navbar is a good place for the "Single Source of Truth".
 // Common Parent Component for AppSlice setttings
 import { ReactNode } from 'react'
-import { Title } from './Title'
+import { NavTitle } from './NavTitle'
 import { IconMap } from '../widgets/Icon'
 import { ButtonToggler } from '../widgets/Button'
 
@@ -17,23 +17,23 @@ interface Props {
 export const Subnavbar = ({ title, subtitle, iconmap, toolbar }: Props) => {
   return (
     <>
-      <nav className="app-main-subnavbar-crystal navbar navbar-expand-sm sticky-top border-bottom shadow-sm">
+      <nav className="app-main-subnavbar-crystal navbar navbar-expand-sm sticky-top text-truncate border-bottom shadow-sm">
         <div className="app-navbar-container container-fluid app-subnavbar">
-          <div className="row text-truncate">
-            {/* Title */}
-            <Title
-              title={t(title!)}
-              subtitle={subtitle && t(subtitle!)}
-              iconmap={iconmap && iconmap}
-              type={1}
-            />
+          {/* <div className="row text-truncate"> */}
+          {/* Title */}
+          <NavTitle
+            title={t(title!)}
+            subtitle={subtitle && t(subtitle!)}
+            iconmap={iconmap && iconmap}
+            type={1}
+          />
 
-            <ButtonToggler
-              iconmap={IconMap.More}
-              toggle="collapse"
-              targetId="subnavbarMenu"
-            />
-          </div>
+          <ButtonToggler
+            iconmap={IconMap.More}
+            toggle="collapse"
+            targetId="subnavbarMenu"
+          />
+          {/* </div> */}
 
           {/* Nav Menu Start */}
           <div className="row col">

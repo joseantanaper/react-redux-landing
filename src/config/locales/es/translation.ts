@@ -7,7 +7,7 @@ export const translationES = {
     confirm: 'Confirm',
     home: {
       title: 'Inicio',
-      // subtitle: 'Raíz de este Sitio Web',
+      subtitle: 'Raíz de este Sitio Web',
       description: `Esto es un Sitio Web de Destino basado en <strong>
       React/Redux</strong> y <strong>Bootstrap</strong> con un montón de
       personalizaciones para adaptarlo a mis propias preferencias. El Sitio está

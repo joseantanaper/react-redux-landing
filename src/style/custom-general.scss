@@ -30,6 +30,17 @@ h6 {
   scroll-margin-top: 150px;
 }
 
+h2 {
+  svg {
+    margin-top: $h2-font-size * 0.1;
+    margin-right: $h2-font-size * 0.3;
+    height: $h2-font-size;
+    vertical-align: top;
+    width: auto;
+    opacity: 0.2;
+  }
+}
+
 div#root {
   margin: 0px;
   padding: 0px;

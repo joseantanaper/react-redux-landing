@@ -4,9 +4,17 @@ import { Icon, IconMap } from '@/components/widgets/Icon'
 import { Linko } from '@/components/widgets/Linko'
 import { useTranslation, Trans } from 'react-i18next'
 import { Avataro } from '@/components/widgets/Avataro'
+import { useLoaderData } from 'react-router-dom'
+import Title from '@/components/widgets/Title'
+
+export interface LoaderData {
+  iconmap?: IconMap
+}
 
 const Index = () => {
   const { t, i18n } = useTranslation()
+  const loader = (useLoaderData() as LoaderData) || {}
+  const { iconmap } = loader
   const toolbar = (
     <>
       <li className="nav-item">
@@ -56,9 +64,12 @@ const Index = () => {
         {/* Section 1 */}
         <div className="row">
           <div className="col">
-            <h2 id="section1">
-              {t('Section')} #1: {t('app:home:navbarTitle')}
-            </h2>
+            <Title
+              id="section1"
+              h="h2"
+              label={`${t('Section')} #1: ${t('app:home:navbarTitle')}`}
+              iconmap={iconmap}
+            />
           </div>
         </div>
         <div className="row">
@@ -75,9 +86,12 @@ const Index = () => {
       <div className="container-fluid mb-5">
         <div className="row">
           <div className="col">
-            <h2 id="section2">
-              {t('Section')} #2: {t('app:home:routeTitle')}
-            </h2>
+            <Title
+              id="section2"
+              h="h2"
+              label={`${t('Section')} #2: ${t('app:home:routeTitle')}`}
+              iconmap={iconmap}
+            />
           </div>
         </div>
         <div className="row">
@@ -101,9 +115,12 @@ const Index = () => {
       <div className="container-fluid mb-5">
         <div className="row">
           <div className="col text-justify">
-            <h2 id="section3">
-              {t('Section')} #3: {t('app:home:layoutTitle')}
-            </h2>
+            <Title
+              id="section3"
+              h="h2"
+              label={`${t('Section')} #3: ${t('app:home:layoutTitle')}`}
+              iconmap={iconmap}
+            />
           </div>
         </div>
         <div className="row">
@@ -130,9 +147,12 @@ const Index = () => {
       <div className="container-fluid mb-5">
         <div className="row">
           <div className="col">
-            <h2 id="section4">
-              {t('Section')} #4: {t('app:home:bootstrapTitle')}
-            </h2>
+            <Title
+              id="section4"
+              h="h2"
+              label={`${t('Section')} #4: ${t('app:home:bootstrapTitle')}`}
+              iconmap={iconmap}
+            />
           </div>
         </div>
         <div className="row">
@@ -140,7 +160,10 @@ const Index = () => {
             <div className="row">
               {[0, 1, 2, 3].map((user, index) => {
                 return (
-                  <div key={`div-avatar-${index}`} className="col px-5">
+                  <div
+                    key={`div-avatar-${index}`}
+                    className="col px-5 text-center"
+                  >
                     <Avatar
                       gender="all"
                       className="avatar app-rotate rounded-circle app-profile mb-5 shadow-lg"
@@ -151,7 +174,7 @@ const Index = () => {
                   </div>
                 )
               })}
-              <span className="app-legend">
+              <span className="app-legend text-center">
                 <Trans>Random Avatars</Trans>
               </span>
             </div>

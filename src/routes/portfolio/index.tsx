@@ -1,17 +1,23 @@
 import { PageLayout, LoaderData } from '@/components/layout/PageLayout'
 import { useLoaderData } from 'react-router-dom'
 import { useTranslation, Trans } from 'react-i18next'
+import Title from '@/components/widgets/Title'
+import { IconMap } from '@/components/widgets/Icon'
 
 export const Portfolio = () => {
-  const loader = useLoaderData() as LoaderData
+  const { t, i18n } = useTranslation()
+  const loader = (useLoaderData() as LoaderData) || {}
+  const { iconmap } = loader
   return (
     <PageLayout subnavbar={true}>
       <div className="container-fluid">
         <div className="row">
           <div className="col text-justify">
-            <h2>
-              <Trans>app:portfolio:summaryTitle</Trans>
-            </h2>
+            <Title
+              h="h2"
+              label={`${t('app:portfolio:summaryTitle')}`}
+              iconmap={iconmap}
+            />
           </div>
         </div>
         <div className="row">

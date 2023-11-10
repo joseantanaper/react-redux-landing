@@ -9,7 +9,7 @@ import { MenuStart } from '@components/menu/MenuStart'
 import { NavMenu } from './NavMenu'
 import { LocaleToggler } from '../toggler/LocaleToggler'
 import { Clock } from './Clock'
-import { Title } from './Title'
+import { NavTitle } from './NavTitle'
 import { Avataro } from '@/components/widgets/Avataro'
 import { Icon, IconMap } from '@components/widgets/Icon'
 import { useAppSelector } from '@app/hooks'
@@ -51,7 +51,7 @@ export const Navbar = ({ title, subtitle }: Props) => {
           />
 
           {/* Title */}
-          <Title title={t(title)} subtitle={t(subtitle!)} type={0} />
+          <NavTitle title={t(title)} subtitle={t(subtitle!)} type={0} />
 
           {/* Menu */}
           <div className={`d-none d-lg-block ${dividerClass}`}>
