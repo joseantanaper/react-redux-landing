@@ -37,7 +37,11 @@ export default defineConfig({
       ),
       '@bootstrap-icons': path.resolve(
         __dirname,
-        './node_modules/bootstrap/scss/bootstrap'
+        './node_modules/bootstrap-icons/font/bootstrap-icons.min.css'
+      ),
+      '@bootstrap-icons-svg': path.resolve(
+        __dirname,
+        './node_modules/bootstrap-icons/bootstrap-icons.svg'
       ),
       '@bootstrap-js': path.resolve(
         __dirname,

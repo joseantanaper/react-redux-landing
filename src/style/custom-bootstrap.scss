@@ -115,6 +115,16 @@ input.form-control {
   }
 }
 
+.btn-group {
+
+  .btn+.btn {
+    // margin-right: -$input-btn-border-width !important;
+    // margin-left: 5px !important;
+    margin-left: -$btn-border-width !important;
+  }
+}
+
+
 .btn,
 .nav-link,
 .accordion-button,
@@ -142,6 +152,7 @@ input.form-control {
   // transition: 1s;
   // overflow-y: scroll !important;
   backdrop-filter: blur(6px) !important;
+  // padding-right: 50px !important;
 }
 
 /* MODAL ---------------------------------------------------------------------*/
@@ -160,7 +171,6 @@ h1.modal-title {
 }
 
 /* BUTTONS AND TOGGLERS ------------------------------------------------------*/
-.navbar-toggler,
 .navbar-toggler {
   // justify-content: center;
   // align-items: center;

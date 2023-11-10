@@ -1,3 +1,5 @@
+// @import '@bootstrap-icons';
+
 // PageLayout
 .app-header,
 .app-content {
@@ -296,6 +298,15 @@ h1.app-counter {
 
 div.app-pageLayout {
   animation: 0.25s ease-in 0s 1 pageLoadTransition;
+
+  h2 {
+    margin-bottom: 2rem;
+  }
+
+  h2::before {
+    content: '📘 ';
+  }
+
 }
 
 h1.app-layout-title {
@@ -383,4 +394,13 @@ img.app-rotate {
 
 img.app-rotate:hover {
   animation: rotation 2s linear infinite;
+}
+
+
+ul.app-custom-list {
+  list-style-type: "📌";
+
+  li {
+    margin-top: 10px;
+  }
 }

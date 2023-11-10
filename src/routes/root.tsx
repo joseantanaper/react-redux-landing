@@ -36,10 +36,10 @@ const Root = () => {
 
   return (
     <>
-      <div className="app-root">
-        <Navbar title={appConfig.title} subtitle={appConfig.subtitle} />
-        <Outlet />
-      </div>
+      {/* <div className="app-root"> */}
+      <Navbar title={appConfig.title} subtitle={appConfig.subtitle} />
+      <Outlet />
+      {/* </div> */}
     </>
   )
 }

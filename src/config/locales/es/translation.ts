@@ -49,27 +49,48 @@ export const translationES = {
       de los datos descriptivos de cada ruta en todas las secciones en donde
       aparezcan.
       `,
-      layoutTitle: 'Plantilla de Página',
-      layout: `Las rutas cargan dentro de una Plantilla de Página para que las
+      layoutTitle: 'Plantilla de Página y Barra de Navegación Secundaria',
+      layout: `Las rutas cargan dentro de una <strong>Plantilla de Página</strong> para que
       todas las vistas mantengan un formato homogéneo y, sobretodo, para que
       cualquier cambio de diseño pueda aplicarse de forma extremadamente fácil
       y sencilla.<br />
-      La Plantilla de Página actual consta de una zona de título, que incluye
-      subtitulo y descripción opcionales, y una Barra de Navegación Secundaria
-      que al desplazarse hacia abajo se "adhiere" a la Barra de Navegación
-      Principal, quedando ambas fijas en la zona superior.
-      Esta Barra de Navegación Secundaria, cuyas opciones y herramientas se
-      definen en cada ruta, permiten mantener siempre a mano aquellas funciones
-      necesarias en cada ruta.<br />
+      La <strong>Plantilla de Página</strong> actual consta de una zona de <strong>título</strong>, que incluye
+      <strong>subtitulo</strong> y <strong>descripción</strong> opcionales, y una
+      <strong>Barra de Navegación Secundaria</strong>
+      que al desplazarse hacia abajo se "adhiere" a la <strong>Barra de Navegación
+      Principal</strong>, quedando ambas fijas en la zona superior.
+      Esta <strong>Barra de Navegación Secundaria</strong> se define en cada ruta para establecer
+      las opciones necesarias en cada vista.<br />
       Un detalle interesante de esta barra es que,
       al desplazarse hacia abajo, el gran titular que aparece en cabecera se
       incorpora a esta barra en un tamaño más compacto, con el objetivo de tener
       siempre a la vista la ruta en la que nos encontramos, junto con las
       opciones y herramientas de la misma. Como no podría ser de otra manera,
-      todos estos elementos tiene diseño responsivo y se adaptan perfectamente
+      todos estos elementos tiene <strong>diseño adaptable</strong> y se ajustan perfectamente
       al tamaño de pantalla, colapsando en un botón de menú desplegable cuando
       es necesario.`,
-      subnavbar: `Debajo`,
+      bootstrapTitle: 'Personalización de Bootstrap',
+      bootstrap: `La librería para Frontend <strong>Bootstrap</strong> permite la personalización
+      a través de sus variables <strong>Sass</strong> y <strong>Css</strong>, y también sobreescribiendo directamente
+      algunos atributos Css. Algunos de los ajustes que se han incorporado en este
+      proyecto son estos:`,
+      bootstrapItems: [
+        `Suavizar los <strong>bordes redondeados</strong> para hacerlos algo más <strong>cuadrados</strong>
+        y ofrecer una imagen más regular.`,
+        `Reajustar los <strong>tamaños</strong> de las barras de navegación, botones, inputs y otros
+        elementos.`,
+        `Modificar el color de fondo de las <strong>barras de navegación</strong> principales con
+        efectos de <strong>transparencia</strong> y <strong>difuminado</strong>.`,
+        `Incorporar leves efectos de <strong>sombra</strong> en las cabeceras.`,
+        `<strong>Ajustes específicos en diseño adaptable</strong>, como la desaparición de etiquetas
+        de texto en botones al reducir el tamaño de pantalla, aparición de scroll
+        horizontal en ciertas colecciones de elementos que no caben en pantalla, y
+        otros.`,
+        `Modificación del color diferencial del <strong>componente acordeón</strong> para homogeneizarlo
+        con el resto de componentes.`,
+        `Incorporar algunos <strong>efectos leves</strong> de <strong>iluminación</strong> en botones, iconos y texto
+        al situar el ratón encima o hacer clic.`,
+      ],
       // de idioma,
       //  Algunos menús de
       // navegación solo aparecen si la pantalla es lo suficientemente grande como
@@ -103,6 +124,22 @@ export const translationES = {
       title: 'Portfolio',
       subtitle: 'This is the Portfolio subtitle',
       description: 'This is the Portfolio description and details',
+      summaryTitle: 'Resumen Ejecutivo',
+      summary: `Tengo una dilatada experiencia en el <strong>desarrollo de
+      aplicaciones industriales y de gestión</strong>, especializado en el 
+      <strong>desarrollo de servidores web de tipo SaaS</strong> que explotan
+      la información recogida por SCADAs, MES y otros 
+      softwares de planta. Me gustan las <strong>UI atractivas, funcionales y bien diseñadas</strong>.
+      Entusiasta de los <strong>últimos frameworks</strong> mejor valorados y de integración ágil.
+      Me siento cómodo gestionando los proyectos con <strong>metodología Agile</strong>:
+      disponer de un producto básico y funcional en un plazo reducido, que incremente sus 
+      funcionalidades con ayuda del <strong>feedback del usuario final</strong>, y esto como
+      herramienta de <strong>mejora continua</strong>. 
+      Apasionado del <strong>código bien organizado</strong> y con un buen balance
+      entre <strong>optimización y legibilidad</strong>. También he 
+      estado al frente de la <strong>gestión TI</strong>, decidiendo, planificando y ejecutando con éxito los avances tecnológicos
+      requeridos para <strong>reducir costes</strong>, reforzar la <strong>seguridad y fiabilidad</strong>,
+      y <strong>simplificar la gestión</strong>`,
     },
     todo: {
       subtitle: 'La más sencilla aplicación de Lista de Tareas',

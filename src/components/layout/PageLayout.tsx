@@ -99,7 +99,7 @@ export const PageLayout = ({ subnavbar = false, toolbar, children }: Props) => {
               {iconmap && <Icon iconmap={iconmap} />}
               {title ? <span>{t(title)}</span> : null}
               {subtitle ? (
-                <span className="opacity-25 ms-3 fst-italic fw-light">
+                <span className="opacity-25 ms-3 fst-italic">
                   {t(subtitle)}
                 </span>
               ) : null}
@@ -112,7 +112,7 @@ export const PageLayout = ({ subnavbar = false, toolbar, children }: Props) => {
         <div className="app-header mb-4">
           <div className="container-fluid">
             <div className="row">
-              <div className="col text-center fw-lighter text-body-secondary">
+              <div className="col text-center text-body-secondary">
                 <Trans>{description}</Trans>
               </div>
             </div>

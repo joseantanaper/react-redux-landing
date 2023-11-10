@@ -6,7 +6,7 @@ import { useTranslation, Trans } from 'react-i18next'
 import { Avataro } from '@/components/widgets/Avataro'
 
 const Index = () => {
-  const { t } = useTranslation()
+  const { t, i18n } = useTranslation()
   const toolbar = (
     <>
       <li className="nav-item">
@@ -37,13 +37,13 @@ const Index = () => {
           href="#section4"
         />{' '}
       </li>
-      <li className="nav-item">
+      {/* <li className="nav-item">
         <Linko
           iconmap={IconMap.Code}
           label={`${t('Section')} #5`}
           href="#section5"
         />{' '}
-      </li>
+      </li> */}
       <li className="nav-item">
         <Linko iconmap={IconMap.Code} label={`${t('Footer')}`} href="#footer" />{' '}
       </li>
@@ -61,7 +61,7 @@ const Index = () => {
             </h2>
           </div>
         </div>
-        <div className="row fw-light">
+        <div className="row">
           <div className="col">
             <Trans>app:home:navbar</Trans>
           </div>
@@ -90,7 +90,7 @@ const Index = () => {
             <br />
             <span className="app-legend">SVG with CSS animation</span>
           </div>
-          <div className="col fw-light">
+          <div className="col">
             <Trans>{'app:home:route'}</Trans>
           </div>
         </div>
@@ -118,16 +118,21 @@ const Index = () => {
                 extra="app-radar-rotate"
               />
               <br />
-              <span className="app-legend">Radar looking for ghosts</span>
+              <span className="app-legend">
+                <Trans>A Radar looking for ghosts!</Trans>
+              </span>
             </div>
           </div>
         </div>
       </div>
 
+      {/* Section 4 */}
       <div className="container-fluid mb-5">
         <div className="row">
           <div className="col">
-            <h2 id="section4">{t('Section')} #4</h2>
+            <h2 id="section4">
+              {t('Section')} #4: {t('app:home:bootstrapTitle')}
+            </h2>
           </div>
         </div>
         <div className="row">
@@ -147,23 +152,33 @@ const Index = () => {
                 )
               })}
               <span className="app-legend">
-                Random Avatars. Rotate on hover!
+                <Trans>Random Avatars</Trans>
               </span>
             </div>
           </div>
           <div className="col">
             <div className="row">
               <div className="col">
-                <LoremIpsum p={2} />
-              </div>
-              <div className="col">
-                <LoremIpsum p={2} />
+                <Trans>app:home:bootstrap</Trans>
+                <ul className="app-custom-list">
+                  {(
+                    i18n.t('app:home:bootstrapItems', {
+                      returnObjects: true,
+                    }) as string[]
+                  ).map((item) => (
+                    <li>
+                      <Trans>{item}</Trans>
+                    </li>
+                  ))}
+                </ul>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="container-fluid mb-5">
+
+      {/* Section 5 */}
+      {/* <div className="container-fluid mb-5">
         <div className="row">
           <div className="col text-justify">
             <h2 id="section5">{t('Section')} #5</h2>
@@ -194,7 +209,7 @@ const Index = () => {
             <LoremIpsum p={2} />
           </div>
         </div>
-      </div>
+      </div> */}
     </PageLayout>
   )
 }

@@ -1,17 +1,11 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
 import { Provider } from 'react-redux'
-import { IconMap } from './components/widgets/Icon'
-
 import { store } from '@app/store'
 import '@style/bootstrap.scss'
 import '@bootstrap-js'
 import Root from '@routes/root'
 import Error from '@routes/error'
-import Index from '@routes/index'
-import Portfolio from '@routes/portfolio/index'
-import Todo from '@routes/miniapps/todo/index'
-import Counter from '@routes/miniapps/counter/index'
 
 import { routes } from './config/routes/routes'
 

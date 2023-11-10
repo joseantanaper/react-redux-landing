@@ -13,7 +13,7 @@ i18n
   .use(initReactI18next)
   .init({
     debug: false,
-    fallbackLng: 'en',
+    fallbackLng: 'es',
     // lng: 'es',
     // lng: 'en',
     // have a common namespace used around the full app
