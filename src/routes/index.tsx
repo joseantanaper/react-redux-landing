@@ -19,28 +19,28 @@ const Index = () => {
     <>
       <li className="nav-item">
         <Linko
-          iconmap={IconMap.Code}
+          iconmap={iconmap || IconMap.Code}
           label={`${t('Section')} #1`}
           href="#section1"
         />
       </li>
       <li className="nav-item float-end">
         <Linko
-          iconmap={IconMap.Code}
+          iconmap={iconmap || IconMap.Code}
           label={`${t('Section')} #2`}
           href="#section2"
         />
       </li>
       <li className="nav-item">
         <Linko
-          iconmap={IconMap.Code}
+          iconmap={iconmap || IconMap.Code}
           label={`${t('Section')} #3`}
           href="#section3"
         />{' '}
       </li>
       <li className="nav-item">
         <Linko
-          iconmap={IconMap.Code}
+          iconmap={iconmap || IconMap.Code}
           label={`${t('Section')} #4`}
           href="#section4"
         />{' '}
@@ -53,7 +53,11 @@ const Index = () => {
         />{' '}
       </li> */}
       <li className="nav-item">
-        <Linko iconmap={IconMap.Code} label={`${t('Footer')}`} href="#footer" />{' '}
+        <Linko
+          iconmap={iconmap || IconMap.Code}
+          label={`${t('Footer')}`}
+          href="#footer"
+        />{' '}
       </li>
     </>
   )

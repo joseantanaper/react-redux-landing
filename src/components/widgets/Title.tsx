@@ -1,55 +1,59 @@
 import React from 'react'
 import { Icon, IconMap } from './Icon'
+import { ReactNode } from 'react'
 
 interface Props {
   id?: string
   h: 'h1' | 'h2' | 'h3' | 'h4' | 'h5' | 'h6'
-  label: string
+  label?: string
+  className?: string
   iconmap?: IconMap
+  children?: ReactNode
 }
 
-const Title = ({ id, h, label, iconmap }: Props) => {
+const Title = ({ id, h, label, className, iconmap, children }: Props) => {
+  const content = (
+    <>
+      {iconmap ? <Icon iconmap={iconmap} /> : null}
+      {label ? label : null}
+      {children ? children : null}
+    </>
+  )
   switch (h) {
     case 'h1':
       return (
-        <h1 id={id}>
-          <Icon iconmap={iconmap} />
-          {label}
+        <h1 id={id} className={className}>
+          {content}
         </h1>
       )
     case 'h2':
       return (
-        <h2 id={id}>
-          <Icon iconmap={iconmap} />
-          {label}
+        <h2 id={id} className={className}>
+          {content}
         </h2>
       )
     case 'h3':
       return (
-        <h3>
-          <Icon iconmap={iconmap} />
-          {label}
+        <h3 id={id} className={className}>
+          {content}
         </h3>
       )
     case 'h4':
       return (
-        <h4>
-          <Icon iconmap={iconmap} />
-          {label}
+        <h4 id={id} className={className}>
+          {content}
         </h4>
       )
     case 'h5':
       return (
-        <h5>
-          <Icon iconmap={iconmap} />
-          {label}
+        <h5 id={id} className={className}>
+          {content}
         </h5>
       )
     case 'h6':
       return (
-        <h6>
-          <Icon iconmap={iconmap} />
-          {label}
+        <h6 id={id} className={className}>
+          {content}
         </h6>
       )
   }

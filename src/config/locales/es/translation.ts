@@ -5,6 +5,7 @@ export const translationES = {
     links: 'Enlaces',
     no: 'No',
     confirm: 'Confirm',
+    more: 'Más',
     home: {
       title: 'Inicio',
       subtitle: 'Raíz de este Sitio Web',
@@ -122,24 +123,31 @@ export const translationES = {
     },
     portfolio: {
       title: 'Portfolio',
-      subtitle: 'This is the Portfolio subtitle',
-      description: 'This is the Portfolio description and details',
+      subtitle: '</>',
+      description: 'Información sobre mi vida profesional',
       summaryTitle: 'Resumen Ejecutivo',
       summary: `Tengo una dilatada experiencia en el <strong>desarrollo de
       aplicaciones industriales y de gestión</strong>, especializado en el 
       <strong>desarrollo de servidores web de tipo SaaS</strong> que explotan
-      la información recogida por SCADAs, MES y otros 
-      softwares de planta. Me gustan las <strong>UI atractivas, funcionales y bien diseñadas</strong>.
-      Entusiasta de los <strong>últimos frameworks</strong> mejor valorados y de integración ágil.
+      la información recogida por SCADAs, MES y otros softwares de planta.
+      Me gustan las <strong>UI atractivas, funcionales y bien diseñadas</strong>.
+      Entusiasta de los <strong>últimos frameworks</strong> mejor valorados y de
+      integración ágil.
       Me siento cómodo gestionando los proyectos con <strong>metodología Agile</strong>:
-      disponer de un producto básico y funcional en un plazo reducido, que incremente sus 
-      funcionalidades con ayuda del <strong>feedback del usuario final</strong>, y esto como
-      herramienta de <strong>mejora continua</strong>. 
+      disponer de un producto básico y funcional en un plazo reducido, que
+      incremente sus funcionalidades con ayuda del <strong>feedback del usuario
+      final</strong>, y esto como herramienta de <strong>mejora continua</strong>. 
       Apasionado del <strong>código bien organizado</strong> y con un buen balance
-      entre <strong>optimización y legibilidad</strong>. También he 
-      estado al frente de la <strong>gestión TI</strong>, decidiendo, planificando y ejecutando con éxito los avances tecnológicos
-      requeridos para <strong>reducir costes</strong>, reforzar la <strong>seguridad y fiabilidad</strong>,
-      y <strong>simplificar la gestión</strong>`,
+      entre <strong>optimización y legibilidad</strong>. También he estado al
+      frente de la <strong>gestión TI</strong>, decidiendo, planificando y ejecutando con éxito los avances tecnológicos
+      requeridos para <strong>reducir costes</strong>, reforzar la
+      <strong>seguridad y fiabilidad</strong>, y <strong>simplificar la gestión</strong>.`,
+      arghos: `Ingeniería, Consultoría y Software`,
+      aernnova: `Diseño, fabricación, mantenimiento y servicios de Aeroestructuras`,
+      seat: `La fábrica de Martorell, situada a 30 kilómetros
+      de Barcelona...`,
+      vw: `Volkswagen Navarra es una de las 120 fábricas
+      que el Grupo Volkswagen tiene en todo el mundo.`,
     },
     todo: {
       subtitle: 'La más sencilla aplicación de Lista de Tareas',
