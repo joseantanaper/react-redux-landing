@@ -6,6 +6,7 @@ export const translationEN = {
     no: 'No',
     confirm: 'Confirm',
     more: 'More',
+    site: 'Site',
     home: {
       title: 'Inicio',
       // subtitle: 'Raíz de este Sitio Web',
@@ -55,7 +56,22 @@ export const translationEN = {
     portfolio: {
       title: 'Portfolio',
       subtitle: '</>',
-      description: 'Information about my professional life',
+      description: 'Information about my professional background',
+      viewMyCert: 'View my Certification',
+
+      omegazeta: `<strong>CIRCA - Panel Omega Zeta</strong> pertenece a la
+      <strong>Corporación Omega Zeta</strong>, que trabaja en <strong>Europa,
+      Asia y África</strong>, desarrollando productos y servicios que favorezcan
+      el conocimiento, la salud, el bienestar, el medio ambiente y la innovación
+      para mejorar el futuro de las personas, a las que sitúa en
+      el centro de toda su actividad.<br />
+      La <strong>Corporación Omega Zeta</strong> nace, hace 50 años, de la mano
+      de su presidente, <strong>Carlos Fradera Pellicer</strong>, empresario e
+      inventor, propietario de <strong>500 patentes internacionales (PCT's)</strong>,
+      fruto de la visión de su fundador y de su experiencia personal.`,
+      arghos: `Ingeniería, Consultoría y Software.`,
+      aernnova: `Diseño, fabricación, mantenimiento y servicios de Aeroestructuras.`,
+
       summaryTitle: 'Executive Summary',
       summary: `I have an extensive experience in the <strong>development of industrial
       and management applications</strong>, specialized in the <strong>development
@@ -75,10 +91,10 @@ export const translationEN = {
       successfully executing the technological advances required to <strong>reduce
       costs, strengthen security and reliability</strong>, and
       <strong>simplify management</strong>.`,
+
       experienceTitle: 'Experience',
       experience: [
         {
-          id: 0,
           title: [
             'Chief Software Development Officer',
             'Full Stack Developer',
@@ -122,7 +138,6 @@ export const translationEN = {
           ],
         },
         {
-          id: 1,
           title: ['Projects', 'Industrial Software Development'],
           year: '2000 - 2015',
           subtitle: [
@@ -147,7 +162,157 @@ export const translationEN = {
           ],
         },
       ],
+
+      academicTitle: 'Academic Background',
+      academic: [
+        {
+          title: 'Technical Engineering in Computer Systems ',
+          year: '2015',
+          entity: 'Universitat Oberta de Catalunya',
+          logo: 'uoc',
+          details: `Degree Project: Mobile Device Development - Android<br />
+          Itineraries: Computer Technology, Programming, System Administration,
+          Object Oriented Programming, Network Management<br />`,
+          leftLink: 'https://www.linkedin.com/school/uoc/',
+          rightLink: 'https://www.uoc.edu/',
+        },
+        {
+          title: 'Cert.HE Web Application Development',
+          year: '2001',
+          entity: 'Institut Escola del Treball',
+          logo: 'iet',
+          details: 'Web Applications Development',
+          leftLink:
+            'https://www.linkedin.com/school/institut-escola-del-treball/',
+          rightLink: 'https://escoladeltreball.org/',
+        },
+        {
+          title: 'Cert.HE Computer System Administration',
+          year: '2000',
+          entity: 'Institut Escola del Treball',
+          logo: 'iet',
+          details: 'Network Computer Systems Administration',
+          leftLink:
+            'https://www.linkedin.com/school/institut-escola-del-treball/',
+          rightLink: 'https://escoladeltreball.org/',
+        },
+      ],
+
+      certificationTitle: 'Licences and Certifications ',
+      certification: [
+        {
+          title: 'Full Stack Open CI/CD',
+          year: 'Aug 2023',
+          entity: 'University of Helsinki',
+          logo: 'uoh',
+          details: `Degree Project: Mobile Device Development - Android<br />
+          Itineraries: Computer Technology, Programming, System Administration,
+          Object Oriented Programming, Network Management<br />`,
+          leftLink: 'https://www.helsinki.fi/en',
+          rightLink: 'https://www.helsinki.fi/en',
+        },
+        {
+          title: 'Full Stack Open React Native',
+          year: 'Jun 2023',
+          entity: 'University of Helsinki',
+          logo: 'uoh',
+          details: `Degree Project: Mobile Device Development - Android<br />
+          Itineraries: Computer Technology, Programming, System Administration,
+          Object Oriented Programming, Network Management<br />`,
+          leftLink: 'https://www.helsinki.fi/en',
+          rightLink: 'https://www.helsinki.fi/en',
+        },
+        {
+          title: 'Full Stack GraphQL',
+          year: 'Apr 2023',
+          entity: 'University of Helsinki',
+          logo: 'uoh',
+          details: `Degree Project: Mobile Device Development - Android<br />
+          Itineraries: Computer Technology, Programming, System Administration,
+          Object Oriented Programming, Network Management<br />`,
+          leftLink: 'https://www.helsinki.fi/en',
+          rightLink: 'https://www.helsinki.fi/en',
+        },
+        {
+          title: 'Full Stack Open',
+          year: 'Apr 2023',
+          entity: 'University of Helsinki',
+          logo: 'uoh',
+          details: `Degree Project: Mobile Device Development - Android<br />
+          Itineraries: Computer Technology, Programming, System Administration,
+          Object Oriented Programming, Network Management<br />`,
+          leftLink: 'https://www.helsinki.fi/en',
+          rightLink: 'https://www.helsinki.fi/en',
+        },
+        {
+          title: 'Full Stack Open TypeScript',
+          year: 'Apr 2023',
+          entity: 'University of Helsinki',
+          logo: 'uoh',
+          details: `Degree Project: Mobile Device Development - Android<br />
+          Itineraries: Computer Technology, Programming, System Administration,
+          Object Oriented Programming, Network Management<br />`,
+          leftLink: 'https://www.helsinki.fi/en',
+          rightLink: 'https://www.helsinki.fi/en',
+        },
+        {
+          title: 'Microsoft Certified: Power Platform App Maker Associate',
+          year: 'Feb 2023',
+          entity: 'Microsoft',
+          logo: 'ms',
+          details: `Degree Project: Mobile Device Development - Android<br />
+          Itineraries: Computer Technology, Programming, System Administration,
+          Object Oriented Programming, Network Management<br />`,
+          leftLink: 'https://www.helsinki.fi/en',
+          rightLink: 'https://www.helsinki.fi/en',
+        },
+        {
+          title: 'Front End Development Libraries',
+          year: 'Ene 2023',
+          entity: 'freeCodeCamp',
+          logo: 'fcc',
+          details: `Degree Project: Mobile Device Development - Android<br />
+          Itineraries: Computer Technology, Programming, System Administration,
+          Object Oriented Programming, Network Management<br />`,
+          leftLink: 'https://www.helsinki.fi/en',
+          rightLink: 'https://www.helsinki.fi/en',
+        },
+        {
+          title: 'Javascript Algorithms and Data Structures',
+          year: 'Nov 2022',
+          entity: 'freeCodeCamp',
+          logo: 'fcc',
+          details: `Degree Project: Mobile Device Development - Android<br />
+          Itineraries: Computer Technology, Programming, System Administration,
+          Object Oriented Programming, Network Management<br />`,
+          leftLink: 'https://www.helsinki.fi/en',
+          rightLink: 'https://www.helsinki.fi/en',
+        },
+        {
+          title: 'Responsive Web Design',
+          year: 'Nov 2022',
+          entity: 'freeCodeCamp',
+          logo: 'fcc',
+          details: `Degree Project: Mobile Device Development - Android<br />
+          Itineraries: Computer Technology, Programming, System Administration,
+          Object Oriented Programming, Network Management<br />`,
+          leftLink: 'https://www.helsinki.fi/en',
+          rightLink: 'https://www.helsinki.fi/en',
+        },
+        {
+          title: 'Pivotal Core Spring 5.0.b',
+          year: 'Oct 2019',
+          entity: 'Spring Latam',
+          logo: 'spr',
+          details: `Degree Project: Mobile Device Development - Android<br />
+          Itineraries: Computer Technology, Programming, System Administration,
+          Object Oriented Programming, Network Management<br />`,
+          leftLink: 'https://www.helsinki.fi/en',
+          rightLink: 'https://www.helsinki.fi/en',
+        },
+      ],
     },
+
     todo: {
       title: 'ToDo',
       subtitle: 'The simplest ToDo List app',

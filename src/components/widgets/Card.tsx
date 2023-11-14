@@ -2,61 +2,98 @@ import React from 'react'
 import { Carousel, CarouselItem } from '@/components/widgets/Carousel'
 import { Icon, IconMap } from '@components/widgets/Icon'
 import { useTranslation, Trans } from 'react-i18next'
+import Title from './Title'
+import { ReactNode } from 'react'
 
 interface Props {
   carouselItems?: CarouselItem[]
   image?: string
   imageClass?: string
+  imageHeight?: string
+  imageFit?: 'cover' | 'fill' | 'contain' | 'none'
   title?: string
-  details: string
-  linkedinLink?: string
-  moreLink?: string
+  subtitle?: string
+  year?: string
+  details?: string
+  leftLink?: string
+  leftLinkIcon?: IconMap
+  rightLink?: string
+  rightLinkLabel?: string
+  rightLinkIcon?: IconMap
+  children?: ReactNode
 }
 
 const Card = ({
   carouselItems,
   image,
   imageClass,
+  imageHeight = '160px',
+  imageFit = 'cover',
   title,
+  subtitle,
+  year,
   details,
-  linkedinLink,
-  moreLink,
+  leftLink,
+  leftLinkIcon = IconMap.Portfolio,
+  rightLink,
+  rightLinkLabel = 'app:more',
+  rightLinkIcon = IconMap.External,
+  children,
 }: Props) => {
   const { t, i18n } = useTranslation()
   return (
-    <div className="card">
-      {carouselItems ? <Carousel carouselItems={carouselItems} /> : null}
-      {image ? (
-        <img
-          src={image}
-          alt={`${title}`}
-          className={`${imageClass} w-100`}
-          style={{ background: 'rgba(0, 0, 0, 0.2)' }}
-        />
-      ) : null}
-      <div className="card-body">
-        {title ? <h5 className="card-title">{title}</h5> : null}
-        {details ? (
-          <p className="card-text text-end fw-light">
+    <div className="card mb-4 shadow">
+      {carouselItems && <Carousel carouselItems={carouselItems} />}
+      {image && (
+        <div style={{ height: imageHeight }}>
+          <img
+            src={image}
+            alt={`${title}`}
+            className={`card-img-top ${imageClass}`}
+            style={{
+              objectFit: imageFit,
+              height: '100%',
+            }}
+          />
+        </div>
+      )}
+      {children ? children : null}
+      <div className="card-body border-top">
+        {title ? (
+          <Title h="h5" className="card-title">
+            {title}
+          </Title>
+        ) : null}
+        {subtitle && (
+          <p className="card-text fw-light">
+            <Trans>{subtitle}</Trans>
+            <span className="text-primary float-end border-start ms-3 ps-3">
+              {year}
+            </span>
+          </p>
+        )}
+        {details && (
+          <p className="card-text text-end small text-secondary border-top pt-3 fw-light">
             <Trans>{details}</Trans>
           </p>
-        ) : null}
-        {linkedinLink ? (
+        )}
+        {leftLink ? (
           <a
-            href={linkedinLink}
+            href={leftLink}
             target="_blank"
             className="btn btn-outline-primary float-start"
           >
-            <Icon iconmap={IconMap.Portfolio} extra="text-primary" />
+            <Icon iconmap={leftLinkIcon} extra="text-primary" />
           </a>
         ) : null}
-        {moreLink ? (
+        {rightLink ? (
           <a
-            href={moreLink}
+            href={rightLink}
             target="_blank"
             className="btn btn-outline-primary float-end"
           >
-            {t('More')}...
+            <Icon iconmap={rightLinkIcon} extra="text-primary" />
+            {rightLinkLabel ? <span>{t(rightLinkLabel)}</span> : ''}
           </a>
         ) : null}
       </div>

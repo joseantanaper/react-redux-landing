@@ -13,22 +13,12 @@
 
 .btn:not([name='app-clock']),
 .nav-link {
-  overflow: hidden;
-  text-overflow: ellipsis;
+  // overflow: hidden;
+  // text-overflow: ellipsis;
   white-space: nowrap;
 }
 
-// }
-
-// @include media-breakpoint-only(sm) {
-
-//   .btn:not([name='app-clock']),
-//   .nav-link {
-//     max-width: $app-button-sm-max-width;
-//   }
-// }
-
-@include media-breakpoint-up(sm) {
+@include media-breakpoint-down(lg) {
   .nav-link {
     overflow: hidden;
     text-overflow: ellipsis;

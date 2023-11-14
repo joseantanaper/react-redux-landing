@@ -142,12 +142,6 @@ export const translationES = {
       frente de la <strong>gestión TI</strong>, decidiendo, planificando y ejecutando con éxito los avances tecnológicos
       requeridos para <strong>reducir costes</strong>, reforzar la
       <strong>seguridad y fiabilidad</strong>, y <strong>simplificar la gestión</strong>.`,
-      arghos: `Ingeniería, Consultoría y Software`,
-      aernnova: `Diseño, fabricación, mantenimiento y servicios de Aeroestructuras`,
-      seat: `La fábrica de Martorell, situada a 30 kilómetros
-      de Barcelona...`,
-      vw: `Volkswagen Navarra es una de las 120 fábricas
-      que el Grupo Volkswagen tiene en todo el mundo.`,
     },
     todo: {
       subtitle: 'La más sencilla aplicación de Lista de Tareas',
