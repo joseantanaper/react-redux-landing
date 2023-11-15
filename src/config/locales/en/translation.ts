@@ -307,6 +307,54 @@ export const translationEN = {
             './src/assets/spring/Certificado_Jose_Antonio_Anacleto.pdf',
         },
       ],
+
+      skillsTitle: 'Skills',
+      skills: [
+        {
+          title: 'Fullstack',
+          logo: 'fullstack',
+          skills: [
+            { logo: 'html5', label: 'HTML5' },
+            { logo: 'css3', label: 'CSS3' },
+            { logo: 'js', label: 'JavaScript' },
+            { logo: 'ts', label: 'TypeScript' },
+            { logo: 'bootstrap', label: 'Bootstrap' },
+            { logo: 'materialize', label: 'Materialize' },
+
+            { logo: 'react', label: 'React' },
+            { logo: 'vue', label: 'Vue' },
+            { logo: 'vite', label: 'Vite' },
+            { logo: 'angular', label: 'AngularJS' },
+            { logo: 'jquery', label: 'jQuery' },
+
+            { logo: 'java', label: 'Java' },
+            { logo: 'spring', label: 'Spring' },
+            { logo: 'nodejs', label: 'NodeJS' },
+            { logo: 'graphql', label: 'Apollo / GraphQL' },
+            { logo: 'rest', label: 'Rest API / Web Services' },
+
+            { logo: 'powerplatform', label: 'Microsoft Power Platform' },
+            { logo: 'powerautomate', label: 'Microsoft Power Automate' },
+            { logo: 'csharp', label: 'C#' },
+            { logo: 'vbnet', label: 'VB.NET' },
+          ],
+        },
+        {
+          title: 'IDE / Source Control',
+        },
+        {
+          title: 'SGBD',
+        },
+        {
+          title: 'Business Intelligence',
+        },
+        {
+          title: 'OS / Virtualization',
+        },
+        {
+          title: 'Languages',
+        },
+      ],
     },
 
     todo: {

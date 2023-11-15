@@ -5,12 +5,11 @@ import { ExperienceItem, ExperienceEntry } from './ExperienceItem'
 import Title from '@/components/widgets/Title'
 
 interface Props {
-  title: string
-  entry: string
+  id: string
   iconmap?: IconMap
 }
 
-export const ExperienceList = ({ title, entry, iconmap }: Props) => {
+export const ExperienceList = ({ id, iconmap }: Props) => {
   const { t, i18n } = useTranslation()
 
   return (
@@ -19,9 +18,9 @@ export const ExperienceList = ({ title, entry, iconmap }: Props) => {
         <div className="row">
           <div className="col text-justify">
             <Title
-              id="experience"
+              id={id}
               h="h2"
-              label={`${t(title)}`}
+              label={`${t('app:portfolio:experienceTitle')}`}
               iconmap={iconmap}
             />
           </div>
@@ -29,7 +28,7 @@ export const ExperienceList = ({ title, entry, iconmap }: Props) => {
         <div className="row">
           <div className="col">
             {(
-              i18n.t(entry, {
+              i18n.t('app:portfolio:experience', {
                 returnObjects: true,
                 defaultValue: [],
               }) as ExperienceEntry[]

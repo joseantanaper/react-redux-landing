@@ -6,6 +6,7 @@ import { Icon, IconMap } from '@/components/widgets/Icon'
 import { Button } from '@/components/widgets/Button'
 
 interface Props {
+  id: string
   title: string
   entry: string
   iconmap?: IconMap
@@ -16,6 +17,7 @@ interface Props {
 }
 
 export const AcademicList = ({
+  id,
   title,
   entry,
   iconmap,
@@ -32,7 +34,7 @@ export const AcademicList = ({
         <div className="row">
           <div className="col-9 text-justify">
             <Title
-              id="academic"
+              id={id}
               h="h2"
               label={`${t(title)}`}
               iconmap={iconmap}

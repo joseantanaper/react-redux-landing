@@ -11,6 +11,8 @@ import fcc from '@assets/fcc/freecodecamp.png'
 import spring from '@assets/spring/spring.png'
 import Card from '@/components/widgets/Card'
 
+import fullstack from '@assets/skills/fullstack.jpg'
+
 export interface AcademicEntry {
   title: string
   year: string
@@ -136,6 +138,21 @@ export const AcademicItem = ({
             />
           </div>
         )
+
+      case 'fullstack':
+        return (
+          <div style={{ height: '80px' }}>
+            <img
+              src={fullstack}
+              alt={`${academicItem.title}`}
+              className={`card-img-top`}
+              style={{
+                objectFit: 'cover',
+                height: '100%',
+              }}
+            />
+          </div>
+        )
       default:
         return uoc
     }
@@ -150,31 +167,34 @@ export const AcademicItem = ({
                 <div className="col">
                   <Title h="h4" iconmap={IconMap.Academic}>
                     <Trans>{academicItem.title}</Trans>
-                    <span
-                      key={`titlex-${academicIndex}`}
-                      className="text-primary border-start ms-3 ps-3 fw-light"
+                    {academicItem.year && (
+                      <span className="text-primary border-start ms-3 ps-3 fw-light">
+                        {academicItem.year}
+                      </span>
+                    )}
+                  </Title>
+                </div>
+              </div>
+              {academicItem.entity && (
+                <div className="row">
+                  <div className="col">
+                    <Title
+                      h="h6"
+                      iconmap={IconMap.Business}
+                      className="text-warning-emphasis"
                     >
-                      {academicItem.year}
-                    </span>
-                  </Title>
+                      {academicItem.entity}
+                    </Title>
+                  </div>
                 </div>
-              </div>
-              <div className="row">
-                <div className="col">
-                  <Title
-                    h="h6"
-                    iconmap={IconMap.Business}
-                    className="text-warning-emphasis"
-                  >
-                    {academicItem.entity}
-                  </Title>
+              )}
+              {academicItem.details && (
+                <div className="row">
+                  <div className="col fw-light">
+                    <Trans>{academicItem.details}</Trans>
+                  </div>
                 </div>
-              </div>
-              <div className="row">
-                <div className="col fw-light">
-                  <Trans>{academicItem.details}</Trans>
-                </div>
-              </div>
+              )}
             </div>
             <div className="col-3">
               <Card
@@ -201,6 +221,7 @@ export const AcademicItem = ({
           subtitle={academicItem.entity}
           year={academicItem.year}
           details={academicItem.details}
+          skills={academicItem.skills}
           leftLinkIcon={leftLinkIcon}
           leftLink={academicItem.leftLink}
           rightLinkIcon={rightLinkIcon}
