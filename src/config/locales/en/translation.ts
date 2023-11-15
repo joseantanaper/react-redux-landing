@@ -205,110 +205,106 @@ export const translationEN = {
           year: 'Aug 2023',
           entity: 'University of Helsinki',
           logo: 'uoh',
-          details: `Degree Project: Mobile Device Development - Android<br />
-          Itineraries: Computer Technology, Programming, System Administration,
-          Object Oriented Programming, Network Management<br />`,
+          details: `Has successfully completed the course's CI/CD part in 1 ECTS credits.`,
           leftLink: 'https://www.helsinki.fi/en',
-          rightLink: 'https://www.helsinki.fi/en',
+          rightLink:
+            'https://studies.cs.helsinki.fi/stats/api/certificate/fs-cicd/en/ae3753610f55012168f706b8bc05c3e1',
         },
         {
           title: 'Full Stack Open React Native',
           year: 'Jun 2023',
           entity: 'University of Helsinki',
           logo: 'uoh',
-          details: `Degree Project: Mobile Device Development - Android<br />
-          Itineraries: Computer Technology, Programming, System Administration,
-          Object Oriented Programming, Network Management<br />`,
+          details: `Has successfully completed the course's React Native part in 2 ECTS credits.`,
           leftLink: 'https://www.helsinki.fi/en',
-          rightLink: 'https://www.helsinki.fi/en',
+          rightLink:
+            'https://studies.cs.helsinki.fi/stats/api/certificate/fs-react-native-2020/en/a6533fa902bfa3748e5cbd0f148ace54',
         },
         {
           title: 'Full Stack GraphQL',
           year: 'Apr 2023',
           entity: 'University of Helsinki',
           logo: 'uoh',
-          details: `Degree Project: Mobile Device Development - Android<br />
-          Itineraries: Computer Technology, Programming, System Administration,
-          Object Oriented Programming, Network Management<br />`,
+          details: `Has successfully completed the course's GraphQL part in 1 ECTS credits.`,
           leftLink: 'https://www.helsinki.fi/en',
-          rightLink: 'https://www.helsinki.fi/en',
+          rightLink:
+            'https://studies.cs.helsinki.fi/stats/api/certificate/fs-graphql/en/dac5ac6a094bdf74e9240237f9751c19',
         },
         {
-          title: 'Full Stack Open',
+          title: 'Full Stack Open 2023',
           year: 'Apr 2023',
           entity: 'University of Helsinki',
           logo: 'uoh',
-          details: `Degree Project: Mobile Device Development - Android<br />
-          Itineraries: Computer Technology, Programming, System Administration,
-          Object Oriented Programming, Network Management<br />`,
+          details: `This is to certificate that you have successfully completed the 7 ECTS online course with grade 5.`,
           leftLink: 'https://www.helsinki.fi/en',
-          rightLink: 'https://www.helsinki.fi/en',
+          rightLink:
+            'https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/12dff53307ab85fb1f5e5d7e842d9516',
         },
         {
           title: 'Full Stack Open TypeScript',
           year: 'Apr 2023',
           entity: 'University of Helsinki',
           logo: 'uoh',
-          details: `Degree Project: Mobile Device Development - Android<br />
-          Itineraries: Computer Technology, Programming, System Administration,
-          Object Oriented Programming, Network Management<br />`,
+          details: `Has successfully completed the course's TypeScript part in 1 ECTS credits.`,
           leftLink: 'https://www.helsinki.fi/en',
-          rightLink: 'https://www.helsinki.fi/en',
+          rightLink:
+            'https://studies.cs.helsinki.fi/stats/api/certificate/fs-typescript/en/b81a965d6ab13be10f8b78d708ad9f77',
         },
         {
           title: 'Microsoft Certified: Power Platform App Maker Associate',
           year: 'Feb 2023',
           entity: 'Microsoft',
           logo: 'ms',
-          details: `Degree Project: Mobile Device Development - Android<br />
-          Itineraries: Computer Technology, Programming, System Administration,
-          Object Oriented Programming, Network Management<br />`,
-          leftLink: 'https://www.helsinki.fi/en',
-          rightLink: 'https://www.helsinki.fi/en',
+          details: `Earning the Power Platform App Maker Associate certification
+          validates candidate skills and knowledge to build solutions to simplify,
+          automate, and transform tasks and processes for themselves and their
+          team where they have deep expertise in the solution domain.`,
+          leftLink: 'https://learn.microsoft.com/es-es/credentials/',
+          rightLink:
+            'https://www.credly.com/badges/e5475702-06a8-4c22-a293-15dcd4ddcf12/',
         },
         {
           title: 'Front End Development Libraries',
-          year: 'Ene 2023',
+          year: 'Jan 2023',
           entity: 'freeCodeCamp',
           logo: 'fcc',
-          details: `Degree Project: Mobile Device Development - Android<br />
-          Itineraries: Computer Technology, Programming, System Administration,
-          Object Oriented Programming, Network Management<br />`,
-          leftLink: 'https://www.helsinki.fi/en',
-          rightLink: 'https://www.helsinki.fi/en',
+          details: `Developer Certification on January 7, 2023<br />
+          representing approximately 300 hours of work`,
+          leftLink: 'https://www.freecodecamp.org/',
+          rightLink:
+            'https://www.freecodecamp.org/certification/fccbff75bbc-30e2-4e2f-8f3e-a414f15c1668/front-end-development-libraries',
         },
         {
           title: 'Javascript Algorithms and Data Structures',
           year: 'Nov 2022',
           entity: 'freeCodeCamp',
           logo: 'fcc',
-          details: `Degree Project: Mobile Device Development - Android<br />
-          Itineraries: Computer Technology, Programming, System Administration,
-          Object Oriented Programming, Network Management<br />`,
-          leftLink: 'https://www.helsinki.fi/en',
-          rightLink: 'https://www.helsinki.fi/en',
+          details: `Developer Certification on November 22, 2022<br />
+          representing approximately 300 hours of work`,
+          leftLink: 'https://www.freecodecamp.org/',
+          rightLink:
+            'https://www.freecodecamp.org/certification/fccbff75bbc-30e2-4e2f-8f3e-a414f15c1668/javascript-algorithms-and-data-structures',
         },
         {
           title: 'Responsive Web Design',
           year: 'Nov 2022',
           entity: 'freeCodeCamp',
           logo: 'fcc',
-          details: `Degree Project: Mobile Device Development - Android<br />
-          Itineraries: Computer Technology, Programming, System Administration,
-          Object Oriented Programming, Network Management<br />`,
-          leftLink: 'https://www.helsinki.fi/en',
-          rightLink: 'https://www.helsinki.fi/en',
+          details: `Developer Certification on November 10, 2022<br />
+          representing approximately 300 hours of work`,
+          leftLink: 'https://www.freecodecamp.org/',
+          rightLink:
+            'https://www.freecodecamp.org/certification/fccbff75bbc-30e2-4e2f-8f3e-a414f15c1668/responsive-web-design',
         },
         {
           title: 'Pivotal Core Spring 5.0.b',
           year: 'Oct 2019',
           entity: 'Spring Latam',
           logo: 'spr',
-          details: `Degree Project: Mobile Device Development - Android<br />
-          Itineraries: Computer Technology, Programming, System Administration,
-          Object Oriented Programming, Network Management<br />`,
-          leftLink: 'https://www.helsinki.fi/en',
-          rightLink: 'https://www.helsinki.fi/en',
+          details: `Curso online en vivo de 32 horas impartido del 28 de Septiembre al 19 de Octubre de 2019.`,
+          leftLink: 'https://www.springla.io/',
+          rightLink:
+            './src/assets/spring/Certificado_Jose_Antonio_Anacleto.pdf',
         },
       ],
     },
