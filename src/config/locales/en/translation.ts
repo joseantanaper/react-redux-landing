@@ -269,7 +269,7 @@ export const translationEN = {
           entity: 'freeCodeCamp',
           logo: 'fcc',
           details: `Developer Certification on January 7, 2023<br />
-          representing approximately 300 hours of work`,
+          representing approximately 300 hours of work.`,
           leftLink: 'https://www.freecodecamp.org/',
           rightLink:
             'https://www.freecodecamp.org/certification/fccbff75bbc-30e2-4e2f-8f3e-a414f15c1668/front-end-development-libraries',
@@ -280,7 +280,7 @@ export const translationEN = {
           entity: 'freeCodeCamp',
           logo: 'fcc',
           details: `Developer Certification on November 22, 2022<br />
-          representing approximately 300 hours of work`,
+          representing approximately 300 hours of work.`,
           leftLink: 'https://www.freecodecamp.org/',
           rightLink:
             'https://www.freecodecamp.org/certification/fccbff75bbc-30e2-4e2f-8f3e-a414f15c1668/javascript-algorithms-and-data-structures',
@@ -291,7 +291,7 @@ export const translationEN = {
           entity: 'freeCodeCamp',
           logo: 'fcc',
           details: `Developer Certification on November 10, 2022<br />
-          representing approximately 300 hours of work`,
+          representing approximately 300 hours of work.`,
           leftLink: 'https://www.freecodecamp.org/',
           rightLink:
             'https://www.freecodecamp.org/certification/fccbff75bbc-30e2-4e2f-8f3e-a414f15c1668/responsive-web-design',
