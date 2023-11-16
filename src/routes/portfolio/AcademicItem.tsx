@@ -1,17 +1,11 @@
 import React from 'react'
 import { useTranslation, Trans } from 'react-i18next'
-import Title from '@/components/widgets/Title'
 import { Icon, IconMap } from '@/components/widgets/Icon'
-import uoc from '@assets/uoc/Logo-uoc.png'
-import uoh from '@assets/uoh/universityofhelsinki.png'
-import microsoft from '@assets/microsoft/microsoft.png'
-import uohLogo from '@assets/uoh/uohLogo2.png'
-import iet from '@assets/iet/escoladeltreball.png'
-import fcc from '@assets/fcc/freecodecamp.png'
-import spring from '@assets/spring/spring.png'
-import Card from '@/components/widgets/Card'
+import Title from '@/components/widgets/Title'
+import { SkillLogo } from '@/components/widgets/SkillLogo'
 
-import fullstack from '@assets/skills/fullstack.jpg'
+import Card from '@/components/widgets/Card'
+import { CustomBackground } from '../../components/widgets/CustomBackground'
 
 export interface AcademicEntry {
   title: string
@@ -19,8 +13,14 @@ export interface AcademicEntry {
   entity: string
   logo: string
   details?: string
+  skills?: Skill[]
   leftLink?: string
   rightLink?: string
+}
+
+export interface Skill {
+  logo: string
+  label: string
 }
 
 interface Props {
@@ -42,131 +42,29 @@ export const AcademicItem = ({
   rightLinkLabel,
 }: Props) => {
   const { t, i18n } = useTranslation()
-  const entityImage = () => {
-    switch (academicItem.logo) {
-      case 'uoc':
-        return (
-          <div style={{ height: '80px' }}>
-            <img
-              src={uoc}
-              alt={`${academicItem.title}`}
-              className={`card-img-top bg-white`}
-              style={{
-                objectFit: 'contain',
-                height: '100%',
-              }}
-            />
-          </div>
-        )
-      case 'iet':
-        return (
-          <div style={{ height: '80px' }}>
-            <img
-              src={iet}
-              alt={`${academicItem.title}`}
-              className={`card-img-top`}
-              style={{
-                objectFit: 'cover',
-                height: '100%',
-              }}
-            />
-          </div>
-        )
-      case 'uoh':
-        return (
-          <div style={{ height: '80px' }}>
-            <img
-              src={uoh}
-              alt={`${academicItem.title}`}
-              className={`card-img-top`}
-              style={{
-                objectFit: 'cover',
-                height: '100%',
-              }}
-            />
-            <img
-              src={uohLogo}
-              alt="Logo"
-              className="position-absolute end-0 m-1"
-              style={{
-                width: '120px',
-                filter:
-                  'drop-shadow(0 0 1px white) drop-shadow(0 0 4px white) drop-shadow(0 0 8px white)',
-              }}
-            />
-          </div>
-        )
-      case 'fcc':
-        return (
-          <div style={{ height: '80px' }} className="">
-            <img
-              src={fcc}
-              alt={`${academicItem.title}`}
-              className={`card-img-top`}
-              style={{
-                objectFit: 'cover',
-                height: '100%',
-              }}
-            />
-          </div>
-        )
-      case 'spr':
-        return (
-          <div style={{ height: '80px' }} className="">
-            <img
-              src={spring}
-              alt={`${academicItem.title}`}
-              className={`card-img-top p-2 bg-white`}
-              style={{
-                objectFit: 'contain',
-                height: '100%',
-              }}
-            />
-          </div>
-        )
-      case 'ms':
-        return (
-          <div style={{ height: '80px' }}>
-            <img
-              src={microsoft}
-              alt={`${academicItem.title}`}
-              className={`card-img-top`}
-              style={{
-                objectFit: 'cover',
-                height: '100%',
-              }}
-            />
-          </div>
-        )
 
-      case 'fullstack':
-        return (
-          <div style={{ height: '80px' }}>
-            <img
-              src={fullstack}
-              alt={`${academicItem.title}`}
-              className={`card-img-top`}
-              style={{
-                objectFit: 'cover',
-                height: '100%',
-              }}
-            />
-          </div>
-        )
-      default:
-        return uoc
-    }
-  }
   return mode === 0 ? (
     <>
-      <div className="row mb-5" key={`academic-${academicIndex}`}>
+      <div className="row" key={`academic-${academicIndex}`}>
         <div className="col">
-          <div className="row">
+          <div className="row border rounded shadow-sm py-3 mb-3">
             <div className="col-9">
               <div className="row">
                 <div className="col">
                   <Title h="h4" iconmap={IconMap.Academic}>
                     <Trans>{academicItem.title}</Trans>
+                  </Title>
+                </div>
+              </div>
+
+              <div className="row">
+                <div className="col">
+                  <Title
+                    h="h6"
+                    iconmap={IconMap.Business}
+                    className="text-primary"
+                  >
+                    <Trans>{academicItem.entity}</Trans>
                     {academicItem.year && (
                       <span className="text-primary border-start ms-3 ps-3 fw-light">
                         {academicItem.year}
@@ -175,38 +73,70 @@ export const AcademicItem = ({
                   </Title>
                 </div>
               </div>
-              {academicItem.entity && (
-                <div className="row">
-                  <div className="col">
-                    <Title
-                      h="h6"
-                      iconmap={IconMap.Business}
-                      className="text-warning-emphasis"
-                    >
-                      {academicItem.entity}
-                    </Title>
-                  </div>
-                </div>
-              )}
+
               {academicItem.details && (
                 <div className="row">
-                  <div className="col fw-light">
+                  <div className="col">
                     <Trans>{academicItem.details}</Trans>
                   </div>
                 </div>
               )}
+              {academicItem.skills && (
+                <div className="row">
+                  {academicItem.skills.map((skill) => (
+                    <div className="col">
+                      <Card>
+                        <SkillLogo
+                          logo={skill.logo}
+                          label={skill.label}
+                          className="me-5 mb-2"
+                        />
+                      </Card>
+                    </div>
+                  ))}
+                </div>
+              )}
             </div>
             <div className="col-3">
-              <Card
-                key={`academic-${academicIndex}`}
-                leftLinkIcon={leftLinkIcon}
-                leftLink={academicItem.leftLink}
-                rightLinkIcon={rightLinkIcon}
-                rightLink={academicItem.rightLink}
-                rightLinkLabel={rightLinkLabel}
-              >
-                {entityImage()}
-              </Card>
+              <CustomBackground
+                logo={academicItem.logo}
+                label={academicItem.title}
+              />
+              <div className="pt-3">
+                {academicItem.leftLink ? (
+                  <a
+                    href={academicItem.leftLink}
+                    target="_blank"
+                    className="btn btn-outline-primary float-start"
+                  >
+                    <Icon iconmap={leftLinkIcon} extra="text-primary" />
+                  </a>
+                ) : null}
+                {academicItem.rightLink ? (
+                  <a
+                    href={academicItem.rightLink}
+                    target="_blank"
+                    className="btn btn-outline-primary float-end"
+                  >
+                    <Icon iconmap={rightLinkIcon} extra="text-primary" />
+                    {rightLinkLabel ? <span>{t(rightLinkLabel)}</span> : ''}
+                  </a>
+                ) : null}
+              </div>
+
+              {/* {academicItem.entity && (
+                  <div className="row">
+                    <div className="col">
+                      <Title
+                        h="h6"
+                        iconmap={IconMap.Business}
+                        className="text-warning-emphasis"
+                      >
+                        {academicItem.entity}
+                      </Title>
+                    </div>
+                  </div>
+                )} */}
             </div>
           </div>
         </div>
@@ -228,7 +158,10 @@ export const AcademicItem = ({
           rightLink={academicItem.rightLink}
           rightLinkLabel={rightLinkLabel}
         >
-          {entityImage()}
+          <CustomBackground
+            logo={academicItem.logo}
+            label={academicItem.title}
+          />
         </Card>
       </div>
     </>

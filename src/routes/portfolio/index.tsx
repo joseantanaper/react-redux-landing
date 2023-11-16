@@ -54,7 +54,9 @@ export const Portfolio = () => {
         id="academic"
         title="app:portfolio:academicTitle"
         entry="app:portfolio:academic"
+        leftLinkIcon={IconMap.Portfolio}
         rightLinkLabel="app:site"
+        rightLinkIcon={IconMap.Code}
         iconmap={iconmap}
       />
 

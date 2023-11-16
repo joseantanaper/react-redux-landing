@@ -4,19 +4,6 @@ import Title from '@/components/widgets/Title'
 import Card from '@/components/widgets/Card'
 import { IconMap } from '@/components/widgets/Icon'
 import { CarouselItem } from '@components/widgets/Carousel'
-import Logo from './Logo'
-
-import aernnova from '@assets/arghos/aernnova.png'
-import arghos from '@assets/arghos/arghos.png'
-import kh7 from '@assets/arghos/khlloreda.png'
-import seat from '@assets/arghos/seatmartorell.png'
-import vw from '@assets/arghos/vwnavarra.png'
-
-import omegazeta3dtech from '@assets/omegazeta/omegazeta-3dtech-cut.png'
-import omegazetacirca from '@assets/omegazeta/omegazeta-circa-cut.png'
-import omegazetaclinica from '@assets/omegazeta/omegazeta-clinica-cut.png'
-import omegazetacorporacion from '@assets/omegazeta/omegazeta-corporacion-cut.png'
-import omegazetananjing from '@assets/omegazeta/omegazeta-nanjing-cut.png'
 
 import circa from '@assets/omegazeta/projects/1I6A9650web.jpg'
 import hostaletsPierola from '@assets/omegazeta/projects/Ajuntament-de-Hostalets-de-Pierola-1-1024x572.jpg'
@@ -28,6 +15,8 @@ import esparreguera from '@assets/omegazeta/projects/Edificio-de-viviendas-en-Es
 import manlleu from '@assets/omegazeta/projects/Edificio-La-Vola-Manlleu-1-1024x490.jpg'
 import sitges from '@assets/omegazeta/projects/Sitges-1-1024x490.jpg'
 import reus from '@assets/omegazeta/projects/Tecnoparc-de-Reus-1-1024x490.jpg'
+
+import { CustomBackground } from '@/components/widgets/CustomBackground'
 
 const omegazetaImages: CarouselItem[] = [
   {
@@ -129,11 +118,7 @@ export const ExperienceItem = ({ experienceItem, experienceIndex }: Props) => {
         </div>
         <div className="row">
           <div className="col-lg-8">
-            <Title
-              h="h6"
-              iconmap={IconMap.Business}
-              className="text-warning-emphasis"
-            >
+            <Title h="h6" iconmap={IconMap.Business} className="text-primary">
               {Object.keys(experienceItem.subtitle).map((key: any, index) => (
                 <span
                   key={`subtitle-${experienceIndex}-${index}`}
@@ -157,22 +142,34 @@ export const ExperienceItem = ({ experienceItem, experienceIndex }: Props) => {
             ))}
             {experienceIndex === 0 && (
               <div className="row p-2">
-                <Logo
-                  image={omegazetacorporacion}
-                  label="Corporación Omega Zeta"
-                  className="me-2"
-                />
-                <Logo
-                  image={omegazetacirca}
-                  label="CIRCA, S.A."
-                  className="me-2"
-                />
-                <Logo
-                  image={omegazetananjing}
-                  label="Omega Zeta Nanjing"
-                  className="me-2"
-                />
-                <Logo image={omegazetaclinica} label="Clínica Omega Zeta" />
+                <div className="col">
+                  <div className="row">
+                    <div className="col">
+                      <CustomBackground
+                        logo="omegazetacorporacion"
+                        label="Corporación Omega Zeta"
+                      />
+                    </div>
+                    <div className="col">
+                      <CustomBackground
+                        logo="omegazetacirca"
+                        label="CIRCA, S.A."
+                      />
+                    </div>
+                    <div className="col">
+                      <CustomBackground
+                        logo="omegazetananjing"
+                        label="Omega Zeta Nanjing"
+                      />
+                    </div>
+                    <div className="col">
+                      <CustomBackground
+                        logo="omegazetaclinica"
+                        label="Clínica Omega Zeta"
+                      />
+                    </div>
+                  </div>
+                </div>
               </div>
             )}
           </div>
@@ -181,7 +178,7 @@ export const ExperienceItem = ({ experienceItem, experienceIndex }: Props) => {
               <Card
                 carouselItems={omegazetaImages}
                 title="CIRCA, S.A."
-                subtitle="app:portfolio:omegazeta"
+                details="app:portfolio:omegazeta"
                 leftLink="https://www.linkedin.com/company/circa---panel-omega-zeta/about/"
                 rightLink="https://panelomegazeta.com/nosotros/"
               />
@@ -190,23 +187,25 @@ export const ExperienceItem = ({ experienceItem, experienceIndex }: Props) => {
                 <div className="row">
                   <div className="col">
                     <Card
-                      image={arghos}
                       imageClass="p-2 bg-dark"
                       imageFit="contain"
-                      subtitle="app:portfolio:arghos"
+                      details="app:portfolio:arghos"
                       leftLink="https://es.linkedin.com/company/arghos"
                       rightLink="https://www.arghos.es/"
-                    />
+                    >
+                      <CustomBackground logo="arghos" label="Arghos" />
+                    </Card>
                   </div>
                   <div className="col">
                     <Card
-                      image={aernnova}
                       imageClass="py-4 px-2 bg-dark"
                       imageFit="contain"
-                      subtitle="app:portfolio:aernnova"
+                      details="app:portfolio:aernnova"
                       leftLink="https://es.linkedin.com/company/aernnova"
                       rightLink="https://www.aernnova.com/es/"
-                    />
+                    >
+                      <CustomBackground logo="aernnova" label="AERnnova" />
+                    </Card>
                   </div>
                 </div>
               </>

@@ -24,7 +24,7 @@ h2,
 h3,
 h4,
 h5,
-h6 {
+h6:not(.text-primary) {
   text-shadow: $app-h-global-shadow;
   // Pass navbar position when clicking anchor
   scroll-margin-top: 150px;

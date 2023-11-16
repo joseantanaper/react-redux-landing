@@ -191,9 +191,12 @@ h1.modal-title {
 .navbar-toggler {
 
   // opacity: $app-default-opacity;
+  svg {
+    transition: $app-global-quick-transition;
+  }
+
   svg,
   span {
-    transition: $app-global-quick-transition;
     opacity: $app-default-opacity;
   }
 }

@@ -57,7 +57,7 @@ export const translationEN = {
       title: 'Portfolio',
       subtitle: '</>',
       description: 'Information about my professional background',
-      viewMyCert: 'View my Certification',
+      viewMyCert: 'View my Cert.',
 
       omegazeta: `<strong>CIRCA - Panel Omega Zeta</strong> pertenece a la
       <strong>Corporación Omega Zeta</strong>, que trabaja en <strong>Europa,
@@ -300,7 +300,7 @@ export const translationEN = {
           title: 'Pivotal Core Spring 5.0.b',
           year: 'Oct 2019',
           entity: 'Spring Latam',
-          logo: 'spr',
+          logo: 'spring',
           details: `Curso online en vivo de 32 horas impartido del 28 de Septiembre al 19 de Octubre de 2019.`,
           leftLink: 'https://www.springla.io/',
           rightLink:
@@ -322,7 +322,7 @@ export const translationEN = {
             { logo: 'materialize', label: 'Materialize' },
 
             { logo: 'react', label: 'React' },
-            { logo: 'vue', label: 'Vue' },
+            -{ logo: 'vue', label: 'Vue' },
             { logo: 'vite', label: 'Vite' },
             { logo: 'angular', label: 'AngularJS' },
             { logo: 'jquery', label: 'jQuery' },
@@ -341,6 +341,17 @@ export const translationEN = {
         },
         {
           title: 'IDE / Source Control',
+          logo: 'ide',
+          skills: [
+            { logo: 'vscode', label: 'Visual Studio Code' },
+            { logo: 'visualstudio', label: 'Visual Studio' },
+            { logo: 'netbeans', label: 'NetBeans' },
+            { logo: 'eclipse', label: 'Eclipse' },
+            { logo: 'intellij', label: 'IntelliJ' },
+            { logo: 'git', label: 'Git' },
+            { logo: 'github', label: 'GitHub' },
+            { logo: 'gitlab', label: 'GitLab' },
+          ],
         },
         {
           title: 'SGBD',
