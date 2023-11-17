@@ -69,28 +69,28 @@ export const AcademicList = ({
       {mode === 0 ? (
         <div className="container-fluid mb-5">
           <div className="row">
-            <div className="col">
-              {(
-                i18n.t(entry, {
-                  returnObjects: true,
-                  defaultValue: [],
-                }) as AcademicEntry[]
-              ).map((academicItem: AcademicEntry, academicIndex) => (
-                <>
-                  <AcademicItem
-                    academicItem={academicItem}
-                    academicIndex={academicIndex}
-                    mode={mode}
-                    titleIcon={titleIcon}
-                    entityIcon={entityIcon}
-                    leftLinkIcon={leftLinkIcon}
-                    leftLinkLabel={leftLinkLabel}
-                    rightLinkIcon={rightLinkIcon}
-                    rightLinkLabel={rightLinkLabel}
-                  />
-                </>
-              ))}
-            </div>
+            {/* <div className="col"> */}
+            {(
+              i18n.t(entry, {
+                returnObjects: true,
+                defaultValue: [],
+              }) as AcademicEntry[]
+            ).map((academicItem: AcademicEntry, academicIndex) => (
+              <>
+                <AcademicItem
+                  academicItem={academicItem}
+                  academicIndex={academicIndex}
+                  mode={mode}
+                  titleIcon={titleIcon}
+                  entityIcon={entityIcon}
+                  leftLinkIcon={leftLinkIcon}
+                  leftLinkLabel={leftLinkLabel}
+                  rightLinkIcon={rightLinkIcon}
+                  rightLinkLabel={rightLinkLabel}
+                />
+              </>
+            ))}
+            {/* </div> */}
           </div>
         </div>
       ) : (

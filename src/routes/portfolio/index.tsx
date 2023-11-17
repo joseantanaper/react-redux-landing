@@ -82,6 +82,18 @@ export const Portfolio = () => {
         rightLinkLabel="app:portfolio:viewMyCert"
         iconmap={iconmap}
       />
+
+      {/* Hobbies */}
+      <AcademicList
+        id="hobbies"
+        title="app:portfolio:hobbiesTitle"
+        entry="app:portfolio:hobbies"
+        titleIcon={IconMap.Workspace}
+        leftLinkIcon={IconMap.Code}
+        rightLinkIcon={IconMap.Academic}
+        rightLinkLabel="app:portfolio:viewMyCert"
+        iconmap={iconmap}
+      />
     </PageLayout>
   )
 }

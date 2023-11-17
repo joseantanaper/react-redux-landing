@@ -312,6 +312,8 @@ export const translationEN = {
       skills: [
         {
           title: 'Fullstack',
+          details: `Technologies, languages, frameworks and libraries related to
+          development of backend, frontend and different kinds of applications.`,
           logo: 'fullstack',
           skills: [
             { logo: 'html5', label: 'HTML5' },
@@ -331,7 +333,7 @@ export const translationEN = {
             { logo: 'spring', label: 'Spring' },
             { logo: 'nodejs', label: 'NodeJS' },
             { logo: 'graphql', label: 'Apollo / GraphQL' },
-            { logo: 'rest', label: 'Rest API / Web Services' },
+            { logo: 'rest', label: 'RestAPI / WebServices' },
 
             { logo: 'powerplatform', label: 'Microsoft Power Platform' },
             { logo: 'powerautomate', label: 'Microsoft Power Automate' },
@@ -341,6 +343,8 @@ export const translationEN = {
         },
         {
           title: 'IDE / Source Control',
+          details:
+            'Integrated development environments, version control and other development tools.',
           logo: 'ide',
           skills: [
             { logo: 'vscode', label: 'Visual Studio Code' },
@@ -354,7 +358,8 @@ export const translationEN = {
           ],
         },
         {
-          title: 'SGBD',
+          title: 'DBMS',
+          details: 'Database management systems',
           logo: 'database',
           skills: [
             { logo: 'mongodb', label: 'MongoDB' },
@@ -366,6 +371,7 @@ export const translationEN = {
         },
         {
           title: 'Business Intelligence',
+          details: 'Reporting and data analysis.',
           logo: 'businessintelligence',
           skills: [
             { logo: 'jasperreports', label: 'Jasper Reports' },
@@ -375,6 +381,7 @@ export const translationEN = {
         },
         {
           title: 'OS / Virtualization',
+          details: 'Operative systems and virtualization systems.',
           logo: 'virtualization',
           skills: [
             { logo: 'windows', label: 'Windows 11 - 3.x' },
@@ -389,9 +396,62 @@ export const translationEN = {
           title: 'Languages',
           logo: 'world',
           skills: [
-            { logo: 'spanish', label: 'Spanish' },
-            { logo: 'catalan', label: 'Catalan' },
-            { logo: 'english', label: 'English' },
+            { logo: 'spanish', label: 'Spanish (Native)' },
+            { logo: 'catalan', label: 'Catalan (Native)' },
+            { logo: 'english', label: 'English (Professional)' },
+          ],
+        },
+      ],
+
+      hobbiesTitle: 'Hobbies',
+      hobbies: [
+        {
+          title: 'Videogames',
+          logo: 'videogames',
+          skills: [
+            { logo: 'simonbelmont', label: 'Retrogaming' },
+            { logo: 'msx', label: 'MSX, my favorite 8-bit computer' },
+            { logo: 'xbox', label: 'PC Gaming, Emulation and more' },
+          ],
+        },
+        {
+          title:
+            'Virtual synthesizers. Electronic and ambient music composition',
+          logo: 'composition',
+          skills: [
+            { logo: 'bandlab', label: 'Bandlab' },
+            { logo: 'cakewalk', label: 'Cakewalk SONAR' },
+            { logo: 'synth', label: 'Virtual Synthesizers' },
+            { logo: 'guitar', label: 'Spanish and acoustic guitar' },
+          ],
+        },
+        {
+          title: 'Listening music and podcasts',
+          details:
+            'New Retro Wave, Synthwave, 80s, 90s, 2000s, New Age, Industrial, Rock, Rap Metal',
+          logo: 'music',
+          skills: [
+            { logo: 'newretrowave', label: 'New Retro Wave' },
+            { logo: 'synthwave', label: 'Synthwave' },
+            { logo: 'newage', label: 'New Age' },
+            { logo: 'industrial', label: 'Industrial' },
+            { logo: 'numetal', label: 'Nu Metal' },
+            { logo: 'rock', label: 'Rock' },
+            { logo: 'd70', label: '70s' },
+            { logo: 'd80', label: '80s' },
+            { logo: 'd90', label: "90's" },
+            { logo: 'd2000', label: "2000's" },
+            { logo: 'videoclips', label: 'Videoclips' },
+          ],
+        },
+        {
+          title: 'Servicios de Streaming',
+          details: '...',
+          logo: 'streaming',
+          skills: [
+            { logo: 'netflix', label: 'Netflix' },
+            { logo: 'hbo', label: 'HBO Max' },
+            { logo: 'amazon', label: 'Prime Video' },
           ],
         },
       ],

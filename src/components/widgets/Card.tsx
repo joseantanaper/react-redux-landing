@@ -83,7 +83,7 @@ const Card = ({
           </p>
         )}
         {skills && (
-          <div className="row">
+          <div className="row mt-3">
             {skills.map((skill) => (
               <div className="col">
                 <SkillLogo logo={skill.logo} label={skill.label} />
@@ -108,10 +108,8 @@ const Card = ({
               className="btn btn-outline-primary text-truncate float-end"
             >
               <Icon iconmap={rightLinkIcon} extra="text-primary" />
-              {rightLinkLabel ? (
+              {rightLinkLabel && (
                 <span className="text-truncate">{t(rightLinkLabel)}</span>
-              ) : (
-                ''
               )}
             </a>
           )}

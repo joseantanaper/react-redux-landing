@@ -54,6 +54,25 @@ import spanish from '@assets/flag/spanish.webp'
 import catalan from '@assets/flag/catalan.webp'
 import english from '@assets/flag/english.png'
 
+import simonbelmont from '@assets/icons/simonbelmont.png'
+import msx from '@assets/icons/msx.png'
+import xbox from '@assets/icons/xbox.png'
+
+import bandlab from '@assets/icons/bandlab.png'
+import cakewalk from '@assets/icons/Cakewalk.png'
+
+import newretrowave from '@assets/music/newretrowave.jpg'
+import synthwave from '@assets/music/synthwave.jpg'
+import newage from '@assets/music/tubularbells.webp'
+import industrial from '@assets/music/industrial.jpg'
+import numetal from '@assets/music/numetal.jpg'
+import rock from '@assets/music/nirvana.jpg'
+import d70 from '@assets/music/d70.png'
+import d80 from '@assets/music/d80c.gif'
+import d90 from '@assets/music/d90.webp'
+import d2000 from '@assets/music/d2000.jpg'
+import videoclips from '@assets/music/mtv.jpg'
+
 interface Props {
   logo: string
   label: string
@@ -63,6 +82,7 @@ interface Props {
 export const SkillLogo = ({ logo, label, className }: Props) => {
   let extraClass = ''
   let width
+  let height = 26
   const icon = () => {
     switch (logo) {
       case 'html5':
@@ -165,21 +185,69 @@ export const SkillLogo = ({ logo, label, className }: Props) => {
         extraClass = 'rounded-circle'
         width = 26
         return english
+
+      case 'simonbelmont':
+        height = 64
+        return simonbelmont
+      case 'msx':
+        return msx
+      case 'xbox':
+        return xbox
+
+      case 'bandlab':
+        return bandlab
+      case 'cakewalk':
+        return cakewalk
+
+      case 'newretrowave':
+        height = 64
+        return newretrowave
+      case 'synthwave':
+        height = 64
+        return synthwave
+      case 'newage':
+        height = 64
+        return newage
+      case 'industrial':
+        height = 64
+        return industrial
+      case 'numetal':
+        height = 64
+        return numetal
+      case 'rock':
+        height = 64
+        return rock
+      case 'd70':
+        height = 64
+        return d70
+      case 'd80':
+        height = 64
+        return d80
+      case 'd90':
+        height = 64
+        return d90
+      case 'd2000':
+        height = 64
+        return d2000
+      case 'videoclips':
+        height = 64
+        return videoclips
     }
   }
   return (
     <div
       className={`text-center ${className}`}
       style={{
+        minWidth: '40px',
         maxWidth: '80px',
-        maxHeight: '80px',
+        maxHeight: '100px',
         verticalAlign: 'top',
         display: 'block',
       }}
     >
       <img
         src={icon()}
-        height={26}
+        height={height}
         width={width}
         className={`${extraClass}`}
         alt={`${label}`}

@@ -36,9 +36,11 @@ export const CustomBackground = ({ logo, label, className }: Props) => {
   let image
   let extra: ReactNode
   let divStyle = { height: '80px' }
-  let divClass = ''
+  let divClass = 'position-relative'
   let imageStyle: object = { objectFit: 'cover', height: '100%' }
   let imageClass = ''
+
+  const mode = 1
 
   switch (logo) {
     case 'uoc':
@@ -55,7 +57,7 @@ export const CustomBackground = ({ logo, label, className }: Props) => {
         <img
           src={uohLogo}
           alt="Logo"
-          className="position-absolute end-0 m-1"
+          className="position-absolute d-inline end-0"
           style={{
             width: '120px',
             filter:
@@ -130,7 +132,7 @@ export const CustomBackground = ({ logo, label, className }: Props) => {
       <img
         src={image}
         alt={`${label}`}
-        className={`card-img-top ${imageClass}`}
+        className={`card-img-top rounded ${imageClass}`}
         style={imageStyle}
       />
       {extra && extra}

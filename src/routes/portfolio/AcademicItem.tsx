@@ -47,6 +47,13 @@ export const AcademicItem = ({
 }: Props) => {
   const { t, i18n } = useTranslation()
 
+  const colSize = () => {
+    switch (academicItem.logo) {
+      case 'fullstack':
+        return 'col-9'
+    }
+  }
+
   return mode === 0 ? (
     <>
       <div className="row" key={`academic-${academicIndex}`}>
@@ -57,7 +64,10 @@ export const AcademicItem = ({
                 <div className="row">
                   <div className="col">
                     <Title h="h4" iconmap={titleIcon || IconMap.Academic}>
-                      <Trans>{academicItem.title}</Trans>
+                      <Trans>
+                        {academicItem.title}
+                        {mode}
+                      </Trans>
                     </Title>
                   </div>
                 </div>
@@ -96,7 +106,7 @@ export const AcademicItem = ({
                 </div>
               )}
               {academicItem.skills && (
-                <div className="row">
+                <div className="row mt-3">
                   {academicItem.skills.map((skill) => (
                     <div className="col">
                       <SkillLogo
@@ -142,7 +152,7 @@ export const AcademicItem = ({
     </>
   ) : (
     <>
-      <div className="col">
+      <div className={colSize()}>
         <Card
           key={`academic-${academicIndex}`}
           title={academicItem.title}
