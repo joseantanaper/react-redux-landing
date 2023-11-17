@@ -12,6 +12,7 @@ import spring from '@assets/spring/spring.png'
 import database from '@assets/skills/database.jpg'
 import businessintelligence from '@assets/skills/businessintelligence.png'
 import virtualization from '@assets/skills/virtualization.jpg'
+import world from '@assets/skills/world.jpg'
 
 import aernnova from '@assets/arghos/aernnova.png'
 import arghos from '@assets/arghos/arghos.png'
@@ -118,6 +119,9 @@ export const CustomBackground = ({ logo, label, className }: Props) => {
       break
     case 'virtualization':
       image = virtualization
+      break
+    case 'world':
+      image = world
       break
   }
 

@@ -50,6 +50,10 @@ import vmware from '@assets/icons/vmware_esxi.png'
 import os2warp from '@assets/icons/ibm_os2_warp.jpg'
 import docker from '@assets/icons/docker.png'
 
+import spanish from '@assets/flag/spanish.webp'
+import catalan from '@assets/flag/catalan.webp'
+import english from '@assets/flag/english.png'
+
 interface Props {
   logo: string
   label: string
@@ -57,6 +61,8 @@ interface Props {
 }
 
 export const SkillLogo = ({ logo, label, className }: Props) => {
+  let extraClass = ''
+  let width
   const icon = () => {
     switch (logo) {
       case 'html5':
@@ -146,17 +152,36 @@ export const SkillLogo = ({ logo, label, className }: Props) => {
         return vmware
       case 'docker':
         return docker
+
+      case 'spanish':
+        extraClass = 'rounded-circle'
+        width = 26
+        return spanish
+      case 'catalan':
+        extraClass = 'rounded-circle'
+        width = 26
+        return catalan
+      case 'english':
+        extraClass = 'rounded-circle'
+        width = 26
+        return english
     }
   }
   return (
     <div
       className={`text-center ${className}`}
-      style={{ maxWidth: '80px', verticalAlign: 'top', display: 'block' }}
+      style={{
+        maxWidth: '80px',
+        maxHeight: '80px',
+        verticalAlign: 'top',
+        display: 'block',
+      }}
     >
       <img
         src={icon()}
         height={26}
-        className={``}
+        width={width}
+        className={`${extraClass}`}
         alt={`${label}`}
         style={{
           filter: 'drop-shadow(0 0 1px white) drop-shadow(0 0 2px gray)',

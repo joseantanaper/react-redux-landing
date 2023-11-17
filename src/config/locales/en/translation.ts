@@ -385,6 +385,15 @@ export const translationEN = {
             { logo: 'docker', label: 'Docker' },
           ],
         },
+        {
+          title: 'Languages',
+          logo: 'world',
+          skills: [
+            { logo: 'spanish', label: 'Spanish' },
+            { logo: 'catalan', label: 'Catalan' },
+            { logo: 'english', label: 'English' },
+          ],
+        },
       ],
     },
 
