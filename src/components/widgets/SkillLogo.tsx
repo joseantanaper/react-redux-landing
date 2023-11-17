@@ -33,6 +33,23 @@ import intellij from '@assets/icons/intellij.png'
 import github from '@assets/icons/github.png'
 import gitlab from '@assets/icons/gitlab.png'
 
+import mongodb from '@assets/icons/mongodb.png'
+import postgresql from '@assets/icons/postgresql.png'
+import mysql from '@assets/icons/mysql.png'
+import sqlserver from '@assets/icons/sqlserver.webp'
+import oracle from '@assets/icons/oracle.png'
+
+import jasperreports from '@assets/icons/tibco_jaspersoft.jpg'
+import crystalreports from '@assets/icons/crystalreports.png'
+import cognospowerplay from '@assets/icons/ibm_cognos.png'
+
+import windows from '@assets/icons/windows.png'
+import ubuntu from '@assets/icons/ubuntu-logo.png'
+import linuxmint from '@assets/icons/linux_mint.png'
+import vmware from '@assets/icons/vmware_esxi.png'
+import os2warp from '@assets/icons/ibm_os2_warp.jpg'
+import docker from '@assets/icons/docker.png'
+
 interface Props {
   logo: string
   label: string
@@ -99,6 +116,36 @@ export const SkillLogo = ({ logo, label, className }: Props) => {
         return github
       case 'gitlab':
         return gitlab
+      case 'mongodb':
+        return mongodb
+      case 'postgresql':
+        return postgresql
+      case 'mysql':
+        return mysql
+      case 'sqlserver':
+        return sqlserver
+      case 'oracle':
+        return oracle
+
+      case 'jasperreports':
+        return jasperreports
+      case 'crystalreports':
+        return crystalreports
+      case 'cognospowerplay':
+        return cognospowerplay
+
+      case 'windows':
+        return windows
+      case 'ubuntu':
+        return ubuntu
+      case 'linuxmint':
+        return linuxmint
+      case 'os2warp':
+        return os2warp
+      case 'vmware':
+        return vmware
+      case 'docker':
+        return docker
     }
   }
   return (
@@ -115,7 +162,7 @@ export const SkillLogo = ({ logo, label, className }: Props) => {
           filter: 'drop-shadow(0 0 1px white) drop-shadow(0 0 2px gray)',
         }}
       />
-      <span className="fw-light small text-secondary d-block">{label}</span>
+      <span className="fw-light mt-2 mb-3 small d-block">{label}</span>
     </div>
   )
 }

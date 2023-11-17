@@ -322,7 +322,7 @@ export const translationEN = {
             { logo: 'materialize', label: 'Materialize' },
 
             { logo: 'react', label: 'React' },
-            -{ logo: 'vue', label: 'Vue' },
+            { logo: 'vue', label: 'Vue' },
             { logo: 'vite', label: 'Vite' },
             { logo: 'angular', label: 'AngularJS' },
             { logo: 'jquery', label: 'jQuery' },
@@ -355,15 +355,35 @@ export const translationEN = {
         },
         {
           title: 'SGBD',
+          logo: 'database',
+          skills: [
+            { logo: 'mongodb', label: 'MongoDB' },
+            { logo: 'postgresql', label: 'PostgreSQL' },
+            { logo: 'mysql', label: 'MySQL' },
+            { logo: 'sqlserver', label: 'SQL Server' },
+            { logo: 'oracle', label: 'Oracle' },
+          ],
         },
         {
           title: 'Business Intelligence',
+          logo: 'businessintelligence',
+          skills: [
+            { logo: 'jasperreports', label: 'Jasper Reports' },
+            { logo: 'crystalreports', label: 'Crystal Reports' },
+            { logo: 'cognospowerplay', label: 'Cognos Powerplay' },
+          ],
         },
         {
           title: 'OS / Virtualization',
-        },
-        {
-          title: 'Languages',
+          logo: 'virtualization',
+          skills: [
+            { logo: 'windows', label: 'Windows 11 - 3.x' },
+            { logo: 'ubuntu', label: 'Ubuntu' },
+            { logo: 'linuxmint', label: 'Linux Mint' },
+            { logo: 'os2warp', label: 'OS/2 Warp' },
+            { logo: 'vmware', label: 'VMware' },
+            { logo: 'docker', label: 'Docker' },
+          ],
         },
       ],
     },

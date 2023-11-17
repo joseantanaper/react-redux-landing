@@ -27,6 +27,8 @@ interface Props {
   academicItem: AcademicEntry
   academicIndex: number
   mode: number
+  titleIcon?: IconMap
+  entityIcon?: IconMap
   leftLinkIcon?: IconMap
   leftLinkLabel?: string
   rightLinkIcon?: IconMap
@@ -37,6 +39,8 @@ export const AcademicItem = ({
   academicItem,
   academicIndex,
   mode,
+  titleIcon,
+  entityIcon,
   leftLinkIcon,
   rightLinkIcon,
   rightLinkLabel,
@@ -49,30 +53,40 @@ export const AcademicItem = ({
         <div className="col">
           <div className="row border rounded shadow-sm py-3 mb-3">
             <div className="col-9">
-              <div className="row">
-                <div className="col">
-                  <Title h="h4" iconmap={IconMap.Academic}>
-                    <Trans>{academicItem.title}</Trans>
-                  </Title>
+              {academicItem.title && (
+                <div className="row">
+                  <div className="col">
+                    <Title h="h4" iconmap={titleIcon || IconMap.Academic}>
+                      <Trans>{academicItem.title}</Trans>
+                    </Title>
+                  </div>
                 </div>
-              </div>
+              )}
 
-              <div className="row">
-                <div className="col">
-                  <Title
-                    h="h6"
-                    iconmap={IconMap.Business}
-                    className="text-primary"
-                  >
-                    <Trans>{academicItem.entity}</Trans>
-                    {academicItem.year && (
-                      <span className="text-primary border-start ms-3 ps-3 fw-light">
-                        {academicItem.year}
-                      </span>
-                    )}
-                  </Title>
+              {academicItem.entity && (
+                <div className="row">
+                  <div className="col">
+                    <Title
+                      h="h6"
+                      iconmap={entityIcon || IconMap.Business}
+                      className="text-primary fw-normal d-flex"
+                    >
+                      <Trans>{academicItem.entity}</Trans>
+                      <Title
+                        h="h6"
+                        iconmap={IconMap.CalendarCheck}
+                        className="text-primary fw-light border-start ms-3 ps-3"
+                      >
+                        {academicItem.year && (
+                          <span className="text-primary  fw-light">
+                            {academicItem.year}
+                          </span>
+                        )}
+                      </Title>
+                    </Title>
+                  </div>
                 </div>
-              </div>
+              )}
 
               {academicItem.details && (
                 <div className="row">
@@ -85,13 +99,11 @@ export const AcademicItem = ({
                 <div className="row">
                   {academicItem.skills.map((skill) => (
                     <div className="col">
-                      <Card>
-                        <SkillLogo
-                          logo={skill.logo}
-                          label={skill.label}
-                          className="me-5 mb-2"
-                        />
-                      </Card>
+                      <SkillLogo
+                        logo={skill.logo}
+                        label={skill.label}
+                        className="me-3 mb-3"
+                      />
                     </div>
                   ))}
                 </div>
@@ -123,20 +135,6 @@ export const AcademicItem = ({
                   </a>
                 ) : null}
               </div>
-
-              {/* {academicItem.entity && (
-                  <div className="row">
-                    <div className="col">
-                      <Title
-                        h="h6"
-                        iconmap={IconMap.Business}
-                        className="text-warning-emphasis"
-                      >
-                        {academicItem.entity}
-                      </Title>
-                    </div>
-                  </div>
-                )} */}
             </div>
           </div>
         </div>

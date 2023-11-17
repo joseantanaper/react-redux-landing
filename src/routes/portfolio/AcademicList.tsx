@@ -10,6 +10,8 @@ interface Props {
   title: string
   entry: string
   iconmap?: IconMap
+  titleIcon?: IconMap
+  entityIcon?: IconMap
   leftLinkIcon?: IconMap
   leftLinkLabel?: string
   rightLinkIcon?: IconMap
@@ -21,6 +23,8 @@ export const AcademicList = ({
   title,
   entry,
   iconmap,
+  titleIcon,
+  entityIcon,
   leftLinkIcon,
   leftLinkLabel,
   rightLinkIcon,
@@ -77,6 +81,8 @@ export const AcademicList = ({
                     academicItem={academicItem}
                     academicIndex={academicIndex}
                     mode={mode}
+                    titleIcon={titleIcon}
+                    entityIcon={entityIcon}
                     leftLinkIcon={leftLinkIcon}
                     leftLinkLabel={leftLinkLabel}
                     rightLinkIcon={rightLinkIcon}

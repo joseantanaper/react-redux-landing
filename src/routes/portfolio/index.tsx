@@ -76,6 +76,7 @@ export const Portfolio = () => {
         id="skills"
         title="app:portfolio:skillsTitle"
         entry="app:portfolio:skills"
+        titleIcon={IconMap.Workspace}
         leftLinkIcon={IconMap.Code}
         rightLinkIcon={IconMap.Academic}
         rightLinkLabel="app:portfolio:viewMyCert"
