@@ -30,13 +30,36 @@ export const Portfolio = () => {
           href="#experience"
         />
       </li>
-
-      <li className="nav-item">
+      <li className="nav-item float-end">
         <Linko
           iconmap={iconmap || IconMap.Code}
-          label={`${t('Footer')}`}
-          href="#footer"
-        />{' '}
+          label={`${t('app:portfolio:academicTitle')}`}
+          href="#academic"
+        />
+      </li>
+      <li className="nav-item float-end">
+        <Linko
+          iconmap={iconmap || IconMap.Code}
+          label={`${t('app:portfolio:certificationTitle')}`}
+          href="#certifications"
+        />
+      </li>
+      <li className="nav-item float-end">
+        <Linko
+          iconmap={iconmap || IconMap.Code}
+          label={`${t('app:portfolio:skillsTitle')}`}
+          href="#skills"
+        />
+      </li>
+      <li className="nav-item float-end">
+        <Linko
+          iconmap={iconmap || IconMap.Code}
+          label={`${t('app:portfolio:hobbiesTitle')}`}
+          href="#hobbies"
+        />
+      </li>
+      <li className="nav-item">
+        <Linko iconmap={IconMap.Code} label={`${t('Footer')}`} href="#footer" />{' '}
       </li>
     </>
   )

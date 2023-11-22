@@ -73,6 +73,13 @@ import d90 from '@assets/music/d90.webp'
 import d2000 from '@assets/music/d2000.jpg'
 import videoclips from '@assets/music/mtv.jpg'
 
+import vsynth from '@assets/music/vsynth.png'
+import guitar from '@assets/music/guitar.png'
+
+import netflix from '@assets/streaming/netflix.png'
+import primevideo from '@assets/streaming/primevideo.jpg'
+import hbomax from '@assets/streaming/hbomax.jpg'
+
 interface Props {
   logo: string
   label: string
@@ -200,22 +207,22 @@ export const SkillLogo = ({ logo, label, className }: Props) => {
         return cakewalk
 
       case 'newretrowave':
-        height = 64
+        // height = 64
         return newretrowave
       case 'synthwave':
-        height = 64
+        // height = 64
         return synthwave
       case 'newage':
-        height = 64
+        // height = 64
         return newage
       case 'industrial':
-        height = 64
+        // height = 64
         return industrial
       case 'numetal':
-        height = 64
+        // height = 64
         return numetal
       case 'rock':
-        height = 64
+        // height = 64
         return rock
       case 'd70':
         height = 64
@@ -232,6 +239,20 @@ export const SkillLogo = ({ logo, label, className }: Props) => {
       case 'videoclips':
         height = 64
         return videoclips
+
+      case 'vsynth':
+        // height = 64
+        return vsynth
+      case 'guitar':
+        // height = 64
+        return guitar
+
+      case 'netflix':
+        return netflix
+      case 'primevideo':
+        return primevideo
+      case 'hbomax':
+        return hbomax
     }
   }
   return (

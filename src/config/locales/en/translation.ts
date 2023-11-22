@@ -8,20 +8,19 @@ export const translationEN = {
     more: 'More',
     site: 'Site',
     home: {
-      title: 'Inicio',
+      title: 'Start',
       // subtitle: 'Raíz de este Sitio Web',
-      description: `Esto es un Sitio Web de Destino basado en <strong>
-      React/Redux</strong> y <strong>Bootstrap</strong> con un montón de
-      personalizaciones para adaptarlo a mis propias preferencias. El Sitio está
-      estructurado como una <strong>SPA (Aplicación de Una Sola Página)</strong>
-      con diversas <strong>rutas</strong>, alguna de las cuales son pequeñas
-      <strong>Aplicaciones Demo</strong> que permiten comprobar las capacidades
-      de <strong>React/Redux</strong> y de <strong>Bootstrap</strong>.
-      De hecho, la idea base detrás de este proyecto es recorrer las capacidades
-      de ambos frameworks, comprobarlas, mejorar su implementación con buenas
-      prácticas, y disponer así de una buena plantilla para iniciar cualquier
-      proyecto web. Espero que os guste!`,
-      navbarTitle: 'Barra de Navegación',
+      description: `This is a Landing Web Site based on <strong>
+      React/Redux</strong> and <strong>Bootstrap</strong> with lots of
+      customizations to adapt it to my own preferences. The Site is structured
+      as a <strong>SPA (Single Page Application)</strong>
+      with various <strong>routes</strong>, some of which are small
+      <strong>Demo Aplicaciones</strong> that allow you to test the capabilities of
+      <strong>React/Redux</strong> and <strong>Bootstrap</strong>.
+      In fact, the basic idea behind this project is to explore the capabilities of
+      both frameworks, check them, improve their implementation with good practices,
+      to have a good template to start any web project. I hope you like it!`,
+      navbarTitle: 'Navigation Bar',
       navbar: `La <strong>barra de navegación principal</strong> es fija en la
       parte superior y está compuesta por varios elementos bien diferenciados:
       una <strong>barra de título</strong>; una <strong>barra con los enlaces principales</strong>; diversos
@@ -97,7 +96,7 @@ export const translationEN = {
         {
           title: [
             'Chief Software Development Officer',
-            'Full Stack Developer',
+            'Fullstack Developer',
             'IT Manager',
           ],
           year: '2015 - 2022',
@@ -138,7 +137,7 @@ export const translationEN = {
           ],
         },
         {
-          title: ['Projects', 'Industrial Software Development'],
+          title: ['Industrial Projects', 'Industrial Software Development'],
           year: '2000 - 2015',
           subtitle: [
             'ARGHOS Engineering, Consulting and Software (AERnnova group)',
@@ -407,7 +406,7 @@ export const translationEN = {
       hobbies: [
         {
           title: 'Videogames',
-          logo: 'videogames',
+          logo: 'xboxbg',
           skills: [
             { logo: 'simonbelmont', label: 'Retrogaming' },
             { logo: 'msx', label: 'MSX, my favorite 8-bit computer' },
@@ -417,11 +416,11 @@ export const translationEN = {
         {
           title:
             'Virtual synthesizers. Electronic and ambient music composition',
-          logo: 'composition',
+          logo: 'synthbg',
           skills: [
             { logo: 'bandlab', label: 'Bandlab' },
             { logo: 'cakewalk', label: 'Cakewalk SONAR' },
-            { logo: 'synth', label: 'Virtual Synthesizers' },
+            { logo: 'vsynth', label: 'Virtual Synthesizers' },
             { logo: 'guitar', label: 'Spanish and acoustic guitar' },
           ],
         },
@@ -429,7 +428,7 @@ export const translationEN = {
           title: 'Listening music and podcasts',
           details:
             'New Retro Wave, Synthwave, 80s, 90s, 2000s, New Age, Industrial, Rock, Rap Metal',
-          logo: 'music',
+          logo: 'headphones',
           skills: [
             { logo: 'newretrowave', label: 'New Retro Wave' },
             { logo: 'synthwave', label: 'Synthwave' },
@@ -437,21 +436,21 @@ export const translationEN = {
             { logo: 'industrial', label: 'Industrial' },
             { logo: 'numetal', label: 'Nu Metal' },
             { logo: 'rock', label: 'Rock' },
-            { logo: 'd70', label: '70s' },
-            { logo: 'd80', label: '80s' },
-            { logo: 'd90', label: "90's" },
-            { logo: 'd2000', label: "2000's" },
-            { logo: 'videoclips', label: 'Videoclips' },
+            // { logo: 'd70', label: '70s' },
+            // { logo: 'd80', label: '80s' },
+            // { logo: 'd90', label: "90's" },
+            // { logo: 'd2000', label: "2000's" },
+            // { logo: 'videoclips', label: 'Videoclips' },
           ],
         },
         {
-          title: 'Servicios de Streaming',
-          details: '...',
+          title: 'Streaming Services',
+          details: 'Cinema, Series and Documentals',
           logo: 'streaming',
           skills: [
             { logo: 'netflix', label: 'Netflix' },
-            { logo: 'hbo', label: 'HBO Max' },
-            { logo: 'amazon', label: 'Prime Video' },
+            { logo: 'hbomax', label: 'HBO Max' },
+            { logo: 'primevideo', label: 'Prime Video' },
           ],
         },
       ],
@@ -490,6 +489,8 @@ export const translationEN = {
     },
   },
   translations: {
+    More: 'More',
+    Playground: 'Playground',
     Section: 'Section',
     Footer: 'Footer',
     Portfolio: 'Portfolio',

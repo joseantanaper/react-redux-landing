@@ -27,7 +27,7 @@ const renderRouteLink = (
       <Accordion
         id={accordionId}
         key={accordionId}
-        title={routeLink.title}
+        title={t(routeLink.title)}
         index={parentIndex}
         iconmap={routeLink.iconmap}
       >

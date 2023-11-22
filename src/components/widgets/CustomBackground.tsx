@@ -14,6 +14,11 @@ import businessintelligence from '@assets/skills/businessintelligence.png'
 import virtualization from '@assets/skills/virtualization.jpg'
 import world from '@assets/skills/world.jpg'
 
+import xboxbg from '@assets/skills/xboxbg.avif'
+import synthbg from '@assets/skills/synthbg.jpg'
+import headphones from '@assets/skills/headphones.jpg'
+import streaming from '@assets/skills/streaming.jpg'
+
 import aernnova from '@assets/arghos/aernnova.png'
 import arghos from '@assets/arghos/arghos.png'
 import kh7 from '@assets/arghos/khlloreda.png'
@@ -124,6 +129,19 @@ export const CustomBackground = ({ logo, label, className }: Props) => {
       break
     case 'world':
       image = world
+      break
+
+    case 'xboxbg':
+      image = xboxbg
+      break
+    case 'synthbg':
+      image = synthbg
+      break
+    case 'headphones':
+      image = headphones
+      break
+    case 'streaming':
+      image = streaming
       break
   }
 

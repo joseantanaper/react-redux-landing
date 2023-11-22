@@ -43,7 +43,7 @@ export const routes = [
     element: <Counter />,
     loader: () => {
       return {
-        title: 'Counter',
+        title: 'app:counter:title',
         subtitle: 'app:counter:subtitle',
         description: 'app:counter:description',
         iconmap: IconMap.Counter,
@@ -55,7 +55,7 @@ export const routes = [
     element: <Todo />,
     loader: () => {
       return {
-        title: 'ToDo',
+        title: 'app:todo:title',
         subtitle: 'app:todo:subtitle',
         description: 'app:todo:description',
         iconmap: IconMap.Task,

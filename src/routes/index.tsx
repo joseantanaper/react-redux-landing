@@ -53,11 +53,7 @@ const Index = () => {
         />{' '}
       </li> */}
       <li className="nav-item">
-        <Linko
-          iconmap={iconmap || IconMap.Code}
-          label={`${t('Footer')}`}
-          href="#footer"
-        />{' '}
+        <Linko iconmap={IconMap.Code} label={`${t('Footer')}`} href="#footer" />{' '}
       </li>
     </>
   )

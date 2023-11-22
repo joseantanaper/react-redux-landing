@@ -125,6 +125,22 @@ export const translationES = {
       title: 'Portfolio',
       subtitle: '</>',
       description: 'Información sobre mi vida profesional',
+
+      viewMyCert: 'Ver mi Cert.',
+
+      omegazeta: `<strong>CIRCA - Panel Omega Zeta</strong> pertenece a la
+      <strong>Corporación Omega Zeta</strong>, que trabaja en <strong>Europa,
+      Asia y África</strong>, desarrollando productos y servicios que favorezcan
+      el conocimiento, la salud, el bienestar, el medio ambiente y la innovación
+      para mejorar el futuro de las personas, a las que sitúa en
+      el centro de toda su actividad.<br />
+      La <strong>Corporación Omega Zeta</strong> nace, hace 50 años, de la mano
+      de su presidente, <strong>Carlos Fradera Pellicer</strong>, empresario e
+      inventor, propietario de <strong>500 patentes internacionales (PCT's)</strong>,
+      fruto de la visión de su fundador y de su experiencia personal.`,
+      arghos: `Ingeniería, Consultoría y Software.`,
+      aernnova: `Diseño, fabricación, mantenimiento y servicios de Aeroestructuras.`,
+
       summaryTitle: 'Resumen Ejecutivo',
       summary: `Tengo una dilatada experiencia en el <strong>desarrollo de
       aplicaciones industriales y de gestión</strong>, especializado en el 
@@ -142,8 +158,373 @@ export const translationES = {
       frente de la <strong>gestión TI</strong>, decidiendo, planificando y ejecutando con éxito los avances tecnológicos
       requeridos para <strong>reducir costes</strong>, reforzar la
       <strong>seguridad y fiabilidad</strong>, y <strong>simplificar la gestión</strong>.`,
+
+      experienceTitle: 'Experiencia',
+      experience: [
+        {
+          title: [
+            'Responsable de Desarrollo de Software',
+            'Desarrollador Fullstack',
+            'Responsable TI',
+          ],
+          year: '2015 - 2022',
+          subtitle: [
+            'Corporación Omega Zeta S.L.',
+            'CIRCA, S.A.',
+            'New Building Materials Co. Ltd.',
+            'Clínica Omega Zeta',
+          ],
+          details: [
+            `Desarrollo del software <strong>OZ-MES</strong> a medida para la
+            <strong>fábrica de Panel Omega Zeta en CIRCA, S.A. y New Building
+            Materials Co. Ltd.</strong>, que controla todo el ciclo de fabricación:
+            planificación, formulación, materias primas, producto semielaborado,
+            producto final y expedición. Soporte multi-idioma con traducción al
+            chino (realizada por los propios empleados desde el inglés) para la planta de Nanjing. Se basó en las 
+            últimas tecnologías del momento: <strong>HTML/CSS/JS/Bootstrap</strong>
+            con <strong>AngularJS</strong> (Frontend), <strong>Java y Spring</strong>
+            (Backend), <strong>PostgreSQL</strong> (motor de base de datos) y
+            <strong>GlassFish/Payara</strong> (Application Server), alojado en 
+            <strong>Ubuntu Server</strong>. Interfase con <strong>NAVISION</strong>
+            para consolidar datos en el ERP de la compañía. Código fuente 
+            gestionado con <strong>servidor GitLab propio</strong>. Librerías CAD
+            para la lectura automatizada de datos en planos de corte, como cotas
+            y ubicación de casquillos y varillas. Preparación e impartición de
+            diversos cursos de formación de OZ-MES en inglés al personal productivo
+            y técnico de la planta en Nanjing`,
+            `Desarrollo de <strong>otros softwares, derivados de OZ-MES</strong>,
+            para cubrir necesidades en compañías del grupo: <strong>OZ-Medic</strong>,
+            para el control contable de caja; <strong>OZ-ProNET</strong>, para el
+            control de ocupación de salas, agenda médica y facturación (Bufetmedic Expansion S.L.).`,
+            `Optimización en la <strong>infraestructura IT</strong>: transición de servidores 
+            <strong>VMWare</strong> en 5 sedes y Data Warehouse local a servicios
+            <strong>Microsoft SharePoint Online</strong>; migración de la 
+            gestión de cuentas a <strong>AzureAD/Office 365</strong>; automatización
+            de backups cloud/local con <strong>Microsoft PowerAutomate</strong>
+            y <strong>RClone</strong>; gestión de proveedores y servicios externos.`,
+          ],
+        },
+        {
+          title: [
+            'Proyectos Industriales',
+            'Desarrollo de Software Industrial',
+          ],
+          year: '2000 - 2015',
+          subtitle: [
+            'ARGHOS Engineering, Consulting and Software (AERnnova group)',
+            'PYSSA',
+          ],
+          details: [
+            `<strong>SEAT Martorell</strong>: Desarrollo de servidores de datos,
+            supervisión, monitorizado y reporting, PYMAN V8 Web Reporting, PYMAN
+            V8 PyArgos, FERGAL PYMANSRV.`,
+            `<strong>VW Navarra</strong>: Desarrollo de servidores Pyman Web Server.`,
+            `<strong>KH Lloreda</strong>: paletización, sistema de robot-picking
+            basado en PYMAN, con sistema de etiquetado automático de palets e
+            interfase con almacén MECALUX.`,
+            `<strong>ENERTRON/VPC (Valencia Power Converters)</strong>: sistema MES basado en PYMAN para la fabricación de cabinas eléctricas, con sistema 
+            automatizado de control de AGVs y transelevador, e interfase con
+            sistemas <strong>CAPTOR</strong> y <strong>SAP</strong>.`,
+          ],
+        },
+      ],
+
+      academicTitle: 'Formación Académica',
+      academic: [
+        {
+          title: 'Ingeniero Técnico en Informática de Sistemas',
+          year: '2015',
+          entity: 'Universitat Oberta de Catalunya',
+          logo: 'uoc',
+          details: `Proyecto de Grado: Desarrollo en Dispositivos Móviles - Android<br />
+          Itinerarios: Tecnología Computacional, Programación, Administración de Sistemas,
+          Programación Orientada a Objetos, Gestión de Redes<br />`,
+          leftLink: 'https://www.linkedin.com/school/uoc/',
+          rightLink: 'https://www.uoc.edu/',
+        },
+        {
+          title: 'Técnico Superior en Desarrollo de Aplicaciones Web',
+          year: '2001',
+          entity: 'Institut Escola del Treball',
+          logo: 'iet',
+          details: 'Desarrollo de Aplicaciones Web',
+          leftLink:
+            'https://www.linkedin.com/school/institut-escola-del-treball/',
+          rightLink: 'https://escoladeltreball.org/',
+        },
+        {
+          title:
+            'Técnico Superior en Administración de Sistemas Informáticos en Red',
+          year: '2000',
+          entity: 'Institut Escola del Treball',
+          logo: 'iet',
+          details: 'Administración de Sistemas Informáticos en Red',
+          leftLink:
+            'https://www.linkedin.com/school/institut-escola-del-treball/',
+          rightLink: 'https://escoladeltreball.org/',
+        },
+      ],
+
+      certificationTitle: 'Cursos y Certificaciones ',
+      certification: [
+        {
+          title: 'Full Stack Open CI/CD',
+          year: 'Aug 2023',
+          entity: 'University of Helsinki',
+          logo: 'uoh',
+          details: `Has successfully completed the course's CI/CD part in 1 ECTS credits.`,
+          leftLink: 'https://www.helsinki.fi/en',
+          rightLink:
+            'https://studies.cs.helsinki.fi/stats/api/certificate/fs-cicd/en/ae3753610f55012168f706b8bc05c3e1',
+        },
+        {
+          title: 'Full Stack Open React Native',
+          year: 'Jun 2023',
+          entity: 'University of Helsinki',
+          logo: 'uoh',
+          details: `Has successfully completed the course's React Native part in 2 ECTS credits.`,
+          leftLink: 'https://www.helsinki.fi/en',
+          rightLink:
+            'https://studies.cs.helsinki.fi/stats/api/certificate/fs-react-native-2020/en/a6533fa902bfa3748e5cbd0f148ace54',
+        },
+        {
+          title: 'Full Stack GraphQL',
+          year: 'Apr 2023',
+          entity: 'University of Helsinki',
+          logo: 'uoh',
+          details: `Has successfully completed the course's GraphQL part in 1 ECTS credits.`,
+          leftLink: 'https://www.helsinki.fi/en',
+          rightLink:
+            'https://studies.cs.helsinki.fi/stats/api/certificate/fs-graphql/en/dac5ac6a094bdf74e9240237f9751c19',
+        },
+        {
+          title: 'Full Stack Open 2023',
+          year: 'Apr 2023',
+          entity: 'University of Helsinki',
+          logo: 'uoh',
+          details: `This is to certificate that you have successfully completed the 7 ECTS online course with grade 5.`,
+          leftLink: 'https://www.helsinki.fi/en',
+          rightLink:
+            'https://studies.cs.helsinki.fi/stats/api/certificate/fullstackopen/en/12dff53307ab85fb1f5e5d7e842d9516',
+        },
+        {
+          title: 'Full Stack Open TypeScript',
+          year: 'Apr 2023',
+          entity: 'University of Helsinki',
+          logo: 'uoh',
+          details: `Has successfully completed the course's TypeScript part in 1 ECTS credits.`,
+          leftLink: 'https://www.helsinki.fi/en',
+          rightLink:
+            'https://studies.cs.helsinki.fi/stats/api/certificate/fs-typescript/en/b81a965d6ab13be10f8b78d708ad9f77',
+        },
+        {
+          title: 'Microsoft Certified: Power Platform App Maker Associate',
+          year: 'Feb 2023',
+          entity: 'Microsoft',
+          logo: 'ms',
+          details: `Earning the Power Platform App Maker Associate certification
+          validates candidate skills and knowledge to build solutions to simplify,
+          automate, and transform tasks and processes for themselves and their
+          team where they have deep expertise in the solution domain.`,
+          leftLink: 'https://learn.microsoft.com/es-es/credentials/',
+          rightLink:
+            'https://www.credly.com/badges/e5475702-06a8-4c22-a293-15dcd4ddcf12/',
+        },
+        {
+          title: 'Front End Development Libraries',
+          year: 'Jan 2023',
+          entity: 'freeCodeCamp',
+          logo: 'fcc',
+          details: `Developer Certification on January 7, 2023<br />
+          representing approximately 300 hours of work.`,
+          leftLink: 'https://www.freecodecamp.org/',
+          rightLink:
+            'https://www.freecodecamp.org/certification/fccbff75bbc-30e2-4e2f-8f3e-a414f15c1668/front-end-development-libraries',
+        },
+        {
+          title: 'Javascript Algorithms and Data Structures',
+          year: 'Nov 2022',
+          entity: 'freeCodeCamp',
+          logo: 'fcc',
+          details: `Developer Certification on November 22, 2022<br />
+          representing approximately 300 hours of work.`,
+          leftLink: 'https://www.freecodecamp.org/',
+          rightLink:
+            'https://www.freecodecamp.org/certification/fccbff75bbc-30e2-4e2f-8f3e-a414f15c1668/javascript-algorithms-and-data-structures',
+        },
+        {
+          title: 'Responsive Web Design',
+          year: 'Nov 2022',
+          entity: 'freeCodeCamp',
+          logo: 'fcc',
+          details: `Developer Certification on November 10, 2022<br />
+          representing approximately 300 hours of work.`,
+          leftLink: 'https://www.freecodecamp.org/',
+          rightLink:
+            'https://www.freecodecamp.org/certification/fccbff75bbc-30e2-4e2f-8f3e-a414f15c1668/responsive-web-design',
+        },
+        {
+          title: 'Pivotal Core Spring 5.0.b',
+          year: 'Oct 2019',
+          entity: 'Spring Latam',
+          logo: 'spring',
+          details: `Curso online en vivo de 32 horas impartido del 28 de Septiembre al 19 de Octubre de 2019.`,
+          leftLink: 'https://www.springla.io/',
+          rightLink:
+            './src/assets/spring/Certificado_Jose_Antonio_Anacleto.pdf',
+        },
+      ],
+
+      skillsTitle: 'Skills',
+      skills: [
+        {
+          title: 'Fullstack',
+          details: `Tecnologías, lenguages, frameworks y librerías relacionados
+          con el desarrollo de backend, frontend y diferentes tipos de aplicaciones.`,
+          logo: 'fullstack',
+          skills: [
+            { logo: 'html5', label: 'HTML5' },
+            { logo: 'css3', label: 'CSS3' },
+            { logo: 'js', label: 'JavaScript' },
+            { logo: 'ts', label: 'TypeScript' },
+            { logo: 'bootstrap', label: 'Bootstrap' },
+            { logo: 'materialize', label: 'Materialize' },
+
+            { logo: 'react', label: 'React' },
+            { logo: 'vue', label: 'Vue' },
+            { logo: 'vite', label: 'Vite' },
+            { logo: 'angular', label: 'AngularJS' },
+            { logo: 'jquery', label: 'jQuery' },
+
+            { logo: 'java', label: 'Java' },
+            { logo: 'spring', label: 'Spring' },
+            { logo: 'nodejs', label: 'NodeJS' },
+            { logo: 'graphql', label: 'Apollo / GraphQL' },
+            { logo: 'rest', label: 'RestAPI / WebServices' },
+
+            { logo: 'powerplatform', label: 'Microsoft Power Platform' },
+            { logo: 'powerautomate', label: 'Microsoft Power Automate' },
+            { logo: 'csharp', label: 'C#' },
+            { logo: 'vbnet', label: 'VB.NET' },
+          ],
+        },
+        {
+          title: 'IDE / Source Control',
+          details: `Entornos integrados de desarrollo, control de versiones y otras
+            herramientas de desarrollo.`,
+          logo: 'ide',
+          skills: [
+            { logo: 'vscode', label: 'Visual Studio Code' },
+            { logo: 'visualstudio', label: 'Visual Studio' },
+            { logo: 'netbeans', label: 'NetBeans' },
+            { logo: 'eclipse', label: 'Eclipse' },
+            { logo: 'intellij', label: 'IntelliJ' },
+            { logo: 'git', label: 'Git' },
+            { logo: 'github', label: 'GitHub' },
+            { logo: 'gitlab', label: 'GitLab' },
+          ],
+        },
+        {
+          title: 'SGBD',
+          details: 'Sistemas gestores de base de datos',
+          logo: 'database',
+          skills: [
+            { logo: 'mongodb', label: 'MongoDB' },
+            { logo: 'postgresql', label: 'PostgreSQL' },
+            { logo: 'mysql', label: 'MySQL' },
+            { logo: 'sqlserver', label: 'SQL Server' },
+            { logo: 'oracle', label: 'Oracle' },
+          ],
+        },
+        {
+          title: 'Inteligencia de Negocio',
+          details: 'Informes y análisis de datos.',
+          logo: 'businessintelligence',
+          skills: [
+            { logo: 'jasperreports', label: 'Jasper Reports' },
+            { logo: 'crystalreports', label: 'Crystal Reports' },
+            { logo: 'cognospowerplay', label: 'Cognos Powerplay' },
+          ],
+        },
+        {
+          title: 'SO / Virtualización',
+          details: 'Sistemas operativos y sistemas de virtualización.',
+          logo: 'virtualization',
+          skills: [
+            { logo: 'windows', label: 'Windows 11 - 3.x' },
+            { logo: 'ubuntu', label: 'Ubuntu' },
+            { logo: 'linuxmint', label: 'Linux Mint' },
+            { logo: 'os2warp', label: 'OS/2 Warp' },
+            { logo: 'vmware', label: 'VMware' },
+            { logo: 'docker', label: 'Docker' },
+          ],
+        },
+        {
+          title: 'Lenguages',
+          logo: 'world',
+          skills: [
+            { logo: 'spanish', label: 'Español (Nativo)' },
+            { logo: 'catalan', label: 'Catalán (Nativo)' },
+            { logo: 'english', label: 'Inglés (Profesional)' },
+          ],
+        },
+      ],
+
+      hobbiesTitle: 'Aficiones',
+      hobbies: [
+        {
+          title: 'Videojuegos',
+          logo: 'xboxbg',
+          skills: [
+            { logo: 'simonbelmont', label: 'Retrogaming' },
+            { logo: 'msx', label: 'MSX, mi ordenador de 8 bits favorito' },
+            { logo: 'xbox', label: 'PC Gaming, Emulación y más' },
+          ],
+        },
+        {
+          title:
+            'Sintetizadores virtuales. Composición de música ambiente y electrónica.',
+          logo: 'synthbg',
+          skills: [
+            { logo: 'bandlab', label: 'Bandlab' },
+            { logo: 'cakewalk', label: 'Cakewalk SONAR' },
+            { logo: 'vsynth', label: 'Virtual Synthesizers' },
+            { logo: 'guitar', label: 'Spanish and acoustic guitar' },
+          ],
+        },
+        {
+          title: 'Listening music and podcasts',
+          details:
+            'New Retro Wave, Synthwave, 80s, 90s, 2000s, New Age, Industrial, Rock, Rap Metal',
+          logo: 'headphones',
+          skills: [
+            { logo: 'newretrowave', label: 'New Retro Wave' },
+            { logo: 'synthwave', label: 'Synthwave' },
+            { logo: 'newage', label: 'New Age' },
+            { logo: 'industrial', label: 'Industrial' },
+            { logo: 'numetal', label: 'Nu Metal' },
+            { logo: 'rock', label: 'Rock' },
+            // { logo: 'd70', label: '70s' },
+            // { logo: 'd80', label: '80s' },
+            // { logo: 'd90', label: "90's" },
+            // { logo: 'd2000', label: "2000's" },
+            // { logo: 'videoclips', label: 'Videoclips' },
+          ],
+        },
+        {
+          title: 'Streaming Services',
+          details: 'Cinema, Series and Documentals',
+          logo: 'streaming',
+          skills: [
+            { logo: 'netflix', label: 'Netflix' },
+            { logo: 'hbomax', label: 'HBO Max' },
+            { logo: 'primevideo', label: 'Prime Video' },
+          ],
+        },
+      ],
     },
     todo: {
+      title: 'Tareas',
       subtitle: 'La más sencilla aplicación de Lista de Tareas',
       description: `Esta es una sencilla aplicación de Lista de Tareas
             basada en <strong>Arrays</strong> y en <strong>almacenamiento
@@ -156,8 +537,28 @@ export const translationES = {
       removeAll: 'Eliminar todas',
       removeAllWarning: 'Se van a eliminar todas las tareas. Continuar?',
     },
+    counter: {
+      title: 'Contador',
+      subtitle: 'Una simple aplicación de contador',
+      description: 'Una simple aplicación de contador',
+      increment: 'Incremento',
+      decrement: 'Decremento',
+      clear: 'Reinicio',
+      addSync: 'A.Sínc',
+      addAsync: 'A.Asínc',
+      addIfOdd: 'A.siImpar',
+    },
+    playground: {
+      lorem: {
+        loremTitle: 'Lorem',
+        loremSubtitle: 'Contenido Lorem Ipsum',
+        loremDescription: 'Esto es un generador aleatorio de Lorem Ipsum',
+      },
+    },
   },
   translations: {
+    More: 'Más',
+    Playground: 'Zona de Pruebas',
     Section: 'Sección',
     Footer: 'Pie de Página',
     'Todo List': 'Lista Tareas',
