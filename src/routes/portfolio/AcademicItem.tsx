@@ -50,7 +50,9 @@ export const AcademicItem = ({
   const colSize = () => {
     switch (academicItem.logo) {
       case 'fullstack':
-        return 'col-9'
+        return 'col-12 col-lg-6'
+      default:
+        return 'col-12 col-lg-6'
     }
   }
 

@@ -60,7 +60,6 @@
   }
 
   div.container-fluid.app-navbar-container {
-    height: $app-navbar-height;
 
     a.navbar-brand {
       min-width: 15rem;
@@ -333,6 +332,7 @@ h1.app-layout-title {
 }
 
 
+// Animations
 
 $app-blur: 16px;
 
@@ -355,9 +355,6 @@ $app-blur: 16px;
     transform: translateY(0);
   }
 }
-
-
-// Animations
 
 .app-radar-rotate {
   cursor: crosshair;

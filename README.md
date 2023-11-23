@@ -165,6 +165,25 @@ npm install react-transition-group --save
 npm install @types/react-transition-group
 ```
 
+## Publish "build" to github.io
+
+1. Install **gh-pages**:
+
+```npm
+npm install gh-pages --save-dev
+```
+
+2. Add **homepage** and **scripts** to package.json:
+
+```json
+"homepage": "https://<Username>.github.io/<Repository-name>"
+
+"scripts":{
+"predeploy": "npm run build",
+"deploy": "gh-pages -d build"
+}
+```
+
 ---
 
 ---

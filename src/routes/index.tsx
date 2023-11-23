@@ -73,10 +73,10 @@ const Index = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col">
+          <div className="col-md">
             <Trans>app:home:navbar</Trans>
           </div>
-          <div className="col text-center">
+          <div className="col-md text-center">
             <Avataro size="40%" label="Custom Avatar" className="shadow" />
           </div>
         </div>
@@ -95,7 +95,7 @@ const Index = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col text-center">
+          <div className="col-md text-center">
             <Icon
               iconmap={IconMap.Hypnotize}
               size={360}
@@ -104,7 +104,7 @@ const Index = () => {
             <br />
             <span className="app-legend">SVG with CSS animation</span>
           </div>
-          <div className="col">
+          <div className="col-md">
             <Trans>{'app:home:route'}</Trans>
           </div>
         </div>
@@ -124,10 +124,10 @@ const Index = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col">
+          <div className="col-md">
             <Trans>app:home:layout</Trans>
           </div>
-          <div className="col">
+          <div className="col-md">
             <div className="row d-flex align-items-center text-center px-5">
               <Icon
                 iconmap={IconMap.Radar}
@@ -156,7 +156,7 @@ const Index = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col">
+          <div className="col-md">
             <div className="row">
               {[0, 1, 2, 3].map((user, index) => {
                 return (
@@ -179,7 +179,7 @@ const Index = () => {
               </span>
             </div>
           </div>
-          <div className="col">
+          <div className="col-md">
             <div className="row">
               <div className="col">
                 <Trans>app:home:bootstrap</Trans>
