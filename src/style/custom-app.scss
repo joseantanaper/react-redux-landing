@@ -62,14 +62,14 @@
   div.container-fluid.app-navbar-container {
 
     a.navbar-brand {
-      min-width: 15rem;
+      // min-width: 15rem; // Too much!
       // Avoid title to move up on navbar-toggler
       display: flex;
       min-height: $app-navbar-height;
       align-items: center;
 
-      // overflow: hidden;
-      // text-overflow: ellipsis;
+      overflow: hidden;
+      text-overflow: ellipsis;
       // margin-right: 0px;
       // padding-right: 0px;
 

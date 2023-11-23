@@ -10,7 +10,7 @@ const Footer = () => {
 
       <div className="container mt-5">
         <div className="row">
-          <div className="col fw-lighter border-end">
+          <div className="col-12 col-md-4 fw-lighter border-end">
             <Avataro size="120px" className="d-flex shadow" />
             <br />
             <p className=" text-justify">
@@ -41,47 +41,51 @@ const Footer = () => {
               </div>
             </code>
           </div>
-          <div className="col text-truncate">
-            <h5>Main Sections</h5>
-            <div className="list-group list-group-flush">
-              {[...(routeLinks as RouteLink[])]
-                .filter((routeLink) => !routeLink.items)
-                .map((routeLink, index: number) => (
-                  <NavLinko
-                    key={`footer-main-${index}`}
-                    routeLink={routeLink}
-                  />
-                ))}
-            </div>
-          </div>
-          <div className="col text-center text-truncate">
-            <h5>Secondary Sections</h5>
-            <div className="list-group list-group-flush">
-              {[...routeLinks]
-                .filter((routeLink) => routeLink.items)
-                .map((routeLink, index) => {
-                  return (
-                    routeLink.items &&
-                    routeLink.items.map((subrouteLink, subindex) => (
+          <div className="col-12 col-md-8 fw-lighter">
+            <div className="row">
+              <div className="col-12 col-lg-4 text-truncate">
+                <h5>Main Sections</h5>
+                <div className="list-group list-group-flush">
+                  {[...(routeLinks as RouteLink[])]
+                    .filter((routeLink) => !routeLink.items)
+                    .map((routeLink, index: number) => (
                       <NavLinko
-                        key={`footer-2nd-${index}-${subindex}`}
-                        routeLink={subrouteLink}
+                        key={`footer-main-${index}`}
+                        routeLink={routeLink}
                       />
-                    ))
-                  )
-                })}
-            </div>
-          </div>
-          <div className="col text-end text-truncate">
-            <h5>More</h5>
-            <div className="list-group list-group-flush">
-              {moreLinks.map((moreLink: RouteLink, index: number) => (
-                <NavLinko
-                  key={`more-${index}`}
-                  routeLink={moreLink}
-                  external={true}
-                />
-              ))}
+                    ))}
+                </div>
+              </div>
+              <div className="col-12 col-lg-4 text-center text-truncate">
+                <h5>Secondary Sections</h5>
+                <div className="list-group list-group-flush">
+                  {[...routeLinks]
+                    .filter((routeLink) => routeLink.items)
+                    .map((routeLink, index) => {
+                      return (
+                        routeLink.items &&
+                        routeLink.items.map((subrouteLink, subindex) => (
+                          <NavLinko
+                            key={`footer-2nd-${index}-${subindex}`}
+                            routeLink={subrouteLink}
+                          />
+                        ))
+                      )
+                    })}
+                </div>
+              </div>
+              <div className="col-12 col-lg-4 text-end text-truncate">
+                <h5>More</h5>
+                <div className="list-group list-group-flush">
+                  {moreLinks.map((moreLink: RouteLink, index: number) => (
+                    <NavLinko
+                      key={`more-${index}`}
+                      routeLink={moreLink}
+                      external={true}
+                    />
+                  ))}
+                </div>
+              </div>
             </div>
           </div>
         </div>
