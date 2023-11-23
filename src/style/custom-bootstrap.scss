@@ -18,7 +18,7 @@
   white-space: nowrap;
 }
 
-@include media-breakpoint-down(lg) {
+@include media-breakpoint-between(md, lg) {
   .nav-link {
     overflow: hidden;
     text-overflow: ellipsis;

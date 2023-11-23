@@ -24,7 +24,7 @@ const Index = () => {
           href="#section1"
         />
       </li>
-      <li className="nav-item float-end">
+      <li className="nav-item">
         <Linko
           iconmap={iconmap || IconMap.Code}
           label={`${t('Section')} #2`}
@@ -95,7 +95,7 @@ const Index = () => {
           </div>
         </div>
         <div className="row">
-          <div className="col-md text-center">
+          <div className="col-md text-center mb-3">
             <Icon
               iconmap={IconMap.Hypnotize}
               extra="app-hypnotize-rotate app-big-svg mb-3"
@@ -126,7 +126,7 @@ const Index = () => {
           <div className="col-md">
             <Trans>app:home:layout</Trans>
           </div>
-          <div className="col-md text-center">
+          <div className="col-md text-center mt-3">
             <Icon
               iconmap={IconMap.Radar}
               extra="app-radar-rotate app-big-svg"

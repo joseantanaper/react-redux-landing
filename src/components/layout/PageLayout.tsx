@@ -95,7 +95,7 @@ export const PageLayout = ({ subnavbar = false, toolbar, children }: Props) => {
       <div className="container-fluid mb-4 text-truncate">
         <div className="row">
           <div className="col">
-            <h1 className="app-layout-title text-center">
+            <h1 className="app-layout-title text-center text-wrap">
               {iconmap && <Icon iconmap={iconmap} />}
               {title ? <span>{t(title)}</span> : null}
               {subtitle ? (

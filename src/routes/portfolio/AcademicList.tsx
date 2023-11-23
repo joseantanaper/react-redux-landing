@@ -36,7 +36,7 @@ export const AcademicList = ({
     <>
       <div className="container-fluid">
         <div className="row">
-          <div className="col-9 text-justify">
+          <div className="col-sm-9 col-12">
             <Title
               id={id}
               h="h2"
@@ -44,22 +44,20 @@ export const AcademicList = ({
               iconmap={iconmap}
             ></Title>
           </div>
-          <div className="col-3 text-end">
+          <div className="col-3 d-none d-lg-block text-end">
             <div className="btn-group">
               <Button
                 className={`btn btn-outline-secondary ${
                   mode === 0 ? 'active' : ''
                 }`}
                 iconmap={IconMap.List}
-                label="List"
                 onClick={() => setMode(0)}
-              />
+              ></Button>
               <Button
                 className={`btn btn-outline-secondary ${
                   mode === 1 ? 'active' : ''
                 }`}
                 iconmap={IconMap.Grid}
-                label="Grid"
                 onClick={() => setMode(1)}
               />
             </div>

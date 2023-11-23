@@ -38,7 +38,7 @@ export const Navbar = ({ title, subtitle }: Props) => {
   const currentLocale = useAppSelector(selectLocale)
   const currentClockMode = useAppSelector(selectClockMode)
 
-  const dividerClass = 'border-start ps-3 me-3'
+  const dividerClass = 'border-start ps-sm-3 me-sm-3'
 
   return (
     <header>
@@ -74,10 +74,10 @@ export const Navbar = ({ title, subtitle }: Props) => {
           </div>
 
           {/* Global Toolbar */}
-          <div className="border-start ps-3 me-3">
+          <div className={`${dividerClass}`}>
             <ThemeToggler currentTheme={currentTheme} />
           </div>
-          <div className="border-start ps-3 me-3">
+          <div className={`${dividerClass}`}>
             <div className="btn-group">
               <ButtonToggler
                 targetId="offcanvasMenuTop"
