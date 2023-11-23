@@ -98,8 +98,7 @@ const Index = () => {
           <div className="col-md text-center">
             <Icon
               iconmap={IconMap.Hypnotize}
-              size={360}
-              extra="app-hypnotize-rotate mb-3"
+              extra="app-hypnotize-rotate app-big-svg mb-3"
             />
             <br />
             <span className="app-legend">SVG with CSS animation</span>
@@ -127,18 +126,15 @@ const Index = () => {
           <div className="col-md">
             <Trans>app:home:layout</Trans>
           </div>
-          <div className="col-md">
-            <div className="row d-flex align-items-center text-center px-5">
-              <Icon
-                iconmap={IconMap.Radar}
-                size={360}
-                extra="app-radar-rotate"
-              />
-              <br />
-              <span className="app-legend">
-                <Trans>A Radar looking for ghosts!</Trans>
-              </span>
-            </div>
+          <div className="col-md text-center">
+            <Icon
+              iconmap={IconMap.Radar}
+              extra="app-radar-rotate app-big-svg"
+            />
+            <br />
+            <span className="app-legend">
+              <Trans>A Radar looking for ghosts!</Trans>
+            </span>
           </div>
         </div>
       </div>

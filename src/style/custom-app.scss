@@ -356,6 +356,13 @@ $app-blur: 16px;
   }
 }
 
+.app-big-svg {
+  width: auto;
+  height: 80%;
+  max-height: 360px;
+  min-height: 180px;
+}
+
 .app-radar-rotate {
   cursor: crosshair;
   color: limegreen;
