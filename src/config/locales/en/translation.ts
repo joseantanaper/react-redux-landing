@@ -21,36 +21,65 @@ export const translationEN = {
       both frameworks, check them, improve their implementation with good practices,
       to have a good template to start any web project. I hope you like it!`,
       navbarTitle: 'Navigation Bar',
-      navbar: `La <strong>barra de navegación principal</strong> es fija en la
-      parte superior y está compuesta por varios elementos bien diferenciados:
-      una <strong>barra de título</strong>; una <strong>barra con los enlaces principales</strong>; diversos
-      <strong>widgets</strong> entre los que se encuentran un <strong>selector de idioma</strong>,
-      un <strong>contador</strong>, un
-      <strong>reloj</strong> y un <strong>selector de tema</strong>; finalmente
-      están los botones de apertura de menús que se desplegan
-      a izquierda, derecha, arriba y abajo de la pantalla. Estos elementos se
-      adaptan al tamaño del dispositivo, y desaparecen si no hay espacio
-      suficiente para mostrarlos. A mayor tamaño de pantalla, más "herramientas"
-      accesibles de forma inmediata. Pero todas ellas están disponibles para
-      cualquier tamaño de pantalla, solo que organizadas de diferente manera.
-      Esta es mi manera de entender una barra de navegación: aprovechar el
-      tamaño de pantalla para hacer más accesibles un mayor número de elementos,
-      pero que estén igualmente disponibles en tamaño pequeño.
-      <strong>Se debe poder hacer lo mismo desde un
-      monitor que desde un móvil</strong>.`,
-      routeTitle: 'Rutas',
-      route: `Para la colección de rutas de este Sitio se ha utilizado la
-      clásica estructura <strong>routes</strong> del
-      <strong>createBrowserRouter</strong> de <strong>React-Router</strong> y su
-      método <strong>loader</strong>, que se aprovecha para incorporar atributos
-      adicionales como <strong>título</strong>, <strong>subtítulo</strong>,
-      <strong>icono</strong> y <strong>descripción</strong>. Estos atributos
-      se utilizan en los menús de navegación, en los datos de cabecera de cada
-      ruta y también en el pie de página, lo que permite mantener la homogeneidad
-      de los datos descriptivos de cada ruta en todas las secciones en donde
-      aparezcan.
-      `,
-      subnavbar: `Debajo`,
+      navbar: `The main navigation bar is top fixed and is made up of several
+      distinct elements: a title bar; a bar with the main links; various widgets
+      including a language switcher, counter, clock, and theme switcher; Finally,
+      there are the menu opening buttons that appear on the left, right, top and
+      bottom of the screen.
+      These elements adapt themselves to the device's size, and they disappear
+      if there is not enough space to display them.
+      The larger the screen size, the more "tools" will be immediately accessible.
+      But all of them are available for any screen size, they are just organized
+      differently. This is my way of understanding a navigation bar:
+      taking advantage of the size of the screen to make a greater number of
+      elements more accessible, but making them equally available in a small size.
+      You should be able to do the same things from desktop pc as from a mobile phone.`,
+      routeTitle: 'Routes',
+      route: `For the routes collection on this Site, we have used the classic
+      structure of <strong>routes</strong> from <strong>createBrowserRouter</strong>
+      of <strong>React-Router</strong> and its <strong>loader</strong> method,
+      which is used to incorporate additional attributes such as x<strong>title</strong>,
+      <strong>subtitle</strong>, <strong>icon</strong> and <strong>description</strong>.
+      These attributes are used in the navigation menus, in the header data of
+      each route and also in footer, which allows maintaining the homogeneity of
+      the descriptive data of each route in all the sections where they appear.`,
+      layoutTitle: 'Page Layout and Secondary Navigation Bar',
+      layout: `The routes load within a <strong>Page Layout</strong> so that all
+      views maintain a homogeneous format and, above all, so that any design change can be applied
+      with ease in a very simple way. The current <strong>Page Layout</strong> consists of a <strong>title</strong>
+      area, which includes optional <strong>subtitle</strong> and <strong>description</strong>,
+      and a <strong>Secondary Navigation Bar</strong> that"sticks" to the
+      <strong>Main Navigation Bar</strong> when scrolled down, both remaining
+      fixed in the top area. This <strong>Secondary Navigation Bar</strong> is defined in each route
+      to set the necessary options in each view. An interesting detail of this bar
+      is that, when you scroll down, the large headline that appears in the header
+      is incorporated into this bar in a more compact size, with the aim of always
+      having the route we are on, along with its options and tools.
+      As the canons dictates, all of these elements have a <strong>responsive design</strong>
+      and fits perfectly to the screen size, collapsing into a drop-down menu button
+      when necessary.`,
+      bootstrapTitle: 'Bootstrap Customization',
+      bootstrap: `The Frontend library <strong>Bootstrap</strong> allows its customization
+      through its <strong>Sass</strong> and <strong>Css</strong> variables, and also
+      by directly overriding some <strong>Css</strong> attributes.
+      Some of the adjustments that have been incorporated into this project are:`,
+      bootstrapItems: [
+        `Soften the <strong>rounded edges</strong> to make them slightly more
+        <strong>square</strong> and offer a more regular image.`,
+        `Readjusting the <strong>sizes</strong> of navigation bars, buttons, inputs
+        and other elements.`,
+        `Modify background color of main <strong>navigation bars</strong> with
+        <strong>transparency</strong> and <strong>blur</strong> effects.`,
+        `Incorporate slight <strong>shadow</strong> effects in headers.`,
+        `<strong>Specific adjustment</strong> in <strong>responsive design</strong>,
+        such a disappearance of text labels on buttons when reducing the screen size,
+        horizontal scroll in certain collections of elements that do not fit on the
+        screen, and others.`,
+        `Modification of the differential color of the <strong>accordion component</strong>
+        to homogenize it with the rest of the components.`,
+        `Incorporate some <strong>slight lighting effects</strong> on buttons,
+        icons and text when hovering or clicking.`,
+      ],
     },
     portfolio: {
       title: 'Portfolio',
@@ -58,18 +87,18 @@ export const translationEN = {
       description: 'Information about my professional background',
       viewMyCert: 'View my Cert.',
 
-      omegazeta: `<strong>CIRCA - Panel Omega Zeta</strong> pertenece a la
-      <strong>Corporación Omega Zeta</strong>, que trabaja en <strong>Europa,
-      Asia y África</strong>, desarrollando productos y servicios que favorezcan
-      el conocimiento, la salud, el bienestar, el medio ambiente y la innovación
-      para mejorar el futuro de las personas, a las que sitúa en
-      el centro de toda su actividad.<br />
-      La <strong>Corporación Omega Zeta</strong> nace, hace 50 años, de la mano
-      de su presidente, <strong>Carlos Fradera Pellicer</strong>, empresario e
-      inventor, propietario de <strong>500 patentes internacionales (PCT's)</strong>,
-      fruto de la visión de su fundador y de su experiencia personal.`,
-      arghos: `Ingeniería, Consultoría y Software.`,
-      aernnova: `Diseño, fabricación, mantenimiento y servicios de Aeroestructuras.`,
+      omegazeta: `<strong>CIRCA - Panel Omega Zeta</strong> belongs to the
+      <strong>Omega Zeta Corporation</strong>, which works in <strong>Europe, Asia
+      and Africa</strong>, developing products and services
+      that promote knowledge, health, well-being, the environment and innovation
+      to improve people's future. those who are located at the center of all
+      their activity.<br />
+      The <strong>Omega Zeta Corporation</strong> was born, 50 years ago, by its president,
+      <strong>Carlos Fradera Pellicer</strong>, businessman and inventor, owner of 500
+      international patents (PCT's), fruit of the vision of its founder and his
+      personal experience.`,
+      arghos: `Engineering, Consulting and Software.`,
+      aernnova: `Design, manufacturing, maintenance and services of Aerostructures.`,
 
       summaryTitle: 'Executive Summary',
       summary: `I have an extensive experience in the <strong>development of industrial
@@ -487,6 +516,12 @@ export const translationEN = {
         loremDescription: 'This is a Lorem Ipsum random content generator',
       },
     },
+    footer: {
+      bio: `Designed, developed and deployed with passion by
+      <strong>JoseA</strong> while learning and enjoying with the most
+      exciting frameworks and libraries. By now, this is my favorite
+      stack.`,
+    },
   },
   translations: {
     More: 'More',
@@ -510,5 +545,7 @@ export const translationEN = {
     'Welcome to React': 'Welcome to React and react-i18next',
     welcome: 'Hello World',
     Add: 'Add',
+    'Main Sections': 'Main Sections',
+    'Secondary Sections': 'Secondary Sections',
   },
 }

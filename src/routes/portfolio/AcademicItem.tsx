@@ -109,9 +109,10 @@ export const AcademicItem = ({
               )}
               {academicItem.skills && (
                 <div className="row mt-3">
-                  {academicItem.skills.map((skill) => (
-                    <div className="col">
+                  {academicItem.skills.map((skill, index) => (
+                    <div className="col" key={`skill-div-${index}`}>
                       <SkillLogo
+                        key={`skill-item-${index}`}
                         logo={skill.logo}
                         label={skill.label}
                         className="me-3 mb-3"
@@ -156,7 +157,7 @@ export const AcademicItem = ({
     <>
       <div className={colSize()}>
         <Card
-          key={`academic-${academicIndex}`}
+          key={`academic-item-${academicIndex}`}
           title={academicItem.title}
           subtitle={academicItem.entity}
           year={academicItem.year}

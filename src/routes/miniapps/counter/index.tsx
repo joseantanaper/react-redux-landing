@@ -28,7 +28,7 @@ const Counter = () => {
 
   const incrementerControls = () => {
     return (
-      <div className="btn-group">
+      <div className="btn-group w-100">
         <Button
           iconmap={IconMap.CircleMinus}
           label="app:counter:decrement"
@@ -73,21 +73,21 @@ const Counter = () => {
       <div className="btn-group w-100">
         <Button
           iconmap={IconMap.CirclePlus}
-          className="btn-outline-success"
+          className="btn-outline-success w-100 text-truncate"
           label="app:counter:addSync"
           onClick={() => dispatch(incrementByAmount(incrementValue))}
         />
         <Button
           name="app-async-navbar-button"
           iconmap={IconMap.CirclePlus}
-          className="btn-outline-primary"
+          className="btn-outline-primary w-100 text-truncate"
           label="app:counter:addAsync"
           async={true}
           onClick={() => dispatch(incrementAsync(incrementValue))}
         />
         <Button
           iconmap={IconMap.CirclePlus}
-          className="btn-outline-info"
+          className="btn-outline-info w-100 text-truncate"
           label="app:counter:addIfOdd"
           onClick={() => dispatch(incrementIfOdd(incrementValue))}
         />
@@ -118,14 +118,14 @@ const Counter = () => {
           </div>
           <div className="col">
             <div className="container-fluid">
-              <div className="row text-end d-flex flex-nowrap">
-                <div className="col">{incrementerControls()}</div>
+              <div className="row">
+                <div className="col mb-3">{incrementerControls()}</div>
                 <div className="col">{clearControl()}</div>
               </div>
 
-              <div className="row float-end mt-3">
-                <div className="col">{amountControl()}</div>
-                <div className="col">{adderControls()}</div>
+              <div className="row mt-3">
+                <div className="col-md-12 col-lg-6">{amountControl()}</div>
+                <div className="col-md-12 col-lg--6">{adderControls()}</div>
               </div>
             </div>
           </div>

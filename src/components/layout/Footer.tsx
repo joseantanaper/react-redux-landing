@@ -2,8 +2,11 @@ import React from 'react'
 import { Avataro } from '@/components/widgets/Avataro'
 import { routeLinks, moreLinks, RouteLink } from '@/config/routes/routes'
 import { NavLinko } from '../widgets/NavLinko'
+import { Trans } from 'react-i18next'
+import { useTranslation } from 'react-i18next'
 
 const Footer = () => {
+  const { t } = useTranslation()
   return (
     <footer id="footer">
       <div className="app-shadow-divider mt-5"></div>
@@ -14,10 +17,7 @@ const Footer = () => {
             <Avataro size="120px" className="d-flex shadow" />
             <br />
             <p className=" text-justify">
-              Designed, developed and deployed with passion by{' '}
-              <strong>JoseA</strong> while learning and enjoying with the most
-              exciting frameworks and libraries. By now, this is my favorite
-              stack.
+              <Trans>app:footer:bio</Trans>
             </p>
             <br />
             <code className="text-start">
@@ -44,7 +44,7 @@ const Footer = () => {
           <div className="col-12 col-md-8 fw-lighter">
             <div className="row">
               <div className="col-12 col-lg-4 text-truncate">
-                <h5>Main Sections</h5>
+                <h5>{t('Main Sections')}</h5>
                 <div className="list-group list-group-flush">
                   {[...(routeLinks as RouteLink[])]
                     .filter((routeLink) => !routeLink.items)
@@ -57,7 +57,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="col-12 col-lg-4 text-center text-truncate">
-                <h5>Secondary Sections</h5>
+                <h5>{t('Secondary Sections')}</h5>
                 <div className="list-group list-group-flush">
                   {[...routeLinks]
                     .filter((routeLink) => routeLink.items)
@@ -75,7 +75,7 @@ const Footer = () => {
                 </div>
               </div>
               <div className="col-12 col-lg-4 text-end text-truncate">
-                <h5>More</h5>
+                <h5>{t('More')}</h5>
                 <div className="list-group list-group-flush">
                   {moreLinks.map((moreLink: RouteLink, index: number) => (
                     <NavLinko

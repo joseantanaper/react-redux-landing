@@ -37,7 +37,7 @@ export const translationES = {
       tamaño de pantalla para hacer más accesibles un mayor número de elementos,
       pero que estén igualmente disponibles en tamaño pequeño.
       <strong>Se debe poder hacer lo mismo desde un
-      monitor que desde un móvil</strong>.`,
+      pc de escritorio que desde un móvil</strong>.`,
       routeTitle: 'Rutas',
       route: `Para la colección de rutas de este Sitio se ha utilizado la
       clásica estructura <strong>routes</strong> del
@@ -124,7 +124,7 @@ export const translationES = {
     portfolio: {
       title: 'Portfolio',
       subtitle: '</>',
-      description: 'Información sobre mi vida profesional',
+      description: 'Información sobre mi historia profesional',
 
       viewMyCert: 'Ver mi Cert.',
 
@@ -555,6 +555,11 @@ export const translationES = {
         loremDescription: 'Esto es un generador aleatorio de Lorem Ipsum',
       },
     },
+    footer: {
+      bio: `Diseñado, desarrollado y desplegado con pasión por
+      <strong>JoseA</strong> mientras aprende y disfruta con los más excitantes
+      frameworks y librerías. Por ahora, éste es mi stack favorito.`,
+    },
   },
   translations: {
     More: 'Más',
@@ -575,5 +580,7 @@ export const translationES = {
     'To get started, edit <1>src/App.js</1> and save to reload.':
       'Starte in dem du, <1>src/App.js</1> editierst und speicherst.',
     'Welcome to React': 'Willkommen bei React und react-i18next',
+    'Main Sections': 'Secciones Principales',
+    'Secondary Sections': 'Secciones Secundarias',
   },
 }

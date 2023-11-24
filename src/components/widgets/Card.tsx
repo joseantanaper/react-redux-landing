@@ -84,9 +84,13 @@ const Card = ({
         )}
         {skills && (
           <div className="row mt-3">
-            {skills.map((skill) => (
-              <div className="col">
-                <SkillLogo logo={skill.logo} label={skill.label} />
+            {skills.map((skill, index) => (
+              <div className="col" key={`skill-div-${index}`}>
+                <SkillLogo
+                  key={`skill-item-${index}`}
+                  logo={skill.logo}
+                  label={skill.label}
+                />
               </div>
             ))}
           </div>

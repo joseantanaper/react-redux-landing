@@ -184,8 +184,8 @@ const Index = () => {
                     i18n.t('app:home:bootstrapItems', {
                       returnObjects: true,
                     }) as string[]
-                  ).map((item) => (
-                    <li>
+                  ).map((item, index) => (
+                    <li key={`bootstrap-${index}`}>
                       <Trans>{item}</Trans>
                     </li>
                   ))}

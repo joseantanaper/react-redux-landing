@@ -144,25 +144,25 @@ export const ExperienceItem = ({ experienceItem, experienceIndex }: Props) => {
               <div className="row p-2">
                 <div className="col">
                   <div className="row">
-                    <div className="col">
+                    <div className="col-sm-6 col-xxl-3 mb-3">
                       <CustomBackground
                         logo="omegazetacorporacion"
                         label="Corporación Omega Zeta"
                       />
                     </div>
-                    <div className="col">
+                    <div className="col-sm-6 col-xxl-3 mb-3">
                       <CustomBackground
                         logo="omegazetacirca"
                         label="CIRCA, S.A."
                       />
                     </div>
-                    <div className="col">
+                    <div className="col-sm-6 col-xxl-3 mb-3">
                       <CustomBackground
                         logo="omegazetananjing"
                         label="Omega Zeta Nanjing"
                       />
                     </div>
-                    <div className="col">
+                    <div className="col-sm-6 col-xxl-3 mb-3">
                       <CustomBackground
                         logo="omegazetaclinica"
                         label="Clínica Omega Zeta"

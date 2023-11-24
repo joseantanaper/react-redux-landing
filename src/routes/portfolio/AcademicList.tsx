@@ -76,6 +76,7 @@ export const AcademicList = ({
             ).map((academicItem: AcademicEntry, academicIndex) => (
               <>
                 <AcademicItem
+                  key={`academic-item-${academicIndex}`}
                   academicItem={academicItem}
                   academicIndex={academicIndex}
                   mode={mode}
@@ -104,6 +105,7 @@ export const AcademicList = ({
                     }) as AcademicEntry[]
                   ).map((academicItem: AcademicEntry, academicIndex) => (
                     <AcademicItem
+                      key={`academic-item-${academicIndex}`}
                       academicItem={academicItem}
                       academicIndex={academicIndex}
                       mode={mode}

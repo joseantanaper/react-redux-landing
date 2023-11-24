@@ -34,6 +34,7 @@ export const ExperienceList = ({ id, iconmap }: Props) => {
               }) as ExperienceEntry[]
             ).map((experienceItem: ExperienceEntry, experienceIndex) => (
               <ExperienceItem
+                key={`experience-item-${experienceIndex}`}
                 experienceItem={experienceItem}
                 experienceIndex={experienceIndex}
               />
