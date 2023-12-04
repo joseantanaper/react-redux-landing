@@ -6,6 +6,7 @@ import Title from './Title'
 import { ReactNode } from 'react'
 import { Skill } from '@/routes/portfolio/AcademicItem'
 import { SkillLogo } from '@components/widgets/SkillLogo'
+import { CustomBackground } from '../../components/widgets/CustomBackground'
 
 interface Props {
   carouselItems?: CarouselItem[]
@@ -23,6 +24,7 @@ interface Props {
   rightLink?: string
   rightLinkLabel?: string
   rightLinkIcon?: IconMap
+  logo?: string
   children?: ReactNode
 }
 
@@ -42,6 +44,7 @@ const Card = ({
   rightLink,
   rightLinkLabel = 'app:more',
   rightLinkIcon = IconMap.External,
+  logo,
   children,
 }: Props) => {
   const { t, i18n } = useTranslation()
@@ -62,6 +65,7 @@ const Card = ({
           />
         </div>
       )}
+      {logo && title && <CustomBackground logo={logo} label={title} />}
       {children ? children : null}
       <div className="card-body border-top">
         {title && (
@@ -94,6 +98,11 @@ const Card = ({
               </div>
             ))}
           </div>
+        )}
+        {skills?.find((skill) => skill.logo === 'simonbelmont') && (
+          <audio controls className="app-audio w-100">
+            <source src="src/assets/audio/vampirekillertheme.mp3" />
+          </audio>
         )}
         <div className="">
           {leftLink && (

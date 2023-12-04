@@ -94,3 +94,25 @@ td {
     margin-right: $app-icon-text-margin;
   }
 }
+
+audio {
+  opacity: $app-icon-opacity;
+}
+
+audio:hover {
+  opacity: $app-icon-opacity-hover;
+  text-shadow: 0 0 5px white;
+}
+
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-panel {
+  background-color: var(--bs-body-bg);
+  color: red !important;
+}
+
+.app-audio>* {
+  color: red !important;
+  background-color: red !important;
+
+}

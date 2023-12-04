@@ -39,6 +39,9 @@ export const Lorem = () => {
           />
         </li>
       ))}
+      <li className="nav-item">
+        <Linko iconmap={IconMap.Code} label={`${t('Footer')}`} href="#footer" />{' '}
+      </li>
     </>
   )
 

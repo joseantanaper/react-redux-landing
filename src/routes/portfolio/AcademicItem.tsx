@@ -50,9 +50,9 @@ export const AcademicItem = ({
   const colSize = () => {
     switch (academicItem.logo) {
       case 'fullstack':
-        return 'col-12 col-lg-6'
+        return 'col-12 col-lg-6 col-xxl-8'
       default:
-        return 'col-12 col-lg-6'
+        return 'col-12 col-lg-6 col-xxl-4'
     }
   }
 
@@ -123,10 +123,13 @@ export const AcademicItem = ({
               )}
             </div>
             <div className="col-3">
-              <CustomBackground
-                logo={academicItem.logo}
-                label={academicItem.title}
-              />
+              {academicItem.logo && academicItem.title && (
+                <CustomBackground
+                  logo={academicItem.logo}
+                  label={academicItem.title}
+                />
+              )}
+
               <div className="pt-3">
                 {academicItem.leftLink ? (
                   <a
@@ -168,12 +171,8 @@ export const AcademicItem = ({
           rightLinkIcon={rightLinkIcon}
           rightLink={academicItem.rightLink}
           rightLinkLabel={rightLinkLabel}
-        >
-          <CustomBackground
-            logo={academicItem.logo}
-            label={academicItem.title}
-          />
-        </Card>
+          logo={academicItem.logo}
+        ></Card>
       </div>
     </>
   )

@@ -9,6 +9,8 @@ import { ExperienceList } from './ExperienceList'
 import { AcademicList } from './AcademicList'
 import { Linko } from '@/components/widgets/Linko'
 
+import vampirekillertheme from '@assets/audio/vampirekillertheme.mp3'
+
 export const Portfolio = () => {
   const { t, i18n } = useTranslation()
   const loader = (useLoaderData() as LoaderData) || {}
@@ -116,7 +118,7 @@ export const Portfolio = () => {
         rightLinkIcon={IconMap.Academic}
         rightLinkLabel="app:portfolio:viewMyCert"
         iconmap={iconmap}
-      />
+      ></AcademicList>
     </PageLayout>
   )
 }

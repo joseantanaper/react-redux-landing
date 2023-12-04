@@ -478,7 +478,10 @@ export const translationES = {
           skills: [
             { logo: 'simonbelmont', label: 'Retrogaming' },
             { logo: 'msx', label: 'MSX, mi ordenador de 8 bits favorito' },
-            { logo: 'xbox', label: 'PC Gaming, Emulación y más' },
+            {
+              logo: 'xbox',
+              label: 'PC Gaming y emulación de consolas/arcades',
+            },
           ],
         },
         {
@@ -513,7 +516,7 @@ export const translationES = {
         },
         {
           title: 'Streaming Services',
-          details: 'Cinema, Series and Documentals',
+          details: 'Cine, Series y Documentales',
           logo: 'streaming',
           skills: [
             { logo: 'netflix', label: 'Netflix' },

@@ -125,7 +125,7 @@ const Counter = () => {
 
               <div className="row mt-3">
                 <div className="col-md-12 col-lg-6">{amountControl()}</div>
-                <div className="col-md-12 col-lg--6">{adderControls()}</div>
+                <div className="col-md-12 col-lg-6">{adderControls()}</div>
               </div>
             </div>
           </div>

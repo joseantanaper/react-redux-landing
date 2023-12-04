@@ -439,7 +439,7 @@ export const translationEN = {
           skills: [
             { logo: 'simonbelmont', label: 'Retrogaming' },
             { logo: 'msx', label: 'MSX, my favorite 8-bit computer' },
-            { logo: 'xbox', label: 'PC Gaming, Emulation and more' },
+            { logo: 'xbox', label: 'PC Gaming and console/arcade emulation' },
           ],
         },
         {
