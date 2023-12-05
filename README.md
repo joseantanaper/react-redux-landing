@@ -167,6 +167,16 @@ npm install @types/react-transition-group
 
 ## Publish "build" to github.io
 
+npm install gh-pages --save-dev
+
+package.json
+"homepage": "https://gitname.github.io/react-gh-pages",
+
+Add a remote that points to the GitHub repository
+$ git remote add origin https://github.com/{username}/{repo-name}.git
+
+### Manual mode
+
 1. Install **gh-pages**:
 
 ```npm
