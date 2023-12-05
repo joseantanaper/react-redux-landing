@@ -436,6 +436,7 @@ export const translationEN = {
         {
           title: 'Videogames',
           logo: 'xboxbg',
+          rightLink: 'creation/#creationRetrogaming',
           skills: [
             { logo: 'simonbelmont', label: 'Retrogaming' },
             { logo: 'msx', label: 'MSX, my favorite 8-bit computer' },

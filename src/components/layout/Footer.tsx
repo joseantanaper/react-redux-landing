@@ -42,7 +42,7 @@ const Footer = () => {
             </code>
           </div>
           <div className="col-12 col-md-8 fw-lighter">
-            <div className="row">
+            <div className="row ms-3">
               <div className="col-12 col-lg-4 text-truncate">
                 <h5>{t('Main Sections')}</h5>
                 <div className="list-group list-group-flush">
