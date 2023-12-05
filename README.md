@@ -167,13 +167,15 @@ npm install @types/react-transition-group
 
 ## Publish "build" to github.io
 
+https://github.com/gitname/react-redux-template
+
 npm install gh-pages --save-dev
 
 package.json
-"homepage": "https://gitname.github.io/react-gh-pages",
+"homepage": "https://joseantanaper.github.io/react-redux-template",
 
 Add a remote that points to the GitHub repository
-$ git remote add origin https://github.com/{username}/{repo-name}.git
+$ git remote add origin https://github.com/joseantanaper/react-redux-template.git
 
 ### Manual mode
 
