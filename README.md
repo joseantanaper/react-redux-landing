@@ -167,13 +167,23 @@ npm install @types/react-transition-group
 
 ## Publish "build" to github.io
 
-package.json
+1. Edit package.json:
 
 ```json
 "homepage": "https://{username}.github.io"
 ```
 
+2. Add remote that points to GitHub repo:
+
+```git
 git remote add origin https://github.com/{username}/{repo-name}.git
+```
+
+3. Deploy:
+
+```npm
+npm run deploy
+```
 
 ...
 
