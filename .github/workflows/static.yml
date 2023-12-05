@@ -27,7 +27,7 @@ jobs:
     environment:
       name: github-pages
       # url: ${{ steps.deployment.outputs.page_url }}
-      url: 'https://github.com/joseantanaper/joseantanaper.github.io'
+      url: 'https://joseantanaper.github.io/'
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
