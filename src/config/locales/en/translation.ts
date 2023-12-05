@@ -484,6 +484,14 @@ export const translationEN = {
         },
       ],
     },
+    creation: {
+      title: 'Creation',
+      subtitle: 'Details about my hobbies',
+      description:
+        'In this section I compile some of the most notable digital publications related to my hobbies',
+      creationMusic: 'Music Creations',
+      creationRetrogaming: 'MSX (8-bit computer) Gameplays',
+    },
 
     todo: {
       title: 'ToDo',

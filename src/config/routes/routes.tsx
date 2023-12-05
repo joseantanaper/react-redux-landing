@@ -1,5 +1,6 @@
 import Index from '@/routes'
 import Portfolio from '@/routes/portfolio'
+import Creation from '@/routes/creation'
 import Counter from '@/routes/miniapps/counter'
 import Todo from '@/routes/miniapps/todo'
 import { IconMap } from '@/components/widgets/Icon'
@@ -9,6 +10,7 @@ import { Lorem } from '@/routes/playground/lorem'
 export const enum routePath {
   HOME = '/',
   PORTFOLIO = '/portfolio',
+  CREATION = '/creation',
   TODO = '/miniapps/todo',
   COUNTER = '/miniapps/counter',
   LOREM = '/playground/lorem',
@@ -35,6 +37,18 @@ export const routes = [
         subtitle: 'app:portfolio:subtitle',
         description: 'app:portfolio:description',
         iconmap: IconMap.Portfolio,
+      }
+    },
+  },
+  {
+    path: '/creation',
+    element: <Creation />,
+    loader: () => {
+      return {
+        title: 'app:creation:title',
+        subtitle: 'app:creation:subtitle',
+        description: 'app:creation:description',
+        iconmap: IconMap.Hobbies,
       }
     },
   },
@@ -97,6 +111,7 @@ export interface RouteLink {
 export const routeLinks: RouteLink[] = [
   getRouteByPath(routePath.HOME),
   getRouteByPath(routePath.PORTFOLIO),
+  getRouteByPath(routePath.CREATION),
   getRouteByPath(routePath.TODO),
   getRouteByPath(routePath.COUNTER),
   {

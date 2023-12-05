@@ -1,6 +1,7 @@
 import React from 'react'
 import { Icon, IconMap } from './Icon'
 import { ReactNode } from 'react'
+import { useTranslation } from 'react-i18next'
 
 interface Props {
   id?: string
@@ -12,10 +13,11 @@ interface Props {
 }
 
 const Title = ({ id, h, label, className, iconmap, children }: Props) => {
+  const { t } = useTranslation()
   const content = (
     <>
       {iconmap ? <Icon iconmap={iconmap} /> : null}
-      {label ? label : null}
+      {label ? t(label) : null}
       {children ? children : null}
     </>
   )

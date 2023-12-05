@@ -526,6 +526,15 @@ export const translationES = {
         },
       ],
     },
+    creation: {
+      title: 'Creación',
+      subtitle: 'Detalles sobre mis aficiones',
+      description:
+        'En esta sección recopilo algunas de las publicaciones digitales más destacadas relacionadas con mis aficiones',
+      creationMusic: 'Creaciones Musicales',
+      creationRetrogaming: 'Gameplays MSX (ordenador de 8 bits)',
+    },
+
     todo: {
       title: 'Tareas',
       subtitle: 'La más sencilla aplicación de Lista de Tareas',

@@ -54,7 +54,7 @@ import spanish from '@assets/flag/spanish.webp'
 import catalan from '@assets/flag/catalan.webp'
 import english from '@assets/flag/english.png'
 
-import simonbelmont from '@assets/logos/simonbelmontok.gif'
+import simonbelmont from '@assets/logos/simonbelmont.gif'
 import msx from '@assets/logos/msx.png'
 import xbox from '@assets/logos/xbox.png'
 
@@ -67,10 +67,6 @@ import newage from '@assets/music/tubularbells.webp'
 import industrial from '@assets/music/industrial.jpg'
 import numetal from '@assets/music/numetal.jpg'
 import rock from '@assets/music/nirvana.jpg'
-import d70 from '@assets/music/d70.png'
-import d80 from '@assets/music/d80c.gif'
-import d90 from '@assets/music/d90.webp'
-import d2000 from '@assets/music/d2000.jpg'
 import videoclips from '@assets/music/mtv.jpg'
 
 import vsynth from '@assets/music/vsynth.png'
@@ -224,18 +220,6 @@ export const SkillLogo = ({ logo, label, className }: Props) => {
       case 'rock':
         // height = 64
         return rock
-      case 'd70':
-        height = 64
-        return d70
-      case 'd80':
-        height = 64
-        return d80
-      case 'd90':
-        height = 64
-        return d90
-      case 'd2000':
-        height = 64
-        return d2000
       case 'videoclips':
         height = 64
         return videoclips
