@@ -101,7 +101,7 @@ const Card = ({
         )}
         {skills?.find((skill) => skill.logo === 'simonbelmont') && (
           <audio controls className="app-audio w-100">
-            <source src="src/assets/audio/vampirekillertheme.mp3" />
+            <source src="src/assets/audio/vampirekiller.mp3" />
           </audio>
         )}
         <div className="">

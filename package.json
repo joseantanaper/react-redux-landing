@@ -14,7 +14,7 @@
     "lint": "eslint --fix .",
     "type-check": "tsc",
     "predeploy": "npm run build",
-    "deploy": "gh-pages -d build --nojekyll --version"
+    "deploy": "gh-pages -d build"
   },
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.1",

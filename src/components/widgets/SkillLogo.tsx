@@ -15,7 +15,6 @@ import angular from '@assets/logos/angular.png'
 import java from '@assets/logos/java.png'
 import spring from '@assets/logos/spring.png'
 import nodejs from '@assets/logos/nodejs.png'
-import apollo from '@assets/logos/apollo.png'
 import rest from '@assets/logos/rest.png'
 import graphql from '@assets/logos/graphql.png'
 

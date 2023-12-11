@@ -171,13 +171,21 @@ npm install @types/react-transition-group
 
 ```json
 "homepage": "https://{username}.github.io"
+...
+"scripts":{
+  "predeploy": "npm run build",
+  "deploy": "gh-pages -d build"
+  /* "deploy": "gh-pages -d build --nojekyll --version" */
+}
 ```
+
+````
 
 2. Add remote that points to GitHub repo:
 
 ```git
 git remote add origin https://github.com/{username}/{repo-name}.git
-```
+````
 
 3. Deploy:
 
