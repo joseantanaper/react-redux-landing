@@ -39,6 +39,9 @@ const Footer = () => {
                 Base url:{' '}
                 <span className="text-primary">{import.meta.env.BASE_URL}</span>
               </div>
+              <div>
+                Deploy mark: <span className="text-primary">Hello</span>
+              </div>
             </code>
           </div>
           <div className="col-12 col-md-8 fw-lighter">
