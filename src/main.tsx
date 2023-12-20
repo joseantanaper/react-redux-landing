@@ -17,14 +17,19 @@ import {
 
 import '@config/i18n'
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: '/',
+      element: <Root />,
+      errorElement: <Error />,
+      children: routes,
+    },
+  ],
   {
-    path: '/',
-    element: <Root />,
-    errorElement: <Error />,
-    children: routes,
-  },
-])
+    basename: '/react-redux-landing',
+  }
+)
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>

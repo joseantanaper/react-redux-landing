@@ -1,4 +1,4 @@
-# react-redux-template
+# react-redux-landing
 
 ## Setup
 
