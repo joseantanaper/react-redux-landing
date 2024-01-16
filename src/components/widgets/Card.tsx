@@ -7,6 +7,7 @@ import { ReactNode } from 'react'
 import { Skill } from '@/routes/portfolio/AcademicItem'
 import { SkillLogo } from '@components/widgets/SkillLogo'
 import { CustomBackground } from '../../components/widgets/CustomBackground'
+import vampirekiller from '@assets/audio/vampirekiller.mp3'
 
 interface Props {
   carouselItems?: CarouselItem[]
@@ -101,7 +102,8 @@ const Card = ({
         )}
         {skills?.find((skill) => skill.logo === 'simonbelmont') && (
           <audio controls className="app-audio w-100">
-            <source src="src/assets/audio/vampirekiller.mp3" />
+            {/* <source src="src/assets/audio/vampirekiller.mp3" /> */}
+            <source src={vampirekiller} />
           </audio>
         )}
         <div className="">
