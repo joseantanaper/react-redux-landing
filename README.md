@@ -2,7 +2,7 @@
 
 ## Setup
 
-Install **Vite** and **Degit** first:
+Install **Vite** and **Degit** first (if not installed):
 
 ```sh
 npm install vite
@@ -167,6 +167,12 @@ npm install @types/react-transition-group
 
 ## Publish "build" to github.io
 
+```sh
+npm install gh-pages --save-dev
+```
+
+0. Configure GitHub Pages:
+
 1. Edit package.json:
 
 ```json
@@ -175,11 +181,12 @@ npm install @types/react-transition-group
 "scripts":{
   "predeploy": "npm run build",
   "deploy": "gh-pages -d build"
+  /* "deploy": "gh-pages -d dist" */
   /* "deploy": "gh-pages -d build --nojekyll --version" */
 }
 ```
 
-2. Add remote that points to GitHub repo:
+2. Add remote that points to GitHub repo+:
 
 ```git
 git remote add origin https://github.com/{username}/{repo-name}.git
@@ -192,18 +199,6 @@ npm run deploy
 ```
 
 ...
-
-https://github.com/gitname/react-redux-template
-
-```sh
-npm install gh-pages --save-dev
-```
-
-package.json
-
-```json
-"homepage": "https://joseantanaper.github.io/react-redux-template",
-```
 
 Add a remote that points to the GitHub repository
 
@@ -229,6 +224,10 @@ npm install gh-pages --save-dev
 "deploy": "gh-pages -d build"
 }
 ```
+
+tsconfig.json:
+"baseUrl": ".",
+"include": ["src"], ???
 
 ---
 
