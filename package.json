@@ -1,7 +1,7 @@
 {
-  "homepage": "https://github.com/joseantanaper/react-redux-landing",
-  "name": "vite-template-redux",
-  "private": true,
+  "homepage": "https://joseantanaper.github.io/react-redux-landing",
+  "name": "react-redux-template",
+  "private": false,
   "version": "0.0.1",
   "type": "module",
   "scripts": {
