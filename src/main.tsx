@@ -4,8 +4,8 @@ import { Provider } from 'react-redux'
 import { store } from '@app/store'
 import '@style/bootstrap.scss'
 import '@bootstrap-js'
-import Root from '@routes/root'
-import Error from '@routes/error'
+import Root from '@routes/Root'
+import Error from '@routes/Error'
 
 import { routes } from './config/routes/routes'
 

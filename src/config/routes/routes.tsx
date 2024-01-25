@@ -1,4 +1,4 @@
-import Index from '@/routes'
+import Index from '@/routes/Index'
 import Portfolio from '@/routes/portfolio'
 import Creation from '@/routes/creation'
 import Counter from '@/routes/miniapps/counter'

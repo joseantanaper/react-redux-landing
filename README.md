@@ -12,7 +12,7 @@ npm install degit
 Create a new project using official Redux+TS template for Vite:
 
 ```sh
-npx degit reduxjs/redux-templates/packages/vite-template-redux react-redux-template
+npx degit reduxjs/redux-templates/packages/vite-template-redux react-redux-landing
 cd react-redux-template
 npm install
 npm run dev
@@ -171,17 +171,15 @@ npm install @types/react-transition-group
 npm install gh-pages --save-dev
 ```
 
-0. Configure GitHub Pages:
-
 1. Edit package.json:
 
 ```json
-"homepage": "https://{username}.github.io"
+"homepage": "https://{username}.github.io/repository_name"
 ...
 "scripts":{
   "predeploy": "npm run build",
-  "deploy": "gh-pages -d build"
-  /* "deploy": "gh-pages -d dist" */
+  "deploy": "gh-pages -d dist"
+  /* "deploy": "gh-pages -d build" */
   /* "deploy": "gh-pages -d build --nojekyll --version" */
 }
 ```
@@ -221,13 +219,34 @@ npm install gh-pages --save-dev
 
 "scripts":{
 "predeploy": "npm run build",
-"deploy": "gh-pages -d build"
+"deploy": "gh-pages -d dist"
+/* "deploy": "gh-pages -d build" */
 }
+```
+
+- "deploy" needs that dist is updated with changes.
+
+vite.config.ts:
+
+IMPORTANT!
+
+```json
+"base": "/repository-name"
 ```
 
 tsconfig.json:
 "baseUrl": ".",
 "include": ["src"], ???
+
+vite.config.ts:
+If outDir is changed to "build", GitHub Pages stops working!
+
+```json
+build: {
+  outDir: 'build',
+  sourcemap: true,
+},
+```
 
 ---
 
