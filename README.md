@@ -13,7 +13,7 @@ Create a new project using official Redux+TS template for Vite:
 
 ```sh
 npx degit reduxjs/redux-templates/packages/vite-template-redux react-redux-landing
-cd react-redux-template
+cd react-redux-landing
 npm install
 npm run dev
 ```
@@ -201,7 +201,7 @@ npm run deploy
 Add a remote that points to the GitHub repository
 
 ```sh
-$ git remote add origin https://github.com/joseantanaper/react-redux-template.git
+$ git remote add origin https://github.com/joseantanaper/react-redux-landing.git
 ```
 
 ### Manual mode
@@ -236,10 +236,9 @@ IMPORTANT!
 
 tsconfig.json:
 "baseUrl": ".",
-"include": ["src"], ???
+"include": ["src"]
 
 vite.config.ts:
-If outDir is changed to "build", GitHub Pages stops working!
 
 ```json
 build: {
