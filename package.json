@@ -20,6 +20,7 @@
     "@reduxjs/toolkit": "^1.8.1",
     "bootstrap": "^5.3.2",
     "bootstrap-icons": "^1.11.1",
+    "degit": "^2.8.4",
     "i18next": "^23.6.0",
     "i18next-browser-languagedetector": "^7.1.0",
     "i18next-http-backend": "^2.3.1",
@@ -53,23 +54,38 @@
     "prettier-config-nick": "^1.0.2",
     "sass": "^1.69.1",
     "typescript": "^5.0.2",
-    "vite": "^4.0.0",
+    "vite": "^4.5.2",
     "vitest": "^0.30.1"
   },
   "eslintConfig": {
-    "ignorePatterns": ["build", "node_modules"],
-    "extends": ["react-app", "react-app/jest", "plugin:json/recommended"],
-    "plugins": ["prettier"],
+    "ignorePatterns": [
+      "build",
+      "node_modules"
+    ],
+    "extends": [
+      "react-app",
+      "react-app/jest",
+      "plugin:json/recommended"
+    ],
+    "plugins": [
+      "prettier"
+    ],
     "overrides": [
       {
-        "files": ["*.ts", "*.tsx"],
+        "files": [
+          "*.ts",
+          "*.tsx"
+        ],
         "rules": {
           "no-unused-vars": "off",
           "@typescript-eslint/no-unused-vars": "off"
         }
       },
       {
-        "files": ["*.tsx", "**/*.tsx"],
+        "files": [
+          "*.tsx",
+          "**/*.tsx"
+        ],
         "rules": {
           "react/jsx-no-target-blank": "off"
         }
